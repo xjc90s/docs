@@ -55,8 +55,6 @@ In your {% data variables.product.prodname_actions %} workflow file, ensure you 
 
 The following example uses the placeholders `YOUR_PROVIDER_NAME` and `YOUR_AUDIENCE`.
 
-{% raw %}
-
 ```yaml
 {% data reusables.actions.actions-not-certified-by-github-comment %}
 permissions:
@@ -79,8 +77,6 @@ jobs:
         run: jf rt upload "dist/*.zip" my-repo/
 
 ```
-
-{% endraw %}
 
 > [!TIP]
 > When OIDC authentication is used, the `setup-jfrog-cli` action automatically provides `oidc-user` and `oidc-token` as step outputs.
