@@ -17127,7 +17127,7 @@
       "created_at",
       "operation_type"
     ],
-    "docs_reference_titles": "code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/managing-dependabot-on-self-hosted-runners"
+    "docs_reference_titles": "Configuring Dependabot on self-hosted runners"
   },
   {
     "action": "repository_dependency_updates_self_hosted.enabled",
@@ -17154,7 +17154,7 @@
       "actor_is_bot",
       "actor_is_agent"
     ],
-    "docs_reference_titles": "code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/managing-dependabot-on-self-hosted-runners"
+    "docs_reference_titles": "Configuring Dependabot on self-hosted runners"
   },
   {
     "action": "repository_image.create",
