@@ -32,7 +32,7 @@ category:
     Implement a user-friendly message for common errors.
     ```
 
-1. Click {% octicon "paper-airplane" aria-label="Start task" %} **Start task** or press <kbd>Return</kbd>.
+1. Click **{% octicon "paper-airplane" aria-label="Start task" %}** or press <kbd>Enter</kbd>.
 
   {% data variables.product.prodname_copilot_short %} will start work on the task and begin pushing changes to a new pull request, where it will automatically add you as a reviewer.
 
