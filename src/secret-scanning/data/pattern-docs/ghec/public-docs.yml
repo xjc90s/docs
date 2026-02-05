@@ -1129,6 +1129,7 @@
   isPrivateWithGhas: false
   hasPushProtection: false
   hasValidityCheck: false
+  hasExtendedMetadata: false
   base64Supported: false
   isduplicate: false
 - provider: Baidu
@@ -2048,6 +2049,7 @@
   isPrivateWithGhas: false
   hasPushProtection: false
   hasValidityCheck: false
+  hasExtendedMetadata: false
   base64Supported: false
   isduplicate: false
 - provider: Figma
