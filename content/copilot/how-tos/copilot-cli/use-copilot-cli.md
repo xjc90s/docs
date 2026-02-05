@@ -320,3 +320,8 @@ For additional information use one of the following commands in your terminal:
   `copilot help permissions`
 
 {% data reusables.cli.feedback %}
+
+## Further reading
+
+* [AUTOTITLE](/copilot/how-tos/copilot-cli/cli-best-practices)
+* [AUTOTITLE](/copilot/reference/cli-command-reference)
