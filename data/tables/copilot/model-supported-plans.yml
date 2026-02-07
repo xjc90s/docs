@@ -43,7 +43,7 @@
 - name: Claude Opus 4.6 (fast mode) (preview)
   free: false
   pro: false
-  pro_plus: false
+  pro_plus: true
   business: false
   enterprise: true
 
