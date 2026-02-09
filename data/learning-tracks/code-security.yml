@@ -140,7 +140,7 @@ secret_scanning:
       %}/code-security/how-tos/secure-your-secrets/work-with-leak-prevention/working-with-push-protection-in-the-github-ui{%
       endif %}
     - >-
-      /code-security/how-tos/secure-your-secrets/troubleshooting-secret-scanning
+      /code-security/reference/secret-security/secret-scanning-detection-scope
 security_alerts:
   title: Explore and manage security alerts
   description: Learn where to find and resolve security alerts.
