@@ -48,7 +48,7 @@ By default:
 To manage configure user display name at the organization level:
 {% data reusables.profile.access_org %}
 {% data reusables.profile.org_settings %}
-1. On the "Manage your enterprise profile" page, go to "Member appearance".
+1. On the "General" page, go to "Member appearance".
 1. Under "Profile name visibility", select one of the following options in the toggle.
    * **On** to show profile names alongside usernames in your organization, including in repositories, issues, pull requests, and discussions.
    * **Off** to show **usernames only** across your organization.
