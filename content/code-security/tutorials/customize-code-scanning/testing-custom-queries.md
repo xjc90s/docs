@@ -1,7 +1,6 @@
 ---
 title: Testing custom queries
-shortTitle: Test custom queries
-intro: Verify your custom {% data variables.product.prodname_codeql %} queries and catch breaking changes before they affect your {% data variables.product.prodname_code_scanning %} results following new releases of the {% data variables.product.prodname_codeql_cli %}.
+intro: You can set up tests for your {% data variables.product.prodname_codeql %} queries to ensure that they continue to return the expected results with new releases of the {% data variables.product.prodname_codeql_cli %}.
 product: '{% data reusables.gated-features.codeql %}'
 versions:
   fpt: '*'
@@ -15,11 +14,10 @@ redirect_from:
   - /code-security/codeql-cli/testing-custom-queries
   - /code-security/codeql-cli/using-the-codeql-cli/testing-custom-queries
   - /code-security/codeql-cli/using-the-advanced-functionality-of-the-codeql-cli/testing-custom-queries
-  - /code-security/tutorials/customize-code-scanning/testing-custom-queries
-contentType: how-tos
+contentType: tutorials
 ---
 
-## Testing custom queries
+## About testing custom queries
 
 {% data variables.product.prodname_codeql %} provides a simple test framework for automated regression testing
 of queries. Test your queries to ensure that they behave as expected.

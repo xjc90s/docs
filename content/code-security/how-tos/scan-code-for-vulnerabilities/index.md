@@ -11,10 +11,8 @@ redirect_from:
 children:
   - /configure-code-scanning
   - /manage-your-configuration
-  - /customize-code-scanning
   - /scan-from-the-command-line
   - /scan-from-vs-code
   - /integrate-with-existing-tools
   - /troubleshooting
 ---
-
