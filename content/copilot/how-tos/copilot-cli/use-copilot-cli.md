@@ -220,7 +220,7 @@ In the case of naming conflicts, a system-level agent overrides a repository-lev
 
 {% data variables.copilot.custom_agents_caps_short %} can be used in three ways:
 
-* Using the slash command in interactive mode to select from the list of available {% data variables.copilot.custom_agents_short %}:
+* Using the slash command in the CLI's interactive interface to select from the list of available {% data variables.copilot.custom_agents_short %}:
 
   ```shell
   /agent
