@@ -1,5 +1,5 @@
 ---
-title: Overview for customizing {% data variables.copilot.copilot_cli %}
+title: Overview of customizing {% data variables.copilot.copilot_cli %}
 shortTitle: Overview
 allowTitleToDifferFromFilename: true
 intro: "{% data variables.copilot.copilot_cli_short %} works best when customized for your specific project and workflow."
