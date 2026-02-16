@@ -105,7 +105,7 @@ For a complete list of available slash commands enter `/help` in the CLI's inter
 | `--add-github-mcp-tool TOOL`       | Add a tool to enable for the {% data variables.product.github %} MCP server, instead of the default CLI subset (can be used multiple times). Use `*` for all tools. |
 | `--add-github-mcp-toolset TOOLSET` | Add a toolset to enable for the {% data variables.product.github %} MCP server, instead of the default CLI subset (can be used multiple times). Use `all` for all toolsets. |
 | `--additional-mcp-config JSON`     | Additional MCP servers configuration as a JSON string or a file path (prefix with `@`) (can be used multiple times). Augments the configuration from `~/.copilot/mcp-config.json` for this session. |
-| `--agent AGENT`                    | Specify a custom agent to use. |
+| `--agent AGENT`                    | Specify a {% data variables.copilot.copilot_custom_agent_short %} to use. |
 | `--allow-all`                      | Enable all permissions (equivalent to `--allow-all-tools --allow-all-paths --allow-all-urls`). |
 | `--allow-all-paths`                | Disable file path verification and allow access to any path. |
 | `--allow-all-tools`                | Allow all tools to run automatically without confirmation. Required when using the CLI programmatically (env: `COPILOT_ALLOW_ALL`). |
