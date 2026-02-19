@@ -82,6 +82,10 @@ copilot_custom_agent_caps_short: 'Custom agent'
 custom_agents_short: 'custom agents'
 custom_agents_caps_short: 'Custom agents'
 
+## Copilot SDK
+copilot_sdk: 'GitHub Copilot SDK'
+copilot_sdk_short: 'Copilot SDK'
+
 ## Copilot subagents
 subagent_short: 'subagent'
 subagent_caps_short: 'Subagent'
