@@ -43,8 +43,8 @@ chat_completions_api: 'https://api.githubcopilot.com/chat/completions'
 copilot_code-review: 'GitHub Copilot code review'
 copilot_code-review_short: 'Copilot code review'
 copilot_code-review-tools-preview_cap: 'New tools (public preview) in GitHub Copilot code review'
-copilot_code-review-tools_short: 'new tools in Copilot code review'
-copilot_code-review-tools_cap_short: 'New tools in Copilot code review'
+copilot_code-review-tools_short: 'tools in Copilot code review'
+copilot_code-review-tools_cap_short: 'Tools in Copilot code review'
 
 ## Copilot coding agent (previously Padawan) -> {% data variables.copilot.copilot_coding_agent %}
 copilot_coding_agent: 'Copilot coding agent'
