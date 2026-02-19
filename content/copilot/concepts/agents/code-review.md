@@ -19,7 +19,7 @@ category:
 
 ## Introduction
 
-{% data variables.copilot.copilot_code-review_short %} reviews code written in any language, and provides feedback. It reviews your code from multiple angles to identify issues and suggest fixes. You can apply suggested changes with a couple of clicks. 
+{% data variables.copilot.copilot_code-review_short %} reviews code written in any language, and provides feedback. It reviews your code from multiple angles to identify issues and suggest fixes. You can apply suggested changes with a couple of clicks.
 
 This article provides an overview of {% data variables.copilot.copilot_code-review_short %}. To learn how to request a code review from {% data variables.product.prodname_copilot_short %}, see [AUTOTITLE](/copilot/how-tos/agents/copilot-code-review/using-copilot-code-review).
 
@@ -78,7 +78,7 @@ Some file types are excluded from {% data variables.copilot.copilot_code-review_
 * Log files
 * SVG files
 
-If you include these file types in a pull request, {% data variables.copilot.copilot_code-review_short %} will not review the file. 
+If you include these file types in a pull request, {% data variables.copilot.copilot_code-review_short %} will not review the file.
 
 For more information, see [AUTOTITLE](/copilot/reference/review-excluded-files).
 
