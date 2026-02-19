@@ -162,7 +162,6 @@ Before adding a new SSH key to the ssh-agent to manage your keys, you should hav
    ```powershell
    ssh-add c:/Users/YOU/.ssh/id_ed25519
    ```
-
 {% data reusables.ssh.add-public-key-to-github %}
 
 > ### Troubleshooting SSH agent conflicts in Windows
@@ -267,7 +266,7 @@ If you are using macOS or Linux, you may need to update your SSH client or insta
    > Enter passphrase (empty for no passphrase): [Type a passphrase]
    > Enter same passphrase again: [Type passphrase again]
    ```
-
+   
 {% data reusables.ssh.add-public-key-to-github %}
 
 
