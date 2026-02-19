@@ -21,14 +21,6 @@
   xcode: true
   jetbrains: true
 
-- name: Claude Opus 4.1
-  dotcom: true
-  vscode: true
-  vs: true
-  eclipse: true
-  xcode: true
-  jetbrains: true
-
 - name: Claude Opus 4.5
   dotcom: true
   vscode: true
@@ -117,14 +109,6 @@
   xcode: true
   jetbrains: true
 
-- name: GPT-5
-  dotcom: true
-  vscode: true
-  vs: true
-  eclipse: true
-  xcode: true
-  jetbrains: true
-
 - name: GPT-5 mini
   dotcom: true
   vscode: true
@@ -132,14 +116,6 @@
   eclipse: true
   xcode: true
   jetbrains: true
-
-- name: GPT-5-Codex
-  dotcom: false
-  vscode: true
-  vs: false
-  eclipse: false
-  xcode: false
-  jetbrains: false
 
 - name: GPT-5.1
   dotcom: true

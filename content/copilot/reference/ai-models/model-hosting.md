@@ -21,9 +21,7 @@ contentType: reference
 Used for:
 
 * {% data variables.copilot.copilot_gpt_41 %}
-* {% data variables.copilot.copilot_gpt_5_codex %} (supported in {% data variables.product.prodname_vscode %} v1.104.1 or higher)
 * {% data variables.copilot.copilot_gpt_5_mini %}
-* {% data variables.copilot.copilot_gpt_5 %}
 * {% data variables.copilot.copilot_gpt_51 %}
 * {% data variables.copilot.copilot_gpt_51_codex %}
 * {% data variables.copilot.copilot_gpt_51_codex_mini %}
@@ -55,7 +53,6 @@ Used for:
 
 * {% data variables.copilot.copilot_claude_haiku_45 %}
 * {% data variables.copilot.copilot_claude_sonnet_45 %}
-* {% data variables.copilot.copilot_claude_opus_41 %}
 * {% data variables.copilot.copilot_claude_opus_45 %}
 * {% data variables.copilot.copilot_claude_opus_46 %}
 * {% data variables.copilot.copilot_claude_opus_46_fast %}
