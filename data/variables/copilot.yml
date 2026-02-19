@@ -155,6 +155,7 @@ copilot_gemini_flash: 'Gemini 2.0 Flash'
 copilot_gemini_3_flash: 'Gemini 3 Flash'
 copilot_gemini_25_pro: 'Gemini 2.5 Pro'
 copilot_gemini_3_pro: 'Gemini 3 Pro'
+copilot_gemini_31_pro: 'Gemini 3.1 Pro'
 # OpenAI GPT series:
 copilot_gpt_4o: 'GPT-4o'
 copilot_gpt_41: 'GPT-4.1'
