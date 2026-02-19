@@ -11,6 +11,7 @@ redirect_from:
   - /copilot/code-review
   - /copilot/concepts/code-review/code-review
   - /copilot/concepts/code-review
+  - /copilot/how-tos/use-copilot-agents/request-a-code-review/manage-tools
 contentType: concepts
 category:
   - Learn about Copilot
@@ -93,7 +94,6 @@ If you get a {% data variables.product.prodname_copilot_short %} subscription fr
 These new tools are enabled automatically for {% data variables.copilot.copilot_pro_short %} or {% data variables.copilot.copilot_pro_plus_short %} plans.
 
 * **Full project context gathering**. This provides more specific, accurate, and contextually aware code reviews.
-* **Support for static analysis tools like {% data variables.product.prodname_codeql %}, ESLint, and PMD**. This delivers more high-signal, consistent findings for security and quality.
 * **The ability to pass suggestions to {% data variables.copilot.copilot_coding_agent %}**. This automates creation of a new pull request against your branch with the suggested fixes applied.
 
 You do not need to have {% data variables.product.prodname_code_scanning %} and {% data variables.product.prodname_actions %} enabled in your organization or enterprise to use the {% data variables.copilot.copilot_code-review-tools_short %}.
@@ -175,16 +175,6 @@ For full instructions, see [AUTOTITLE](/copilot/how-tos/agents/copilot-code-revi
 
 > [!NOTE]
 > Unless {% data variables.product.prodname_copilot_short %} has been configured to review each push to a pull request, it will only review a pull request once. If you make changes to the pull request after it has been automatically reviewed and you want {% data variables.product.prodname_copilot_short %} to re-review it, you can request this manually. Click the {% octicon "sync" aria-label="Re-request review" %} button next to {% data variables.product.prodname_copilot_short %}'s name in the **Reviewers** menu.
-
-## About static analysis tools
-
-Enable static analysis tools in {% data variables.copilot.copilot_code-review_short %} to enhance its ability to identify and fix issues. Available tools include:
-
-* **{% data variables.product.prodname_codeql %}**: A code analysis engine that identifies security vulnerabilities. For more information, see [About {% data variables.product.prodname_codeql %}](/code-security/code-scanning/introduction-to-code-scanning/about-code-scanning-with-codeql#about-codeql).
-* **ESLint**: A linter designed specifically for JavaScript. See [Core Concepts](https://eslint.org/docs/latest/use/core-concepts/) in the the ESLint documentation.
-* **PMD**: A static code analyzer that focuses on Java and Apex. It also supports many other languages. See the [PMD documentation](https://docs.pmd-code.org/latest/).
-
-If you have access to {% data variables.copilot.copilot_code-review-tools_short %}, {% data variables.product.prodname_codeql %} is enabled by default. ESLint and PMD are disabled. If you have access to rulesets, you can change your selected tools. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/request-a-code-review/manage-tools).
 
 ## Getting detailed code quality feedback for your whole repository
 
