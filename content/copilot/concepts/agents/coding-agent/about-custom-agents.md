@@ -79,3 +79,4 @@ To create your own {% data variables.copilot.custom_agents_short %}, see:
 
 * [AUTOTITLE](/copilot/how-tos/use-copilot-agents/coding-agent/create-custom-agents)
 * [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/create-custom-agents-for-cli)
+* [AUTOTITLE](/copilot/reference/customization-cheat-sheet)
