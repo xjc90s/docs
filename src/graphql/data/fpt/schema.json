@@ -89963,6 +89963,14 @@
           "description": "<p>Represents a comment on an Issue.</p>"
         },
         {
+          "name": "ISSUE_COMMENT_PINNED_EVENT",
+          "description": "<p>Represents a<code>issue_comment_pinned</code>event on a given issue.</p>"
+        },
+        {
+          "name": "ISSUE_COMMENT_UNPINNED_EVENT",
+          "description": "<p>Represents a<code>issue_comment_unpinned</code>event on a given issue.</p>"
+        },
+        {
           "name": "ISSUE_FIELD_ADDED_EVENT",
           "description": "<p>Represents a<code>issue_field_added</code>event on a given issue.</p>"
         },
@@ -92173,6 +92181,14 @@
         {
           "name": "ISSUE_COMMENT",
           "description": "<p>Represents a comment on an Issue.</p>"
+        },
+        {
+          "name": "ISSUE_COMMENT_PINNED_EVENT",
+          "description": "<p>Represents a<code>issue_comment_pinned</code>event on a given issue.</p>"
+        },
+        {
+          "name": "ISSUE_COMMENT_UNPINNED_EVENT",
+          "description": "<p>Represents a<code>issue_comment_unpinned</code>event on a given issue.</p>"
         },
         {
           "name": "ISSUE_FIELD_ADDED_EVENT",
