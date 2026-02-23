@@ -16,6 +16,7 @@ redirect_from:
 contentType: rai
 category: 
   - Responsible use
+  - Learn about Copilot CLI
 ---
 
 {% data reusables.cli.preview-note-cli %}
