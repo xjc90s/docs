@@ -27,7 +27,7 @@ The {% data variables.copilot.agent_profile %} defines the {% data variables.cop
 * **Prompt**: Custom instructions that define the agent's behavior and expertise.
 * **Tools** (optional): Specific tools the agent can access. By default, agents can access all available tools, including built-in tools and MCP server tools.
 
-Organization and enterprise-level {% data variables.copilot.agent_profiles %} can also include MCP server configurations using the `mcp-server` property.
+{% data variables.copilot.agent_profiles_caps %} can also include MCP server configurations using the `mcp-server` property.
 
 ### Example {% data variables.copilot.agent_profile %}
 
