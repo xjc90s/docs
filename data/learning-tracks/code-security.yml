@@ -197,7 +197,7 @@ code_security_actions:
       /code-security/tutorials/customize-code-scanning/running-codeql-code-scanning-in-a-container
     - /code-security/how-tos/scan-code-for-vulnerabilities/troubleshooting/troubleshooting-analysis-errors
     - >-
-      /code-security/how-tos/scan-code-for-vulnerabilities/manage-your-configuration/about-the-tool-status-page
+      /code-security/how-tos/scan-code-for-vulnerabilities/manage-your-configuration/use-the-tools-status-page-for-code-scanning
 code_security_integration:
   title: Integrate with code scanning
   description: Upload code analysis results from third-party systems to GitHub using SARIF.
