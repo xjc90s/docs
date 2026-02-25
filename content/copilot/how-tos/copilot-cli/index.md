@@ -24,6 +24,7 @@ children:
   - /set-up-copilot-cli
   - /customize-copilot
   - /use-copilot-cli
+  - /administer-copilot-cli-for-your-enterprise
   - /automate-with-actions
   - /speeding-up-task-completion
   - /content/copilot/concepts/agents/copilot-cli/about-copilot-cli
