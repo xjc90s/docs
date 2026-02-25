@@ -19,8 +19,6 @@ category:
 
 The command-line interface (CLI) for {% data variables.product.prodname_copilot %} allows you to use {% data variables.product.prodname_copilot_short %} directly from your terminal. For more information, see [AUTOTITLE](/copilot/concepts/agents/about-copilot-cli).
 
-{% data reusables.cli.preview-note-cli %}
-
 ## Prerequisite
 
 Install {% data variables.copilot.copilot_cli_short %}. See [AUTOTITLE](/copilot/how-tos/set-up/install-copilot-cli).
