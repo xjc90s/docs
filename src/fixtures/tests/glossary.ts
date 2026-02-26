@@ -1,11 +1,11 @@
 import { describe, expect, test } from 'vitest'
-import cheerio from 'cheerio'
+import type { CheerioAPI } from 'cheerio'
 
 import { getDOMCached as getDOM } from '@/tests/helpers/e2etest'
 
 describe('glossary', () => {
   test('headings are sorted alphabetically', async () => {
-    const $: cheerio.Root = await getDOM('/get-started/learning-about-github/github-glossary')
+    const $: CheerioAPI = await getDOM('/get-started/learning-about-github/github-glossary')
     const headings = $('#article-contents h2')
     const headingTexts = headings.map((_: number, el: any) => $(el).text()).get()
     const cloned = [...headingTexts].sort((a: string, b: string) => a.localeCompare(b))
@@ -14,7 +14,7 @@ describe('glossary', () => {
     expect(equalStringArray(headingTexts, cloned)).toBe(true)
   })
   test('Markdown links are correct', async () => {
-    const $: cheerio.Root = await getDOM('/get-started/learning-about-github/github-glossary')
+    const $: CheerioAPI = await getDOM('/get-started/learning-about-github/github-glossary')
     const internalLink = $('#article-contents a[href="/en/get-started/foo"]')
     expect(internalLink.length).toBe(1)
     // That link used AUTOTITLE so it should be "expanded"
@@ -22,7 +22,7 @@ describe('glossary', () => {
   })
 
   test('all Liquid is evaluated', async () => {
-    const $: cheerio.Root = await getDOM('/get-started/learning-about-github/github-glossary')
+    const $: CheerioAPI = await getDOM('/get-started/learning-about-github/github-glossary')
     const paragraphs = $('#article-contents p')
     const paragraphTexts = paragraphs.map((_: number, el: any) => $(el).text()).get()
     expect(paragraphTexts.find((text: string) => text.includes('{%'))).toBe(undefined)
@@ -31,7 +31,7 @@ describe('glossary', () => {
   test('liquid in one of the description depends on version', async () => {
     // fpt
     {
-      const $: cheerio.Root = await getDOM('/get-started/learning-about-github/github-glossary')
+      const $: CheerioAPI = await getDOM('/get-started/learning-about-github/github-glossary')
       const paragraphs = $('#article-contents p')
       const paragraphTexts = paragraphs
         .map((_: number, el: any) => $(el).text())
@@ -42,7 +42,7 @@ describe('glossary', () => {
 
     // ghes
     {
-      const $: cheerio.Root = await getDOM(
+      const $: CheerioAPI = await getDOM(
         '/enterprise-server@latest/get-started/learning-about-github/github-glossary',
       )
       const paragraphs = $('#article-contents p')
