@@ -7,7 +7,7 @@ describe('glossary', () => {
   test('headings are sorted alphabetically', async () => {
     const $: CheerioAPI = await getDOM('/get-started/learning-about-github/github-glossary')
     const headings = $('#article-contents h2')
-    const headingTexts = headings.map((_: number, el: any) => $(el).text()).get()
+    const headingTexts = headings.map((_, el) => $(el).text()).get()
     const cloned = [...headingTexts].sort((a: string, b: string) => a.localeCompare(b))
     const equalStringArray = (a: string[], b: string[]) =>
       a.length === b.length && a.every((v, i) => v === b[i])
@@ -24,7 +24,7 @@ describe('glossary', () => {
   test('all Liquid is evaluated', async () => {
     const $: CheerioAPI = await getDOM('/get-started/learning-about-github/github-glossary')
     const paragraphs = $('#article-contents p')
-    const paragraphTexts = paragraphs.map((_: number, el: any) => $(el).text()).get()
+    const paragraphTexts = paragraphs.map((_, el) => $(el).text()).get()
     expect(paragraphTexts.find((text: string) => text.includes('{%'))).toBe(undefined)
   })
 
@@ -34,7 +34,7 @@ describe('glossary', () => {
       const $: CheerioAPI = await getDOM('/get-started/learning-about-github/github-glossary')
       const paragraphs = $('#article-contents p')
       const paragraphTexts = paragraphs
-        .map((_: number, el: any) => $(el).text())
+        .map((_, el) => $(el).text())
         .get()
         .join('\n')
       expect(paragraphTexts).toContain('status check on HubGit.')
@@ -47,7 +47,7 @@ describe('glossary', () => {
       )
       const paragraphs = $('#article-contents p')
       const paragraphTexts = paragraphs
-        .map((_: number, el: any) => $(el).text())
+        .map((_, el) => $(el).text())
         .get()
         .join('\n')
       expect(paragraphTexts).toContain('status check on HubGit Enterprise Server.')

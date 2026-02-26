@@ -16,7 +16,7 @@ describe('home page', () => {
     const $: CheerioAPI = await getDOM('/')
     const main = $('[data-testid="product"]')
     const links = main.find('a[href*="/"]')
-    const hrefs = links.map((i: number, link: any) => $(link)).get()
+    const hrefs = links.map((_, link) => $(link)).get()
     let externalLinks = 0
     for (const href of hrefs) {
       if (!href.attr('href')?.startsWith('https://')) {

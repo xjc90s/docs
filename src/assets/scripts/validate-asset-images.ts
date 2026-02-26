@@ -115,8 +115,8 @@ async function checkFile(filePath: string) {
     }
     try {
       checkSVGContent(content)
-    } catch (error: any) {
-      return [CRITICAL, filePath, error.message]
+    } catch (error: unknown) {
+      return [CRITICAL, filePath, error instanceof Error ? error.message : String(error)]
     }
   } else if (EXPECT[ext]) {
     const fileType = await fileTypeFromFile(filePath)
