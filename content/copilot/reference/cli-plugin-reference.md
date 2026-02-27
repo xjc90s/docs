@@ -7,8 +7,6 @@ versions:
 category:
   - Author and optimize with Copilot # Copilot discovery page
   - Configure Copilot CLI # Copilot CLI bespoke page
-topics:
-  - Copilot
 contentType: reference
 ---
 

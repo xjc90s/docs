@@ -8,9 +8,6 @@ versions:
   fpt: '*'
   ghec: '*'
 type: reference
-topics:
-  - Copilot
-  - Enterprise
 category:
   - Copilot usage metrics
   - Understand available data

@@ -5,8 +5,6 @@ intro: '{% data variables.product.prodname_copilot_short %} usage and adoption m
 permissions: '{% data reusables.copilot.usage-metrics-permissions %}'
 versions:
   feature: copilot
-topics:
-  - Copilot
 contentType: reference
 allowTitleToDifferFromFilename: true
 redirect_from:
