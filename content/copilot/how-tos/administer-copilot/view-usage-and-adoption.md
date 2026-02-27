@@ -15,8 +15,6 @@ category:
   - Track Copilot usage
 ---
 
-{% data reusables.copilot.usage-metrics-preview %}
-
 After your initial rollout, the {% data variables.product.prodname_copilot_short %} usage metrics dashboard helps you monitor how usage evolves over time. By exploring adoption, feature, model, and language trends, you can see how developers are engaging with {% data variables.product.prodname_copilot_short %} and identify areas where additional enablement or communication may drive deeper value.
 
 ## Prerequisite

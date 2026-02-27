@@ -22,8 +22,6 @@ category:
   - Manage Copilot for a team
 ---
 
-{% data reusables.copilot.usage-metrics-preview %}
-
 ## About {% data variables.product.prodname_copilot_short %} usage metrics
 
 {% data variables.product.prodname_copilot_short %} usage metrics help key stakeholders and decision-makers understand how their teams are adopting and using {% data variables.product.prodname_copilot_short %}. By tracking usage patterns across the enterprise, you can measure engagement, identify opportunities to increase value, and assess how AI-assisted workflows influence pull request throughput and time to merge.

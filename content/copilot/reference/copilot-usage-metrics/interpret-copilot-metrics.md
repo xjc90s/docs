@@ -16,8 +16,6 @@ category:
   - Track Copilot usage
 ---
 
-{% data reusables.copilot.usage-metrics-preview %}
-
 After you’ve viewed the {% data variables.product.prodname_copilot_short %} usage metrics dashboard, you can use this article to interpret each chart and identify opportunities to increase adoption and engagement.
 
 ## Reviewing overall usage trends

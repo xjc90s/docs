@@ -16,8 +16,6 @@ category:
   - Track Copilot usage
 ---
 
-{% data reusables.copilot.usage-metrics-preview %}
-
 The {% data variables.product.prodname_copilot_short %} usage metrics dashboard, APIs, and export files all use the same underlying telemetry data, but they aggregate and present it differently. Understanding these differences helps you reconcile numbers across sources and trust your analysis when preparing internal reports.
 
 * The {% data variables.product.prodname_copilot_short %} usage metrics dashboards are available at the **enterprise** and **organization** level.
