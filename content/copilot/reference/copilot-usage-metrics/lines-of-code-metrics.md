@@ -8,8 +8,6 @@ versions:
 redirect_from:
   - /early-access/copilot-metrics/LoC
   - /early-access/copilot-metrics/LoC/about-the-copilot-metrics-LoC
-topics:
-  - Copilot
 contentType: reference
 allowTitleToDifferFromFilename: true
 category:

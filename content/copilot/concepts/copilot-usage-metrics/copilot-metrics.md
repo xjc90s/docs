@@ -4,8 +4,6 @@ shortTitle: Copilot usage metrics
 intro: '{% data variables.product.prodname_copilot_short %} usage metrics provide visibility into how {% data variables.product.prodname_copilot_short %} is adopted and used across your organization, including engagement, activity, code generation, and pull request lifecycle trends.'
 versions:
   feature: copilot
-topics:
-  - Copilot
 contentType: concepts
 allowTitleToDifferFromFilename: true
 redirect_from:

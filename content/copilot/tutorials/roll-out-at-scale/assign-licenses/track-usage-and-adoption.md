@@ -5,8 +5,6 @@ intro: Identify and act on {% data variables.product.prodname_copilot %} adoptio
 permissions: '{% data reusables.copilot.usage-metrics-permissions %}'
 versions:
   feature: copilot
-topics:
-  - Copilot
 contentType: tutorials
 redirect_from:
   - /copilot/tutorials/roll-out-at-scale/measure-adoption/analyze-usage-over-time

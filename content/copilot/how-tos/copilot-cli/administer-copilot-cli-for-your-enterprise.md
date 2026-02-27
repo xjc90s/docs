@@ -4,9 +4,6 @@ shortTitle: Administer for enterprise
 intro: 'Control the use of {% data variables.copilot.copilot_cli_short %} within your enterprise.'
 versions:
   feature: copilot
-topics:
-  - Copilot
-  - Enterprise
 contentType: how-tos
 allowTitleToDifferFromFilename: true
 category:

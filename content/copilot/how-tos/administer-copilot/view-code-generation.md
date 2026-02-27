@@ -5,8 +5,6 @@ intro: The code generation dashboard shows how {% data variables.product.prodnam
 permissions: '{% data reusables.copilot.usage-metrics-permissions %}'
 versions:
   feature: copilot
-topics:
-  - Copilot
 contentType: how-tos
 allowTitleToDifferFromFilename: true
 redirect_from:
