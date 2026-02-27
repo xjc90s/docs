@@ -16,8 +16,6 @@ category:
   - Track Copilot usage
 ---
 
-{% data reusables.copilot.usage-metrics-preview %}
-
 Lines of Code (LoC) metrics provide a directional measure of {% data variables.product.prodname_copilot_short %}’s output by quantifying the lines it suggested, added, or deleted across completions, chat, and agent features.
 
 ## Where LoC metrics appear

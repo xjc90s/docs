@@ -21,8 +21,6 @@ category:
   - Measure success
 ---
 
-{% data reusables.copilot.usage-metrics-preview %}
-
 After you assign {% data variables.product.prodname_copilot_short %} licenses across your enterprise, you can use the {% data variables.product.prodname_copilot_short %} usage metrics dashboard and APIs to verify that licenses are active and monitor early usage trends. This helps you evaluate whether your rollout is reaching the right people and take quick action if adoption is slower than expected.
 
 To get a wider view of adoption, you can combine dashboard insights with qualitative feedback, for example, short pulse surveys or team check-ins.
