@@ -23,9 +23,11 @@ The {% data variables.product.prodname_copilot_short %} usage metrics dashboard,
 
 ## Prerequisite
 
-{% data variables.product.prodname_copilot_short %} usage metrics depend on **telemetry from users’ IDEs**. If a developer has disabled telemetry in their IDE, their {% data variables.product.prodname_copilot_short %} activity will **not** appear in the dashboard, API reports, or exported data.
+IDE-based {% data variables.product.prodname_copilot_short %} usage metrics depend on **telemetry from users’ IDEs**. If a developer has disabled telemetry in their IDE, their IDE-based {% data variables.product.prodname_copilot_short %} activity will **not** appear in the dashboard, API reports, or exported data.
 
 If you notice missing users or unexpectedly low adoption numbers, verify IDE telemetry settings before troubleshooting other causes.
+
+{% data variables.copilot.copilot_cli_short %} metrics (`daily_active_cli_users` and `totals_by_cli`) are collected and reported separately from IDE telemetry. CLI usage does **not** contribute to IDE-based active user counts or other IDE metrics.
 
 ## Metric alignment
 
