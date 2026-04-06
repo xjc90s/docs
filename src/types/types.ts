@@ -156,6 +156,7 @@ export type Context = {
   getDottedData?: (dottedPath: string) => unknown
   initialRestVersioningReleaseDate?: string
   initialRestVersioningReleaseDateLong?: string
+  defaultRestApiVersion?: string
   nonEnterpriseDefaultVersion?: string
   enterpriseServerVersions?: string[]
   enterpriseServerReleases?: typeof enterpriseServerReleases
