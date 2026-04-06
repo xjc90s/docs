@@ -1,5 +1,13 @@
 # Docs changelog
 
+**2 April 2026**
+
+We've expanded the documentation for custom agents in Copilot CLI, adding information about the built-in agents.
+
+[About custom agents](https://docs.github.com/en/copilot/concepts/agents/copilot-cli/about-custom-agents#built-in-agents)
+
+<hr>
+
 **27 March 2026**
 
 We've introduced a new discovery landing page design for all the top-level doc sets on docs.github.com. The landing pages highlight recommended articles and give users the ability to filter articles by category with a drop down menu. Every article across the site now includes category metadata, making it easier to browse doc sets without relying solely on search. This replaces the previous product-landing layout across 35 doc sets.
