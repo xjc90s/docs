@@ -37,7 +37,6 @@ const layoutNames = [
   'default',
   'graphql-explorer',
   'product-landing',
-  'product-guides',
   'release-notes',
   'inline',
   'category-landing',
@@ -163,24 +162,6 @@ export const schema: Schema = {
           type: 'string',
           translatable: true,
         },
-        videos: {
-          type: 'array',
-          items: {
-            type: 'object',
-            properties: {
-              title: {
-                type: 'string',
-              },
-              href: {
-                type: 'string',
-              },
-            },
-          },
-        },
-        // allows you to use an alternate heading for the videos column
-        videosHeading: {
-          type: 'string',
-        },
       },
     },
     // Shown in `product-landing.html` "What's new" section
@@ -202,11 +183,11 @@ export const schema: Schema = {
       type: 'string',
       enum: contentTypesEnum,
     },
-    includeGuides: {
-      type: 'array',
-    },
-    learningTracks: {
-      type: 'array',
+    // Optional heading override for the single-track journey landing UI
+    journeyArticlesHeading: {
+      type: 'string',
+      translatable: true,
+      description: 'Override the default "Articles" heading on single-track journey landing pages',
     },
     // Journey tracks for journey landing pages
     journeyTracks: {
@@ -257,14 +238,6 @@ export const schema: Schema = {
     // Used in `product-landing.html`
     beta_product: {
       type: 'boolean',
-    },
-    // Show in `product-landing.html`
-    product_video: {
-      type: 'string',
-    },
-    // Show in `product-landing.html`
-    product_video_transcript: {
-      type: 'string',
     },
     // Hero image for landing pages
     heroImage: {

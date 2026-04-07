@@ -4,7 +4,21 @@ import nonEnterpriseDefaultVersion from '@/versions/lib/non-enterprise-default-v
 import removeFPTFromPath from '@/versions/lib/remove-fpt-from-path'
 import { renderContent } from '@/content-render/index'
 import { executeWithFallback } from '@/languages/lib/render-with-fallback'
-import { Context, LinkOptions, ProcessedLink } from './types'
+import type { Context, Page } from '@/types'
+
+export interface LinkOptions {
+  title?: boolean
+  intro?: boolean
+  fullTitle?: boolean
+}
+
+export interface ProcessedLink {
+  href: string
+  page: Page
+  title?: string
+  fullTitle?: string
+  intro?: string
+}
 
 // rawLinks is an array of paths: [ '/foo' ]
 // we need to convert it to an array of localized objects: [ { href: '/en/foo', title: 'Foo', intro: 'Description here' } ]
@@ -41,20 +55,19 @@ export default async function getLinkData(
 }
 
 async function processLink(
-  link: string | { href: string },
+  link: string,
   context: Context,
   options: LinkOptions,
 ): Promise<ProcessedLink | null> {
   const opts: { textOnly: boolean; preferShort?: boolean } = { textOnly: true }
-  const linkHref = typeof link === 'string' ? link : link.href
   // Parse the link in case it includes Liquid conditionals
-  const linkPath = linkHref.includes('{')
+  const linkPath = link.includes('{')
     ? await executeWithFallback(
         context,
-        () => renderContent(linkHref, context, opts),
-        (enContext: Context) => renderContent(linkHref, enContext, opts),
+        () => renderContent(link, context, opts),
+        (enContext: Context) => renderContent(link, enContext, opts),
       )
-    : linkHref
+    : link
   // If the link was `{% ifversion ghes %}/admin/foo/bar{% endifversion %}`
   // the `context.currentVersion` was `enterprise-cloud`, the final
   // output would become '' (empty string).

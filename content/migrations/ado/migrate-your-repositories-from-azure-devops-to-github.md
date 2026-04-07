@@ -1,5 +1,5 @@
 ---
-title: "Phase 5. Migrate your repositories from Azure DevOps to Github"
+title: "Migrate your repositories from Azure DevOps to GitHub"
 shortTitle: "5. Migrate repositories"
 intro: Perform a trial run and then migrate your repositories from Azure DevOps to {% data variables.product.github %}.
 versions:
@@ -12,6 +12,7 @@ redirect_from:
   - /migrations/using-github-enterprise-importer/migrating-repositories-with-github-enterprise-importer/migrating-repositories-from-azure-devops-to-github-enterprise-cloud
   - /migrations/using-github-enterprise-importer/migrating-from-azure-devops-to-github-enterprise-cloud/migrating-repositories-from-azure-devops-to-github-enterprise-cloud
   - /migrations/ado/migrating-repositories-from-azure-devops-to-github-enterprise-cloud
+  - /migrations/ado/phase-5-migrate-your-repositories-from-azure-devops-to-github
 category:
   - Migrate from Azure DevOps
 ---
@@ -70,7 +71,3 @@ If your trial run was successful, and you were able to complete the follow-up ta
 >[!WARNING] We recommend halting work in the repositories you are migrating. Any changes made during or after the migration will need to be manually migrated.
 
 {% data reusables.enterprise-migration-tool.migrate-multiple-repos %}
-
-## Next steps
-
-In the next and final phase, you'll perform follow-up tasks, check logs, and get your repositories ready to use. See [AUTOTITLE](/migrations/ado/phase-6-follow-up-tasks).

@@ -1,5 +1,5 @@
 ---
-title: "Phase 6. Follow-up tasks"
+title: "Follow-up tasks"
 shortTitle: "6. Follow-up tasks"
 intro: "After each migration has finished, you'll need to complete some additional tasks before the repository is ready for work."
 versions:
@@ -8,6 +8,8 @@ versions:
 contentType: other
 category:
   - Migrate from Azure DevOps
+redirect_from:
+  - /migrations/ado/phase-6-follow-up-tasks
 ---
 
 ## Checking the migration status

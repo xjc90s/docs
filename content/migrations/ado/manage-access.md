@@ -1,5 +1,5 @@
 ---
-title: "Phase 2. Manage access"
+title: "Manage access"
 shortTitle: "2. Manage access"
 intro: "Set up the required access for migrating from Azure DevOps to {% data variables.product.github %}."
 versions:
@@ -9,6 +9,7 @@ contentType: other
 redirect_from:
   - /migrations/using-github-enterprise-importer/migrating-from-azure-devops-to-github-enterprise-cloud/managing-access-for-a-migration-from-azure-devops
   - /migrations/ado/managing-access-for-a-migration-from-azure-devops
+  - /migrations/ado/phase-2-manage-access
 category:
   - Migrate from Azure DevOps
 ---
@@ -55,7 +56,3 @@ If you use your IdP's IP allow list (such as Azure CAP) to restrict access to yo
 ## Allow migrations to bypass repository rulesets
 
 {% data reusables.enterprise-migration-tool.repository-migrations-bypass %}
-
-## Next steps
-
-In the next phase, you'll install and configure {% data variables.product.prodname_importer_proper_name %}. See [AUTOTITLE](/migrations/ado/phase-3-install-and-configure-github-enterprise-importer).

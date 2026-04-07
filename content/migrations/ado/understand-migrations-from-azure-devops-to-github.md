@@ -1,7 +1,7 @@
 ---
-title: "Phase 1. Understand migrations from Azure DevOps to GitHub"
-shortTitle: "1. Understand migrations"
-intro: "{% data variables.product.prodname_importer_proper_name %} can automate migrating from Azure DevOps."
+title: Understand migrations from Azure DevOps to GitHub
+shortTitle: 1. Understand migrations
+intro: '{% data variables.product.prodname_importer_proper_name %} can automate migrating from Azure DevOps.'
 versions:
   fpt: '*'
   ghec: '*'
@@ -14,6 +14,7 @@ redirect_from:
   - /migrations/using-github-enterprise-importer/understanding-github-enterprise-importer/migrating-from-azure-devops-with-github-enterprise-importer
   - /migrations/using-github-enterprise-importer/migrating-from-azure-devops-to-github-enterprise-cloud/overview-of-a-migration-from-azure-devops-to-github-enterprise-cloud
   - /migrations/ado/overview-of-a-migration-from-azure-devops-to-github-enterprise-cloud
+  - /migrations/ado/phase-1-understand-migrations-from-azure-devops-to-github
 category:
   - Migrate from Azure DevOps
 ---
@@ -25,6 +26,8 @@ You can use {% data variables.product.prodname_importer_proper_name %} to migrat
 You can only use {% data variables.product.prodname_importer_proper_name %} to migrate from Azure DevOps Cloud, not from Azure DevOps Server. If you currently use Azure DevOps Server and want to migrate to {% data variables.product.prodname_dotcom %}, you can migrate to Azure DevOps Cloud first. For more information, see [Migrate to Azure DevOps](https://azure.microsoft.com/en-us/services/devops/migrate/) on the Azure site.
 
 Before you create your enterprise account on {% data variables.product.prodname_dotcom %}, decide whether your enterprise will use {% data variables.product.prodname_emus %}. This affects how your members authenticate and how you manage identities and access. See [AUTOTITLE](/enterprise-cloud@latest/enterprise-onboarding/getting-started-with-your-enterprise/choose-an-enterprise-type).
+
+To learn more about the differences between {% data variables.product.prodname_dotcom %} and Azure DevOps, see [AUTOTITLE](/migrations/ado/key-differences-between-azure-devops-and-github).
 
 ## Support for Azure Pipelines and Azure Boards
 
@@ -61,8 +64,3 @@ There are limits to what {% data variables.product.prodname_importer_proper_name
 * **Delayed code search functionality:** Re-indexing the search index can take a few hours after a repository is migrated, and code searches may return unexpected results until re-indexing is complete.
 * **Rulesets configured for your organization can cause migrations to fail:** For example, if you configured a rule that requires email addresses for commit authors to end with `@monalisa.cat`, and the repository you're migrating contains commits that don't comply with this rule, your migration will fail.
 * **Mannequin content might not be searchable:** Mannequins are placeholder users to which imported content (such as issues, pull requests, comments, etc.) is associated. When you search for content associated with a mannequin, such as assigned issues, the issues may not be found. Once a mannequin is reclaimed, the content should be found via the new owner.
-
-
-## Next steps
-
-In the next article, you'll decide who will perform the migration and prepare access to both Azure DevOps and {% data variables.product.prodname_ghe_cloud %}. See [AUTOTITLE](/migrations/ado/phase-2-manage-access).
