@@ -5,7 +5,6 @@ import cx from 'classnames'
 import { useArticleContext } from '@/frame/components/context/ArticleContext'
 import { DefaultLayout } from '@/frame/components/DefaultLayout'
 import { ArticleTitle } from '@/frame/components/article/ArticleTitle'
-import { LearningTrackNav } from '@/learning-track/components/article/LearningTrackNav'
 import { MarkdownContent } from '@/frame/components/ui/MarkdownContent'
 import { Lead } from '@/frame/components/ui/Lead'
 import { PermissionsStatement } from '@/frame/components/ui/PermissionsStatement'
@@ -14,7 +13,6 @@ import { ArticleInlineLayout } from './ArticleInlineLayout'
 import { PlatformPicker } from '@/tools/components/PlatformPicker'
 import { ToolPicker } from '@/tools/components/ToolPicker'
 import { MiniTocs } from '@/frame/components/ui/MiniTocs'
-import { LearningTrackCard } from '@/learning-track/components/article/LearningTrackCard'
 import { RestRedirect } from '@/rest/components/RestRedirect'
 import { Breadcrumbs } from '@/frame/components/page-header/Breadcrumbs'
 import { LinkPreviewPopover } from '@/links/components/LinkPreviewPopover'
@@ -40,13 +38,11 @@ export const ArticlePage = () => {
     includesToolSpecificContent,
     product,
     miniTocItems,
-    currentLearningTrack,
     currentJourneyTrack,
     supportPortalVaIframeProps,
     currentLayout,
     currentPath,
   } = useArticleContext()
-  const isLearningPath = !!currentLearningTrack?.trackName
   const isJourneyTrack = !!currentJourneyTrack?.trackId
 
   const introProp = (
@@ -73,7 +69,6 @@ export const ArticlePage = () => {
   const toc = (
     <>
       <CopyMarkdownMenu currentPath={currentPath} />
-      {isLearningPath && <LearningTrackCard track={currentLearningTrack} />}
       {isJourneyTrack && <JourneyTrackCard journey={currentJourneyTrack} />}
       {miniTocItems.length > 1 && <MiniTocs miniTocItems={miniTocItems} />}
     </>
@@ -112,11 +107,6 @@ export const ArticlePage = () => {
           >
             {articleContents}
           </ArticleInlineLayout>
-          {isLearningPath ? (
-            <div className="container-lg mt-4 px-3">
-              <LearningTrackNav track={currentLearningTrack} />
-            </div>
-          ) : null}
           {isJourneyTrack ? (
             <div className="container-lg mt-4 px-3">
               <JourneyTrackNav context={currentJourneyTrack} />
@@ -143,11 +133,6 @@ export const ArticlePage = () => {
             {articleContents}
           </ArticleGridLayout>
 
-          {isLearningPath ? (
-            <div className="mt-4">
-              <LearningTrackNav track={currentLearningTrack} />
-            </div>
-          ) : null}
           {isJourneyTrack ? (
             <div className="container-lg mt-4 px-3">
               <JourneyTrackNav context={currentJourneyTrack} />

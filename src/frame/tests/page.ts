@@ -433,7 +433,7 @@ describe('catches errors thrown in Page class', () => {
   })
 
   describe('versioning optional attributes', () => {
-    test("re-rendering set appropriate 'product', 'permissions', 'learningTracks'", async () => {
+    test("re-rendering set appropriate 'product', 'permissions'", async () => {
       const page = await Page.init({
         relativePath: 'page-with-optional-attributes.md',
         basePath: path.join(__dirname, '../../../src/fixtures/fixtures'),

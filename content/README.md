@@ -23,7 +23,7 @@ See the [contributing docs](https://docs.github.com/en/contributing) for general
   - [`changelog`](#changelog)
   - [`defaultPlatform`](#defaultplatform)
   - [`defaultTool`](#defaulttool)
-  - [`learningTracks`](#learningtracks)
+
   - [`journeyTracks`](#journeytracks)
   - [`journeyArticlesHeading`](#journeyarticlesheading)
   - [`contentType`](#contenttype)
@@ -229,12 +229,6 @@ defaultPlatform: linux
 defaultTool: cli
 ```
 
-### `learningTracks`
-- Purpose: Render a list of learning tracks on a product's sub-landing page.
-- type: `String`. This should reference learning tracks' names defined in [`data/learning-tracks/*.yml`](../data/learning-tracks/README.md).
-- Optional
-
-**Note: the featured track is set by a specific property in the learning tracks YAML. See that [README](../data/learning-tracks/README.md) for details.*
 
 ### `journeyTracks`
 - Purpose: Define journeys for journey landing pages.
@@ -434,3 +428,4 @@ Index pages are the Table of Contents files for the docs site. Every product, ca
 The homepage is the main Table of Contents file for the docs site. The homepage must have a complete list of `children`, like every [Index page](#index-page) but must also specify the `childGroups` frontmatter property that will be highlighted in the main content area.
 
 `childGroups` is an array of mappings containing a `name` for the group, an optional `icon` for the group, and an array of `children`.  The `children` in the array must be present in the `children` frontmatter property.
+

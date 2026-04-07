@@ -8,7 +8,7 @@ import getEnglishHeadings from '@/languages/lib/get-english-headings'
 import { getAlertTitles } from '@/languages/lib/get-alert-titles'
 import Permalink from './permalink'
 import { renderContent } from '@/content-render/index'
-import processLearningTracks from '@/learning-track/lib/process-learning-tracks'
+
 import { productMap } from '@/products/lib/all-products'
 import slash from 'slash'
 import readFileContents from './read-file-contents'
@@ -83,8 +83,6 @@ class Page {
   public showMiniToc?: boolean
   public hidden?: boolean
   public redirect_from?: string[]
-  public learningTracks?: any[]
-  public rawLearningTracks?: string[]
   public introLinks?: Record<string, string>
   public rawIntroLinks?: Record<string, string>
   public carousels?: Record<string, string[]>
@@ -213,7 +211,6 @@ class Page {
     this.rawShortTitle = this.shortTitle
     this.rawProduct = this.product
     this.rawPermissions = this.permissions
-    this.rawLearningTracks = this.learningTracks
     this.rawIntroLinks = this.introLinks
     this.rawCarousels = this.carousels
 
@@ -348,12 +345,6 @@ class Page {
     // permissions frontmatter may contain liquid
     if (this.rawPermissions) {
       this.permissions = await renderContentWithFallback(this, 'rawPermissions', context)
-    }
-
-    // Learning tracks may contain Liquid and need to have versioning processed.
-    if (this.rawLearningTracks) {
-      const { learningTracks } = await processLearningTracks(this.rawLearningTracks, context)
-      this.learningTracks = learningTracks
     }
 
     // introLinks may contain Liquid and need to have versioning processed.

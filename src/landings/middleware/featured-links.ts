@@ -1,7 +1,7 @@
 import type { Response, NextFunction } from 'express'
 
 import type { ExtendedRequest, FeaturedLinkExpanded } from '@/types'
-import getLinkData from '@/learning-track/lib/get-link-data'
+import getLinkData from '@/frame/lib/get-link-data'
 
 /**
  * This is the max. number of featured links, by any category, that we

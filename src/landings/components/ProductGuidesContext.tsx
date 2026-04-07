@@ -1,17 +1,8 @@
 import { createContext, useContext } from 'react'
 
-export type LearningTrack = {
-  trackName: string
-  trackProduct: string
-  title: string
-  description: string
-  guides?: Array<{ href: string; contentType: string | null; title: string; intro: string }>
-}
-
 export type ProductGuidesContextT = {
   title: string
   intro: string
-  learningTracks: Array<LearningTrack>
 }
 
 export const ProductGuidesContext = createContext<ProductGuidesContextT | null>(null)

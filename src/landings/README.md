@@ -42,7 +42,6 @@ npm run test -- src/landings/tests
 ### Dependencies
 - [`@/frame`](../frame/README.md) - Context object, page data, shared components
 - [`@/content-render`](../content-render/README.md) - Renders Liquid in featured link titles
-- [`@/learning-track`](../learning-track/README.md) - Learning track data resolution
 - [`@/journeys`](../journeys/README.md) - Journey track components and data
 - [`@/products`](../products/README.md) - Product metadata and groupings
 - [`@/versions`](../versions/README.md) - Version-aware content filtering

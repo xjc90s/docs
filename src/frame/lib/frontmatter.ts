@@ -183,9 +183,6 @@ export const schema: Schema = {
       type: 'string',
       enum: contentTypesEnum,
     },
-    learningTracks: {
-      type: 'array',
-    },
     // Optional heading override for the single-track journey landing UI
     journeyArticlesHeading: {
       type: 'string',
