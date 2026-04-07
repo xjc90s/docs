@@ -163,24 +163,6 @@ export const schema: Schema = {
           type: 'string',
           translatable: true,
         },
-        videos: {
-          type: 'array',
-          items: {
-            type: 'object',
-            properties: {
-              title: {
-                type: 'string',
-              },
-              href: {
-                type: 'string',
-              },
-            },
-          },
-        },
-        // allows you to use an alternate heading for the videos column
-        videosHeading: {
-          type: 'string',
-        },
       },
     },
     // Shown in `product-landing.html` "What's new" section
@@ -263,14 +245,6 @@ export const schema: Schema = {
     // Used in `product-landing.html`
     beta_product: {
       type: 'boolean',
-    },
-    // Show in `product-landing.html`
-    product_video: {
-      type: 'string',
-    },
-    // Show in `product-landing.html`
-    product_video_transcript: {
-      type: 'string',
     },
     // Hero image for landing pages
     heroImage: {

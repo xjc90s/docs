@@ -90,7 +90,6 @@ toc:
   popular: Popular
   startHere: Start here
   whats_new: What's new
-  videos: Videos
   all_changelogs: All changelog posts
 pages:
   article_version: 'Article version'
@@ -98,7 +97,6 @@ pages:
   all_enterprise_releases: All Enterprise Server releases
   about_versions: About versions
   permissions_callout_title: Who can use this feature?
-  video_from_transcript: See video for this transcript
   copy_as_markdown: Copy as Markdown
   copy_as_markdown_desc: Use with any LLM
   view_as_markdown: View as Markdown
@@ -306,7 +304,6 @@ product_landing:
   docs: docs
   explore_release_notes: Explore release notes
   view: View all
-  view_transcript: View video transcript
   all_docs: 'All {{ title }} docs'
   all_content: 'View all {{ title }} content'
 product_guides:

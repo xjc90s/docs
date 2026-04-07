@@ -17,6 +17,7 @@ redirect_from:
   - /articles
   - /common-issues-and-questions
   - /troubleshooting-common-issues
+  - /video-transcripts
   - /early-access/github/enforcing-best-practices-with-github-policies
   - /github/enforcing-best-practices-with-github-policies/index
   - /early-access/github/enforcing-best-practices-with-github-policies/about-github-policies
@@ -83,7 +84,7 @@ children:
   - desktop
   - early-access
   - support
-  - video-transcripts
+
   - contributing
   - github-models
   - nonprofit

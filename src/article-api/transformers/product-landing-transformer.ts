@@ -20,7 +20,7 @@ interface PageWithChildren extends Page {
 
 /**
  * Transforms product-landing pages into markdown format.
- * Handles featured links (startHere, popular, videos), guide cards,
+ * Handles featured links (startHere, popular), guide cards,
  * article grids with category filtering, and children listings.
  */
 export class ProductLandingTransformer implements PageTransformer {
@@ -97,13 +97,12 @@ export class ProductLandingTransformer implements PageTransformer {
       }
     }
 
-    // Featured links (startHere, popular, videos, etc.)
+    // Featured links (startHere, popular, etc.)
     const rawFeaturedLinks = productPage.featuredLinks
     if (rawFeaturedLinks) {
-      const { default: getLearningTrackLinkData } =
-        await import('@/learning-track/lib/get-link-data')
+      const { default: getPageLinkData } = await import('@/learning-track/lib/get-link-data')
 
-      const featuredKeys = ['startHere', 'popular', 'videos']
+      const featuredKeys = ['startHere', 'popular']
       const featuredGroups: LinkGroup[] = []
 
       for (const key of featuredKeys) {
@@ -112,33 +111,17 @@ export class ProductLandingTransformer implements PageTransformer {
 
         const sectionTitle = this.getSectionTitle(key)
 
-        let resolvedLinks: LinkData[]
-
-        if (key === 'videos') {
-          // Videos are external URLs with title and href properties
-          const videoLinks = await Promise.all(
-            links.map(async (link) => {
-              if (typeof link === 'object' && link.href) {
-                const title = await renderContent(link.title, context, { textOnly: true })
-                return title ? { href: link.href, title, intro: link.intro || '' } : null
-              }
-              return null
-            }),
-          )
-          resolvedLinks = videoLinks.filter((l) => l !== null) as LinkData[]
-        } else {
-          // Other featuredLinks are page hrefs that need Liquid evaluation
-          const stringLinks = links.map((item) => (typeof item === 'string' ? item : item.href))
-          const linkData = await getLearningTrackLinkData(stringLinks, context, {
-            title: true,
-            intro: true,
-          })
-          resolvedLinks = (linkData || []).map((item) => ({
-            href: item.href,
-            title: item.title || '',
-            intro: item.intro || '',
-          }))
-        }
+        // featuredLinks are page hrefs that need Liquid evaluation
+        const stringLinks = links.map((item) => (typeof item === 'string' ? item : item.href))
+        const linkData = await getPageLinkData(stringLinks, context, {
+          title: true,
+          intro: true,
+        })
+        const resolvedLinks = (linkData || []).map((item) => ({
+          href: item.href,
+          title: item.title || '',
+          intro: item.intro || '',
+        }))
 
         const validLinks = resolvedLinks.filter((l) => l.href)
         if (validLinks.length > 0) {
@@ -292,7 +275,6 @@ export class ProductLandingTransformer implements PageTransformer {
       startHere: 'Start here',
       guideCards: 'Guides',
       popular: 'Popular',
-      videos: 'Videos',
     }
     return map[key] || key
   }

@@ -36,8 +36,6 @@ children:
   - /organizing-your-work-with-project-boards
   - /using-labels-and-milestones-to-track-work
   - /guides
-product_video: 'https://www.youtube-nocookie.com/embed/yFQ-p6wMS_Y'
-product_video_transcript: /video-transcripts/transcript-using-projects-for-feature-planning
 redirect_from:
   - /github/managing-your-work-on-github/managing-your-work-with-issues-and-pull-requests
   - /github/managing-your-work-on-github/managing-your-work-with-issues
@@ -63,4 +61,5 @@ redirect_from:
   - /disabling-issues
   - /linking-a-pull-request-to-an-issue
   - /about-duplicate-issues-and-pull-requests
+  - /video-transcripts/transcript-using-projects-for-feature-planning
 ---

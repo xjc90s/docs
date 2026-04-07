@@ -1,11 +1,10 @@
 import { useRouter } from 'next/router'
 import dynamic from 'next/dynamic'
 import cx from 'classnames'
-import { LinkExternalIcon } from '@primer/octicons-react'
 
+import { useArticleContext } from '@/frame/components/context/ArticleContext'
 import { DefaultLayout } from '@/frame/components/DefaultLayout'
 import { ArticleTitle } from '@/frame/components/article/ArticleTitle'
-import { useArticleContext } from '@/frame/components/context/ArticleContext'
 import { LearningTrackNav } from '@/learning-track/components/article/LearningTrackNav'
 import { MarkdownContent } from '@/frame/components/ui/MarkdownContent'
 import { Lead } from '@/frame/components/ui/Lead'
@@ -18,8 +17,6 @@ import { MiniTocs } from '@/frame/components/ui/MiniTocs'
 import { LearningTrackCard } from '@/learning-track/components/article/LearningTrackCard'
 import { RestRedirect } from '@/rest/components/RestRedirect'
 import { Breadcrumbs } from '@/frame/components/page-header/Breadcrumbs'
-import { Link } from '@/frame/components/Link'
-import { useTranslation } from '@/languages/components/useTranslation'
 import { LinkPreviewPopover } from '@/links/components/LinkPreviewPopover'
 import { UtmPreserver } from '@/frame/components/UtmPreserver'
 import { JourneyTrackCard, JourneyTrackNav } from '@/journeys/components'
@@ -42,7 +39,6 @@ export const ArticlePage = () => {
     includesPlatformSpecificContent,
     includesToolSpecificContent,
     product,
-    productVideoUrl,
     miniTocItems,
     currentLearningTrack,
     currentJourneyTrack,
@@ -52,7 +48,6 @@ export const ArticlePage = () => {
   } = useArticleContext()
   const isLearningPath = !!currentLearningTrack?.trackName
   const isJourneyTrack = !!currentJourneyTrack?.trackId
-  const { t } = useTranslation(['pages'])
 
   const introProp = (
     <>
@@ -86,15 +81,6 @@ export const ArticlePage = () => {
 
   const articleContents = (
     <div id="article-contents">
-      {productVideoUrl && (
-        <div className="my-2">
-          <Link id="product-video" href={productVideoUrl} target="_blank">
-            <LinkExternalIcon aria-label="(external site)" className="octicon-link mr-2" />
-            {t('video_from_transcript')}
-          </Link>
-        </div>
-      )}
-
       <MarkdownContent>{renderedPage}</MarkdownContent>
       <ExperimentContentSwap containerRef="#article-contents" />
       {effectiveDate && (

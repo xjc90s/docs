@@ -18,8 +18,6 @@ const pages: { [key: string]: string } = {
   search: '/search?q=playwright',
   switchers: '/get-started/liquid/tool-platform-switcher',
   tableWithHeaders: '/get-started/liquid/table-row-headers',
-  video: '/get-started',
-  videoTranscript: '/get-started/video-transcripts/transcript--my-awesome-video',
 }
 
 // create a test for each page, will eventually be separated into finer grain tests

@@ -34,7 +34,6 @@ export type ArticleContextT = {
   defaultPlatform?: string
   defaultTool?: string
   product?: string
-  productVideoUrl?: string
   currentLearningTrack?: LearningTrack
   currentJourneyTrack?: JourneyContext
   detectedPlatforms: Array<string>
@@ -100,7 +99,6 @@ export const getArticleContextFromRequest = (req: any): ArticleContextT => {
     defaultPlatform: page.defaultPlatform || '',
     defaultTool: page.defaultTool || '',
     product: page.product || '',
-    productVideoUrl: page.product_video || '',
     currentLearningTrack: req.context.currentLearningTrack,
     currentJourneyTrack: req.context.currentJourneyTrack,
     detectedPlatforms: page.detectedPlatforms || [],

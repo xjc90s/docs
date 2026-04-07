@@ -62,7 +62,6 @@ excluded_categories:
   - site-policy
   - subscriptions-and-notifications
   - support
-  - video-transcripts
 
 # Slugs to exclude (e.g. index pages)
 excluded_slugs:

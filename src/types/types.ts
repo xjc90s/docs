@@ -60,8 +60,6 @@ export type PageFrontmatter = {
   includeGuides?: string[]
   learningTracks?: string[]
   beta_product?: boolean
-  product_video?: boolean
-  product_video_transcript?: string
   interactive?: boolean
   communityRedirect?: {
     name: string
@@ -80,11 +78,6 @@ type FeaturedLinks = {
   guideCards?: string[]
   popular?: string[]
   popularHeading?: string
-  videos?: {
-    title: string
-    href: string
-  }[]
-  videoHeadings?: string
 }
 
 export type ChildGroup = {

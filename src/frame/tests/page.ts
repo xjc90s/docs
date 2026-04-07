@@ -2,7 +2,7 @@ import { fileURLToPath } from 'url'
 import path from 'path'
 
 import { load } from 'cheerio'
-import { beforeAll, beforeEach, describe, expect, test } from 'vitest'
+import { beforeAll, describe, expect, test } from 'vitest'
 
 import Page, { FrontmatterErrorsError } from '@/frame/lib/page'
 import { allVersions } from '@/versions/lib/all-versions'
@@ -260,37 +260,6 @@ describe('Page class', () => {
         )!.href,
       ).toBe('/en/products/actions/some-category/some-article')
       expect(page!.permalinks.length).toBe(1)
-    })
-  })
-
-  describe('videos', () => {
-    let page: Page | undefined
-
-    beforeEach(async () => {
-      page = await Page.init({
-        relativePath: 'article-with-videos.md',
-        basePath: path.join(__dirname, '../../../src/fixtures/fixtures'),
-        languageCode: 'en',
-      })
-    })
-
-    test('includes videos specified in the featuredLinks frontmatter', async () => {
-      expect((page as any)!.featuredLinks.videos).toStrictEqual([
-        {
-          title: 'codespaces',
-          href: 'https://www.youtube-nocookie.com/embed/_W9B7qc9lVc',
-        },
-        {
-          title: 'more codespaces',
-          href: 'https://www.youtube-nocookie.com/embed/_W9B7qc9lVc',
-        },
-        {
-          title: 'even more codespaces',
-          href: 'https://www.youtube-nocookie.com/embed/_W9B7qc9lVc',
-        },
-      ])
-
-      expect((page as any)!.featuredLinks.videosHeading).toBe('Custom Videos heading')
     })
   })
 
