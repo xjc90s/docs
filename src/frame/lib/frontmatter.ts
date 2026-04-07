@@ -37,7 +37,6 @@ const layoutNames = [
   'default',
   'graphql-explorer',
   'product-landing',
-  'product-guides',
   'release-notes',
   'inline',
   'category-landing',
@@ -183,9 +182,6 @@ export const schema: Schema = {
     contentType: {
       type: 'string',
       enum: contentTypesEnum,
-    },
-    includeGuides: {
-      type: 'array',
     },
     learningTracks: {
       type: 'array',

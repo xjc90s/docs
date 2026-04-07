@@ -35,7 +35,6 @@ children:
   - /planning-and-tracking-with-projects
   - /organizing-your-work-with-project-boards
   - /using-labels-and-milestones-to-track-work
-  - /guides
 redirect_from:
   - /github/managing-your-work-on-github/managing-your-work-with-issues-and-pull-requests
   - /github/managing-your-work-on-github/managing-your-work-with-issues
@@ -61,5 +60,6 @@ redirect_from:
   - /disabling-issues
   - /linking-a-pull-request-to-an-issue
   - /about-duplicate-issues-and-pull-requests
+  - /issues/guides
   - /video-transcripts/transcript-using-projects-for-feature-planning
 ---

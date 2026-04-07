@@ -18,7 +18,6 @@ Landing pages serve as navigational hubs that provide a hierarchical view of the
 | Landing Page Type | Layout Value | Purpose |
 |-------------------|--------------|---------|
 | Product landing | `product-landing` | Product overview pages with featured links and release notes |
-| Product guides | `product-guides` | Product guides listing organized by categories |
 | Category landing | `category-landing` | Category pages with hierarchical navigation |
 | Table of contents | `toc-landing` | Table of contents pages |
 | Journey landing | `journey-landing` | Guided learning journey pages with track navigation |

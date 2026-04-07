@@ -110,7 +110,6 @@ async function updateFile(
   const HAS_LINKS: Record<string, any> = {
     featuredLinks: ['gettingStarted', 'startHere', 'guideCards', 'popular'],
     introLinks: ANY,
-    includeGuides: IS_ARRAY,
   }
 
   if (

@@ -24,7 +24,6 @@ See the [contributing docs](https://docs.github.com/en/contributing) for general
   - [`defaultPlatform`](#defaultplatform)
   - [`defaultTool`](#defaulttool)
   - [`learningTracks`](#learningtracks)
-  - [`includeGuides`](#includeguides)
   - [`journeyTracks`](#journeytracks)
   - [`journeyArticlesHeading`](#journeyarticlesheading)
   - [`contentType`](#contenttype)
@@ -41,7 +40,6 @@ See the [contributing docs](https://docs.github.com/en/contributing) for general
   - [Legacy filepaths and redirects for links](#legacy-filepaths-and-redirects-for-links)
   - [Index pages](#index-pages)
   - [Home page](#homepage)
-  - [Creating new product guides pages](#creating-new-product-guides-pages)
 
 ## Frontmatter
 
@@ -237,21 +235,6 @@ defaultTool: cli
 - Optional
 
 **Note: the featured track is set by a specific property in the learning tracks YAML. See that [README](../data/learning-tracks/README.md) for details.*
-
-### `includeGuides`
-- Purpose: Render a list of articles, filterable by `contentType`. Only applicable when used with `layout: product-guides`.
-- Type: `Array`
-- Optional.
-
-Example:
-
-```yaml
-includeGuides:
-  - /actions/guides/about-continuous-integration
-  - /actions/guides/setting-up-continuous-integration-using-workflow-templates
-  - /actions/guides/building-and-testing-nodejs
-  - /actions/guides/building-and-testing-powershell
-```
 
 ### `journeyTracks`
 - Purpose: Define journeys for journey landing pages.
@@ -451,14 +434,3 @@ Index pages are the Table of Contents files for the docs site. Every product, ca
 The homepage is the main Table of Contents file for the docs site. The homepage must have a complete list of `children`, like every [Index page](#index-page) but must also specify the `childGroups` frontmatter property that will be highlighted in the main content area.
 
 `childGroups` is an array of mappings containing a `name` for the group, an optional `icon` for the group, and an array of `children`.  The `children` in the array must be present in the `children` frontmatter property.
-
-### Creating new product guides pages
-
-To create a product guides page (e.g. [Actions' Guide page](https://docs.github.com/en/actions/guides)), create or modify an existing markdown file with these specific frontmatter values:
-
-1. Use the product guides page template by referencing `layout: product-guides`.
-1. (optional) Include the learning tracks in [`learningTracks`](#learningTracks).
-1. (optional) Define which articles to include with [`includeGuides`](#includeGuides).
-
-If using learning tracks, they need to be defined in [`data/learning-tracks/*.yml`](../data/learning-tracks/README.md).
-If using `includeGuides`, make sure each of the articles in this list has [`contentType`](#contenttype) in its frontmatter.

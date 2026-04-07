@@ -5,7 +5,6 @@ import { turnOffExperimentsInPage, turnOnExperimentsInPage } from '../helpers/tu
 const pages: { [key: string]: string } = {
   category: '/actions/category',
   codeAnnotations: '/get-started/markdown/code-annotations',
-  guides: '/code-security/guides',
   homepage: '/',
   learningPath:
     '/code-security/getting-started/quickstart?learn=foo_bar&learnProduct=code-security',
