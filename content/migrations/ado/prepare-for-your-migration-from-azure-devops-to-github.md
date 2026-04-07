@@ -1,5 +1,5 @@
 ---
-title: "Phase 4. Prepare for your migration from Azure DevOps to GitHub"
+title: "Prepare for your migration from Azure DevOps to GitHub"
 shortTitle: "4. Prepare to migrate"
 intro: Plan your migration by understanding your timeline, what data will be migrated, and your organizational structure.
 versions:
@@ -8,6 +8,8 @@ versions:
 contentType: other
 category:
   - Migrate from Azure DevOps
+redirect_from:
+  - /migrations/ado/phase-4-prepare-for-your-migration-from-azure-devops-to-github
 ---
 
 ## Determine how much you have to migrate
@@ -59,7 +61,3 @@ TEAM-PROJECT-Maintainers | Maintainer
 TEAM-PROJECT-Admins | Admin
 
 To give access to migrated repositories, you can add people to these teams. You can do this manually on {% data variables.product.prodname_dotcom %}, or if you chose to link the teams to Azure Active Directory (AAD) groups during your migration, by managing group membership in AAD. For more information about manually managing team membership, see [AUTOTITLE](/organizations/organizing-members-into-teams/adding-organization-members-to-a-team).
-
-## Next steps
-
-In the next phase, you'll perform a dry run and then migrate your repositories. See [AUTOTITLE](/migrations/ado/phase-5-migrate-your-repositories-from-azure-devops-to-github).

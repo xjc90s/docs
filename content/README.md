@@ -26,6 +26,7 @@ See the [contributing docs](https://docs.github.com/en/contributing) for general
   - [`learningTracks`](#learningtracks)
   - [`includeGuides`](#includeguides)
   - [`journeyTracks`](#journeytracks)
+  - [`journeyArticlesHeading`](#journeyarticlesheading)
   - [`contentType`](#contenttype)
   - [`communityRedirect`](#communityRedirect)
   - [`effectiveDate`](#effectiveDate)
@@ -282,6 +283,24 @@ journeyTracks:
     guides:
       - href: '/actions/using-workflows/workflow-syntax-for-github-actions'
       - href: '/actions/deployment/deploying-with-github-actions'
+```
+
+### `journeyArticlesHeading`
+- Purpose: Override the default "Articles" heading shown above the article list on single-track journey landing pages.
+- Type: `String`
+- Only applicable when used with `layout: journey-landing` and a single journey track.
+- Optional. If omitted, the heading defaults to the translated value of `journey_landing.articles_heading` ("Articles").
+
+Example:
+
+```yaml
+layout: journey-landing
+journeyArticlesHeading: "Guides"
+journeyTracks:
+  - id: ado_migration
+    title: Run your migration
+    guides:
+      - href: /migrations/ado/understand-migrations-from-azure-devops-to-github
 ```
 
 ### `contentType`

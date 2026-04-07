@@ -208,6 +208,12 @@ export const schema: Schema = {
     learningTracks: {
       type: 'array',
     },
+    // Optional heading override for the single-track journey landing UI
+    journeyArticlesHeading: {
+      type: 'string',
+      translatable: true,
+      description: 'Override the default "Articles" heading on single-track journey landing pages',
+    },
     // Journey tracks for journey landing pages
     journeyTracks: {
       type: 'array',

@@ -29,6 +29,7 @@ export type LandingContextT = {
   introLinks?: Record<string, string> | null
   // For journey landing pages
   journeyTracks?: JourneyTrack[]
+  journeyArticlesHeading?: string | null
   // For article grid category filtering
   includedCategories?: string[]
 }
@@ -42,6 +43,7 @@ type LandingPage = NonNullable<Context['page']> & {
   rawPermissions?: string
   introLinks?: Record<string, string> | null
   resolvedJourneyTracks?: JourneyTrack[]
+  journeyArticlesHeading?: string
 }
 
 export const LandingContext = createContext<LandingContextT | null>(null)
@@ -109,6 +111,7 @@ export const getLandingContextFromRequest = async (
     introLinks: page.introLinks || null,
     carousels,
     journeyTracks,
+    journeyArticlesHeading: page.journeyArticlesHeading || null,
     includedCategories: page.includedCategories || [],
   }
 }

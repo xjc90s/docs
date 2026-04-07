@@ -1,5 +1,5 @@
 ---
-title: "Phase 3. Install and configure GitHub Enterprise Importer"
+title: "Install and configure GitHub Enterprise Importer"
 shortTitle: "3. Configure GitHub Enterprise Importer"
 intro: "Install the {% data variables.product.prodname_ado2gh_cli %} and configure your environment for the migration."
 versions:
@@ -8,6 +8,8 @@ versions:
 contentType: other
 category:
   - Migrate from Azure DevOps
+redirect_from:
+  - /migrations/ado/phase-3-install-and-configure-github-enterprise-importer
 ---
 
 ## Step 1: Install the {% data variables.product.prodname_ado2gh_cli %}
@@ -22,7 +24,7 @@ GitHub Enterprise Importer is a collection of extensions for {% data variables.p
 
 Before you can use the {% data variables.product.prodname_ado2gh_cli_short %} to migrate to {% data variables.product.prodname_ghe_cloud %}, you must create {% data variables.product.pat_generic %}s that can access the source and destination organizations, then set the {% data variables.product.pat_generic %}s as environment variables.
 
-1. Make sure you have your {% data variables.product.pat_generic %}s for both {% data variables.product.github %} and Azure DevOps ready. See [AUTOTITLE](/migrations/ado/phase-2-manage-access).
+1. Make sure you have your {% data variables.product.pat_generic %}s for both {% data variables.product.github %} and Azure DevOps ready. See [AUTOTITLE](/migrations/ado/phase-2-manage-access?token-backtrack#create-a-personal-access-token-classic-on-github) if you haven't already created a token.
 1. Set environment variables for the {% data variables.product.pat_generic %}s, replacing TOKEN in the commands below with the {% data variables.product.pat_generic %}s you previously created. Use `GH_PAT` for the destination organization and `ADO_PAT` for the source organization.
 
    * If you're using Terminal, use the `export` command.
@@ -40,7 +42,3 @@ Before you can use the {% data variables.product.prodname_ado2gh_cli_short %} to
       ```
 
 {% data reusables.enterprise-migration-tool.set-target-api-url %}
-
-## Next steps
-
-In the next phase, you'll use {% data variables.product.prodname_ghe_cloud %} to prepare for the migration. See [AUTOTITLE](/migrations/ado/phase-4-prepare-for-your-migration-from-azure-devops-to-github).
