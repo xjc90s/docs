@@ -81,6 +81,9 @@ When `allow` is specified {% data variables.product.prodname_dependabot %} uses 
 |------------|---------|
 | `dependency-name` | Allow updates for dependencies with matching names, optionally using `*` to match zero or more characters. |
 | `dependency-type` | Allow updates for dependencies of specific types. |
+| {% ifversion dependabot-allow-update-types %} |
+| `update-types` | Allow updates to one or more semantic versioning levels. Supported values: `version-update:semver-patch`, `version-update:semver-minor`, and `version-update:semver-major`. |
+| {% endif %} |
 
 ### `dependency-name` (`allow`)
 
@@ -100,6 +103,26 @@ For most package managers, you should define a value that will match the depende
 | `all` | All | All explicitly defined dependencies. For `bundler`, `pip`, `composer`, `cargo`, `gomod`{% ifversion dependabot-uv-support %}, `uv`{% endif %}, also the dependencies of direct dependencies.|
 | `production` | `bundler`, `composer`, `mix`, `maven`, `npm`, `pip`{% ifversion dependabot-uv-support %}, `uv`{% endif %} (not all managers) | Only to dependencies defined by the package manager as production dependencies. |
 | `development`| `bundler`, `composer`, `mix`, `maven`, `npm`, `pip`{% ifversion dependabot-uv-support %}, `uv`{% endif %} (not all managers) | Only to dependencies defined by the package manager as development dependencies. |
+
+{% ifversion dependabot-allow-update-types %}
+
+### `update-types` (`allow`)
+
+`update-types` only affects _version_ updates, not _security updates_.
+
+Specify which semantic versions (SemVer) to allow.
+
+SemVer is an accepted standard for defining versions of software packages, in the form `x.y.z`. {% data variables.product.prodname_dependabot %} assumes that versions in this form are always `major.minor.patch`. The `update-types` value is a list of one or more strings.
+
+* Use `version-update:semver-patch` to allow patch releases.
+* Use `version-update:semver-minor` to allow minor releases.
+* Use `version-update:semver-major` to allow major releases.
+
+When `update-types` is omitted from an `allow` rule, all update types are allowed for that rule.
+
+You can combine `update-types` with `dependency-name` or `dependency-type` to further narrow allowed updates. For examples of how you can combine these options, see [AUTOTITLE](/code-security/how-tos/secure-your-supply-chain/manage-your-dependency-security/controlling-dependencies-updated#allowing-specific-semantic-versioning-levels-for-updates).
+
+{% endif %}
 
 ## `assignees` {% octicon "versions" aria-label="Version updates" height="24" %} {% octicon "shield-check" aria-label="Security updates" height="24" %}
 
@@ -351,7 +374,7 @@ When `ignore` is used {% data variables.product.prodname_dependabot %} uses the 
 |------------|---------|
 | `dependency-name` | Ignore updates for dependencies with matching names, optionally using `*` to match zero or more characters. |
 | `versions` | Ignore specific versions or ranges of versions. |
-| `update-types` | Ignore updates to one or more semantic versioning levels. Supported values: `version-update:semver-minor`, `version-update:semver-patch`, and `version-update:semver-major`. |
+| `update-types` | Ignore updates to one or more semantic versioning levels. Supported values: `version-update:semver-patch`, `version-update:semver-minor`, and `version-update:semver-major`. |
 
 ### `dependency-name` (`ignore`)
 
