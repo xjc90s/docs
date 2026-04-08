@@ -10,6 +10,8 @@ category:
 contentType: reference
 redirect_from:
   - /copilot/reference/cli-command-reference
+docsTeamMetrics:
+  - copilot-cli
 ---
 
 ## Command-line commands
