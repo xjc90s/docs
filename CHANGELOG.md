@@ -1,5 +1,16 @@
 # Docs changelog
 
+**9 April 2026**
+
+We have added documentation for the code security risk assessment (CSRA), a free self-serve tool that helps organization admins and security managers understand their organization's exposure to code vulnerabilities.
+New content includes:
+
+* [Code security risk assessment](https://docs.github.com/en/code-security/concepts/code-scanning/code-security-risk-assessment): What the CSRA is, who can run it, what it scans, and how it relates to the secret risk assessment.
+* [Running a code security risk assessment](https://docs.github.com/en/code-security/how-tos/secure-at-scale/configure-organization-security/configure-specific-tools/assess-your-vulnerability-risk): How to generate and rerun a CSRA report.
+* [Interpreting code security risk assessment results](https://docs.github.com/en/code-security/tutorials/secure-your-organization/interpreting-code-security-risk-assessment-results): How to read the results dashboard, understand vulnerability and rule breakdowns, and enable Code Security directly from the assessment.
+
+<hr>
+
 **3 April 2026**
 
 We've published documentation for the GitHub Copilot SDK, now available in public preview. These docs were migrated from the `github/copilot-sdk` repo and cover getting started, setup, authentication, usage patterns, hooks, observability, integrations, and troubleshooting.
