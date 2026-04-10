@@ -43,7 +43,7 @@ Start using {% data variables.product.prodname_copilot_short %} by signing up fo
 
 * **{% data variables.copilot.copilot_free_short %}** — Try {% data variables.product.prodname_copilot_short %} with limited features and requests. [Start using {% data variables.copilot.copilot_free_short %}](https://github.com/copilot?ref_product=copilot&ref_type=engagement&ref_style=text&ref_plan=free).
 
-* **{% data variables.copilot.copilot_student %}** — Get access to {% data variables.product.prodname_copilot_short %}'s premium features for free. [Access {% data variables.copilot.copilot_student %}](/copilot/how-tos/manage-your-account/free-access-with-copilot-student).
+* **{% data variables.copilot.copilot_student %}** — Get access to {% data variables.product.prodname_copilot_short %}'s premium features for free. [Access {% data variables.copilot.copilot_student %}](/copilot/how-tos/copilot-on-github/set-up-copilot/enable-copilot/set-up-for-students).
 
 * **{% data variables.copilot.copilot_pro_short %}** — Get unlimited completions and access to premium models. [Subscribe to {% data variables.copilot.copilot_pro_short %}](https://github.com/github-copilot/signup?ref_product=copilot&ref_type=purchase&ref_style=text&ref_plan=pro).
 
