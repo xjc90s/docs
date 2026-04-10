@@ -6,5 +6,6 @@ versions:
   feature: copilot
 children:
   - /chat-with-copilot
+  - /copilot-for-github-tasks
 contentType: how-tos
 ---
