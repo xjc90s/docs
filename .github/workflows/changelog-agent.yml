@@ -420,7 +420,10 @@ jobs:
         uses: actions/ai-inference@17ff458cb182449bbb2e43701fcd98f6af8f6570 # v2.1.0
         with:
           provider: copilot
-          model: gpt-4.1
+          # No model is pinned: actions/ai-inference forwards --model to the
+          # Copilot CLI only when it differs from its GitHub Models default, so
+          # omitting it lets the CLI pick its own current default (latest Sonnet)
+          # and avoids breaking when a pinned slug (e.g. gpt-4.1) is retired.
           prompt-file: prompt.txt
           system-prompt-file: system-prompt.txt
           max-completion-tokens: 1000
