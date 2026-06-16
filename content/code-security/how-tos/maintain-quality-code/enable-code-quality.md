@@ -21,7 +21,7 @@ category:
 * {% data variables.product.prodname_actions %} must be enabled because {% data variables.product.prodname_code_quality_short %} uses actions to run each {% data variables.product.prodname_codeql %} analysis.
 * To get the full benefit of the feature, your repository should include one of the languages supported for quality analysis by {% data variables.product.prodname_codeql %}. See [Supported languages](/code-security/code-quality/concepts/about-code-quality#supported-languages).
 
-## Enabling {% data variables.product.prodname_code_quality_short %} for a repository
+## Enabling {% data variables.product.prodname_code_quality_short %} for your repository
 
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.sidebar-settings %}
