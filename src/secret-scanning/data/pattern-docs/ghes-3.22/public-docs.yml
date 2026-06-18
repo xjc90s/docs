@@ -4141,7 +4141,7 @@
   isPrivateWithGhas: true
   hasPushProtection: true
   hasValidityCheck: true
-  hasExtendedMetadata: '{% ifversion ghes %}false{% else %}true{% endif %}'
+  hasExtendedMetadata: false
   base64Supported: false
   isduplicate: false
 - provider: Rootly
