@@ -324,6 +324,7 @@ product_landing:
   article_grid:
     heading: Articles
     all_categories: All categories
+    filter_by_category: Category
     search_articles: Search articles
     no_articles_found: No articles found matching your criteria.
     showing_results: Showing {start}-{end} of {total}

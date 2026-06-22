@@ -4,6 +4,7 @@ import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { slug } from 'github-slugger'
 import cx from 'classnames'
+import { announce } from '@primer/live-region-element'
 
 import { useVersion } from '@/versions/components/useVersion'
 import { HeadingLink } from '@/frame/components/article/HeadingLink'
@@ -84,6 +85,10 @@ export function Webhook({ webhook }: Props) {
     setClickedBodyParameterName('')
     setSelectedWebhookActionType(type)
     setSelectedActionTypeIndex(index)
+
+    // Announce the newly selected action type to screen readers so users
+    // relying on AT know the page content has changed.
+    announce(`${t('action_type')}: ${type}`, { politeness: 'polite' })
 
     const { asPath, locale } = router
     let [pathRoot, pathQuery = ''] = asPath.split('?')
