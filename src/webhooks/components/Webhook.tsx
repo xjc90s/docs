@@ -4,12 +4,14 @@ import useSWR from 'swr'
 import { useRouter } from 'next/router'
 import { slug } from 'github-slugger'
 import cx from 'classnames'
+import { announce } from '@primer/live-region-element'
 
 import { useVersion } from '@/versions/components/useVersion'
 import { HeadingLink } from '@/frame/components/article/HeadingLink'
 import { useTranslation } from '@/languages/components/useTranslation'
 import type { WebhookAction, WebhookData } from './types'
 import { ParameterTable } from '@/automated-pipelines/components/parameter-table/ParameterTable'
+import { HighlightedCode } from '@/frame/components/HighlightedCode'
 
 import styles from './WebhookPayloadExample.module.scss'
 
@@ -83,6 +85,10 @@ export function Webhook({ webhook }: Props) {
     setClickedBodyParameterName('')
     setSelectedWebhookActionType(type)
     setSelectedActionTypeIndex(index)
+
+    // Announce the newly selected action type to screen readers so users
+    // relying on AT know the page content has changed.
+    announce(`${t('action_type')}: ${type}`, { politeness: 'polite' })
 
     const { asPath, locale } = router
     let [pathRoot, pathQuery = ''] = asPath.split('?')
@@ -203,8 +209,11 @@ export function Webhook({ webhook }: Props) {
       {webhook.data.payloadExample && (
         <>
           <h3>{t('webhook_payload_example')}</h3>
-          <div className={cx(styles.payloadExample, 'border rounded-1 my-0')} data-highlight="json">
-            <code>{JSON.stringify(webhook.data.payloadExample, null, 2)}</code>
+          <div className={cx(styles.payloadExample, 'border rounded-1 my-0')}>
+            <HighlightedCode
+              language="json"
+              code={JSON.stringify(webhook.data.payloadExample, null, 2)}
+            />
           </div>
         </>
       )}
