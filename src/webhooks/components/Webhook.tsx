@@ -10,6 +10,7 @@ import { HeadingLink } from '@/frame/components/article/HeadingLink'
 import { useTranslation } from '@/languages/components/useTranslation'
 import type { WebhookAction, WebhookData } from './types'
 import { ParameterTable } from '@/automated-pipelines/components/parameter-table/ParameterTable'
+import { HighlightedCode } from '@/frame/components/HighlightedCode'
 
 import styles from './WebhookPayloadExample.module.scss'
 
@@ -203,8 +204,11 @@ export function Webhook({ webhook }: Props) {
       {webhook.data.payloadExample && (
         <>
           <h3>{t('webhook_payload_example')}</h3>
-          <div className={cx(styles.payloadExample, 'border rounded-1 my-0')} data-highlight="json">
-            <code>{JSON.stringify(webhook.data.payloadExample, null, 2)}</code>
+          <div className={cx(styles.payloadExample, 'border rounded-1 my-0')}>
+            <HighlightedCode
+              language="json"
+              code={JSON.stringify(webhook.data.payloadExample, null, 2)}
+            />
           </div>
         </>
       )}
