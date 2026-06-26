@@ -103,13 +103,6 @@
   business: true
   enterprise: true
 
-- name: MAI-Code-1-Flash
-  pro: true
-  pro_plus: true
-  max: true
-  business: false
-  enterprise: false
-
 - name: GPT-5 mini
   pro: true
   pro_plus: true
@@ -147,6 +140,13 @@
 
 - name: GPT-5.5
   pro: false
+  pro_plus: true
+  max: true
+  business: true
+  enterprise: true
+
+- name: MAI-Code-1-Flash
+  pro: true
   pro_plus: true
   max: true
   business: true
