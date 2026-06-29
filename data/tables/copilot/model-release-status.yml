@@ -52,15 +52,15 @@
   provider: 'Anthropic'
   release_status: 'GA'
 
-- name: 'Claude Opus 4.6 (fast mode) (preview)'
-  provider: 'Anthropic'
-  release_status: 'Public preview'
-
 - name: 'Claude Opus 4.7'
   provider: 'Anthropic'
   release_status: 'GA'
 
 - name: 'Claude Opus 4.8'
+  provider: 'Anthropic'
+  release_status: 'GA'
+
+- name: 'Claude Opus 4.8 (fast mode) (preview)'
   provider: 'Anthropic'
   release_status: 'GA'
 
