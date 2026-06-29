@@ -6,6 +6,7 @@ import type { Root as HastRoot } from 'hast'
 import cx from 'classnames'
 
 import { CopyButton } from '@/frame/components/CopyButton'
+import { CodeTabsGroup } from '@/frame/components/CodeTabsGroup'
 import { ToggleableContent } from '@/tools/components/ToggleableContent'
 import { isToggleClass } from '@/tools/components/SelectionContext'
 import styles from './MarkdownContent.module.scss'
@@ -35,6 +36,10 @@ const markdownComponents = {
   // and runs first, so only the handful of toggleable elements become context
   // consumers; every other div/span renders as a plain element with no hook.
   div(props: ComponentProps<'div'>) {
+    const classes = String(props.className || '').split(/\s+/)
+    if (classes.includes('ghd-codetabs')) {
+      return <CodeTabsGroup {...props} />
+    }
     if (isToggleClass(props.className)) {
       return <ToggleableContent tag="div" {...props} />
     }
