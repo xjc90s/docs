@@ -1,6 +1,6 @@
 ---
 title: About open source license compliance
-shortTitle: Open Source license compliance
+shortTitle: Open source license compliance
 intro: Define and enforce license policy for dependencies in your repositories with open source license compliance.
 product: 'Organizations owned by an enterprise account with {% data variables.product.prodname_GH_code_security %} enabled'
 versions:
@@ -18,11 +18,11 @@ Open source license compliance helps you **track dependency licenses** and **enf
 
 ## How license policy works
 
-You can define an enterprise or organization policy that controls which licenses dependencies are allowed to use.
+You can define an enterprise policy that controls which licenses your dependencies are allowed to use.
 
 You can specify licenses from either a built-in list or, if a license is not listed, by manually adding a SPDX license identifier.
 
-Your policy is applied at the enterprise, organization, and repository scope. You can also add package or license exceptions when an **Enterprise Open Source License Manager** approves requests.
+Your policy is enforced by rulesets that can be defined at the enterprise, organization, and repository scope. You can also add package or license exceptions when an **Enterprise Open Source License Manager** approves requests.
 
 License evaluation uses dependency data from your repositories, including transitive dependencies detected in the dependency graph.
 

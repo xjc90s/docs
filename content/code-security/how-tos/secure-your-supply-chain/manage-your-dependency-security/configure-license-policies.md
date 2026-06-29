@@ -19,7 +19,7 @@ redirect_from:
 Before you configure license policies, ensure that:
 
 * Your organization has {% data variables.product.prodname_GH_code_security %}
-* You have access to manage enterprise or organization policy and rulesets
+* You have access to manage enterprise policy and rulesets
 * Dependency graph is enabled for repositories you want to evaluate
 
 ## About license compliance
@@ -31,7 +31,7 @@ When the policy is enforced with rulesets, {% data variables.product.github %} e
 Violations are typically resolved by:
 
 * Updating the pull request to use compliant dependencies
-* Approving an exception for a package or license
+* Approving an exception for a package
 * Updating policy to allow a license where appropriate
 
 ## Create a license policy
@@ -66,7 +66,7 @@ Assigning this role also subscribes reviewers to request notifications so they c
 
 ## Optionally use custom properties to control rollout per repository
 
-If you want gradual rollout, use a repository custom property to control whether each repository is in inactive, evaluate, or active enforcement mode.
+If you want a gradual rollout, use a repository custom property to control whether each repository is in inactive, evaluate, or active enforcement mode.
 
 {% data reusables.organizations.navigate-to-org %}
 {% data reusables.organizations.org_settings %}
@@ -126,4 +126,4 @@ After a request is approved, the alert is closed and the pull request is unblock
 
 ## Further reading
 
-* [AUTOTITLE](/code-security/concepts/supply-chain-security/open-source-license-compliance).
+* [AUTOTITLE](/code-security/concepts/supply-chain-security/open-source-license-compliance)
