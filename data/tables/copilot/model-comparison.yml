@@ -68,6 +68,11 @@
   excels_at: Complex problem-solving challenges, sophisticated reasoning
   further_reading: '[Claude Sonnet 4.6 model card](https://www-cdn.anthropic.com/78073f739564e986ff3e28522761a7a0b4484f84.pdf)'
 
+- name: Claude Sonnet 5
+  task_area: General-purpose coding and agent tasks
+  excels_at: Complex problem-solving challenges, sophisticated reasoning
+  further_reading: 'Not available'
+
 # Google
 - name: Gemini 2.5 Pro
   task_area: Deep reasoning and debugging

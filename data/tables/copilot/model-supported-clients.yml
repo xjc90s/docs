@@ -95,6 +95,15 @@
   xcode: false
   jetbrains: false
 
+- name: Claude Sonnet 5
+  dotcom: true
+  cli: true
+  vscode: true
+  vs: true
+  eclipse: false
+  xcode: false
+  jetbrains: false
+
 - name: Gemini 2.5 Pro
   dotcom: false
   cli: false
