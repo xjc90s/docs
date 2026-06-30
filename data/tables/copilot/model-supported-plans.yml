@@ -75,6 +75,13 @@
   business: true
   enterprise: true
 
+- name: Claude Sonnet 5
+  pro: true
+  pro_plus: true
+  max: true
+  business: true
+  enterprise: true
+
 - name: Gemini 2.5 Pro
   pro: true
   pro_plus: true
