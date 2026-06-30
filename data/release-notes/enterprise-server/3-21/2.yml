@@ -8,8 +8,6 @@ sections:
     - |
       **MEDIUM**: An attacker could gain unintended access to an organization's runner management by directing a user to authorize an OAuth app whose requested manage_runners:org scope was not displayed on the authorization consent screen. GitHub has requested CVE ID [CVE-2026-9106](https://www.cve.org/cverecord?id=CVE-2026-9106) for this vulnerability, which was reported via the [GitHub Bug Bounty](https://bounty.github.com/) program.
     - |
-      **MEDIUM**: An attacker who could execute code within a Copilot coding agent session, for example through a malicious dependency or repository setup steps, could use the agent's server-to-server token to create, modify, or delete releases and release assets in that repository via the REST API, exceeding the agent's documented push-only restriction. GitHub has requested CVE ID [CVE-2026-12373](https://www.cve.org/cverecord?id=CVE-2026-12373) for this vulnerability, which was reported via the [GitHub Bug Bounty program](https://bounty.github.com/).
-    - |
       GitHub has updated `dnsmasq` to fix the following vulnerabilities: CVE-2026-4891, CVE-2026-4890, CVE-2026-4892, CVE-2026-4893, CVE-2026-5172, CVE-2026-2291.
     - |
       Packages have been updated to the latest security versions.
