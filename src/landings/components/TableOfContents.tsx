@@ -2,6 +2,7 @@ import React from 'react'
 
 import { Link } from '@/frame/components/Link'
 import type { TocItem } from '@/landings/types'
+import { RenderedHTML } from '@/frame/components/ui/RenderedHTML/RenderedHTML'
 
 type Props = {
   items: Array<TocItem>
@@ -27,9 +28,7 @@ export const TableOfContents = (props: Props) => {
                   {title}
                 </Link>
               </h2>
-              {intro && (
-                <div className="f4 color-fg-muted" dangerouslySetInnerHTML={{ __html: intro }} />
-              )}
+              {intro && <RenderedHTML as="div" className="f4 color-fg-muted" html={intro} />}
             </div>
           )
         })}
