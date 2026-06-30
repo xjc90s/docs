@@ -40,26 +40,22 @@ export const TableOfContents = (props: Props) => {
             const { fullPath, title, childTocItems } = item
             const filteredChildren = (childTocItems || []).filter(Boolean)
             return (
-              <li
-                key={fullPath}
-                className="mb-2"
-                aria-setsize={items.length}
-                aria-posinset={index + 1}
-              >
+              <li key={fullPath} role="listitem" className="mb-2">
                 <Link href={fullPath} className="text-underline mb-2 d-block">
                   {title}
+                  <span className="visually-hidden">
+                    , {index + 1} of {items.length}
+                  </span>
                 </Link>
                 {filteredChildren.length > 0 && (
                   <ul role="list" className="pl-4 list-style-none">
                     {filteredChildren.map((childItem, childIndex) => (
-                      <li
-                        key={childItem.fullPath}
-                        className="mb-2"
-                        aria-setsize={filteredChildren.length}
-                        aria-posinset={childIndex + 1}
-                      >
+                      <li key={childItem.fullPath} role="listitem" className="mb-2">
                         <Link href={childItem.fullPath} className="text-underline">
                           {childItem.title}
+                          <span className="visually-hidden">
+                            , {childIndex + 1} of {filteredChildren.length}
+                          </span>
                         </Link>
                       </li>
                     ))}

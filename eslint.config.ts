@@ -232,9 +232,10 @@ export default [
   },
 
   // Allow role="list" on list-style:none <ul> elements in these components.
-  // Chromium drops the implicit `list` role from the accessibility tree when
-  // list-style:none is set, so NVDA/JAWS lose list semantics; role="list" restores
-  // them and is not actually redundant here. See github/accessibility-audits#16815.
+  // Chromium drops the implicit `list`/`listitem` roles from the accessibility tree
+  // when list-style:none is set, so NVDA/JAWS lose list semantics and the item count;
+  // role="list" on the <ul> and role="listitem" on each <li> restore them and are not
+  // actually redundant here. See github/accessibility-audits#16815.
   {
     files: [
       'src/frame/components/ui/MiniTocs/MiniTocs.tsx',
@@ -245,7 +246,10 @@ export default [
       'src/release-notes/components/GHESReleaseNotes.tsx',
     ],
     rules: {
-      'jsx-a11y/no-redundant-roles': ['error', { nav: ['navigation'], ul: ['list'] }],
+      'jsx-a11y/no-redundant-roles': [
+        'error',
+        { nav: ['navigation'], ul: ['list'], li: ['listitem'] },
+      ],
     },
   },
 
