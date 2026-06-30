@@ -1726,6 +1726,10 @@
                     {
                       "type": "Repo",
                       "name": "octocat/hello-world"
+                    },
+                    {
+                      "type": "Team",
+                      "name": "enterprise-team-1"
                     }
                   ]
                 },
@@ -1737,6 +1741,10 @@
                     {
                       "type": "User",
                       "name": "Octocat"
+                    },
+                    {
+                      "type": "Team",
+                      "name": "enterprise-team-2"
                     }
                   ]
                 }
@@ -2162,96 +2170,7 @@
         }
       ],
       "descriptionHTML": "<p>Updates an existing cost center name.</p>",
-      "codeExamples": [
-        {
-          "request": {
-            "contentType": "application/json",
-            "description": "Update cost center name example",
-            "acceptHeader": "application/vnd.github.v3+json",
-            "bodyParameters": {
-              "name": "New Cost Center Name"
-            },
-            "parameters": {
-              "enterprise": "ENTERPRISE",
-              "cost_center_id": "COST_CENTER_ID"
-            }
-          },
-          "response": {
-            "statusCode": "200",
-            "contentType": "application/json",
-            "description": "<p>Response when updating a cost center</p>",
-            "example": {
-              "id": "2eeb8ffe-6903-11ee-8c99-0242ac120002",
-              "name": "Cost Center Name",
-              "state": "active",
-              "azure_subscription": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee",
-              "resources": [
-                {
-                  "type": "User",
-                  "name": "Monalisa"
-                },
-                {
-                  "type": "Repo",
-                  "name": "octocat/hello-world"
-                }
-              ]
-            },
-            "schema": {
-              "type": "object",
-              "properties": {
-                "id": {
-                  "type": "string",
-                  "description": "ID of the cost center."
-                },
-                "name": {
-                  "type": "string",
-                  "description": "Name of the cost center."
-                },
-                "azure_subscription": {
-                  "type": [
-                    "string",
-                    "null"
-                  ],
-                  "description": "Azure subscription ID associated with the cost center. Only present for cost centers linked to Azure subscriptions."
-                },
-                "state": {
-                  "type": "string",
-                  "description": "State of the cost center.",
-                  "enum": [
-                    "active",
-                    "deleted"
-                  ]
-                },
-                "resources": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "type": {
-                        "type": "string",
-                        "description": "Type of the resource."
-                      },
-                      "name": {
-                        "type": "string",
-                        "description": "Name of the resource."
-                      }
-                    },
-                    "required": [
-                      "type",
-                      "name"
-                    ]
-                  }
-                }
-              },
-              "required": [
-                "id",
-                "name",
-                "resources"
-              ]
-            }
-          }
-        }
-      ],
+      "codeExamples": [],
       "statusCodes": [
         {
           "httpStatusCode": "200",
@@ -2448,6 +2367,11 @@
           "type": "array of strings",
           "name": "repositories",
           "description": "<p>The repositories to add to the cost center.</p>"
+        },
+        {
+          "type": "array of strings",
+          "name": "enterprise_teams",
+          "description": "<p>The enterprise teams to add to the cost center.</p>"
         }
       ],
       "descriptionHTML": "<p>Adds resources to a cost center.</p>\n<p>The usage for the resources will be charged to the cost center's budget. The authenticated user must be an enterprise admin in order to use this endpoint.</p>",
@@ -2488,6 +2412,11 @@
                   "resource_type": "repository",
                   "name": "octo-repo",
                   "previous_cost_center": "yet-another-cost-center"
+                },
+                {
+                  "resource_type": "team",
+                  "name": "octo-enterprise-team",
+                  "previous_cost_center": "old-cost-center"
                 }
               ]
             },
@@ -2601,6 +2530,11 @@
           "type": "array of strings",
           "name": "repositories",
           "description": "<p>The repositories to remove from the cost center.</p>"
+        },
+        {
+          "type": "array of strings",
+          "name": "enterprise_teams",
+          "description": "<p>The enterprise teams to remove from the cost center.</p>"
         }
       ],
       "descriptionHTML": "<p>Remove resources from a cost center.</p>\n<p>The usage for the resources will no longer be charged to the cost center's budget. The authenticated user must be an enterprise admin in order to use this endpoint.</p>",

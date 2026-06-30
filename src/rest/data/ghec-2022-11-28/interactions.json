@@ -602,7 +602,7 @@
         }
       ],
       "bodyParameters": [],
-      "descriptionHTML": "<p>Lists the users that are on the pull request creation cap bypass list for a\nrepository. Users on this list can create pull requests regardless of any\nconfigured pull request creation cap.</p>\n<p>Only repository admins can view the bypass list.</p>",
+      "descriptionHTML": "<p>Lists the users that are on the pull request creation cap bypass list for a\nrepository. Users on this list can create pull requests regardless of any\nconfigured pull request creation cap.</p>\n<p>Only users with maintainer permissions can view the bypass list.</p>",
       "codeExamples": [
         {
           "request": {
