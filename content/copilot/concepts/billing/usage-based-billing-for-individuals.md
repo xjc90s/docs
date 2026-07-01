@@ -81,6 +81,8 @@ More complex interactions consume more of your usage allowance. The main factors
 
 > [!NOTE] {% data reusables.copilot.auto-model-discount %}
 
+For guidance on how to optimize your usage and reduce spend, including how to set session limits to cap spend for agent tasks, see [AUTOTITLE](/copilot/tutorials/optimize-ai-usage).
+
 ## What happens if I exceed my included {% data variables.product.prodname_ai_credits_short %}?
 
 When your {% data variables.product.prodname_ai_credits_short %} are exhausted, you can:
