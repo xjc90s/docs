@@ -161,7 +161,7 @@ The following table shows which AI models are available in each {% data variable
 {% data reusables.copilot.available-models-per-plan %}
 
 > [!NOTE]
-> If you're an organization or enterprise owner, you can enable or restrict access to specific models for your members. See [AUTOTITLE](/copilot/how-tos/copilot-on-github/set-up-copilot/configure-access-to-ai-models#setup-for-organization-and-enterprise-use).
+> * If you're an organization or enterprise owner, you can enable or restrict access to specific models for your members. See [AUTOTITLE](/copilot/how-tos/copilot-on-github/set-up-copilot/configure-access-to-ai-models#setup-for-organization-and-enterprise-use).
 
 ## Fallback and long-term support (LTS) models
 

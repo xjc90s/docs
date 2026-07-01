@@ -94,6 +94,20 @@ When using {% data variables.copilot.copilot_gemini %} models, input prompts and
 
 {% data variables.copilot.copilot_mai_code_1_flash %} is a first-party Microsoft model hosted on Azure in {% data variables.product.github %}'s tenant. 
 
+## Open-weight models
+
+Open-weight models have publicly available weights. {% data reusables.copilot.open-weight-model-hosting %}
+
+### Moonshot AI models
+
+Used for:
+
+* {% data variables.copilot.copilot_kimi_k27_code %}
+
+{% data variables.copilot.copilot_kimi_k27_code %} was developed by Moonshot AI. It is an open-weight model that may be less aligned than other {% data variables.product.prodname_copilot_short %} models, with an elevated risk of producing harmful content. {% data variables.product.github %}'s content filtering applies, but you should review the [{% data variables.copilot.copilot_kimi_k27_code %} model card](https://huggingface.co/moonshotai/Kimi-K2.7-Code) and conduct your own evaluations before enabling it.
+
+When using {% data variables.copilot.copilot_kimi_k27_code %}, input prompts and output completions continue to run through {% data variables.product.prodname_copilot %}'s content filters for public code matching, when applied, along with those for harmful or offensive content.
+
 ## Inline suggestions
 
 Inline suggestions, including ghost text and next edit suggestions, are powered by models hosted on Azure for {% data variables.copilot.copilot_business_short %} and {% data variables.copilot.copilot_enterprise_short %} plans. {% data variables.copilot.copilot_free_short %} and {% data variables.copilot.copilot_student_short %} user models are hosted on Fireworks AI.
