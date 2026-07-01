@@ -100,9 +100,9 @@
   cli: true
   vscode: true
   vs: true
-  eclipse: false
-  xcode: false
-  jetbrains: false
+  eclipse: true
+  xcode: true
+  jetbrains: true
 
 - name: Gemini 2.5 Pro
   dotcom: false
