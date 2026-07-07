@@ -41,6 +41,7 @@ children:
   - /content/copilot/concepts/agents/copilot-cli/lsp-servers
   - /content/copilot/concepts/agents/copilot-cli/research
   - /content/copilot/concepts/agents/copilot-cli/rubber-duck
+  - /content/copilot/concepts/agents/copilot-cli/about-cli-extensions
   - /content/copilot/reference/copilot-cli-reference/acp-server
   - /content/copilot/reference/copilot-cli-reference/cli-command-reference
   - /content/copilot/reference/copilot-cli-reference/cli-plugin-reference
