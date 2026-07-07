@@ -2437,4 +2437,21 @@ Para más información, consulta "[AUTOTITLE](/path)".
       expect(fix(broken, 'de')).toBe('auf selbst-gehosteten Runnern ausführen.{% endif %}')
     })
   })
+
+  // ─── SCRAPE-6732: search-scrape failures ─────────────────────────────
+  // The ru admin landing page failed to scrape with `tag "else" not found`
+  // because the intro of viewing-and-managing-a-users-saml-access-to-your-enterprise.md
+  // had an orphaned `{% else %}` before any opening `{% ifversion %}`
+  // (github/docs-engineering#6732). The corrector runs on the PARSED intro value.
+  describe('SCRAPE-6732 per-file fixes', () => {
+    test('ru: viewing-and-managing-a-users-saml-access intro reorders orphaned else', () => {
+      const broken =
+        'Вы можете просматривать и отзывать связанную личность, активные сессии и авторизованные учетные{% else %}данные {% ifversion ghec %}SAML{% endif %} участника предприятия.'
+      const fixed =
+        'Вы можете просматривать и отзывать {% ifversion ghec %}связанную личность, активные сессии и авторизованные учетные данные{% else %}активные сессии SAML{% endif %} участника предприятия.'
+      expect(fix(broken, 'ru')).toBe(fixed)
+      // idempotent: the fix only matches the broken form
+      expect(fix(fixed, 'ru')).toBe(fixed)
+    })
+  })
 })
