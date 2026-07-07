@@ -52,6 +52,7 @@ children:
   - /customize-copilot/add-mcp-servers
   - /customize-copilot/add-skills
   - /customize-copilot/create-custom-agents-for-cli
+  - /customize-copilot/change-settings
   - /customize-copilot/overview
   - /customize-copilot/plugins-creating
   - /customize-copilot/plugins-finding-installing
