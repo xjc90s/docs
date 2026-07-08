@@ -28,6 +28,6 @@ In responses from the REST API, `watchers`, `watchers_count`, and `stargazers_co
 
 ### New access restrictions
 
-In July 2026, to ensure responsible use of this data and to protect users from misuse, we are introducing new access restrictions to the endpoints related to starring. Access to the stargazers listing endpoints will be limited to admins and collaborators. For more information, see the [changelog post](/WIP).
+In July 2026, to ensure responsible use of this data and to protect users from misuse, we are introducing new access restrictions to the endpoints related to starring. Access to the stargazers listing endpoints will be limited to admins and collaborators. For more information, see the [changelog post](https://github.blog/changelog/2026-06-30-upcoming-access-restrictions-to-public-api-endpoints-and-ui-views/).
 
 <!-- Content after this section is automatically generated -->
