@@ -11,6 +11,8 @@ category:
   - Configure organization features
 ---
 
+{% data reusables.dependency-graph.dependency-insights-maintenance-mode %}
+
 Organization owners can set limitations for viewing organization dependency insights. All members of an organization can view organization dependency insights by default.
 
 Enterprise owners can set limitations for viewing organization dependency insights on all organizations in your enterprise account. For more information, see [AUTOTITLE](/admin/policies/enforcing-policies-for-your-enterprise/enforcing-policies-for-code-security-and-analysis-for-your-enterprise#enforcing-a-policy-for-visibility-of-dependency-insights).

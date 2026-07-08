@@ -13,14 +13,16 @@ category:
   - Configure organization features
 ---
 
+{% data reusables.dependency-graph.dependency-insights-maintenance-mode %}
+
+Dependency insights can help you track, report, and act on your organization's open source usage.
+
 > [!NOTE]
 > To view organization dependency insights, your organization must use {% data variables.product.prodname_ghe_cloud %}. {% data reusables.enterprise.link-to-ghec-trial %}
 >
 > {% data reusables.data-residency.dependency-graph-data-availability %}
 
 ## Viewing organization dependency insights
-
-Dependency insights can help you track, report, and act on your organization's open source usage.
 
 > [!NOTE]
 > Please make sure you have enabled the [dependency graph](/code-security/supply-chain-security/understanding-your-software-supply-chain/configuring-the-dependency-graph).
