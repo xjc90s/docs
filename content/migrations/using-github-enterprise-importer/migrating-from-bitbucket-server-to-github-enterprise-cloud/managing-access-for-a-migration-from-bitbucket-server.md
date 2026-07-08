@@ -103,6 +103,7 @@ To grant the migrator role using the CLI, you must have installed the {% data va
 
 ## Creating a {% data variables.product.pat_generic %} for {% data variables.product.prodname_importer_proper_name %}
 
+1. Verify that you have a sufficient role for the task you want to complete. For more information, see [Required roles](#required-roles-for-github).
 {% data reusables.enterprise-migration-tool.creating-a-pat-steps %}
 
 ## Configuring IP allow lists for migrations
