@@ -109,5 +109,5 @@ When you view a pull request created by {% data variables.copilot.copilot_cloud_
 
 ## Further reading
 
-* [AUTOTITLE](/copilot/tutorials/using-copilot-to-explore-a-codebase)
+* [AUTOTITLE](/copilot/tutorials/explore-a-codebase)
 * [AUTOTITLE](/copilot/tutorials/roll-out-at-scale/drive-downstream-impact/accelerate-pull-requests)
