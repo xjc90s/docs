@@ -151,4 +151,4 @@ For more information, see [AUTOTITLE](/repositories/viewing-activity-and-data-fo
 
 ## Further reading
 
-* [AUTOTITLE](/copilot/using-github-copilot/copilot-chat/asking-github-copilot-questions-in-github)
+* [AUTOTITLE](/copilot/how-tos/copilot-on-github/chat-with-copilot/chat-in-github)
