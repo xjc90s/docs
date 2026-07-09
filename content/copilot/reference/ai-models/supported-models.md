@@ -87,6 +87,9 @@ Choosing a larger context window or higher reasoning will impact {% data variabl
 | {% data variables.copilot.copilot_gpt_53_codex %} | {% octicon "check" aria-label="Supported" %} | {% octicon "check" aria-label="Supported" %} |
 | {% data variables.copilot.copilot_gpt_54 %} | {% octicon "check" aria-label="Supported" %} | {% octicon "check" aria-label="Supported" %} |
 | {% data variables.copilot.copilot_gpt_55 %} | {% octicon "check" aria-label="Supported" %} | {% octicon "check" aria-label="Supported" %} |
+| {% data variables.copilot.copilot_gpt_56_luna %} | {% octicon "check" aria-label="Supported" %} | {% octicon "check" aria-label="Supported" %} |
+| {% data variables.copilot.copilot_gpt_56_sol %} | {% octicon "check" aria-label="Supported" %} | {% octicon "check" aria-label="Supported" %} |
+| {% data variables.copilot.copilot_gpt_56_terra %} | {% octicon "check" aria-label="Supported" %} | {% octicon "check" aria-label="Supported" %} |
 
 {% endrowheaders %}
 
@@ -137,6 +140,9 @@ Some {% data variables.product.prodname_copilot_short %} models require minimum 
 | {% data variables.copilot.copilot_gpt_54 %}              | `v1.104.1` and later | `17.14.19` and later                     | `1.5.66` and later | `0.47.0` and later | `0.15.0` and later |
 | {% data variables.copilot.copilot_gpt_54_mini %}         | `v1.104.1` and later | `17.14.19` and later                     | `1.5.66` and later | `0.47.0` and later | `0.15.0` and later |
 | {% data variables.copilot.copilot_gpt_55 %}              | `v1.117` and later   | `17.14.19` and later                     | `1.5.66` and later | `0.47.0` and later | `0.15.0` and later |
+| {% data variables.copilot.copilot_gpt_56_luna %}         | `1.128.0` | TBD | TBD | TBD | TBD |
+| {% data variables.copilot.copilot_gpt_56_sol %}          | `1.128.0` | TBD | TBD | TBD | TBD |
+| {% data variables.copilot.copilot_gpt_56_terra %}        | `1.128.0` | TBD | TBD | TBD | TBD |
 | {% data variables.copilot.copilot_claude_opus_48 %}      | `v1.118` and later   | `17.14.6` and later                     | TBD | TBD | TBD |
 | {% data variables.copilot.copilot_claude_sonnet_5 %}  | `v1.124` and later | `17.14.6` and later | TBD | TBD | TBD |
 | {% data variables.copilot.copilot_claude_fable_5 %}      | `v1.124` and later   | `17.14.6` and later                    | TBD | TBD | TBD |
