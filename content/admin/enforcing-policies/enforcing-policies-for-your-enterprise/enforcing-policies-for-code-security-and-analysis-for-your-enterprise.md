@@ -32,7 +32,7 @@ Additionally, you can enforce policies for the use of {% data variables.product.
 
 ## Enforcing a policy for the availability of {% data variables.product.prodname_AS %} in your enterprise's organizations
 
-You are billed for {% data variables.product.prodname_GHAS_cs_and_sp %} products on a per-committer basis. See [AUTOTITLE](/billing/managing-billing-for-your-products/managing-billing-for-github-advanced-security/about-billing-for-github-advanced-security#managing-committers-and-costs).
+You are billed for {% data variables.product.prodname_GHAS_cs_and_sp %} products on a per-committer basis. See [AUTOTITLE](/billing/concepts/product-billing/github-advanced-security#managing-committers-and-costs).
 
 You can enforce a policy that controls whether repository administrators are allowed to enable features for {% data variables.product.prodname_AS %} in an organization's repositories. You can configure a policy for all organizations owned by your enterprise account, or for individual organizations that you choose.
 
