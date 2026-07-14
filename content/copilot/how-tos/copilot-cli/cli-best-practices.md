@@ -335,7 +335,9 @@ Pair with {% data variables.copilot.copilot_cli_short %} to develop tests.
 
 ### Code review assistance
 
+* ``/security-review Review my current local changes for security issues. Prioritize high-severity findings and suggest remediations I can apply before opening a pull request.``
 * ``/review Use Opus 4.5 and Codex 5.2 to review the changes in my current branch against `main`. Focus on potential bugs and security issues.``
+* Triage high-severity findings first, validate your fixes, then continue through your normal pull request review workflow.
 
 ### Git operations
 
