@@ -974,7 +974,7 @@ ghe-btop [ <port number> | --help | --usage ]
 
 #### ghe-governor
 
-This utility helps to analyze Git traffic. It queries _Governor_ data files, located under `/data/user/gitmon`. {% data variables.product.company_short %} holds one hour of data per file, retained for two weeks. For more information, see [Analyzing Git traffic using Governor](https://github.com/orgs/community/discussions/34220) in {% data variables.product.prodname_github_community %}.
+This utility helps to analyze Git traffic. It queries _Governor_ data files, located under `/data/user/governor/`. {% data variables.product.company_short %} holds one hour of data per file, retained for two weeks. For more information, see [AUTOTITLE](/admin/monitoring-and-managing-your-instance/monitoring-your-instance/analyze-git-traffic).
 
 ```bash
 ghe-governor <subcommand> <column> [options]
