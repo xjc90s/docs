@@ -188,12 +188,25 @@ Defines a **cooldown period** for dependency updates, allowing updates to be del
 
 This feature enables users to customize how often {% data variables.product.prodname_dependabot %} generates new version updates, offering greater control over update frequency. For examples, see [AUTOTITLE](/code-security/dependabot/dependabot-version-updates/optimizing-pr-creation-version-updates#setting-up-a-cooldown-period-for-dependency-updates).
 
+{% ifversion dependabot-cooldown-default-days %}
+
 {% data variables.product.prodname_dependabot %} default behavior:
 
-* Check for updates according to the scheduled defined via `schedule.interval`.
+* Check for updates according to the schedule defined via `schedule.interval`.
+* Apply a **default cooldown period of 3 days** to version updates, even when `cooldown` is not configured. A new version is not considered for a version update until 3 days after its release. **This default cooldown does not apply to security updates.**
+
+You can configure the `cooldown` option to customize these default cooldown periods and control which dependencies they apply to. When **`cooldown`** is defined:
+
+{% else %}
+
+{% data variables.product.prodname_dependabot %} default behavior:
+
+* Check for updates according to the schedule defined via `schedule.interval`.
 * Consider all new versions **immediately** for updates.
 
 When **`cooldown`** is defined:
+
+{% endif %}
 
 1. {% data variables.product.prodname_dependabot %} checks for updates according to the defined `schedule.interval` settings.
 1. {% data variables.product.prodname_dependabot %} checks for any cooldown settings.
@@ -207,7 +220,7 @@ You can specify the duration of the cooldown using the options below.
 
 | Parameter | Description |
 |-----------|-------------|
-| `default-days` | **Default cooldown period for dependencies** without specific rules (optional). |
+| `default-days` | **Default cooldown period for dependencies** without specific rules (optional).{% ifversion dependabot-cooldown-default-days %} If not specified, {% data variables.product.prodname_dependabot %} applies a default cooldown of 3 days.{% endif %} |
 | `semver-major-days` | Cooldown period for **major version updates** (optional, applies only to package managers supporting SemVer). |
 | `semver-minor-days` | Cooldown period for **minor version updates** (optional, applies only to package managers supporting SemVer). |
 | `semver-patch-days` | Cooldown period for **patch version updates** (optional, applies only to package managers supporting SemVer). |

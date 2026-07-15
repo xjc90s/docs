@@ -47,6 +47,12 @@ For certain package managers, {% data variables.product.prodname_dependabot_vers
 
 When {% data variables.product.prodname_dependabot %} identifies an outdated dependency, it raises a pull request to update the manifest to the latest version of the dependency. For vendored dependencies, {% data variables.product.prodname_dependabot %} raises a pull request to replace the outdated dependency with the new version directly. You check that your tests pass, review the changelog and release notes included in the pull request summary, and then merge it. For more information, see [AUTOTITLE](/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates).
 
+{% ifversion dependabot-cooldown-default-days %}
+
+{% data reusables.dependabot.default-cooldown-period %} This gives new releases time to stabilize before you receive a pull request. You can customize the cooldown periods, and the dependencies they apply to, with the `cooldown` option. For more information, see [AUTOTITLE](/code-security/reference/supply-chain-security/dependabot-options-reference#cooldown-).
+
+{% endif %}
+
 If you enable _security updates_, {% data variables.product.prodname_dependabot %} also raises pull requests to update vulnerable dependencies. For more information, see [AUTOTITLE](/code-security/dependabot/dependabot-security-updates/about-dependabot-security-updates).
 
 ## Updates for actions
