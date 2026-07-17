@@ -60,6 +60,9 @@ By default, this file is located in the `~/.copilot` directory, which is the use
 > [!NOTE]
 > User-editable settings were originally stored in `config.json`. They have been moved to `settings.json`. Any user settings present in `config.json` on startup are automatically migrated to `settings.json`.
 
+> [!NOTE]
+> If `settings.json` fails to read, parse, or validate, {% data variables.copilot.copilot_cli_short %} ignores the invalid values (recognized `config.json` values are still merged in) and shows a startup warning on the timeline identifying the error. Fix the reported issue to restore the affected settings.
+
 For the full list of settings and how they interact with repository-level configuration, see [Configuration file settings](#configuration-file-settings) later in this article.
 
 > [!TIP]
@@ -441,6 +444,7 @@ These settings apply across all your sessions and repositories. You can use the 
 | `builtInAgents.rubberDuck` | `boolean` | `true` | Enable the rubber-duck subagent that provides adversarial feedback on agent plans. |
 | `builtInAgents.rubberDuckAutoInvoke` | `boolean` | `false` | Include proactive prompting for automatic rubber-duck invocation. Set to `true` to opt into additional rubber-duck nudges during agent turns. |
 | `colorMode` | `"default"` \| `"github"` \| `"dim"` \| `"high-contrast"` \| `"colorblind"` | `"github"` | Deprecated alias for `theme`. Prefer `theme`. | <!-- markdownlint-disable-line GHD046 -->
+| `commandHistoryMaxSize` | `number` | `50` | Maximum number of recent commands retained for input history and reverse search. Must be an integer between `1` and `1000`. |
 | `compactPaste` | `boolean` | `true` | Collapse large pastes (more than 10 lines) into compact tokens. |
 | `companyAnnouncements` | `string[]` | `[]` | Custom messages shown randomly on startup. One message is randomly selected each time the CLI starts. Useful for team announcements or reminders. |
 | `continueOnAutoMode` | `boolean` | `false` | Automatically switch to auto mode when rate-limited. When `true`, eligible rate limit errors trigger an automatic switch to auto mode and retry. Does not apply to global rate limits or BYOK providers. |
@@ -467,6 +471,7 @@ These settings apply across all your sessions and repositories. You can use the 
 | `model` | `string` | varies | AI model to use. Set to `"auto"` to let {% data variables.product.prodname_copilot_short %} pick the best available model automatically. Managed by the `/model` slash command. |
 | `mouse` | `boolean` | `true` | Enable mouse support. Can also be set with `--mouse` or `--no-mouse`. |
 | `permissions.disableBypassPermissionsMode` | `string` | — | When set to `"disable"`, all allow-all flags (`--allow-all-tools`, `--allow-all-paths`, `--allow-all-urls`, `--allow-all`, `--yolo`) are suppressed at startup and cannot be used to grant elevated permissions. |
+| `pinnedPrompts` | `boolean` | `true` | Pin the current section's user prompt just below the top bar while scrolling the timeline, so it stays clear which request the visible output belongs to. CLI UI only—has no effect on prompts sent to the model. |
 | `powershellFlags` | `string[]` | `["-NoProfile", "-NoLogo"]` | Flags passed to PowerShell on startup. On Windows, the CLI prefers PowerShell 7+ (`pwsh`) and falls back to Windows PowerShell (`powershell.exe`) when `pwsh` is unavailable. Windows only. |
 | `proxyKerberosServicePrincipal` | `string` | unset | Service principal name (SPN) for Kerberos/Negotiate proxy authentication, overriding the derived `HTTP/<proxy-host>`. |
 | `proxyUrl` | `string` | unset | Proxy URL for HTTP(S) requests (for example, `http://proxy.corp.example:3128`). Overridden by the `HTTP_PROXY` or `HTTPS_PROXY` environment variables (any casing). |
@@ -476,6 +481,7 @@ These settings apply across all your sessions and repositories. You can use the 
 | `respectGitignore` | `boolean` | `true` | Exclude gitignored files from the `@` file mention picker. When `false`, the picker includes files normally excluded by `.gitignore`. |
 | `screenReader` | `boolean` | `false` | Enable screen reader optimizations. |
 | `scrollbar` | `boolean` | `true` | Show the scrollbar in scrollable views. Set to `false` to hide it and use the full terminal width. |
+| `showTimestamps` | `boolean` | `true` | Show dim `HH:mm` timestamps next to user messages in the timeline. |
 | `showTipsOnStartup` | `boolean` | `true` | Show a random command tip when the CLI starts. |
 | `skillDirectories` | `string[]` | `[]` | Additional directories to search for custom skill definitions (in addition to `~/.copilot/skills/`). |
 | `statusLine` | `object` | — | Custom status line display. `type`: must be `"command"`. `command`: path to an executable script that receives session JSON on stdin and prints status content to stdout. `padding`: optional number of left-padding spaces. |
@@ -502,16 +508,26 @@ Repository settings apply to everyone who works in the repository. They are comm
 > [!NOTE]
 > The plugin-related keys in the repository configuration file (`enabledPlugins` and `extraKnownMarketplaces`) are also read by {% data variables.copilot.copilot_cloud_agent %}, not only {% data variables.copilot.copilot_cli_short %}. This lets you enable the same plugins for both clients from a single file. For more information about plugins, see [AUTOTITLE](/copilot/concepts/agents/about-plugins).
 
-Only the keys listed in the following table are supported at the repository level. Any other keys—including keys that are valid in the user configuration file—are silently ignored.
+Only the keys listed in the following table are supported at the repository level. Any other keys—including keys that are valid in the user configuration file—are silently ignored. Each supported key has a directional merge policy that keeps the override fail-closed and safe.
 
 | Key | Type | Merge behavior | Description |
 |-----|------|---------------|-------------|
 | `companyAnnouncements` | `string[]` | Replaced—repository takes precedence | Messages shown randomly on startup. |
+| `contextTier` | `"default"` \| `"long_context"` | Replaced—repository takes precedence | Pin the default context tier. |
+| `deniedUrls` | `string[]` | Union—repository can add entries, never remove | URLs or domains blocked. |
 | `disableAllHooks` | `boolean` | Repository takes precedence | Disable all hooks. |
+| `disabledMcpServers` | `string[]` | Union—repository can add entries, never remove | MCP servers configured but not started. |
+| `disabledSkills` | `string[]` | Union—repository can add entries, never remove | Skills discovered but not loaded. |
+| `effortLevel` | `string` | Replaced—repository takes precedence | Pin the default reasoning effort. |
 | `enabledPlugins` | `Record<string, boolean>` | Merged—repository overrides user for same key | Declarative plugin auto-install. |
 | `extraKnownMarketplaces` | `Record<string, {...}>` | Merged—repository overrides user for same key | Plugin marketplaces available in this repository. |
-| `hooks` | `object` | Concatenated—repository hooks run after user hooks | Hook definitions scoped to this repository. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/use-hooks). |
-| `mergeStrategy` | `"rebase"` \| `"merge"` | Repository takes precedence | Conflict resolution strategy for `/pr fix conflicts`. |
+| `hooks` | `object` | Merged—repository overrides user for same key | Hook definitions scoped to this repository. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/use-hooks). |
+| `includeCoAuthoredBy` | `boolean` | Replaced—repository takes precedence | Add a `Co-authored-by` trailer to commits. |
+| `mergeStrategy` | `"rebase"` \| `"merge"` | Replaced—repository takes precedence | Conflict resolution strategy for `/pr fix conflicts`. |
+| `model` | `string` | Replaced—repository takes precedence | Pin the default model for this repo. |
+| `respectGitignore` | `boolean` | Tighten-only—repository can enable, never disable | Exclude gitignored files from the `@` file mention picker. |
+
+`model`, `effortLevel`, and `contextTier` overrides only apply when the working directory is [trusted](/copilot/how-tos/copilot-cli/use-copilot-cli/allowing-tools).
 
 A plugin enabled only through a repository's `enabledPlugins` is scoped to that repository: it auto-installs and activates in the declaring repository, but stays disabled globally, so it never activates in unrelated projects. Leaving the repository, or the repository disabling the plugin, tears down its MCP server and deactivates its agents and skills for the session.
 
@@ -553,6 +569,8 @@ IT administrators can push baseline policy using Mobile Device Management (MDM) 
 
 {% data variables.copilot.copilot_cli_short %} also loads server-managed settings at startup, in addition to MDM. Device-managed (MDM) and server-managed settings are resolved **per key**: MDM's value wins for any key it sets, and the server's value fills in keys MDM leaves unset. This lets an organization set some policy via MDM (for example, `permissions`) while still receiving other managed defaults (for example, `model`) from the server.
 
+Long-running sessions re-fetch and re-apply managed settings hourly, so policy changes—for example, an organization enabling `permissions.disableBypassPermissionsMode`—take effect without restarting the session.
+
 ### MDM managed settings sources
 
 {% data variables.copilot.copilot_cli_short %} reads managed settings from platform-specific MDM or file-based locations.
@@ -574,11 +592,15 @@ Write file-based managed settings as JSON.
 
 ```json
 {
+    "model": "auto",
     "permissions": {
         "disableBypassPermissionsMode": "disable"
     }
 }
 ```
+
+> [!NOTE]
+> `model` is a top-level key. Older configurations that nested it as `permissions.model` still work—the runtime falls back to that location when the top-level `model` key is absent—but write new configurations with `model` at the top level.
 
 ### Supported keys
 
@@ -590,6 +612,7 @@ Only the following keys are supported in MDM managed settings.
 | `extraKnownMarketplaces` | Add trusted plugin marketplaces |
 | `model` | Set a default model for all users (overridden by the `--model` flag or a resumed-session model) |
 | `permissions` | Set managed permissions, including `disableBypassPermissionsMode` |
+| `remoteControl` | Control whether sessions on this device can be controlled from other devices. `mode` is `"enabled"`, `"disabled"`, or `"requireSSO"` (requires `requiredSsoOrganizations` when set). |
 | `strictKnownMarketplaces` | Restrict plugins to known marketplaces |
 
 ## Further reading
