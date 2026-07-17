@@ -1159,27 +1159,32 @@ ghe-dpages evacuate pages-server-UUID
 
 ### ghe-remove-node
 
-This utility removes a node from a cluster. If you're replacing a node, after you've set up a replacement node, you can use this command to take the old node offline. For more information, see [AUTOTITLE](/admin/monitoring-and-managing-your-instance/configuring-clustering/replacing-a-cluster-node).
+This utility removes a node from a cluster{% ifversion ghes > 3.17 %} or an additional node from a high availability (HA) configuration{% endif %}. For a planned replacement of a functional cluster node, set up the replacement node before using this command to remove the old node. For more information, see [AUTOTITLE](/admin/monitoring-and-managing-your-instance/configuring-clustering/replacing-a-cluster-node#replacing-a-functional-node).{% ifversion ghes > 3.17 %} For the required HA checks and verification steps, see [Removing an additional node](/admin/monitoring-and-managing-your-instance/additional-nodes/configuring-additional-nodes#removing-an-additional-node).{% endif %}
 
-You must run this command from the primary MySQL node in your cluster, which is typically the node designated as `mysql-master` in your cluster configuration file (`cluster.conf`). You can use this command to remove any node, with the exception of the `mysql-master` or `redis-master` node. For more information, see [AUTOTITLE](/admin/monitoring-and-managing-your-instance/configuring-clustering/initializing-the-cluster#about-the-cluster-configuration-file).
+Before using this command for a planned removal, install the latest patch release for your feature release on every node. Every node must run the same exact release. Wait for any upgrade or configuration run to finish before starting removal. For emergency replacement of an unavailable cluster node, see [AUTOTITLE](/admin/monitoring-and-managing-your-instance/configuring-clustering/replacing-a-cluster-node#replacing-a-node-in-an-emergency).
+
+You must run this command from the primary MySQL node, which is typically the node designated as `mysql-master` in the cluster configuration file (`cluster.conf`).{% ifversion ghes > 3.17 %} In an HA configuration, run the command from the HA primary.{% endif %} You cannot remove the `mysql-master` or `redis-master` node. For more information, see [AUTOTITLE](/admin/monitoring-and-managing-your-instance/configuring-clustering/initializing-the-cluster#about-the-cluster-configuration-file).
 
 ```shell
 ghe-remove-node HOSTNAME
 ```
 
 The command does the following things:
-* Evacuates data from any data services running on the node, so that the remaining nodes in your cluster contain copies of the data
-* Marks the node as offline in your configuration, applies this change to the rest of the nodes in the cluster, and stops traffic being routed to the node
+
+* Evacuates data from any data services running on the node, so that the remaining nodes contain copies of the data
+* Drains workloads from the node
+* Removes the node from the configuration.{% ifversion ghes > 3.17 %} If another non-primary node remains, the command runs `ghe-config-apply` and stops routing traffic to the removed node. If no non-primary node remains, the command removes cluster metadata and converts the primary to a standalone instance without running `ghe-config-apply`.{% else %} The command runs `ghe-config-apply` and stops routing traffic to the removed node.{% endif %}
 
 You can run the command with the following flags.
 
 Flag | Description
 ---- | ----------
-`-ne/--no-evacuate` | Skips evacuation of data services (warning: may result in data loss).
+`-ne/--no-evacuate` | Marks the node offline in the configuration instead of removing it, and skips evacuation of data services (warning: may result in data loss).
 `-v/--verbose` | Prints additional information to the console.
 
 > [!NOTE]
-> * This command can only be used to remove a node from a cluster configuration. It cannot be used to remove a node from a high availability configuration.
+> {% ifversion ghes > 3.17 %}* In an HA configuration, you can use this command to remove an additional node. You cannot use it to remove the HA primary or a replica.{% endif %}
+> * The target node must report `ready` in `nomad node status` to complete removal. The `--no-evacuate` flag does not remove an offline node from the configuration.
 > * This command does not support parallel execution. To remove multiple nodes, you must wait until this command has finished before running it for another node.
 
 ### ghe-spokesctl
