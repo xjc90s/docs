@@ -213,7 +213,7 @@ If you install multiple plugins it's possible that some custom agents, skills, M
 
 * **MCP servers** use last-wins precedence.
 
-  If you install a plugin that defines an MCP server with the same server name as an MCP server you have already installed, the plugin's definition takes precedence. You can use the `--additional-mcp-config` command-line option to override an MCP server configuration with the same name, installed using a plugin.
+  If you install a plugin that defines an MCP server with the same server name as an MCP server you have already installed, the plugin's definition takes precedence. You can use the `--additional-mcp-config` command-line option to override an MCP server configuration with the same name, installed using a plugin. If two or more plugins declare an MCP server with the same name, the CLI uses the version from the plugin that loaded last and shows a warning naming every prior plugin that defined it.
 
 * **Built-in tools and agents** are always present and cannot be overridden by user-defined components.
 

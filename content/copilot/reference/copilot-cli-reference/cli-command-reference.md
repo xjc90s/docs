@@ -26,6 +26,7 @@ docsTeamMetrics:
 | `copilot login` [OPTION] | Authenticate with {% data variables.product.prodname_copilot_short %} via the OAuth device flow. See [`copilot login` options](#copilot-login-options). |
 | `copilot mcp`          | Manage MCP server configurations from the command line. |
 | `copilot plugin`       | Manage plugins and plugin marketplaces.            |
+| `copilot plugins list` | Non-interactively inspect every plugin, MCP server, skill, instruction source, and language server discovered for the current working directory—the same resources the in-CLI plugins dashboard shows. See [Using `copilot plugins list`](#using-copilot-plugins-list). |
 | `copilot skill`        | Manage agent skills from the command line (list, add, and remove skills). See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/add-skills). |
 | `copilot update`       | Download and install the latest version.           |
 | `copilot version`      | Display version information and check for updates. |
@@ -87,6 +88,30 @@ Fish:
 copilot completion fish > ~/.config/fish/completions/copilot.fish
 ```
 
+### Using `copilot plugins list`
+
+Run `copilot plugins list` to inspect every plugin, MCP server, skill, instruction source, and language server discovered for the current working directory. Output is grouped by kind, then by configuration scope (user, repository, organization, plugin-contributed, built-in, or unknown).
+
+```bash
+# List everything for the current workspace
+copilot plugins list
+
+# Only MCP servers and skills
+copilot plugins list --kind mcp --kind skill
+
+# Only user-scoped resources, as JSON
+copilot plugins list --scope user --json
+```
+
+| Option                | Description                                                                       |
+|-----------------------|------------------------------------------------------------------------------------|
+| `--kind KINDS`      | Filter by kind. Repeatable or comma-separated: `mcp`, `skill`, `instruction`, `plugin`, `lsp`. |
+| `--scope SCOPES`    | Filter by configuration scope. Repeatable or comma-separated.                         |
+| `--json`              | Emit machine-readable JSON instead of grouped text.                                   |
+| `--config-dir=DIRECTORY` | Path to the configuration directory. This option is deprecated. Use `COPILOT_HOME` instead. | <!-- markdownlint-disable-line GHD046 -->
+
+Custom agents and session-scoped hooks aren't covered by `copilot plugins list`; both require a live session.
+
 ## Global shortcuts in the interactive interface
 
 | Shortcut                            | Purpose                               |
@@ -95,7 +120,7 @@ copilot completion fish > ~/.config/fish/completions/copilot.fish
 | `# NUMBER`                          | Include a {% data variables.product.github %} issue or pull request in the context. |
 | `! COMMAND`                                         | Execute a command in your local shell, bypassing {% data variables.product.prodname_copilot_short %}. Enter `!` alone on an empty prompt to enter shell mode for running multiple shell commands in sequence. Press <kbd>Esc</kbd> or <kbd>Ctrl</kbd>+<kbd>C</kbd> on an empty prompt to exit shell mode. |
 | `?`                                 | Open quick help (on an empty prompt). |
-| <kbd>Esc</kbd>                      | Cancel the current operation.         |
+| <kbd>Esc</kbd>                      | Cancel the current operation. Press twice to interrupt the running turn, or to stop background agents when the main agent is idle. |
 | <kbd>Ctrl</kbd>+<kbd>C</kbd>        | Cancel operation / clear input. Press twice to exit. |
 | <kbd>Ctrl</kbd>+<kbd>D</kbd>        | Shutdown.                             |
 | <kbd>Ctrl</kbd>+<kbd>G</kbd>        | Edit the prompt in an external editor (`$EDITOR`). |
@@ -163,6 +188,7 @@ When diff mode is open (entered via `/diff`):
 | <kbd>Ctrl</kbd>+<kbd>D</kbd> | Scroll down half a page. |
 | `Click` | Select the clicked diff line (requires mouse support). |
 | Mouse scroll | Scroll up or down. |
+| <kbd>Alt</kbd>/<kbd>Option</kbd>+scroll | Scroll one line at a time for fine-grained control. |
 | `c` | Add or edit a comment on the selected line. |
 | `s` | Show comments summary (when comments exist). |
 | `b` | Toggle between unstaged changes and branch diff. |
@@ -204,7 +230,7 @@ These are the slash commands you can use from within an interactive CLI session.
 | `/ask QUESTION`                                     | Ask a quick side question without adding to the conversation history. {% data reusables.copilot.experimental %} |
 | `/allow-all [on\|off\|show]`, `/yolo [on\|off\|show]` | Enable all permissions (tools, paths, and URLs). |
 | `/changelog [summarize] [VERSION\|last N\|since VERSION]`, `/release-notes [summarize] [VERSION\|last N\|since VERSION]` | Display the CLI changelog. Optionally specify a version, a count of recent releases, or a starting version. Add the keyword `summarize` for an AI-generated summary. |
-| `/chronicle <standup\|tips\|improve\|reindex>`      | Session history tools and insights. See [AUTOTITLE](/copilot/concepts/agents/copilot-cli/chronicle). |
+| `/chronicle <standup\|tips\|improve\|reindex\|skills create\|skills review\|skills status>` | Session history tools and insights. The `skills` subcommands draft, review, and track the status of repository skill proposals generated from observed usage. See [AUTOTITLE](/copilot/concepts/agents/copilot-cli/chronicle). |
 | `/clear [PROMPT]`, `/new [PROMPT]`, `/reset [PROMPT]` | Start a new conversation. |
 | `/clikit [COMPONENT]`                               | Preview CLI business components (for example, quota info). |
 | `/compact [FOCUS-INSTRUCTIONS]`                     | Summarize the conversation history to reduce context window usage. Optionally provide focus instructions to steer the summary—for example, `/compact focus on the auth module`. See [AUTOTITLE](/copilot/concepts/agents/copilot-cli/context-management#compaction). |
@@ -226,16 +252,19 @@ These are the slash commands you can use from within an interactive CLI session.
 | `/init`                 | Initialize {% data variables.product.prodname_copilot_short %} custom instructions and agentic features for this repository. See [Project initialization for {% data variables.product.prodname_copilot_short %}](#project-initialization-for-copilot). |
 | `/instructions`                                     | View and toggle custom instruction files. |
 | `/keep-alive [on\|off\|busy\|DURATION]`, `/caffeinate [on\|off\|busy\|DURATION]` | Prevent the machine from going to sleep: while a CLI session is active, while the agent is busy, or for a defined length of time. Accepts durations like `30`, `30m`, `2h`, `1d` (bare numbers default to minutes). |
+| `/limits`                                           | Open the interactive response limits dialog. |
+| `/limits set max-ai-credits VALUE`                  | Set a soft maximum for AI Credits allowed per response. Response limits are soft limits that reset for each user message. See [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/set-session-limit). |
+| `/limits unset [max-ai-credits\|all]`               | Remove a specific response limit, or all response limits. |
 | `/list-dirs`                                        | Display all of the directories for which file access has been allowed. |
 | `/login`                                            | Log in to {% data variables.product.prodname_copilot_short %}. |
 | `/logout`                                           | Log out of {% data variables.product.prodname_copilot_short %}. |
-| `/lsp [show\|test\|reload\|help] [SERVER-NAME]`     | Manage the language server configuration. |
-| `/mcp [show\|add\|edit\|delete\|disable\|enable\|auth\|reload\|search] [SERVER-NAME]` | Manage the MCP server configuration. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers#managing-mcp-servers). |
+| `/lsp [show\|test\|reload\|logs\|help] [SERVER-NAME]` | Manage the language server configuration. The `logs` subcommand opens the live LSP services log panel. |
+| `/mcp [list\|show\|add\|edit\|delete\|disable\|enable\|auth\|reload\|search] [SERVER-NAME]` | Manage the MCP server configuration. `list` (alias `ls`) lists attached MCP servers and their live status, and is read-only, so it can run while the agent is busy processing a turn; all other subcommands are blocked until the turn finishes. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/add-mcp-servers#managing-mcp-servers). |
 | `/model`, `/models [MODEL]`                         | Select the AI model you want to use, or choose **Auto**. See [AUTOTITLE](/copilot/concepts/models/auto-model-selection). |
 | `/permissions [show\|reset]`                        | View or clear in-memory tool and path approvals for the current session. |
 | `/plan [PROMPT]`                                    | Create an implementation plan before coding. |
-| `/plugin [marketplace\|install\|uninstall\|update\|list] [ARGS...]` | Manage plugins and plugin marketplaces. See [AUTOTITLE](/copilot/concepts/agents/about-plugins). |
-| `/pr [view\|create\|fix\|auto]`                     | Manage pull requests for the current branch. See [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/manage-pull-requests). |
+| `/plugin [marketplace\|install\|uninstall\|update\|list] [ARGS...]` | Manage plugins and plugin marketplaces. `list` (alias `ls`, including bare `/plugin`) is read-only and can run while the agent is busy processing a turn; all other subcommands are blocked until the turn finishes. See [AUTOTITLE](/copilot/concepts/agents/about-plugins). |
+| `/pr [view\|create\|fix\|auto\|automerge]`          | Manage pull requests for the current branch. `auto` drives the pull request to green and stops; `automerge` (alias: `agentmerge`) drives the pull request to green and merges it. See [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/manage-pull-requests). |
 | `/remote [on\|off]`                                 | Show the remote control status (if no argument provided), enable remote steering (`on`), or end the remote connection (`off`). See [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/steer-remotely). |
 | `/rename [NAME]`                                    | Rename the current session (auto-generates a name if omitted; alias for `/session rename`). |
 | `/research TOPIC`                                   | Run a deep research investigation using {% data variables.product.github %} search and web sources. See [AUTOTITLE](/copilot/concepts/agents/copilot-cli/research). |
@@ -249,7 +278,7 @@ These are the slash commands you can use from within an interactive CLI session.
 | `/security-review [PROMPT]`                         | Run a focused security review of active local code changes and return prioritized vulnerability findings with remediation suggestions. This command is not a full repository security audit. |
 | `/session [info\|checkpoints [n]\|files\|plan\|rename [NAME]\|cleanup\|prune\|delete [ID]\|delete-all]`, `/sessions [info\|checkpoints [n]\|files\|plan\|rename [NAME]\|cleanup\|prune\|delete [ID]\|delete-all]`  | Show session information and manage sessions. The `info` subcommand shows session details including the session link (when available). Subcommands: `info`, `checkpoints`, `files`, `plan`, `rename`, `cleanup`, `prune`, `delete`, `delete-all`. |
 | `/settings [show KEY\|KEY\|KEY VALUE]`,<br>`/config [show KEY\|KEY\|KEY VALUE]` | Open the settings editor, open it focused on a specific setting (`KEY`), set a setting inline (`KEY VALUE`), or display a setting's current value (`show KEY`). See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/change-settings). |
-| `/share [file\|html\|gist] [session\|research] [PATH]`, `/export [file\|html\|gist] [session\|research] [PATH]` | Share the session to a Markdown file, interactive HTML file, or {% data variables.product.github %} gist. |
+| `/share [link\|off\|file\|html\|gist\|research] [...]`, `/export [...]` | Share the current session. With no subcommand, generates a shareable {% data variables.product.github %} link when you're logged in and synced (falls back to Markdown file export otherwise). `off` stops sharing. `link` is an explicit alias for the default link flow; `link off` stops link sharing. `file [session\|research] [PATH]` exports to a Markdown file. `html [session\|research] [PATH]` exports to an HTML file. `gist [session\|research]` creates a {% data variables.product.github %} gist. `research [PATH]` exports the research report. |
 | `/skills [list\|info\|add\|remove\|reload] [ARGS...]`   | Manage skills for enhanced capabilities. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/add-skills). |
 | `/statusline`, `/footer`                            | Configure which items appear in the status line. |
 | `/subagents`, `/agents`                             | Configure default and per-agent subagent models. See [AUTOTITLE](/copilot/reference/copilot-cli-reference/cli-config-dir-reference#configuration-file-settings). |
@@ -263,7 +292,7 @@ These are the slash commands you can use from within an interactive CLI session.
 | `/user [show\|list\|switch]`                        | Manage the current {% data variables.product.github %} user. |
 | `/version`                                          | Display version information and check for updates. |
 | `/fork [NAME]`, `/branch [NAME]`                    | Fork the current session into a new session, optionally with a name. {% data reusables.copilot.experimental %} |
-| `/worktree [branch]`, `/move [branch]`              | Create a new Git worktree and switch to it, moving any uncommitted changes along. If you omit the branch name, a name is auto-generated from the conversation. Requires a Git repository. {% data reusables.copilot.experimental %} |
+| `/worktree [branch\|task]`, `/move [branch\|task]`  | Create a new Git worktree and switch to it, moving any uncommitted changes along. Pass a branch name, a task description (multiline supported, used as the opening prompt in the new worktree), or omit the argument to auto-generate a branch name from the conversation. Requires a Git repository. {% data reusables.copilot.experimental %} |
 
 For a complete list of available slash commands enter `/help` in the CLI's interactive interface.
 
@@ -299,7 +328,6 @@ For a complete list of available slash commands enter `/help` in the CLI's inter
 | `--disable-builtin-mcps`           | Disable all built-in MCP servers (currently: `github-mcp-server`). |
 | `--disable-mcp-server=SERVER-NAME` | Disable a specific MCP server (can be used multiple times). |
 | `--disallow-temp-dir`              | Prevent automatic access to the system temporary directory. |
-| `--dynamic-retrieval=CATEGORY=on\|off` | Enable or disable embeddings-based dynamic retrieval per category and persist the choice. Supported category: `skills`. Repeatable—for example, `--dynamic-retrieval skills=off`. |
 | `--effort=LEVEL`, `--reasoning-effort=LEVEL` | Set the reasoning effort level (`low`, `medium`, `high`, `xhigh`, `max`). `max` is the highest-depth tier for Anthropic models. |
 | `--enable-all-github-mcp-tools`    | Enable all {% data variables.product.github %} MCP server tools, instead of the default CLI subset. Overrides the `--add-github-mcp-toolset` and `--add-github-mcp-tool` options. |
 | `--enable-memory`                  | Enable memory in prompt mode (disabled by default). |
@@ -311,6 +339,7 @@ For a complete list of available slash commands enter `/help` in the CLI's inter
 | `-i PROMPT`, `--interactive=PROMPT`  | Start an interactive session and automatically execute this prompt. |
 | `--log-dir=DIRECTORY`              | Set the log file directory (default: `~/.copilot/logs/`). |
 | `--log-level=LEVEL`                | Set the log level (choices: `none`, `error`, `warning`, `info`, `debug`, `all`, `default`). |
+| `--max-ai-credits=CREDITS`         | Set a soft maximum for AI Credits allowed for each response. The limit resets per user message and can be adjusted mid-session with `/limits`. See [AUTOTITLE](/copilot/how-tos/copilot-cli/use-copilot-cli/set-session-limit). |
 | `--max-autopilot-continues=COUNT`  | Maximum number of continuation messages in autopilot mode (default: unlimited). See [AUTOTITLE](/copilot/concepts/agents/copilot-cli/autopilot). |
 | `--mode=MODE`                      | Set the initial agent mode (choices: `interactive`, `plan`, `autopilot`). Cannot be combined with `--autopilot` or `--plan`. |
 | `--model=MODEL`                    | Set the AI model you want to use. Pass `auto` as the value to let {% data variables.product.prodname_copilot_short %} pick the best available model automatically. See [AUTOTITLE](/copilot/concepts/models/auto-model-selection). |
@@ -326,7 +355,7 @@ For a complete list of available slash commands enter `/help` in the CLI's inter
 | `--no-remote`                      | Disable remote access for this session. |
 | `--no-remote-export`               | Disable exporting your session to {% data variables.product.prodname_dotcom_the_website %} and {% data variables.product.prodname_mobile %} (also disables remote control). |
 | `--output-format=FORMAT`           | FORMAT can be `text` (default) or `json` (outputs JSONL: one JSON object per line). |
-| `-p PROMPT`, `--prompt=PROMPT`     | Execute a prompt programmatically (exits after completion). See [AUTOTITLE](/copilot/how-tos/copilot-cli/automate-copilot-cli/run-cli-programmatically). |
+| `-p PROMPT`, `--prompt=PROMPT`     | Execute a prompt programmatically (exits after completion). The exit summary includes a `copilot --resume=SESSION-ID` hint for continuing the session. See [AUTOTITLE](/copilot/how-tos/copilot-cli/automate-copilot-cli/run-cli-programmatically). |
 | `--plan`                           | Start in plan mode. Shorthand for `--mode plan`. Cannot be combined with `--mode` or `--autopilot`. |
 | `--plain-diff`                     | Disable rich diff rendering (syntax highlighting via the diff tool specified by your Git config). |
 | `--plugin-dir=DIRECTORY`           | Load a plugin from a local directory (can be used multiple times). |
@@ -469,8 +498,7 @@ copilot --allow-tool='MyMCP'
 | `COPILOT_MODEL` | Set the AI model. |
 | `COPILOT_PROMPT_FRAME` | Set to `1` to enable the decorative UI frame around the input prompt, or `0` to disable it. Overrides the `PROMPT_FRAME` experimental feature flag for the current session. |
 | `COPILOT_SKILLS_DIRS` | Comma-separated list of additional directories for skills. |
-| `COPILOT_SUBAGENT_MAX_CONCURRENT` | Maximum concurrent subagents across the entire session tree. Default varies by plan (see [Subagent limits](#subagent-limits)). Range: `1`–`256`. |
-| `COPILOT_SUBAGENT_MAX_DEPTH` | Maximum subagent nesting depth. Default: `6`. Range: `1`–`256`. |
+| `COPILOT_STRIP_REASONING_ON_RESUME` | Set to `0` or `false` to keep BYOK reasoning tokens across a session resume instead of stripping them. Defaults to stripping them. |
 | `GH_HOST` | {% data variables.product.github %} hostname for both {% data variables.product.prodname_cli %} and {% data variables.copilot.copilot_cli_short %} (default: `github.com`). Set to your {% data variables.product.prodname_ghe_cloud %} with data residency hostname. Override with `COPILOT_GH_HOST` for {% data variables.copilot.copilot_cli_short %} only. |
 | `GH_TOKEN` | Authentication token. Takes precedence over `GITHUB_TOKEN`. |
 | `GITHUB_COPILOT_PROMPT_MODE_EXTENSIONS` | Set to `true` to load project extensions and allow extension management tools in prompt mode (`-p`). Disabled by default to prevent running repository-controlled extension code without interactive trust. |
@@ -508,6 +536,10 @@ The CLI looks for the `copilot-instructions.md` file on startup, and if it's mis
 If you don't want to create this file, you can permanently hide this startup message for the current repository by using the `/init suppress` slash command.
 
 For more information, see [AUTOTITLE](/copilot/how-tos/copilot-on-github/customize-copilot/add-custom-instructions/add-repository-instructions).
+
+### Custom instructions imports
+
+Instruction files support `@path` imports. Prefix a line with `@` followed by a path to inline the contents of another file. Paths can be relative to the instruction file's directory or absolute. Imports are resolved recursively, up to a depth limit, with cycle and size guards. This is supported in `AGENTS.md`, `CLAUDE.md`, and `.github/copilot-instructions.md`.
 
 ## Hooks reference
 
@@ -745,6 +777,14 @@ pwsh -NoProfile -Command "`$json = Get-Content '.vscode/mcp.json' -Raw | Convert
 
 On Windows, replace `pwsh` with `powershell` if you are using Windows PowerShell instead of PowerShell Core.
 
+### Stdio server output
+
+The MCP stdio transport reserves stdout exclusively for newline-delimited JSON-RPC frames. The CLI automatically filters out any non-JSON lines—plain-text logs, exception stack traces, or whitespace-only lines—before passing output to the protocol parser.
+
+Write all diagnostic output to **stderr**, not stdout. A server that writes logs or error messages to stdout can trigger a parse-error feedback loop that stalls the initialization handshake; the filter prevents this by silently dropping non-JSON frames.
+
+Lines longer than 1 MB bypass the structural check and are forwarded as-is, to avoid splitting or dropping oversized but valid protocol frames (for example, a large `tools/list` response).
+
 ## Skills reference
 
 Skills are Markdown files that extend what the CLI can do. Each skill lives in its own directory containing a `SKILL.md` file. When invoked (via `/SKILL-NAME` or automatically by the agent), the skill's content is injected into the conversation.
@@ -778,6 +818,8 @@ Skills are loaded from these locations in priority order (first found wins for d
 | (org/enterprise) | Remote | Skills hosted by your organization or enterprise, projected via the AHP relay. Content is fetched on demand when the skill is invoked. |
 
 Remote skills are projected alongside local skills and follow the same name-based priority when a local skill has the same name.
+
+When two plugins provide skills with the same name, both coexist using plugin-qualified invocation names such as `/my-plugin/search` and `/other-plugin/search`. The bare name routes to the higher-priority plugin. This applies to skills only; commands keep the standard tier-based deduplication, where the higher-priority source wins.
 
 ### Commands (alternative skill format)
 
@@ -876,11 +918,12 @@ write_agent(agent_id="explore-auth", message="Focus on token refresh flow and re
 
 The CLI enforces depth and concurrency limits to prevent runaway agent spawning.
 
-| Limit | Default | Environment variable |
-|-------|---------|---------------------|
-| Max depth | `6` | `COPILOT_SUBAGENT_MAX_DEPTH` |
+| Limit | Default | Max |
+|-------|---------|-----|
+| Max depth | `6` | `256` |
+| Max concurrent | plan-based | `32` |
 
-**Depth** counts how many agents are nested within one another. When the depth limit is reached, the innermost agent cannot spawn further subagents. **Concurrency** counts how many subagents are running simultaneously across the entire session tree. When the limit is reached, new subagent requests are rejected until an active agent completes. Values are clamped between `1` and `256`.
+**Depth** counts how many agents are nested within one another. When the depth limit is reached, the innermost agent cannot spawn further subagents. **Concurrency** counts how many subagents are running simultaneously across the entire session tree. When the limit is reached, new subagent requests are rejected until an active agent completes.
 
 The default concurrency limit depends on your {% data variables.product.prodname_copilot_short %} plan:
 
@@ -893,7 +936,18 @@ The default concurrency limit depends on your {% data variables.product.prodname
 | Enterprise | `32` |
 | Usage-based billing | `32` |
 
-Override the concurrency limit by setting the `COPILOT_SUBAGENT_MAX_CONCURRENT` environment variable before starting the CLI.
+Usage-based billing users can override these limits with the `subagents.maxConcurrency` and `subagents.maxDepth` settings:
+
+```json
+{
+    "subagents": {
+        "maxConcurrency": 16,
+        "maxDepth": 10
+    }
+}
+```
+
+Values outside the valid range are clamped: `maxConcurrency` is capped at `32`, and `maxDepth` is capped at `256`. These settings are ignored for plans that don't use usage-based billing. See [Configuration file settings](/copilot/reference/copilot-cli-reference/cli-config-dir-reference#configuration-file-settings).
 
 ## Sidekick agents
 
@@ -908,6 +962,8 @@ description: Gathers relevant context when the working directory changes
 sidekick:
     triggers:
         - session.context_changed
+        - event: user.message
+          limit: 1
     behavior: persistent
     maxSendsPerTurn: 2
 ---
@@ -918,16 +974,23 @@ Summarize recent changes and any relevant project structure.
 
 ### Sidekick triggers
 
+Each entry in `triggers` is either a bare event-name string, which fires an unlimited number of times, or an object with `event` and an optional `limit`.
+
 | Event | Description |
 |-------|-------------|
 | `user.message` | Fires on every user message. |
 | `session.context_changed` | Fires when the working directory, repository, or branch changes (for example, after `cd` or switching Git branches). |
 
+| Trigger field | Type | Default | Description |
+|----------------|------|---------|-------------|
+| `event` | `string` | Required | Session event type that launches this agent. |
+| `limit` | `number` | Unlimited | Maximum number of times this trigger may fire per session. Must be a positive integer when set. |
+
 ### Sidekick configuration fields
 
 | Field | Type | Default | Description |
 |-------|------|---------|-------------|
-| `triggers` | `string[]` | Required | Session event types that launch this agent. At least one trigger is required. |
+| `triggers` | `string[]` or object[] | Required | Session event types that launch this agent. At least one trigger is required. |
 | `behavior` | `string` | `"restart"` | `"restart"`: cancel any prior run and start fresh on each trigger. `"persistent"`: keep the same long-lived run alive and deliver new messages into the existing loop instead of relaunching. |
 | `maxSendsPerTurn` | `number` | `1` | Maximum inbox sends allowed per trigger. In `"persistent"` mode, each delivered user message resets this budget. |
 

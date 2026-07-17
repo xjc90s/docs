@@ -440,7 +440,7 @@ These settings apply across all your sessions and repositories. You can use the 
 | `beepOnSchedule` | `boolean` | `true` | Play an audible beep when a scheduled `/every` or `/after` run finishes. |
 | `builtInAgents.rubberDuck` | `boolean` | `true` | Enable the rubber-duck subagent that provides adversarial feedback on agent plans. |
 | `builtInAgents.rubberDuckAutoInvoke` | `boolean` | `false` | Include proactive prompting for automatic rubber-duck invocation. Set to `true` to opt into additional rubber-duck nudges during agent turns. |
-| `colorMode` | `"default"` \| `"github"` \| `"dim"` \| `"high-contrast"` \| `"colorblind"` | `"github"` | Color palette mode. Managed by the `/settings` and `/theme` slash commands. |
+| `colorMode` | `"default"` \| `"github"` \| `"dim"` \| `"high-contrast"` \| `"colorblind"` | `"github"` | Deprecated alias for `theme`. Prefer `theme`. | <!-- markdownlint-disable-line GHD046 -->
 | `compactPaste` | `boolean` | `true` | Collapse large pastes (more than 10 lines) into compact tokens. |
 | `companyAnnouncements` | `string[]` | `[]` | Custom messages shown randomly on startup. One message is randomly selected each time the CLI starts. Useful for team announcements or reminders. |
 | `continueOnAutoMode` | `boolean` | `false` | Automatically switch to auto mode when rate-limited. When `true`, eligible rate limit errors trigger an automatic switch to auto mode and retry. Does not apply to global rate limits or BYOK providers. |
@@ -450,7 +450,7 @@ These settings apply across all your sessions and repositories. You can use the 
 | `disableAllHooks` | `boolean` | `false` | Disable all hooks (both repository-level and user-level). |
 | `disabledMcpServers` | `string[]` | `[]` | MCP server names to disable. Listed servers are configured but not started. |
 | `disabledSkills` | `string[]` | `[]` | Skill names to disable. Listed skills are discovered but not loaded. |
-| `dynamicRetrieval` | `{ skills?: boolean }` | unset | Per-category control of embeddings-based dynamic instruction retrieval. Set `skills` to `false` to disable retrieval for skills. Can also be set with `--dynamic-retrieval` (for example, `--dynamic-retrieval skills=off`); using the flag persists the preference to this file. |
+| `dynamicRetrieval` | `{ skills?: boolean }` | unset | Per-category control of embeddings-based dynamic instruction retrieval. Set `skills` to `false` to disable retrieval for skills. |
 | `effortLevel` | `string` | `"medium"` | Reasoning effort level for extended thinking: `"low"`, `"medium"`, `"high"`, or `"xhigh"`. Higher levels use more compute. |
 | `enabledMcpServers` | `string[]` | `[]` | Enable built-in MCP servers that are disabled by default (for example, `"computer-use"`). |
 | `enabledPlugins` | `Record<string, boolean>` | `{}` | Declarative plugin auto-install. Keys are plugin specs; values are `true` (enabled) or `false` (disabled). |
@@ -479,16 +479,19 @@ These settings apply across all your sessions and repositories. You can use the 
 | `showTipsOnStartup` | `boolean` | `true` | Show a random command tip when the CLI starts. |
 | `skillDirectories` | `string[]` | `[]` | Additional directories to search for custom skill definitions (in addition to `~/.copilot/skills/`). |
 | `statusLine` | `object` | — | Custom status line display. `type`: must be `"command"`. `command`: path to an executable script that receives session JSON on stdin and prints status content to stdout. `padding`: optional number of left-padding spaces. |
+| `stayInAutopilot` | `boolean` | `false` | Stay in autopilot mode after an autopilot task completes, instead of reverting to interactive mode. |
 | `storeTokenPlaintext` | `boolean` | `false` | Allow authentication tokens to be stored in plain text in `config.json` when no system keychain is available. |
 | `stream` | `boolean` | `true` | Enable streaming responses. |
 | `streamerMode` | `boolean` | `false` | Hide preview model names and quota details. Useful when demonstrating {% data variables.copilot.copilot_cli_short %} or screen sharing. |
 | `subagents.agents` | `object` | `{}` | Per-agent model configuration, keyed by agent name. Each value is an object with optional `model` (string), `effortLevel` (string), and `contextTier` (`"default"`, `"long_context"`, or `"inherit"`) fields. Set any field to `"inherit"` to use the parent session's value at dispatch time. Use the `/subagents` slash command to configure these settings interactively. |
 | `subagents.disabledSubagents` | `string[]` | `[]` | Agent names to prevent from being dispatched. Only the `rubber-duck` agent cannot be disabled via this setting. All other built-in agents—including `explore`, `task`, `code-review`, `general-purpose`, `research`, and `security-review`—can be disabled. |
+| `subagents.maxConcurrency` | `number` | plan-based | Maximum concurrent subagents for this session. Only honored for usage-based billing users; ignored for all other plans. Capped at `32`. See [AUTOTITLE](/copilot/reference/copilot-cli-reference/cli-command-reference#subagent-limits). |
+| `subagents.maxDepth` | `number` | `6` | Maximum subagent nesting depth. Only honored for usage-based billing users; ignored for all other plans. Capped at `256`. See [AUTOTITLE](/copilot/reference/copilot-cli-reference/cli-command-reference#subagent-limits). |
 | `tabs.enabled` | `boolean` | `true` | Show the home tab bar. Set to `false` to hide it entirely. |
 | `tabs.hide` | `string[]` | `[]` | Tab identifiers to hide. Accepted values: `"copilot"`, `"agents"`, `"issues"`, `"pull-requests"`, `"gists"` (matched case-insensitively). |
 | `tabs.sort` | `string[]` | `[]` | Order in which tabs are displayed. Tabs not listed keep their default relative order after the listed ones. Unknown identifiers are ignored. |
 | `terminalProgress` | `boolean` | `true` | Emit OSC 9;4 terminal progress indicators while the agent is working. Supported terminals include Windows Terminal, iTerm2, Ghostty, and ConEmu. |
-| `theme` | `"auto"` \| `"dark"` \| `"light"` | `"auto"` | Terminal color theme. `"auto"` detects the terminal background and chooses accordingly. |
+| `theme` | `"default"` \| `"github"` \| `"dim"` \| `"high-contrast"` \| `"colorblind"` | `"github"` | Color palette for terminal output. Managed by the `/settings` and `/theme` slash commands. `colorMode` is a deprecated alias for this setting. | <!-- markdownlint-disable-line GHD046 -->
 | `toolSearch` | `boolean` | model- and feature-dependent | Controls tool search (deferred tool loading). Set `toolSearch: false` to opt out of tool search. |
 | `updateTerminalTitle` | `boolean` | `true` | Show the current intent in the terminal tab or window title. |
 
@@ -510,6 +513,34 @@ Only the keys listed in the following table are supported at the repository leve
 | `hooks` | `object` | Concatenated—repository hooks run after user hooks | Hook definitions scoped to this repository. See [AUTOTITLE](/copilot/how-tos/copilot-cli/customize-copilot/use-hooks). |
 | `mergeStrategy` | `"rebase"` \| `"merge"` | Repository takes precedence | Conflict resolution strategy for `/pr fix conflicts`. |
 
+A plugin enabled only through a repository's `enabledPlugins` is scoped to that repository: it auto-installs and activates in the declaring repository, but stays disabled globally, so it never activates in unrelated projects. Leaving the repository, or the repository disabling the plugin, tears down its MCP server and deactivates its agents and skills for the session.
+
+### Repository-level models allowlist (`.github/allowed_models.txt`)
+
+Restrict which built-in models a repository can use with a plain-text allowlist at `.github/allowed_models.txt`, resolved from the current working directory's repository root (or the working directory itself outside a repository).
+
+Each line is a glob pattern matched against model IDs, or a `fallback:` directive naming the model to use when the configured or requested model isn't allowed:
+
+```text
+# .github/allowed_models.txt
+fallback: gpt-5.2
+gpt-5.2
+gpt-5.4
+claude-sonnet-*
+```
+
+| Rule | Description |
+|------|-------------|
+| `*` | Allow all models (default when no file is present). |
+| `MODEL-ID` | Allow an exact model ID. |
+| `GLOB-PATTERN` | Allow model IDs matching the glob (for example, `claude-sonnet-*`). |
+| `fallback: MODEL-ID` | Required exactly once. The model {% data variables.product.prodname_copilot_short %} uses when the active model isn't allowed. |
+| `#` | Comment line. |
+
+Negated patterns (`!pattern`) aren't supported, the fallback model must be an exact ID (not a glob), and the fallback model must itself match one of the configured globs. {% data variables.copilot.copilot_cli_short %} re-evaluates the policy on `/cd` and rejects an invalid file with an error before running.
+
+The allowlist governs only {% data variables.product.prodname_copilot_short %}'s built-in models. It cannot filter out custom models added using the bring your own API keys (BYOK) method. BYOK models remain listed and selectable regardless of the patterns you configure, and the `fallback:` directive never applies to them. For more information, see [AUTOTITLE](/copilot/how-tos/administer-copilot/manage-for-enterprise/enable-custom-models) and [AUTOTITLE](/copilot/how-tos/administer-copilot/manage-for-organization/enable-custom-models).
+
 ### Local settings (`.github/copilot/settings.local.json`)
 
 Create `.github/copilot/settings.local.json` in the repository for personal overrides that should not be committed. Add this file to `.gitignore`.
@@ -519,6 +550,8 @@ The local configuration file uses the same schema as the repository configuratio
 ## MDM managed settings
 
 IT administrators can push baseline policy using Mobile Device Management (MDM) managed settings instead of requiring per-user configuration. These settings apply device-level defaults for supported keys and load before user settings.
+
+{% data variables.copilot.copilot_cli_short %} also loads server-managed settings at startup, in addition to MDM. Device-managed (MDM) and server-managed settings are resolved **per key**: MDM's value wins for any key it sets, and the server's value fills in keys MDM leaves unset. This lets an organization set some policy via MDM (for example, `permissions`) while still receiving other managed defaults (for example, `model`) from the server.
 
 ### MDM managed settings sources
 
