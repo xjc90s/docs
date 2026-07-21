@@ -23,7 +23,7 @@ If the repository you are committing to has compulsory commit signoffs enabled, 
 You can add a co-author on any commits you collaborate on. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors).
 
 {% ifversion fpt or ghec %}
-You can also create a commit on behalf of an organization. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-on-behalf-of-an-organization).{% endif %}
+You can also create a commit on behalf of an organization. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors#creating-a-commit-on-behalf-of-an-organization).{% endif %}
 
 Rebasing allows you to change a series of commits and can modify the order of the commits in your timeline. For more information, see [AUTOTITLE](/get-started/using-git/about-git-rebase).
 

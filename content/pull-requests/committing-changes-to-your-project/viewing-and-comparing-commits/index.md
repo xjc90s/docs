@@ -10,7 +10,6 @@ versions:
   ghec: '*'
 children:
   - /comparing-commits
-  - /differences-between-commit-views
 shortTitle: View & compare commits
 ---
 

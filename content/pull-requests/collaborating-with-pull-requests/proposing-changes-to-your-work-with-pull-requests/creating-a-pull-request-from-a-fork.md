@@ -17,6 +17,8 @@ category:
 ---
 If your pull request compares your topic branch with a branch in the upstream repository as the base branch, then your topic branch is also called the "compare branch" of the pull request.
 
+Before you can create a pull request from a fork, you need to fork the upstream repository and push your changes to a branch in your fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
+
 For example:
 * Your topic branch (also known as “feature branch”) is the branch where you’re making your changes in your forked repository (e.g. `my-topic-branch`).
 * The base branch is the branch in the upstream (central) repository that you want to merge your changes into (e.g. `main`).

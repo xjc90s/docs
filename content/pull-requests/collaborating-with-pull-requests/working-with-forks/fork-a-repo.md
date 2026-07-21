@@ -8,7 +8,7 @@ redirect_from:
   - /github/getting-started-with-github/fork-a-repo
   - /github/getting-started-with-github/quickstart/fork-a-repo
   - /get-started/quickstart/fork-a-repo
-intro: A fork is a new repository that shares code and visibility settings with the original upstream repository.
+intro: Create a fork of a repository so you can make changes without affecting the upstream repository.
 permissions: '{% data reusables.enterprise-accounts.emu-permission-fork %}'
 versions:
   fpt: '*'
@@ -19,25 +19,7 @@ category:
 ---
 ## About forks
 
-{% data reusables.repositories.fork-definition-long %} For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks).
-
-### Propose changes to someone else's project
-
-For example, you can use forks to propose changes related to fixing a bug. Rather than logging an issue for a bug you have found, you can:
-
-* Fork the repository.
-* Make the fix.
-* Submit a pull request to the project owner.
-
-### Use someone else's project as a starting point for your own idea.
-
-Open source software is based on the idea that by sharing code, we can make better, more reliable software. For more information, see the [About the Open Source Initiative](https://opensource.org/about) on the Open Source Initiative.
-
-For more information about applying open source principles to your organization's development work on {% data variables.product.prodname_dotcom %}, see {% data variables.product.prodname_dotcom %}'s white paper [An introduction to innersource](https://resources.github.com/whitepapers/introduction-to-innersource/).
-
-When creating your public repository from a fork of someone's project, make sure to include a license file that determines how you want your project to be shared with others. For more information, see [Choose an open source license](https://choosealicense.com/) at choosealicense.com.
-
-{% data reusables.open-source.open-source-guide-repositories %} {% data reusables.open-source.open-source-learning %}
+Forking a repository lets you propose changes to a project without affecting the upstream repository. For more information about what forks are and when to use them, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
 
 ## Prerequisites
 
@@ -202,7 +184,7 @@ gh repo fork REPOSITORY --remote-name "main-remote-repo"
 You can make any changes to a fork, including:
 
 * **Creating branches:** [_Branches_](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) allow you to build new features or test out ideas without putting your main project at risk.
-* **Opening pull requests:** If you want to contribute back to the upstream repository, you can send a request to the original author to pull your fork into their repository by submitting a [pull request](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests).
+* **Opening pull requests:** If you want to contribute back to the upstream repository, you can send a request to the original author to pull your fork into their repository by submitting a pull request. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 ## Find another repository to fork
 

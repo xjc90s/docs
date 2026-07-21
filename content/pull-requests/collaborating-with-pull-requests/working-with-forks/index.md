@@ -16,6 +16,5 @@ children:
   - /configuring-a-remote-repository-for-a-fork
   - /syncing-a-fork
   - /allowing-changes-to-a-pull-request-branch-created-from-a-fork
-  - /what-happens-to-forks-when-a-repository-is-deleted-or-changes-visibility
   - /detaching-a-fork
 ---

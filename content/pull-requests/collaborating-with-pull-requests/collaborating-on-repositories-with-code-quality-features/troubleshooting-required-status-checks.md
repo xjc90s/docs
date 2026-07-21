@@ -14,6 +14,8 @@ shortTitle: Required status checks
 category:
   - Merge and close pull requests
 ---
+For an overview of how status checks work, including the difference between checks and commit statuses, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks).
+
 If you have a check and a status with the same name, and you select that name as a required status check, both the check and the status are required. For more information, see [AUTOTITLE](/rest/checks).
 
 > [!NOTE]
