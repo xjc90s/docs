@@ -19,26 +19,26 @@ category:
 ---
 To compare different versions of your repository, append `/compare` to your repository's path.
 
-We'll demonstrate the power of Compare by looking at the compare page for [a fork of the Linguist repo](https://github.com/octocat/linguist), which is at [https://github.com/octocat/linguist/compare/master...octocat:master](https://github.com/octocat/linguist/compare/master...octocat:master).
+The following example uses the compare page for [a fork of the Linguist repository](https://github.com/octocat/linguist), which is at [https://github.com/octocat/linguist/compare/master...octocat:master](https://github.com/octocat/linguist/compare/master...octocat:master).
 
-Every repository's Compare view contains two drop down menus: `base` and `compare`.
+Every repository's Compare view contains two dropdown menus: `base` and `compare`.
 
-`base` should be considered the starting point of your comparison, and `compare` is the endpoint. During a comparison, you can always change your `base` and `compare` points by clicking on **Edit**.
+`base` is the starting point of your comparison, and `compare` is the endpoint. During a comparison, you can change your `base` and `compare` points by clicking **Edit**.
 
 ## Comparing branches
 
 The most common use of Compare is to compare branches, such as when you're starting a new pull request. You'll always be taken to the branch comparison view when starting [a new pull request](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
-To compare branches, you can select a branch name from the `compare` drop down menu at the top of the page.
+To compare branches, select a branch name from the `compare` dropdown menu at the top of the page.
 
 Here's an example of a [comparison between two branches](https://github.com/octocat/linguist/compare/master...octocat:an-example-comparison-for-docs).
 
 ## Comparing tags
 
-Comparing release tags will show you changes to your repository since the last release.
+Comparing release tags shows changes to your repository since the last release.
 For more information, see [AUTOTITLE](/repositories/releasing-projects-on-github/comparing-releases).
 
-To compare tags, you can select a tag name from the `compare` drop-down menu at the top of the page.
+To compare tags, select a tag name from the `compare` dropdown menu at the top of the page.
 
 Here's an example of a [comparison between two tags](https://github.com/octocat/linguist/compare/v2.2.0...octocat:v2.3.3).
 
@@ -57,11 +57,11 @@ To learn more about other comparison options, see [AUTOTITLE](/pull-requests/col
 
 ## Comparing across forks
 
-You can compare your base repository and any forked repository. This is the view that's presented when a user performs a Pull Request to a project.
+You can compare your base repository and any forked repository. This view appears when a user opens a pull request to a project.
 
-To compare branches on different repositories, preface the branch names with user names. For example, by specifying `octocat:main` for `base` and `octo-org:main` for `compare`, you can compare the `main` branch of the repositories respectively owned by `octocat` and `octo-org`.
+To compare branches on different repositories, preface the branch names with user names. For example, specify `octocat:main` for `base` and `octo-org:main` for `compare` to compare the `main` branches of repositories owned by `octocat` and `octo-org`.
 
-You can also preface the branch name with a user name and a repository name. For example, specifying `octocat:awesome-app:main` would use the `main` branch in the `octocat/awesome-app` repository. This can be useful in large organizations, where you might have an upstream repository and a fork both owned by the organization. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
+You can also preface the branch name with a user name and a repository name. For example, specifying `octocat:awesome-app:main` uses the `main` branch in the `octocat/awesome-app` repository. This can be useful in large organizations, where an upstream repository and a fork might both be owned by the organization. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
 
 Here's an example of a [comparison between two repositories](https://github.com/github-linguist/linguist/compare/master...octocat:master).
 
@@ -76,24 +76,18 @@ You can compare a single commit in Git to the commit's predecessors using two ty
 
 ## Differences between commit views
 
-You might observe differences in commit history depending on the chosen viewing method. On {% data variables.product.github %}, you can see the commit history of a repository by:
+You might observe differences in commit history depending on the chosen viewing method. On {% data variables.product.github %}, you can see the commit history of a repository in these places:
 
-* Navigating to [the commits page](https://github.com/rust-lang/rust/commits/main) of a repository by clicking the clock icon with the number of commits at the top of the main repository view.
-* Navigating to [the commit history for a specific file](https://github.com/rust-lang/rust/commits/main/README.md) by clicking on a file, then clicking **History**, to get.
+* The repository's [commits page](https://github.com/rust-lang/rust/commits/main), which you can open by clicking the clock icon with the number of commits at the top of the main repository view.
+* The [commit history for a specific file](https://github.com/rust-lang/rust/commits/main/README.md), which you can open by clicking a file and then clicking **History**.
 
 These two commit views may show _different_ information at times. The history for a single file may omit commits found on the repository's commit history.
 
-Git has several different ways of showing the history of a repository. When Git shows the history of a single file, it simplifies history by omitting
-commits that did not change the file. Instead of looking at every commit to
-decide whether it touched the file, Git will omit a whole branch if that branch,
-when merged, did not impact the final contents of the file. Any commits on the
-branch that touched the file will not be shown.
+Git has several ways to show the history of a repository. When Git shows the history of a single file, it simplifies history by omitting commits that did not change the file. Instead of looking at every commit to decide whether it touched the file, Git will omit a whole branch if that branch, when merged, did not impact the final contents of the file. Any commits on that branch that touched the file will not be shown.
 
 For a file's commit history, {% data variables.product.github %} explicitly follows this simple strategy. It makes the history simpler by removing commits that didn't contribute to the final result. For example, if a side branch made a change and then reverted it, that commit would not show up in the branch history. This makes reviewing branches more efficient, since you only see the commits that affect the file.
 
-This truncated view might not always contain the information you're
-after. If you want to see the entire history, {% data variables.product.github %} provides a view with more
-information on a repository's commits page.
+This truncated view might not always contain the information you need. To see the entire history, use the repository's commits page on {% data variables.product.github %}.
 
 For more information on how Git considers commit history, see [the "History Simplification"](https://git-scm.com/docs/git-log#_history_simplification) section of the `git log` help article.
 

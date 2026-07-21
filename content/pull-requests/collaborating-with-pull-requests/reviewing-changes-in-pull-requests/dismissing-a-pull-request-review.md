@@ -15,7 +15,7 @@ category:
   - Review pull requests
 ---
 {% data reusables.pull_requests.dismiss_review %}
-This changes the status of the review to a review comment. When you dismiss a review, you must add a comment explaining why you dismissed it. Your comment will be added to the pull request conversation.
+Dismissing a review changes the status of the review to a review comment. When you dismiss a review, you must add a comment explaining why you dismissed it. Your comment will be added to the pull request conversation.
 
 {% data reusables.search.requested_reviews_search %}
 
@@ -25,7 +25,7 @@ This changes the status of the review to a review comment. When you dismiss a re
 
    ![Screenshot of the merge box for a pull request. The chevron icon to see the reviews is outlined in dark orange.](/assets/images/help/pull_requests/merge_box/pull-request-open-menu.png)
 
-1. Next. to the review you'd like to dismiss, select the {% octicon "kebab-horizontal" aria-label="Show options" %} dropdown menu, then click **Dismiss review**.
+1. Next to the review you'd like to dismiss, select the {% octicon "kebab-horizontal" aria-label="Show options" %} dropdown menu, then click **Dismiss review**.
 
    ![Screenshot of the merge box of a pull request. The Show options menu (kebab icon), is expanded, and the "Dismiss review" option is outlined in orange.](/assets/images/help/pull_requests/merge_box/pull-request-dismiss-review.png)
 

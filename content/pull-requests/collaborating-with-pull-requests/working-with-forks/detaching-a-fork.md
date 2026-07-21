@@ -12,7 +12,7 @@ category:
 
 ## Converting a fork into a standalone repository
 
-To turn your fork into a standalone repository, you can leave the fork network ensuring the new repository will no longer automatically sync with changes from the original repository. This is useful when you want to take the work you are doing in a different direction or maintain distinct versions.
+To turn your fork into a standalone repository, you can leave the fork network. The new repository will no longer automatically sync with changes from the original repository. This is useful when you want to take your work in a different direction or maintain distinct versions.
 
 > [!WARNING]
 > * The new repository will not retain any of its issues, pull requests, wikis, stars, watchers, comments, child forks, or other metadata that may currently be associated with your current fork.
@@ -40,11 +40,11 @@ You can only detach forks with the leave network option when:
 1. To verify that you're detaching the correct repository, in the text box, type the name of the fork.
 1. Click **Leave fork network**.
 
-While the fork is being detached, some operations will be briefly unavailable until the fork has been transitioned to a standalone repository.
+While the fork is being detached, some operations will be briefly unavailable. They will become available again after the fork becomes a standalone repository.
 
 ## Manually leaving the fork network
 
-To turn your fork into a standalone repository, you can clone the fork, use the clone to create a new repository, and then delete the fork removing the connection to the original network.
+To turn your fork into a standalone repository, you can clone the fork and use the clone to create a new repository. Then, delete the fork to remove the connection to the original network.
 
 {% data reusables.command_line.open_the_multi_os_terminal %}
 1. Create a bare clone of the fork.
@@ -65,7 +65,7 @@ To turn your fork into a standalone repository, you can clone the fork, use the 
    git --git-dir FORK.git push --mirror https://{% data variables.product.product_url %}/EXAMPLE-USER/FORK.git
    ```
 
-1. Remove temporary local clone you created earlier.
+1. Remove the temporary local clone you created earlier.
 
    ```shell
    rm -rf FORK.git

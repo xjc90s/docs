@@ -40,7 +40,7 @@ To update the remote fork from its parent, use the `gh repo sync -b BRANCH-NAME`
 gh repo sync owner/cli-fork -b BRANCH-NAME
 ```
 
-If the changes from the upstream repository cause conflict then the {% data variables.product.prodname_cli %} can't sync. You can set the `--force` flag to overwrite the destination branch.
+If the changes from the upstream repository cause conflicts, the {% data variables.product.prodname_cli %} can't sync. To overwrite the destination branch, use the `--force` flag.
 
 ## Syncing a fork branch from the command line
 
@@ -60,14 +60,14 @@ Before you can sync your fork with an upstream repository, you must configure a 
    >  * [new branch]      main     -> upstream/main
    ```
 
-1. Check out your fork's local default branch - in this case, we use `main`.
+1. Check out your fork's local default branch. In this example, we use `main`.
 
    ```shell
    $ git checkout main
    > Switched to branch 'main'
    ```
 
-1. Merge the changes from the upstream default branch - in this case, `upstream/main` - into your local default branch. This brings your fork's default branch into sync with the upstream repository, without losing your local changes.
+1. Merge the changes from the upstream default branch into your local default branch. In this example, the upstream default branch is `upstream/main`. This syncs your fork's default branch with the upstream repository without losing your local changes.
 
    ```shell
    $ git merge upstream/main

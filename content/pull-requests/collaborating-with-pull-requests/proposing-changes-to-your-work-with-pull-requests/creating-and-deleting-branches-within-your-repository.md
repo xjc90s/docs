@@ -17,7 +17,7 @@ category:
 
 ## Creating a branch
 
-You can create a branch in different ways on {% data variables.product.github %}.
+You can create branches in several ways on {% data variables.product.github %}.
 
 > [!NOTE]
 > You can only create a branch in a repository to which you have push access.
@@ -42,14 +42,14 @@ You can create a branch in different ways on {% data variables.product.github %}
 
    ![Screenshot of the file tree view for a repository. A dropdown menu for branches is outlined in dark orange.](/assets/images/help/branches/file-tree-view-branch-dropdown.png)
 
-1. Optionally, if you want to create the new branch from a branch other than the default branch of the repository, click another branch, then select the branch dropdown menu again.
+1. Optionally, to create the new branch from a branch other than the default branch of the repository, click another branch. Then, select the branch dropdown menu again.
 1. In the "Find or create a branch..." text field, type a unique name for your new branch, then click **Create branch**.
 
    ![Screenshot of the branch selector dropdown menu. "Create branch: new-branch" is highlighted with an orange outline.](/assets/images/help/branches/create-branch-text.png)
 
 ### Creating a branch for an issue
 
-You can create a branch to work on an issue directly from the issue page and get started right away. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/creating-a-branch-for-an-issue).
+You can create a branch to work on an issue directly from the issue page. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/creating-a-branch-for-an-issue).
 
 ## Deleting a branch
 
@@ -65,7 +65,7 @@ If the branch you want to delete is associated with an open pull request, you mu
 1. Next to the branch that you want to delete, click {% octicon "trash" aria-label="The trash icon" %} .
 
    ![Screenshot of a branch in the branch list. A trash icon is highlighted with an orange outline.](/assets/images/help/branches/branches-delete.png)
-1. If the branch is associated with at least one open pull request, deleting the branch will close the pull requests. Read the warning, then click **Delete**.
+1. If the branch is associated with at least one open pull request, deleting the branch closes the pull requests. Read the warning, then click **Delete**.
 
 {% data reusables.pull_requests.retargeted-on-branch-deletion %}
 For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#working-with-branches).

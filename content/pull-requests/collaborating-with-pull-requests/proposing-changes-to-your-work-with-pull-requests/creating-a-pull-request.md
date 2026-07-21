@@ -14,9 +14,9 @@ category:
   - Create pull requests
 ---
 
-If you want to create a new branch for your pull request and do not have write permissions to the repository, you can fork the repository first. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) and [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
+If you want to create a new branch for your pull request but don't have write permissions to the repository, you can fork the repository first. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) and [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
 
-You can specify which branch you'd like to merge your changes into when you create your pull request. Pull requests can only be opened between two branches that are different.
+When you create your pull request, you can specify which branch you want to merge your changes into. Pull requests can only be opened between two different branches.
 
 {% data reusables.pull_requests.perms-to-open-pull-request %}
 
@@ -26,15 +26,15 @@ You can specify which branch you'd like to merge your changes into when you crea
 
 By default, pull requests are based on the parent repository's default branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#about-the-default-branch).
 
-If the default parent repository isn't correct, you can change both the parent repository and the branch with the drop-down lists. You can also swap your head and base branches with the drop-down lists to establish diffs between reference points. References here must be branch names in your GitHub repository.
+If the default parent repository isn't correct, you can change both the parent repository and the branch with the dropdown lists. You can also swap your head and base branches with the dropdown lists to compare reference points. The references must be branch names in your GitHub repository.
 
 ![Screenshot of a pull request. The dropdown to edit the compare branch is expanded.](/assets/images/help/pull_requests/pull-request-review-edit-branch.png)
 
-When thinking about branches, remember that the _base branch_ is **where** changes should be applied, the _head branch_ contains **what** you would like to be applied.
+When thinking about branches, remember that the _base branch_ is **where** changes should be applied. The _head branch_ contains **what** you would like to be applied.
 
-When you change the base repository, you also change notifications for the pull request. Everyone that can push to the base repository will receive an email notification and see the new pull request in their dashboard the next time they sign in.
+When you change the base repository, you also change notifications for the pull request. Everyone who can push to the base repository receives an email notification and sees the new pull request in their dashboard the next time they sign in.
 
-When you change any of the information in the branch range, the Commit and Files changed preview areas will update to show your new range.
+When you change any information in the branch range, the Commit and Files changed preview areas update to show your new range.
 
 > [!TIP]
 > * Using the compare view, you can set up comparisons across any timeframe. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
@@ -50,7 +50,7 @@ When you change any of the information in the branch range, the Commit and Files
    ![Screenshot of the branch dropdown menu on the main page of a repository.](/assets/images/help/pull_requests/branch-dropdown.png)
 
 {% data reusables.repositories.new-pull-request %}
-1. Use the _base_ branch dropdown menu to select the branch you'd like to merge your changes into, then use the _compare_ branch drop-down menu to choose the topic branch you made your changes in.
+1. Use the _base_ branch dropdown menu to select the branch where you want to merge your changes. Then, use the _compare_ branch dropdown menu to choose the topic branch where you made your changes.
 {% data reusables.repositories.pr-title-description %}
 {% data reusables.repositories.create-pull-request %}
 
@@ -94,7 +94,7 @@ To mark a pull request as a draft, use the `--draft` flag.
 gh pr create --draft
 ```
 
-To add a labels or milestones to the new pull request, use the `--label` and `--milestone` flags.
+To add labels or milestones to the new pull request, use the `--label` and `--milestone` flags.
 
 ```shell
 gh pr create --label "bug,help wanted" --milestone octocat-milestone
@@ -122,7 +122,7 @@ gh pr create --web
 
 {% desktop %}
 
-1. Click **Preview Pull Request**. {% data variables.product.prodname_desktop %} will open a preview dialog showing the diff of the changes between your current branch and the base branch.
+1. Click **Preview Pull Request**. {% data variables.product.prodname_desktop %} opens a preview dialog that shows the diff of the changes between your current branch and the base branch.
 
    {% mac %}
 
@@ -142,11 +142,11 @@ gh pr create --web
 
    ![Screenshot of the "Open a Pull Request" dialog window. A button with a dropdown icon, labeled "base: development", is outlined in orange.](/assets/images/help/desktop/base-branch-selection.png)
 
-   {% data variables.product.prodname_desktop %} will advise you whether the current branch can be automatically merged into the base branch.
+   {% data variables.product.prodname_desktop %} tells you whether the current branch can be automatically merged into the base branch.
 
    ![Screenshot of the "Open a Pull Request" dialog window. A status label stating "Can't automatically merge" is highlighted with an orange outline.](/assets/images/help/desktop/preview-dialog-merge-status.png)
 
-1. Click **Create Pull Request**. {% data variables.product.prodname_desktop %} will open your default browser to take you to {% data variables.product.prodname_dotcom %}.
+1. Click **Create Pull Request**. {% data variables.product.prodname_desktop %} opens your default browser and takes you to {% data variables.product.prodname_dotcom %}.
 {% data reusables.repositories.pr-title-description %}
 {% data reusables.repositories.create-pull-request %}
 
@@ -156,9 +156,9 @@ gh pr create --web
 
 {% codespaces %}
 
-1. Once you've committed changes to your local copy of the repository, click the **Create Pull Request** icon.
+1. After you commit changes to your local copy of the repository, click the **Create Pull Request** icon.
 ![Screenshot of the top of the "Source Control" side bar. The pull request icon is highlighted with a dark orange outline.](/assets/images/help/codespaces/codespaces-commit-pr-button.png)
-1. Check that the local branch and repository you're merging from, and the remote branch and repository you're merging into, are correct. Then give the pull request a title and a description.
+1. Check that the local branch and repository you're merging from, and the remote branch and repository you're merging into, are correct. Then, give the pull request a title and a description.
 ![Screenshot of the "{% data variables.product.prodname_dotcom %} Pull Request" side bar with a form for creating a pull request, including "Title" and "Description" fields.](/assets/images/help/codespaces/codespaces-commit-pr.png)
 1. Click **Create**.
 
@@ -170,7 +170,7 @@ For more information on creating pull requests in {% data variables.product.prod
 
 ## Making changes to files in your pull request
 
-After you have opened your pull request, you can continue making changes to the files by adding new commits to your head branch.
+After you open your pull request, you can continue changing files by adding new commits to your head branch.
 
 {% webui %}
 
@@ -183,7 +183,7 @@ You can also make changes to files on the {% data variables.product.github %} we
 1. Above the file you want to change, click {% octicon "kebab-horizontal" aria-label="Show options" %}.
    ![Screenshot of the options above a file on the "File changed" tab. The "Show options" button is highlighted with an orange rectangle.](/assets/images/help/pull_requests/menu-on-pull-request-file.png)
 1. In the menu, click **Edit file**.
-1. Make your changes in the editor and when committing your change, choose to commit directly back to your head branch.
+1. Make your changes in the editor. When you commit your change, choose to commit directly back to your head branch.
 
 {% endwebui %}
 

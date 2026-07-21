@@ -19,16 +19,16 @@ category:
 ---
 ## About pull request comments
 
-You can comment on a pull request's **Conversation** tab to leave general comments, questions, or props. You can also suggest changes that the author of the pull request can apply directly from your comment.
+You can comment on a pull request's **Conversation** tab to leave general comments, questions, or praise. You can also suggest changes that the pull request author can apply directly from your comment.
 
-You can also comment on specific files or sections of a file in a pull request's **Files changed** tab in the form of individual line or file comments, or as part of a pull request review. Adding line or file comments is a great way to discuss questions about implementation or provide feedback to the author. For more information about pull request reviews, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews).
+You can also comment on specific files or sections of a file in a pull request's **Files changed** tab as individual line or file comments, or as part of a pull request review. Adding line or file comments is a great way to discuss questions about implementation or give feedback to the author. For more information about pull request reviews, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews).
 
 For more information on adding line or file comments to a pull request review, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request).
 
 > [!NOTE]
 > If you reply to a pull request via email, your comment will be added on the **Conversation** tab and will not be part of a pull request review.
 
-To reply to an existing line or file comment, you'll need to navigate to the comment on either the **Conversation** tab or **Files changed** tab and add an additional comment below it.
+To reply to an existing line or file comment, navigate to the comment on either the **Conversation** tab or **Files changed** tab. Then, add another comment below it.
 
 > [!TIP]
 > * Pull request comments support the same [formatting](/get-started/writing-on-github) as regular comments on {% data variables.product.github %}, such as @mentions, emoji, and references.
@@ -37,7 +37,7 @@ To reply to an existing line or file comment, you'll need to navigate to the com
 ## Adding comments to a pull request
 
 {% data reusables.repositories.sidebar-pr %}
-1. In the list of pull requests, click the pull request where you'd like to leave line comments.
+1. In the list of pull requests, click the pull request where you want to leave line comments.
 {% data reusables.repositories.changed-files %}
 {% data reusables.repositories.start-line-comment %}
 {% data reusables.repositories.multiple-lines-comment %}
@@ -50,9 +50,9 @@ To reply to an existing line or file comment, you'll need to navigate to the com
 
    * If you want to add **multiple comments**, click **Start a review**, then continue adding comments.
 
-     When you have finished, click **Finish your review** at the top right of the page, leave a summary of your review, and click **Submit review**.
+     When you're finished, click **Finish your review** at the top right of the page, leave a summary of your review, and click **Submit review**.
 
-Anyone watching the pull request or repository will receive a notification of your comments. Batching your comments avoids multiple notifications being sent. {% ifversion copilot %}If you are commenting on a pull request created by {% data variables.product.prodname_copilot_short %}, batching your comments prevents {% data variables.product.prodname_copilot_short %} from starting to work on individual comments before you have completed your review. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/start-copilot-sessions).{% endif %}
+Anyone watching the pull request or repository will receive a notification of your comments. Batching your comments avoids sending multiple notifications. {% ifversion copilot %}If you are commenting on a pull request created by {% data variables.product.prodname_copilot_short %}, batching your comments prevents {% data variables.product.prodname_copilot_short %} from starting to work on individual comments before you have completed your review. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/start-copilot-sessions).{% endif %}
 
 ### Resolving conversations
 
@@ -60,15 +60,15 @@ You can resolve a conversation in a pull request if you opened the pull request 
 
 To indicate that a conversation on the **Files changed** tab is complete, click **Resolve conversation**.
 
-The entire conversation will be collapsed and marked as resolved, making it easier to find conversations that still need to be addressed.
+The entire conversation will collapse and be marked as resolved. This makes it easier to find conversations that still need to be addressed.
 
 If the suggestion in a comment is out of your pull request's scope, you can open a new issue that tracks the feedback and links back to the original comment. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-comment).
 
 #### Discovering and navigating conversations
 
-You can discover and navigate to all the conversations in your pull request using the **Conversations** menu that's shown at the top of the **Files Changed** tab.
+You can discover and navigate to all the conversations in your pull request with the **Conversations** menu at the top of the **Files changed** tab.
 
-From this view, you can see which conversations are unresolved, resolved, and outdated. This makes it easy to discover and resolve conversations.
+In this view, you can see which conversations are unresolved, resolved, and outdated. This makes it easy to discover and resolve conversations.
 
 ![Screenshot of the "Conversations" menu on the "Files Changed" tab of a pull request.](/assets/images/help/pull_requests/conversations-menu.png)
 

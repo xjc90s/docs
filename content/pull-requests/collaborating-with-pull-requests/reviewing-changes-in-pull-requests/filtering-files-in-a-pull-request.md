@@ -15,7 +15,7 @@ shortTitle: Filter files
 category:
   - Review pull requests
 ---
-You can filter files in a pull request by file extension type, such as `.html` or `.js`, lack of an extension, code ownership, or dotfiles. You can also use the file tree to filter by file path, navigate between files, or see a high level view of the changed files.
+You can filter files in a pull request by file extension type, such as `.html` or `.js`, lack of an extension, code ownership, or dotfiles. You can also use the file tree to filter by file path, navigate between files, or see a high-level view of the changed files.
 
 ## Using the file filter dropdown
 
@@ -25,7 +25,7 @@ You can filter files in a pull request by file extension type, such as `.html` o
 {% data reusables.repositories.sidebar-pr %}
 1. In the list of pull requests, click the pull request you'd like to filter.
 {% data reusables.repositories.changed-files %}
-1. Use the File filter dropdown menu, and select, deselect, or click the desired filters.
+1. Use the **File filter** dropdown menu, then select, deselect, or click the filters you want.
 
    ![Screenshot of the view options for a pull request. The file filter option is outlined in dark orange.](/assets/images/help/pull_requests/file-filter-option.png)
 
@@ -39,13 +39,13 @@ You can filter files in a pull request by file extension type, such as `.html` o
 1. In the list of pull requests, click the pull request you'd like to filter.
 {% data reusables.repositories.changed-files %}
 
-1. Click on a file in the file tree to view the corresponding file diff. If the file tree is hidden, click {% octicon "sidebar-collapse" aria-label="The sidebar collapse icon" %} to display the file tree.
+1. If the file tree is hidden, click {% octicon "sidebar-collapse" aria-label="The sidebar collapse icon" %} to display it. Then, click a file in the file tree to view the corresponding file diff.
 
    > [!NOTE]
    > The file tree will not display if your screen width is too narrow or if the pull request only includes one file.
 
    ![Screenshot of the "Files changed" tab of a pull request. In the left sidebar, the file tree is outlined in dark orange.](/assets/images/help/repository/file-tree.png)
-1. To filter by file path, enter part or all of the file path in the **Filter changed files** search box. Alternatively, use the file filter dropdown. For more information, see [Using the file filter dropdown](#using-the-file-filter-dropdown).
+1. To filter by file path, enter part or all of the file path in the **Filter changed files** search box. Alternatively, use the **File filter** dropdown menu. For more information, see [Using the file filter dropdown](#using-the-file-filter-dropdown).
 
 ## Further reading
 

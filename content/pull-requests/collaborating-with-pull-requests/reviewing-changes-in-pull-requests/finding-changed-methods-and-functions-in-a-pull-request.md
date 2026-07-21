@@ -14,9 +14,9 @@ shortTitle: Methods & functions
 category:
   - Review pull requests
 ---
-Anyone with read access to a repository can see a summary list of the functions and methods changes in certain files of a pull request.
+Anyone with read access to a repository can see a summary list of the function and method changes in certain files of a pull request.
 
-The summary list of methods and functions is created from these supported file types:
+The summary list of methods and functions is created from the following supported file types:
 * Go
 * JavaScript (includes TypeScript, Flow, and other types of JavaScript)
 * PHP
@@ -35,7 +35,7 @@ The summary list of methods and functions is created from these supported file t
    > [!NOTE]
    > If you don't see the functions or methods you expected, confirm that your code compiles and doesn't contain errors. Only functions and methods changed in this pull request and found in _.go_, _.js_, _.ts_, _.py_, _.php_, and _.rb_ files appear in the drop-down menu.
 
-1. You'll be redirected to the first line of the function or method you selected.
+1. You'll go to the first line of the function or method you selected.
 
 ## Further reading
 

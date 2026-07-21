@@ -16,11 +16,11 @@ category:
 ---
 {% data reusables.search.requested_reviews_search %}
 
-When you view a full review, you'll see the same version of the pull request as the reviewer did at the time of the review.
+When you view a full review, you see the same version of the pull request as the reviewer did at the time of the review.
 
 {% data reusables.repositories.sidebar-pr %}
 {% data reusables.repositories.choose-pr-review %}
-1. On the "Conversation" tab, scroll to the review you'd like to see, then click **View changes**.
+1. On the "Conversation" tab, scroll to the review you want to see, then click **View changes**.
 
    ![Screenshot of a review. The "View changes" link is outlined in dark orange.](/assets/images/help/pull_requests/view-full-review-view-changes.png)
 

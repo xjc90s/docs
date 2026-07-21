@@ -25,11 +25,11 @@ You can attribute a commit to more than one author by adding one or more `Co-aut
 
 ### Required co-author information
 
-Before you can add a co-author to a commit, you must know the appropriate email to use for each co-author. For the co-author's commit to count as a contribution, you must use the email associated with their account on {% data variables.location.product_location %}.
+Before you add a co-author to a commit, you must know the right email address to use for each co-author. For the co-author's commit to count as a contribution, use the email address associated with their account on {% data variables.location.product_location %}.
 
 {% ifversion fpt or ghec %}
 
-If a person chooses to keep their email address private, you should use their {% data variables.product.github %}-provided `no-reply` email to protect their privacy. Otherwise, the co-author's email will be available to the public in the commit message. If you want to keep your email private, you can choose to use a {% data variables.product.github %}-provided `no-reply` email for Git operations and ask other co-authors to list your `no-reply` email in commit trailers.
+If a person chooses to keep their email address private, you should use their {% data variables.product.github %}-provided `no-reply` email to protect their privacy. Otherwise, the co-author's email will be public in the commit message. To keep your email private, you can choose to use a {% data variables.product.github %}-provided `no-reply` email for Git operations and ask other co-authors to list your `no-reply` email in commit trailers.
 
 For more information, see [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address).
 
@@ -48,7 +48,7 @@ You can use {% data variables.product.prodname_desktop %} to create a commit wit
 
 {% data reusables.pull_requests.collect-co-author-commit-git-config-info %}
 
-1. Type your commit message and a short, meaningful description of your changes. After your commit description, instead of a closing quotation, add an empty line.
+1. Type your commit message and a short, meaningful description of your changes. After your commit description, add an empty line instead of a closing quotation mark.
 
    ```shell
    $ git commit -m "Refactor usability tests.
@@ -70,11 +70,11 @@ You can use {% data variables.product.prodname_desktop %} to create a commit wit
    > Co-authored-by: ANOTHER-NAME <ANOTHER-NAME@EXAMPLE.COM>"
    ```
 
-The new commit and message will appear on {% data variables.location.product_location %} the next time you push. For more information, see [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
+The new commit and message will appear on {% data variables.location.product_location %} after you push. For more information, see [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
 
 ### Creating co-authored commits on {% data variables.product.github %}
 
-After you've made changes in a file using the web editor on {% data variables.product.github %}, you can create a co-authored commit by adding a `Co-authored-by:` trailer to the commit's message.
+After you make changes in a file using the web editor on {% data variables.product.github %}, you can create a co-authored commit by adding a `Co-authored-by:` trailer to the commit's message.
 
 {% data reusables.pull_requests.collect-co-author-commit-git-config-info %}
 1. Click **Commit changes...**
@@ -127,7 +127,7 @@ The new commit, message, and badge will appear on {% data variables.product.prod
 
 ### Creating commits with an `on-behalf-of` badge on {% data variables.product.github %}
 
-After you've made changes in a file using the web editor on {% data variables.product.github %}, you can create a commit on behalf of your organization by adding an `on-behalf-of:` trailer to the commit's message.
+After you make changes in a file using the web editor on {% data variables.product.github %}, you can create a commit on behalf of your organization by adding an `on-behalf-of:` trailer to the commit's message.
 
 1. Click **Commit changes...**
 1. In the "Commit message" field, type a short, meaningful commit message that describes the changes you made.

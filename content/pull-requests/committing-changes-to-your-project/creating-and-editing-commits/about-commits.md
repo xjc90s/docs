@@ -18,14 +18,14 @@ category:
 
 {% data reusables.commits.about-commits %}
 
-If the repository you are committing to has compulsory commit signoffs enabled, and you are committing via the web interface, you will automatically sign off on the commit as part of the commit process. For more information, see [AUTOTITLE](/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-the-commit-signoff-policy-for-your-repository).
+If the repository you are committing to requires commit signoffs, and you are committing in the web interface, you will automatically sign off on the commit. For more information, see [AUTOTITLE](/repositories/managing-your-repositorys-settings-and-features/managing-repository-settings/managing-the-commit-signoff-policy-for-your-repository).
 
 You can add a co-author on any commits you collaborate on. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors).
 
 {% ifversion fpt or ghec %}
 You can also create a commit on behalf of an organization. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors#creating-a-commit-on-behalf-of-an-organization).{% endif %}
 
-Rebasing allows you to change a series of commits and can modify the order of the commits in your timeline. For more information, see [AUTOTITLE](/get-started/using-git/about-git-rebase).
+Rebasing lets you change a series of commits and can change the order of the commits in your timeline. For more information, see [AUTOTITLE](/get-started/using-git/about-git-rebase).
 
 ## About commit branches and tag labels
 
@@ -51,7 +51,7 @@ You can use the file tree to navigate between files in a commit.
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.navigate-to-commit-page %}
 {% data reusables.repositories.navigate-to-commit %}
-1. Click on a file in the file tree to view the corresponding file diff. If the file tree is hidden, click {% octicon "sidebar-collapse" aria-label="The sidebar collapse icon" %} to display the file tree.
+1. Click a file in the file tree to view the corresponding file diff. If the file tree is hidden, click {% octicon "sidebar-collapse" aria-label="The sidebar collapse icon" %} to display the file tree.
 
    > [!NOTE]
    > The file tree will not display if your screen width is too narrow or if the commit only includes one file.

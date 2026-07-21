@@ -28,11 +28,11 @@ category:
 
 {% ifversion fpt or ghec %}
 
-If you're a member of an {% data variables.enterprise.prodname_emu_enterprise %}, there are further restrictions on the repositories you can fork. {% ifversion ghec %}{% data reusables.enterprise-accounts.emu-forks %}{% endif %} For more information, see [AUTOTITLE](/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users){% ifversion fpt %} in the {% data variables.product.prodname_ghe_cloud %} documentation.{% else %}.{% endif %}
+If you're a member of an {% data variables.enterprise.prodname_emu_enterprise %}, additional restrictions apply to the repositories you can fork. {% ifversion ghec %}{% data reusables.enterprise-accounts.emu-forks %}{% endif %} For more information, see [AUTOTITLE](/enterprise-cloud@latest/admin/identity-and-access-management/using-enterprise-managed-users-for-iam/about-enterprise-managed-users){% ifversion fpt %} in the {% data variables.product.prodname_ghe_cloud %} documentation.{% else %}.{% endif %}
 
 {% endif %}
 
-Organizations can allow or prevent the forking of any private repositories owned by the organization{% ifversion ghec or ghes %}, and enterprises can enforce policies to specify where members can create forks of private or internal repositories. Policies control the options available to the enterprise's organizations{% endif %}. For more information, see [AUTOTITLE](/organizations/managing-organization-settings/managing-the-forking-policy-for-your-organization){% ifversion fpt %}.{% else %} and [AUTOTITLE](/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-forking-private-or-internal-repositories).{% endif %}
+Organizations can allow or prevent the forking of any private repositories owned by the organization{% ifversion ghec or ghes %}. Enterprises can also enforce policies to specify where members can create forks of private or internal repositories. Policies control the options available to the enterprise's organizations{% endif %}. For more information, see [AUTOTITLE](/organizations/managing-organization-settings/managing-the-forking-policy-for-your-organization){% ifversion fpt %}.{% else %} and [AUTOTITLE](/admin/policies/enforcing-policies-for-your-enterprise/enforcing-repository-management-policies-in-your-enterprise#enforcing-a-policy-for-forking-private-or-internal-repositories).{% endif %}
 
 ## About visibility of forks
 
@@ -40,9 +40,9 @@ A fork is a new repository that shares code and visibility settings with the ups
 
 All repositories belong to a repository network. A repository network contains the upstream repository, the upstream repository's direct forks, and all forks of those forks. All forks in the repository network have the same visibility setting. For more information, see [AUTOTITLE](/repositories/viewing-activity-and-data-for-your-repository/understanding-connections-between-repositories).
 
-If you delete a repository or change the repository's visibility settings, you will affect the repository's forks. For more information, see [What happens to forks when a repository is deleted or changes visibility](#what-happens-to-forks-when-a-repository-is-deleted-or-changes-visibility).
+Deleting a repository or changing its visibility settings affects the repository's forks. For more information, see [What happens to forks when a repository is deleted or changes visibility](#what-happens-to-forks-when-a-repository-is-deleted-or-changes-visibility).
 
-If you delete a fork, any code contributions of that fork will still be accessible to the repository network.
+If you delete a fork, any code contributions from that fork remain accessible to the repository network.
 
 ## What happens to forks when a repository is deleted or changes visibility
 
@@ -54,16 +54,16 @@ When you delete a private repository, all of its private forks are also deleted.
 
 ### Deleting a public repository
 
-When you delete a public repository, the oldest, active public fork is chosen to be the new upstream repository. All other repositories are forked off of this new upstream and subsequent pull requests go to this new upstream repository.
+When you delete a public repository, the oldest active public fork is chosen to be the new upstream repository. All other repositories are forked from this new upstream, and subsequent pull requests go to this new upstream repository.
 
 ### Changing a public repository to a private repository
 
-If a public repository is made private, its public forks are split off into a new network. As with deleting a public repository, one of the existing public forks is chosen to be the new upstream repository and all other repositories are forked off of this new upstream. Subsequent pull requests go to this new upstream repository.
+If a public repository is made private, its public forks are split off into a new network. As with deleting a public repository, one of the existing public forks is chosen to be the new upstream repository. All other repositories are forked from this new upstream, and subsequent pull requests go to this new upstream repository.
 
 In other words, a public repository's forks will remain public in their own separate repository network even after the upstream repository is made private. This allows the fork owners to continue to work and collaborate without interruption. If public forks were not moved into a separate network in this way, the owners of those forks would need to get the appropriate [access permissions](/get-started/learning-about-github/access-permissions-on-github) to pull changes from and submit pull requests to the (now private) upstream repository—even though they didn't need those permissions before.
 
 > [!WARNING]
-> * Making a public repository private will permanently remove stars and watchers associated to users that will no longer have access to this repository. If you decide to make the repository public in the future, it will not be possible to restore these stars and watchers, and this will affect its repository rankings.
+> * Making a public repository private will permanently remove stars and watchers associated with users who will no longer have access to this repository. If you decide to make the repository public in the future, you cannot restore these stars and watchers, and this will affect its repository rankings.
 > * Dependency graph and {% data variables.product.prodname_dependabot_alerts %} will remain enabled with permission to perform read-only analysis on this repository. Any custom {% data variables.product.prodname_dependabot %} alert rules will be disabled unless {% data variables.product.prodname_code_security %} is enabled for this repository.
 > * {% data variables.product.prodname_code_scanning_caps %} will become unavailable unless {% data variables.product.prodname_code_security %} is enabled for this repository.
 > * Current forks will remain public and will be detached from this repository.
@@ -78,7 +78,9 @@ If a public repository is made private and then deleted, its public forks will c
 
 ### Changing a private repository to a public repository
 
-When a private repository is made public, all the commits in that repository, including any commits previously pushed to private forks of that repository, will be migrated to a new public repository network and become visible to everyone. Any previously created private forks will remain private but will become disconnected from the original repository that was made public. Each private fork will become a separate private repository and create its own independent network of repositories. Any new changes made to these networks will not be accessible from the original repository that was made public.
+When a private repository is made public, all the commits in that repository become visible to everyone. This includes any commits previously pushed to private forks of that repository.
+
+Any previously created private forks will remain private but will become disconnected from the original repository that was made public. Each private fork will become a separate private repository and create its own independent network of repositories. Any new changes made to these networks will not be accessible from the original repository that was made public.
 
 #### Deleting the public repository
 
@@ -107,6 +109,7 @@ When you fork a public repository to your personal account, you can allow reposi
 This speeds up collaboration by letting maintainers:
 * Make direct commits to your branch
 * Run tests locally before merging
+
 You cannot give push permissions to a fork owned by an organization.
 
 For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
@@ -141,7 +144,7 @@ Forks within the same organization copy the collaborators and team settings of t
 
 ### About forks within an enterprise
 
-Internal repositories only support a single level of forking, it is not possible to fork a private fork of an internal repository. This is intentional to simplify access and management for internal repositories which have enterprise-wide access. This differs from the behavior of public and private repositories, that allow nested forking.
+Internal repositories only support a single level of forking. You cannot fork a private fork of an internal repository. This is intentional to simplify access and management for internal repositories, which have enterprise-wide access. This differs from the behavior of public and private repositories, which allow nested forking.
 
 {% endif %}
 

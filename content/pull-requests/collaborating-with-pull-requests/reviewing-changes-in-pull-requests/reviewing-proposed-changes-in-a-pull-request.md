@@ -26,7 +26,7 @@ It's best to review changes in a pull request one file at a time:
 
 {% ifversion copilot %}
 
-If the pull request was raised by {% data variables.product.prodname_copilot %} then, when you submit your comments, {% data variables.product.prodname_copilot_short %} will carry out more work to respond to your comments and will push a new commit to the pull request with further changes. See [AUTOTITLE](/copilot/concepts/agents/cloud-agent/about-cloud-agent).
+If the pull request was raised by {% data variables.product.prodname_copilot %}, then {% data variables.product.prodname_copilot_short %} will respond to your comments when you submit them. {% data variables.product.prodname_copilot_short %} will push a new commit to the pull request with further changes. See [AUTOTITLE](/copilot/concepts/agents/cloud-agent/about-cloud-agent).
 
 {% endif %}
 
@@ -34,15 +34,15 @@ If the pull request was raised by {% data variables.product.prodname_copilot %} 
 
 ## Understanding the purpose of the pull request
 
-Gaining a clear understanding of the motivation behind a pull request helps inform your review, so you can keep it targeted and meaningful, and provide feedback that is aligned with the pull request author’s intent and the project's goals.
+Understanding the motivation behind a pull request helps you keep your review targeted and meaningful. It also helps you provide feedback that aligns with the pull request author’s intent and the project's goals.
 
-There are several options available to you to better understand the context and rationale for proposed changes.
+You have several options to better understand the context and rationale for proposed changes.
 
 ### Using the pull request sidebar for context
 
-In the pull request sidebar, you can find valuable context including:
+In the pull request sidebar, you can find valuable context, including:
 
-* Linked **issues** or **discussions**: Review these to understand the problems or goals that the pull request aims to address, or to gather information on, for example, any background, design decisions, or current debates.
+* Linked **issues** or **discussions**: Review these to understand the problems or goals that the pull request aims to address. You can also gather information about background, design decisions, or current debates.
 * Linked **projects** or **milestones**: Review how this pull request fits within larger projects or upcoming releases.
 
 Use this information to frame your review and check if the goals of the pull request align with the original intent.
@@ -51,7 +51,7 @@ Use this information to frame your review and check if the goals of the pull req
 
 ### Using {% data variables.copilot.copilot_chat_short %} to understand the rationale
 
-You can ask {% data variables.copilot.copilot_chat_short %} for help understanding the pull request’s intent or for clarification on any part of the change.
+You can ask {% data variables.copilot.copilot_chat_short %} for help understanding the pull request’s intent or clarifying any part of the change.
 
 1. At the top right of the pull request page, click the **{% octicon "copilot" aria-label="Copilot icon" %}** button next to the search bar.
 
@@ -64,7 +64,7 @@ You can ask {% data variables.copilot.copilot_chat_short %} for help understandi
    * `Summarize the goals of this PR based on the linked issue.`
    * `How does this PR relate to issue ISSUE-URL?`
 
-{% data variables.copilot.copilot_chat_short %} can help you clarify the bigger picture before diving into line-level review.
+{% data variables.copilot.copilot_chat_short %} can help you clarify the bigger picture before you start line-level review.
 
 {% endif %}
 
@@ -73,11 +73,11 @@ You can ask {% data variables.copilot.copilot_chat_short %} for help understandi
 {% data reusables.repositories.sidebar-pr %}
 {% data reusables.repositories.choose-pr-review %}
 {% data reusables.repositories.changed-files %}
-You can change the format of the diff view in this tab by clicking {% octicon "gear" aria-label="The Settings gear" %} and choosing the unified or split view. The choice you make will apply when you view the diff for other pull requests.
+To change the format of the diff view in this tab, click {% octicon "gear" aria-label="The Settings gear" %} and choose the unified or split view. The choice you make will apply when you view the diff for other pull requests.
 
    ![Screenshot of the "Files changed" tab for a pull request. The "Diff view" menu is outlined in dark orange.](/assets/images/help/pull_requests/diff-settings-menu.png)
 
-   You can also choose to hide whitespace differences. The choice you make only applies to this pull request and will be remembered the next time you visit this page.
+   You can also hide whitespace differences. The choice you make only applies to this pull request and will be remembered the next time you visit this page.
 1. Optionally, filter the files to show only the files you want to review or use the file tree to navigate to a specific file. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/filtering-files-in-a-pull-request).
 {%- ifversion ghec %}
 1. Optionally, if you have access to {% data variables.copilot.copilot_enterprise %}, you can ask {% data variables.product.prodname_copilot_short %} about the changes in a file in a pull request by clicking {% octicon "kebab-horizontal" aria-label="Show options" %} at the top right of the file, clicking **Ask {% data variables.product.prodname_copilot_short %} about this diff**, then typing a request such as "Explain these changes." For more information, see [AUTOTITLE](/enterprise-cloud@latest/copilot/github-copilot-chat/copilot-chat-in-github/using-github-copilot-chat-in-githubcom#asking-questions-about-a-specific-pull-request).
@@ -133,7 +133,7 @@ For more information on reviewing pull requests in {% data variables.product.pro
 
 > [!NOTE] {% data reusables.copilot.copilot-requires-subscription %}
 
-{% data variables.product.prodname_copilot %} can help you quickly understand the changes in a pull request by providing context and explanations for specific commits. If you’re unsure about the purpose of a particular change or need more details about how it fits into the broader codebase, you can ask {% data variables.product.prodname_copilot_short %} questions about individual commits.
+{% data variables.product.prodname_copilot %} can help you quickly understand changes in a pull request by providing context and explanations for specific commits. If you’re unsure about the purpose of a particular change or need more details about how it fits into the broader codebase, you can ask {% data variables.product.prodname_copilot_short %} questions about individual commits.
 
 1. Navigate to a commit on {% data variables.product.github %}.
 
@@ -154,7 +154,7 @@ For more information on reviewing pull requests in {% data variables.product.pro
 
 ## Reviewing dependency changes
 
-If the pull request contains changes to dependencies you can use the dependency review for a manifest or lock file to see what has changed and check whether the changes introduce security vulnerabilities. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-dependency-changes-in-a-pull-request).
+If the pull request contains changes to dependencies, you can use the dependency review for a manifest or lock file to see what has changed. You can also check whether the changes introduce security vulnerabilities. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-dependency-changes-in-a-pull-request).
 
 {% data reusables.repositories.changed-files %}
 
@@ -166,7 +166,7 @@ If the pull request contains changes to dependencies you can use the dependency 
 
 ## Marking a file as viewed
 
-After you finish reviewing a file, you can mark the file as viewed, and the file will collapse. If the file changes after you view the file, it will be unmarked as viewed.
+After you finish reviewing a file, you can mark the file as viewed. The file will collapse. If the file changes after you view the file, it will be unmarked as viewed.
 
 {% data reusables.repositories.changed-files %}
 1. On the right of the header of the file you've finished reviewing, select **Viewed**.

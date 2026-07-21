@@ -16,19 +16,19 @@ category:
 ---
 
 > [!NOTE]
-> Pull request authors can give upstream repository maintainers, or those with push access to the upstream repository, permission to make commits to their pull request's compare branch in a user-owned fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
+> Pull request authors can give upstream repository maintainers, or people with push access to the upstream repository, permission to make commits to their pull request's compare branch in a user-owned fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
 
 ## Modifying an active pull request locally
 
 {% webui %}
 
 {% data reusables.repositories.sidebar-pr %}
-1. In the list of pull requests, click the pull request you'd like to modify.{% ifversion fpt or ghec %}
-1. To choose where you'd like to open the pull request, select the **{% octicon "code" aria-hidden="true" aria-label="code" %} Code** dropdown and click one of the tabs.
+1. In the list of pull requests, click the pull request you want to modify.{% ifversion fpt or ghec %}
+1. To choose where you want to open the pull request, select the **{% octicon "code" aria-hidden="true" aria-label="code" %} Code** dropdown and click one of the tabs.
 
    ![Screenshot of a pull request title. A button with an arrow indicating a dropdown menu, labeled "Code," is outlined in dark orange.](/assets/images/help/pull_requests/open-with-button.png){% else %}
 
-1. In the merge box, click **command line instructions**. Follow the sequence of steps to bring down the proposed pull request.
+1. In the merge box, click **command line instructions**. Follow the steps to download the proposed pull request.
 
    ![Screenshot of the merge box in a pull request. The link to access command line pull request instructions is outlined in dark orange.](/assets/images/help/pull_requests/pull-request-show-command-line-merge.png)
 
@@ -52,20 +52,20 @@ gh pr checkout PULL-REQUEST
 
 ## Modifying an inactive pull request locally
 
-If a pull request’s author is unresponsive to requests or has deleted their fork, the changes proposed in that pull request can still be merged via a new pull request. However, if you want to make changes to a pull request and the author is not responding, you'll need to perform some additional steps to update the pull request.
+If a pull request’s author is unresponsive to requests or has deleted their fork, the changes proposed in that pull request can still be merged through a new pull request. However, if you want to make changes to a pull request and the author is not responding, you need to take additional steps to update the pull request.
 
-Once a pull request is opened, {% data variables.product.github %} stores all of the changes remotely. In other words, commits in a pull request are available in a repository even before the pull request is merged. You can fetch an open pull request and recreate it as your own.
+After a pull request is opened, {% data variables.product.github %} stores all of the changes remotely. In other words, commits in a pull request are available in a repository even before the pull request is merged. You can fetch an open pull request and recreate it as your own.
 
-Anyone can work with a previously opened pull request to continue working on it, test it out, or even open a new pull request with additional changes. However, only collaborators with push access can merge pull requests.
+Anyone can work with a previously opened pull request to continue working on it, test it, or open a new pull request with additional changes. However, only collaborators with push access can merge pull requests.
 
 {% data reusables.repositories.sidebar-issue-pr %}
-1. In the "Pull Requests" list, click the pull request you'd like to merge.
+1. In the "Pull Requests" list, click the pull request you want to merge.
 1. Find the ID number of the inactive pull request. This is the sequence of digits right after the pull request's title.
 
    ![Screenshot of the title of a pull request. The pull request's ID number is outlined in dark orange.](/assets/images/help/pull_requests/pull-request-id-number.png)
 
 {% data reusables.command_line.open_the_multi_os_terminal %}
-1. Fetch the reference to the pull request based on its ID number, creating a new branch in the process. Use the pull request ID and the name of the local branch you want to create in the command.
+1. Fetch the reference to the pull request based on its ID number. This creates a new branch. Use the pull request ID and the name of the local branch you want to create in the command.
 
    ```shell
    git fetch origin pull/ID/head:BRANCH_NAME
@@ -78,8 +78,8 @@ Anyone can work with a previously opened pull request to continue working on it,
    > Switched to a new branch 'BRANCH_NAME'
    ```
 
-1. At this point, you can do anything you want with this branch. You can run some local tests, or merge other branches into the branch.
-1. When you're ready, you can push the new branch up:
+1. Make any needed changes to this branch. You can run local tests or merge other branches into the branch.
+1. When you're ready, push the new branch:
 
    ```shell
    [pull-inactive-pull-request] $ git push origin BRANCH_NAME
@@ -96,7 +96,7 @@ Anyone can work with a previously opened pull request to continue working on it,
 
 ## Error: Failed to push some refs
 
-The remote `refs/pull/` namespace is _read-only_. If you try to push any commits there, you'll see this error:
+The remote `refs/pull/` namespace is _read-only_. If you try to push commits there, you'll see this error:
 
 ```shell
 ! [remote rejected] HEAD -> refs/pull/1/head (deny updating a hidden ref)
@@ -104,4 +104,4 @@ error: failed to push some refs to 'git@github.local:USERNAME/REPOSITORY.git'
 ```
 
 > [!TIP]
-> When you remove or rename a remote reference, your local `refs/pull/origin/` namespace will not be affected by calls to `git-remote`.
+> When you remove or rename a remote reference, calls to `git-remote` do not affect your local `refs/pull/origin/` namespace.

@@ -16,7 +16,7 @@ category:
 
 ## About forks
 
-Forks are like independent copies of repositories. Unlike branches, forks give you more freedom to experiment without affecting the original project. Unlike cloned or duplicated repositories, changes from forks can be merged back into the upstream repository via pull requests, similar to a branch.
+Forks are like independent copies of repositories. Unlike branches, forks give you more freedom to experiment without affecting the original project. Unlike cloned or duplicated repositories, changes from forks can be merged back into the upstream repository with pull requests, similar to a branch.
 
 When you view a forked repository on {% data variables.product.github %}, the upstream repository is indicated below the name of the fork.
 
@@ -34,7 +34,7 @@ Each fork is a complete repository with its own:
 
 ## When to use a fork
 
-There are times when a fork may be a better fit for your task than a branch would be. A fork might be better:
+A fork may fit your task better than a branch. A fork might be better:
 
 * To experiment safely without affecting the original project
 * To create separate space for discussions unrelated to a project's main goals
@@ -46,6 +46,6 @@ There are times when a fork may be a better fit for your task than a branch woul
 
 ## Next steps
 
-For instructions for forking a repository, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
+For instructions on forking a repository, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
 For more information about when you can create forks, and the permission and visibility settings of forks, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks).

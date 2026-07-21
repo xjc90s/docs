@@ -16,7 +16,7 @@ category:
   - Work with forks
 ---
 {% data reusables.command_line.open_the_multi_os_terminal %}
-1. List the current configured remote repository for your fork.
+1. List the remotes currently configured for your fork.
 
    ```shell
    $ git remote -v
@@ -24,13 +24,13 @@ category:
    > origin  https://{% data variables.product.product_url %}/YOUR-USERNAME/YOUR-FORK.git (push)
    ```
 
-1. Specify a new remote _upstream_ repository that will be synced with the fork.
+1. Add a new remote named _upstream_ that points to the original repository.
 
    ```shell
    git remote add upstream https://{% data variables.product.product_url %}/ORIGINAL-OWNER/ORIGINAL-REPOSITORY.git
    ```
 
-1. Verify the new upstream repository you've specified for your fork.
+1. Verify the new upstream repository that you specified for your fork.
 
    ```shell
    $ git remote -v

@@ -15,13 +15,13 @@ category:
 ---
 ## Rewriting the most recent commit message
 
-You can change the most recent commit message using the `git commit --amend` command.
+You can change the most recent commit message with the `git commit --amend` command.
 
-In Git, the text of the commit message is part of the commit. Changing the commit message will change the commit ID—i.e., the SHA1 checksum that names the commit. Effectively, you are creating a new commit that replaces the old one.
+In Git, the text of the commit message is part of the commit. Changing the commit message changes the commit ID—the SHA1 checksum that names the commit. You create a new commit that replaces the old one.
 
 ## Commit has not been pushed online
 
-If the commit only exists in your local repository and has not been pushed to {% data variables.location.product_location %}, you can amend the commit message with the `git commit --amend` command.
+If the commit only exists in your local repository and has not been pushed to {% data variables.location.product_location %}, you can amend the commit message with `git commit --amend`.
 
 1. On the command line, navigate to the repository that contains the commit you want to amend.
 1. Type `git commit --amend` and press **Enter**.
@@ -31,14 +31,14 @@ If the commit only exists in your local repository and has not been pushed to {%
     * You can create commits on behalf of your organization by adding a trailer to the commit. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors#creating-a-commit-on-behalf-of-an-organization).
 {% endif %}
 
-The new commit and message will appear on {% data variables.location.product_location %} the next time you push.
+The new commit and message will appear on {% data variables.location.product_location %} after you push.
 
 > [!TIP]
 > You can change the default text editor for Git by changing the `core.editor` setting. For more information, see [Basic Client Configuration](https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration#_basic_client_configuration) in the Git manual.
 
 ## Amending older or multiple commit messages
 
-If you have already pushed the commit to {% data variables.location.product_location %}, you will have to force push a commit with an amended message.
+If you have already pushed the commit to {% data variables.location.product_location %}, you must force push a commit with an amended message.
 
 > [!WARNING]
 > We strongly discourage force pushing, since this changes the history of your repository. If you force push, people who have already cloned your repository will have to manually fix their local history. For more information, see [Recovering from upstream rebase](https://git-scm.com/docs/git-rebase#_recovering_from_upstream_rebase) in the Git manual.
@@ -99,14 +99,14 @@ If you need to amend the message for multiple commits or an older commit, you ca
    ```
 
 1. Save and close the commit list file.
-1. In each resulting commit file, type the new commit message, save the file, and close it.
-1. When you're ready to push your changes to GitHub, use the push --force command to force push over the old commit.
+1. In each resulting commit file, type the new commit message. Save and close the file.
+1. When you're ready to push your changes to GitHub, use `push --force` to force push over the old commit.
 
    ```shell
    git push --force origin EXAMPLE-BRANCH
    ```
 
-For more information on interactive rebase, see [Interactive mode](https://git-scm.com/docs/git-rebase#_interactive_mode) in the Git manual.
+For more information about interactive rebase, see [Interactive mode](https://git-scm.com/docs/git-rebase#_interactive_mode) in the Git manual.
 
 > [!NOTE]
 > As before, amending the commit message will result in a new commit with a new ID. However, in this case, every commit that follows the amended commit will also get a new ID because each commit also contains the ID of its parent.

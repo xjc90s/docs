@@ -25,7 +25,7 @@ category:
 
 ## Commits are linked to the wrong user
 
-{% data variables.product.github %} uses the email address in the commit header to link the commit to a {% data variables.product.github %} user. If your commits are being linked to another user, or not linked to a user at all, you may need to change your local Git configuration settings, add an email address to your account email settings, or do both.
+{% data variables.product.github %} uses the email address in the commit header to link the commit to a {% data variables.product.github %} user. If your commits are linked to another user or not linked to any user, you may need to change your local Git configuration settings, add an email address to your account email settings, or do both.
 
 > [!NOTE]
 > If your commits are linked to another user, that does not mean the user can access your repository. A user can only access a repository you own if you add them as a collaborator or add them to a team that has access to the repository.
@@ -41,7 +41,7 @@ Commits you make from this point forward will be linked to your account.
 
 ### Commits are not linked to any user
 
-If your commits are not linked to any user, the commit author's name will not be rendered as a link to a user profile. To check the email address used for those commits and connect commits to your account, take the following steps.
+If your commits are not linked to any user, the commit author's name will not be rendered as a link to a user profile. To check the email address used for those commits and connect commits to your account, follow these steps.
 
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.navigate-to-commit-page %}
@@ -68,11 +68,11 @@ $ git show 1095ff3d0153115e75b7bca2c09e5136845b5592
 > fatal: bad object 1095ff3d0153115e75b7bca2c09e5136845b5592
 ```
 
-However, when you view the commit on {% data variables.location.product_location %}, you'll be able to see it without any problems:
+However, when you view the commit on {% data variables.location.product_location %}, you can see it without any problems:
 
 `github.com/ACCOUNT/REPOSITORY/commit/1095ff3d0153115e75b7bca2c09e5136845b5592`
 
-There are several possible explanations:
+The following explanations are possible:
 
 * The local repository is out of date.
 * The branch that contains the commit was deleted, so the commit is no longer referenced.
@@ -86,29 +86,20 @@ Your local repository may not have the commit yet. To get information from your 
 git fetch REMOTE
 ```
 
-This safely copies information from the remote repository to your local clone without making any changes to the files you have checked out.
-You can use `git fetch upstream` to get information from a repository you've forked, or `git fetch origin` to get information from a repository you've only cloned.
+This safely copies information from the remote repository to your local clone without changing the files you have checked out.
+
+You can use `git fetch upstream` to get information from a repository you've forked. You can use `git fetch origin` to get information from a repository you've only cloned.
 
 > [!TIP]
 > For more information, read about [managing remotes and fetching data](https://git-scm.com/book/en/v2/Git-Basics-Working-with-Remotes) in the [Pro Git](https://git-scm.com/book) book.
 
 ### The branch that contained the commit was deleted
 
-If a collaborator on the repository has deleted the branch containing the commit
-or has force pushed over the branch, the missing commit may have been orphaned
-(i.e. it cannot be reached from any reference) and therefore will not be fetched
-into your local clone.
+If a collaborator on the repository deleted the branch containing the commit or force pushed over the branch, the missing commit may have been orphaned. This means the commit cannot be reached from any reference, so it will not be fetched into your local clone.
 
-Fortunately, if any collaborator has a local clone of the repository with the
-missing commit, they can push it back to {% data variables.product.github %}. They need to make sure the commit
-is referenced by a local branch and then push it as a new branch to {% data variables.product.github %}.
+If any collaborator has a local clone of the repository with the missing commit, they can push it back to {% data variables.product.github %}. They need to make sure a local branch references the commit. Then, they can push it as a new branch to {% data variables.product.github %}.
 
-Let's say that the person still has a local branch (call it `B`) that contains
-the commit. This might be tracking the branch that was force pushed or deleted
-and they simply haven't updated yet. To preserve the commit, they can push that
-local branch to a new branch (call it `recover-B`) on {% data variables.product.github %}. For this example,
-let's assume they have a remote named `upstream` via which they have push access
-to `github.com/ACCOUNT/REPOSITORY`.
+Let's say that the person still has a local branch, called `B`, that contains the commit. This branch might track the branch that was force pushed or deleted, and the person might not have updated it yet. To preserve the commit, they can push that local branch to a new branch, called `recover-B`, on {% data variables.product.github %}. For this example, let's assume they have a remote named `upstream` with push access to `github.com/ACCOUNT/REPOSITORY`.
 
 The other person runs:
 
@@ -136,7 +127,7 @@ To keep your repository secure, push protection prevents you from accidentally c
 
 ### Understanding why push protection has blocked your commit
 
-Leaked secrets can pose serious security risks to your repository and your supply chain. Push protection prevents you from accidentally introducing secrets to your codebase where they could be exploited by malicious actors.
+Leaked secrets can pose serious security risks to your repository and your supply chain. Push protection prevents you from accidentally adding secrets to your codebase, where malicious actors could exploit them.
 
 If the repository you're contributing to on {% data variables.product.github %} is secured by push protection, you'll encounter a push protection block whenever you:
 
@@ -146,7 +137,7 @@ If the repository you're contributing to on {% data variables.product.github %} 
 
 ### Resolving a push protection block
 
-In order to resolve the block, you should remove the secret from the commit (or request). If you believe the secret is safe to push, you may be able to bypass the block. For more information on how to remove the secret or, if necessary, bypass the block, see:
+To resolve the block, you should remove the secret from the commit or request. If you believe the secret is safe to push, you may be able to bypass the block. For more information about how to remove the secret or, if necessary, bypass the block, see:
 
 * [AUTOTITLE](/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line)
 * [AUTOTITLE](/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-in-the-github-ui)

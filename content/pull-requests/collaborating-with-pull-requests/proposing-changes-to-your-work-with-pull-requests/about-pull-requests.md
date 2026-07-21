@@ -15,25 +15,25 @@ category:
   - Create pull requests
 ---
 
-Pull requests are proposals to merge code changes into a project. A pull request is {% data variables.product.github %}'s foundational **collaboration feature**, letting you discuss and review changes before merging them. This helps teams work together, catch issues early, and maintain code quality.
+Pull requests are proposals to merge code changes into a project. A pull request is {% data variables.product.github %}'s key **collaboration feature**, letting you discuss and review changes before merging them. This helps teams work together, catch issues early, and maintain code quality.
 
 <a href="https://github.com/pulls?ref_product=github&ref_type=engagement&ref_style=button" target="_blank" class="btn btn-primary mt-3 mr-3 no-underline"><span>View your pull requests</span> {% octicon "link-external" height:16 aria-label="link-external" %}</a>
 
 ## Working with pull requests
 
-The **Conversation** tab of a pull request displays a description of the changes, a timeline of events, and comments and reviews from collaborators. This central hub lets you track the discussion and progress of the proposed changes.
+The **Conversation** tab of a pull request displays a description of the changes, a timeline of events, and comments and reviews from collaborators. This tab lets you track the discussion and progress of the proposed changes.
 
-The **Commits** tab shows all commits made to the pull request branch in chronological order. This helps you understand the development history and see how the changes evolved over time.
+The **Commits** tab shows all commits on the pull request branch in chronological order. This helps you understand the development history and see how the changes evolved over time.
 
 The **Checks** tab displays the status of any automated tests, builds, or other continuous integration workflows that run when you push commits. These checks help ensure your changes meet quality standards before merging.
 
 The **Files changed** tab shows the differences between the proposed changes and the existing code, making it easy to see what will change when the pull request merges.
 
-The **Merge status** of a pull request can be viewed directly in the header from anywhere in the pull request page. Click to open the details so you can quickly identify blockers, missing approvals, and get your pull request ready to merge. 
+You can view the **Merge status** of a pull request directly in the header from anywhere in the pull request page. Click the merge status to open the details, quickly identify blockers and missing approvals, and get your pull request ready to merge.
 
 ## Draft pull requests
 
-When you create a pull request, you can choose to make it a draft pull request. Draft pull requests cannot be merged, and code owners are not automatically requested to review them. This is useful when you want to share work-in-progress without formally requesting reviews.
+When you create a pull request, you can choose to make it a draft pull request. Draft pull requests cannot be merged, and code owners are not automatically requested to review them. Drafts are useful when you want to share work-in-progress without formally requesting reviews.
 
 {% data reusables.pull_requests.mark-ready-review %} You can convert a pull request to a draft at any time. See [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request).
 

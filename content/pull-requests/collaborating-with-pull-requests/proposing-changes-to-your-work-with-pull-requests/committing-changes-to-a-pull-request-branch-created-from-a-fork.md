@@ -14,16 +14,16 @@ shortTitle: Commit to PR branch from fork
 category:
   - Create pull requests
 ---
-You can only make commits on pull request branches that:
-* Are opened in a repository that you have push access to and that were created from a fork of that repository
+You can make commits only on pull request branches that:
+* Are opened in a repository that you have push access to and were created from a fork of that repository
 * Are on a user-owned fork
-* Have permission granted from the pull request creator
-* Don't have [branch restrictions](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches) that will prevent you from committing
+* Have permission from the pull request creator
+* Don't have [branch restrictions](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#restrict-who-can-push-to-matching-branches) that prevent you from committing
 
 Only the user who created the pull request can give you permission to push commits to the user-owned fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
 
 > [!NOTE]
-> You can also make commits to a pull request branch from a fork of your repository through {% data variables.location.product_location %} by creating your own copy (or fork) of the fork of your repository and committing changes to the same head branch that the original pull request changes were created on. For some general guidelines, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+> You can also make commits to a pull request branch from a fork of your repository through {% data variables.location.product_location %}. To do this, create your own copy (or fork) of the fork of your repository. Then, commit changes to the same head branch where the original pull request changes were created. For some general guidelines, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 1. On {% data variables.product.github %}, navigate to the main page of the fork (or copy of your repository) where the pull request branch was created.
 {% data reusables.repositories.copy-clone-url %}
@@ -38,13 +38,13 @@ Only the user who created the pull request can give you permission to push commi
    cd open-source-projects
    ```
 
-1. Type `git clone`, and then paste the URL you copied in Step 3.
+1. Type `git clone`, then paste the URL you copied in Step 3.
 
    ```shell
    git clone https://{% data variables.product.product_url %}/USERNAME/FORK-OF-THE-REPOSITORY
    ```
 
-1. Press **Enter**. Your local clone will be created.
+1. Press **Enter**. Git creates your local clone.
 
    ```shell
    $ git clone https://{% data variables.product.product_url %}/USERNAME/FORK-OF-THE-REPOSITORY
@@ -64,7 +64,7 @@ Only the user who created the pull request can give you permission to push commi
    cd FORK-OF-THE-REPOSITORY
    ```
 
-1. Switch branches to the compare branch of the pull request where the original changes were made. If you navigate to the original pull request, you'll see the compare branch at the top of the pull request.
+1. Switch to the compare branch of the pull request where the original changes were made. To find the compare branch, navigate to the original pull request and check the top of the pull request.
 
    In this example, the compare branch is `test-branch`:
 
@@ -75,8 +75,8 @@ Only the user who created the pull request can give you permission to push commi
    > [!TIP]
    > For more information about pull request branches, including examples, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request#changing-the-branch-range-and-destination-repository).
 
-1. At this point, you can do anything you want with this branch. You can push new commits to it, run some local tests, or merge other branches into the branch. Make modifications as you like.
-1. After you commit your changes to the head branch of the pull request you can push your changes up to the original pull request directly. In this example, the head branch is `test-branch`:
+1. Make any needed changes to this branch. You can push new commits to it, run local tests, or merge other branches into the branch.
+1. After you commit your changes to the head branch of the pull request, push your changes directly to the original pull request. In this example, the head branch is `test-branch`:
 
    ```shell
    $ git push origin test-branch
@@ -89,8 +89,8 @@ Only the user who created the pull request can give you permission to push commi
    > 12da2e9..250e946  TEST-BRANCH -> TEST-BRANCH
    ```
 
-Your new commits will be reflected on the original pull request on {% data variables.location.product_location %}.
+Your new commits appear on the original pull request on {% data variables.location.product_location %}.
 
-## Further Reading
+## Further reading
 
 * [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)

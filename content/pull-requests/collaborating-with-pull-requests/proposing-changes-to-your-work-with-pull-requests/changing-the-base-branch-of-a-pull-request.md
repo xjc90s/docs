@@ -16,10 +16,10 @@ category:
 ---
 
 > [!WARNING]
-> When you change the base branch of your pull request, some commits may be removed from the timeline. Review comments may also become outdated, as the line of code that the comment referenced may no longer be part of the changes in the pull request.
+> When you change the base branch of your pull request, some commits may be removed from the timeline. Review comments may also become outdated because the line of code that the comment referenced may no longer be part of the changes in the pull request.
 
 {% data reusables.repositories.sidebar-pr %}
-1. In the "Pull Requests" list, click the pull request you'd like to modify.
+1. In the "Pull Requests" list, click the pull request you want to modify.
 1. Next to the pull request title, click **Edit title** {% octicon "pencil" aria-label="Edit title" %}.
 
 1. In the base branch drop-down menu, select the base branch you'd like to [compare changes against](/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits#comparing-branches).
@@ -29,7 +29,7 @@ category:
 1. Read the information about changing the base branch and click **Change base**.
 
 > [!TIP]
-> When you open a pull request, {% data variables.product.github %} will set the base to the commit that branch references. If the branch is updated in the future, {% data variables.product.github %} will not update the base branch's commit.
+> When you open a pull request, {% data variables.product.github %} sets the base to the commit that branch references. If the branch is updated in the future, {% data variables.product.github %} does not update the base branch's commit.
 
 ## Further reading
 

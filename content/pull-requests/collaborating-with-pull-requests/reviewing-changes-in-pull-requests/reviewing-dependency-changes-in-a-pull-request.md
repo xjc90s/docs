@@ -25,11 +25,11 @@ category:
 
 {% ifversion ghes %}Before you can use dependency review, you must enable the dependency graph and connect {% data variables.location.product_location %} to {% data variables.product.prodname_dotcom_the_website %}. For more information, see [AUTOTITLE](/admin/configuration/configuring-github-connect/enabling-dependabot-for-your-enterprise).{% endif %}
 
-Dependency review allows you to "shift left". You can use the provided predictive information to catch vulnerable dependencies before they hit production. For more information, see [AUTOTITLE](/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review).
+Dependency review helps you find vulnerable dependencies before they reach production. For more information, see [AUTOTITLE](/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review).
 
 You can use the {% data variables.dependency-review.action_name %} to help enforce dependency reviews on pull requests in your repository. {% data reusables.dependency-review.dependency-review-action-overview %}
 
-You can configure the {% data variables.dependency-review.action_name %} to better suit your needs by specifying the type of dependency vulnerability you wish to catch. For more information, see [AUTOTITLE](/code-security/supply-chain-security/understanding-your-software-supply-chain/configuring-the-dependency-review-action).
+You can configure the {% data variables.dependency-review.action_name %} to better suit your needs by specifying the type of dependency vulnerability you want to catch. For more information, see [AUTOTITLE](/code-security/supply-chain-security/understanding-your-software-supply-chain/configuring-the-dependency-review-action).
 
 ## Reviewing dependencies in a pull request
 
@@ -37,15 +37,15 @@ You can configure the {% data variables.dependency-review.action_name %} to bett
 {% data reusables.repositories.choose-pr-review %}
 {% data reusables.repositories.changed-files %}
 
-1. If the pull request contains many files, use the **File filter** drop-down menu to collapse all files that don't record dependencies. This will make it easier to focus your review on the dependency changes.
+1. If the pull request contains many files, use the **File filter** drop-down menu to collapse all files that don't record dependencies. This makes it easier to focus your review on the dependency changes.
 
    ![Screenshot of the "Changed files" tab. A dropdown labeled "File filter" is expanded, displaying a list of file types with checkboxes.](/assets/images/help/pull_requests/file-filter-menu-json.png)
-   The dependency review provides a clearer view of what has changed in large lock files, where the source diff is not rendered by default.
+   The dependency review provides a clearer view of what has changed in large lock files, where the source diff is not shown by default.
 
    > [!NOTE]
    > Dependency review rich diffs are not available for committed static JavaScript files like `jquery.js`.
 
-1. On the right of the header for a manifest or lock file, display the dependency review by clicking **{% octicon "file" aria-label="Display the rich diff" %}**.
+1. To display the dependency review, click **{% octicon "file" aria-label="Display the rich diff" %}** on the right of the header for a manifest or lock file.
 
    ![Screenshot of the "Files changed" tab of a pull request. The button to display the rich diff, labeled with a file icon, is outlined in dark orange.](/assets/images/help/pull_requests/dependency-review-rich-diff.png)
 
@@ -62,8 +62,8 @@ You can configure the {% data variables.dependency-review.action_name %} to bett
    * The version, or version range, of the new, updated, or deleted dependency.
    * For a specific version of a dependency:
       * The age of that release of the dependency.
-      * The number of projects that are dependent on this software. This information is taken from the dependency graph. Checking the number of dependents can help you avoid accidentally adding the wrong dependency.
-      * The license used by this dependency, if this information is available. This is useful if you want to avoid code with certain licenses being used in your project.
+      * The number of projects that depend on this software. This information is taken from the dependency graph. Checking the number of dependents can help you avoid accidentally adding the wrong dependency.
+      * The license used by this dependency, if this information is available. This is useful if you want to avoid using code with certain licenses in your project.
 
    Where a dependency has a known vulnerability, the warning message includes:
 

@@ -15,11 +15,9 @@ shortTitle: Allow changes to a branch
 category:
   - Work with forks
 ---
-When a user creates a pull request from their fork, the user generally has the authority to decide if other users can commit to the pull request's compare branch. If the pull request author wants greater collaboration, they can grant maintainers of the upstream repository (that is, anyone with push access to the upstream repository) permission to commit to the pull request's compare branch. To learn more about upstream repositories, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
+When someone creates a pull request from their fork, they usually decide whether other people can commit to the pull request's compare branch. For greater collaboration, the author can give maintainers of the upstream repository—that is, anyone with push access to the upstream repository—permission to commit to the compare branch. To learn more about upstream repositories, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
 
-Pull request authors can give these permissions when they initially create a pull request from a fork in a personal account or after they create the pull request. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
-
-You can set commit permissions when you first create a pull request from a fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork). Additionally, you can modify an existing pull request to let repository maintainers make commits to your branch.
+Pull request authors can set these permissions when they create a pull request from a fork in a personal account. They can also update an existing pull request to let repository maintainers commit to the branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
 
 ## Enabling repository maintainer permissions on existing pull requests
 
