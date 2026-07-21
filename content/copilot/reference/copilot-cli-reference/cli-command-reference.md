@@ -23,7 +23,7 @@ docsTeamMetrics:
 | `copilot help [TOPIC]` | Display help information. Help topics include: `billing`, `config`, `commands`, `environment`, `logging`, `monitoring`, `permissions`, and `providers`. |
 | `copilot init`         | Initialize {% data variables.product.prodname_copilot_short %} custom instructions for this repository. |
 | `copilot login`        | Authenticate with {% data variables.product.prodname_copilot_short %} via the OAuth device flow. Accepts `--host HOST` to specify the {% data variables.product.github %} host URL (default: `https://github.com`). |
-| `copilot login` [OPTION] | Authenticate with {% data variables.product.prodname_copilot_short %} via the OAuth device flow. See [`copilot login` options](#copilot-login-options). |
+| `copilot login [OPTION]` | Authenticate with {% data variables.product.prodname_copilot_short %} via the OAuth device flow. See [`copilot login` options](#copilot-login-options). |
 | `copilot mcp`          | Manage MCP server configurations from the command line. |
 | `copilot plugin`       | Manage plugins and plugin marketplaces.            |
 | `copilot plugins list` | Non-interactively inspect every plugin, MCP server, skill, instruction source, and language server discovered for the current working directory—the same resources the in-CLI plugins dashboard shows. See [Using `copilot plugins list`](#using-copilot-plugins-list). |
