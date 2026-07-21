@@ -1,6 +1,6 @@
 ---
 title: Closing a pull request
-intro: You may choose to *close* a pull request without [merging it into the upstream branch](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request). This can be handy if the changes proposed in the branch are no longer needed, or if another solution has been proposed in another branch.
+intro: Close a pull request without merging it to manage unnecessary changes or address alternative solutions in other branches.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/incorporating-changes-from-a-pull-request/closing-a-pull-request
   - /articles/closing-a-pull-request
@@ -11,13 +11,14 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
+shortTitle: Close a pull request
 category:
   - Merge and close pull requests
 contentType: how-tos
 ---
 
 > [!TIP]
-> If you opened a pull request with the wrong base branch, instead of closing it and opening a new one, you can change the base branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-base-branch-of-a-pull-request).
+> If you opened a pull request with the wrong base branch, instead of closing it and opening a new one, you can change the base branch. See [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/changing-the-base-branch-of-a-pull-request).
 
 {% data reusables.repositories.sidebar-pr %}
 1. In the "Pull Requests" list, click the pull request you want to close.

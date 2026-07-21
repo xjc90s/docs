@@ -1,6 +1,6 @@
 ---
 title: Merging a pull request with a merge queue
-intro: If a merge queue is required by the branch protection setting for the branch, you can add your pull requests to a merge queue and {% data variables.product.github %} will merge the pull requests for you once all required checks have passed.
+intro: 'Use merge queues in {% data variables.product.github %} to streamline pull request merging, ensure required checks pass, and manage queue operations effectively.'
 versions:
   fpt: '*'
   ghec: '*'
@@ -19,7 +19,7 @@ contentType: how-tos
 
 ## About merge queues
 
-A merge queue helps merge pull requests into a busy protected branch after required checks pass. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue).
+A merge queue helps merge pull requests into a busy protected branch after required checks pass. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue).
 
 ## Adding a pull request to a merge queue
 
@@ -48,7 +48,7 @@ A merge queue helps merge pull requests into a busy protected branch after requi
 
 {% cli %}
 
-With {% data variables.product.prodname_cli %}, use the `gh pr merge` command to add a pull request to a merge queue. If you are targeting a branch that requires a merge queue, this command automatically adds the pull request to the queue if required checks have passed. If required checks have not passed, this command enables auto-merge for the pull request. For more information, see [`gh pr merge`](https://cli.github.com/manual/gh_pr_merge) in the {% data variables.product.prodname_cli %} manual.
+With {% data variables.product.prodname_cli %}, use the `gh pr merge` command to add a pull request to a merge queue. If you are targeting a branch that requires a merge queue, this command automatically adds the pull request to the queue if required checks have passed. If required checks have not passed, this command enables auto-merge for the pull request. See [`gh pr merge`](https://cli.github.com/manual/gh_pr_merge) in the {% data variables.product.prodname_cli %} manual.
 
 {% endcli %}
 
@@ -85,7 +85,7 @@ You can view the merge queue for a base branch in various places on {% data vari
 
 {% endwebui %}
 
-* On the **Branches** page for the repository. We recommend this route if you don't have or don't know about a pull request already in a queue, and if you want to see what's in that queue. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/viewing-branches-in-your-repository).
+* On the **Branches** page for the repository. We recommend this route if you don't have or don't know about a pull request already in a queue, and if you want to see what's in that queue. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/viewing-branches-in-your-repository).
 
   ![Screenshot of the "Branches" page for a repository. A link, labeled "33 pull requests queued to merge," is outlined in dark orange.](/assets/images/help/pull_requests/merge-queue-branches-page.png)
 

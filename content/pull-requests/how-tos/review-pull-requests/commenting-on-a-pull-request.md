@@ -9,7 +9,7 @@ redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/commenting-on-a-pull-request
   - /github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
   - /pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request
-intro: After you open a pull request in a repository, collaborators or team members can comment on the comparison of files between the two specified branches, or leave general comments on the project as a whole.
+intro: Leave comments on pull requests in {% data variables.product.github %}, including general feedback, line-specific suggestions, and file-level discussions to enhance collaboration and code reviews.
 versions:
   fpt: '*'
   ghes: '*'
@@ -23,9 +23,9 @@ contentType: how-tos
 
 You can comment on a pull request's **Conversation** tab to leave general comments, questions, or praise. You can also suggest changes that the pull request author can apply directly from your comment.
 
-You can also comment on specific files or sections of a file in a pull request's **Files changed** tab as individual line or file comments, or as part of a pull request review. Adding line or file comments is a great way to discuss questions about implementation or give feedback to the author. For more information about pull request reviews, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews).
+You can also comment on specific files or sections of a file in a pull request's **Files changed** tab as individual line or file comments, or as part of a pull request review. Adding line or file comments is a great way to discuss questions about implementation or give feedback to the author. See [AUTOTITLE](/pull-requests/reference/pull-request-reviews).
 
-For more information on adding line or file comments to a pull request review, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request).
+See [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request).
 
 > [!NOTE]
 > If you reply to a pull request via email, your comment will be added on the **Conversation** tab and will not be part of a pull request review.
@@ -54,7 +54,9 @@ To reply to an existing line or file comment, navigate to the comment on either 
 
      When you're finished, click **Finish your review**, leave a summary of your review, and click **Submit review**.
 
-Anyone watching the pull request or repository will receive a notification of your comments. Batching your comments avoids sending multiple notifications. {% ifversion copilot %}If you are commenting on a pull request created by {% data variables.product.prodname_copilot_short %}, batching your comments prevents {% data variables.product.prodname_copilot_short %} from starting to work on individual comments before you have completed your review. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/start-copilot-sessions).{% endif %}
+Anyone watching the pull request or repository will receive a notification of your comments. Batching your comments avoids sending multiple notifications.
+
+{% ifversion fpt or ghec %} If you are commenting on a pull request created by {% data variables.product.prodname_copilot_short %}, batching your comments prevents {% data variables.product.prodname_copilot_short %} from starting to work on individual comments before you have completed your review. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/start-copilot-sessions).{% endif %}
 
 ### Resolving conversations
 
@@ -64,7 +66,7 @@ To indicate that a conversation on the **Files changed** tab is complete, click 
 
 The entire conversation will collapse and be marked as resolved. This makes it easier to find conversations that still need to be addressed.
 
-If the suggestion in a comment is out of your pull request's scope, you can open a new issue that tracks the feedback and links back to the original comment. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/creating-an-issue#creating-an-issue-from-a-comment).
+If the suggestion in a comment is out of your pull request's scope, you can open a new issue that tracks the feedback and links back to the original comment. See [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/creating-an-issue#creating-an-issue-from-a-comment).
 
 #### Discovering and navigating conversations
 
@@ -77,5 +79,4 @@ In this view, you can see which conversations are unresolved, resolved, and outd
 ## Further reading
 
 * [AUTOTITLE](/get-started/writing-on-github)
-{% ifversion fpt or ghec %}- [AUTOTITLE](/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam)
-{% endif %}
+{% ifversion fpt or ghec %}* [AUTOTITLE](/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam){% endif %}

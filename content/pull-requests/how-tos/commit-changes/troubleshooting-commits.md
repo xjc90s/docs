@@ -1,7 +1,7 @@
 ---
 title: Troubleshooting commits
-shortTitle: Troubleshooting commits
-intro: Resolve common problems with commits, such as commits linked to the wrong user, commits that are missing from your local clone, and commits blocked by push protection.
+shortTitle: Troubleshoot commits
+intro: Resolve common commit issues like incorrect user links, missing local commits, and push protection blocks.
 redirect_from:
   - /articles/troubleshooting-commits
   - /github/committing-changes-to-your-project/troubleshooting-commits
@@ -34,8 +34,8 @@ contentType: how-tos
 
 ### Commits are linked to another user
 
-1. Change the email address in your local Git configuration by following [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-in-git). If you work on multiple machines, change this setting on each one.
-1. Add the email address to your account by following [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/adding-an-email-address-to-your-github-account).
+1. Change the email address in your local Git configuration by following [AUTOTITLE](/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address#setting-your-commit-email-address-in-git). If you work on multiple machines, change this setting on each one.
+1. Add the email address to your account by following [AUTOTITLE](/account-and-profile/how-tos/email-preferences/adding-an-email-address-to-your-github-account).
 
 Future commits that use the email address will be linked to your account.
 
@@ -52,7 +52,7 @@ To find out why a commit is not linked, inspect the commit on {% data variables.
    * **Unrecognized author (no email address):** Set your commit email address in Git, then add that address to your {% data variables.product.github %} account.
    * **Invalid email:** Set a valid commit email address in Git, then add that address to your {% data variables.product.github %} account.
 
-Old commits might not be linked after you update your email settings. For more information, see [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address).
+Old commits might not be linked after you update your email settings. See [AUTOTITLE](/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address).
 
 ## A commit exists on GitHub but not in your local clone
 
@@ -101,12 +101,12 @@ If push protection blocks your work, {% data variables.product.github %} detecte
 1. Remove the secret from the commit, file upload, or API request.
 1. Try the push, commit, upload, or request again.
 1. If you believe the secret is safe to push, follow the bypass steps for your workflow:
-   * [AUTOTITLE](/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-command-line)
-   * [AUTOTITLE](/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-in-the-github-ui)
-   * [AUTOTITLE](/code-security/secret-scanning/working-with-secret-scanning-and-push-protection/working-with-push-protection-from-the-rest-api)
+   * [AUTOTITLE](/code-security/how-tos/secure-your-secrets/work-with-leak-prevention/push-protection-on-the-command-line)
+   * [AUTOTITLE](/code-security/how-tos/secure-your-secrets/work-with-leak-prevention/push-protection-in-the-github-ui)
+   * [AUTOTITLE](/code-security/concepts/secret-security/push-protection-from-the-rest-api)
 
 ## Further reading
 
 * [AUTOTITLE](/search-github/searching-on-github/searching-commits)
-* [AUTOTITLE](/code-security/secret-scanning/introduction/about-push-protection)
-* [AUTOTITLE](/code-security/secret-scanning/introduction/supported-secret-scanning-patterns)
+* [AUTOTITLE](/code-security/concepts/secret-security/push-protection)
+* [AUTOTITLE](/code-security/reference/secret-security/supported-secret-scanning-patterns)

@@ -1,6 +1,6 @@
 ---
 title: Keeping your pull request in sync with the base branch
-intro: After you open a pull request, you can update the head branch, which contains your changes, with any changes that have been made in the base branch.
+intro: Update your pull request branch with changes from the base branch to resolve conflicts and ensure compatibility before merging.
 permissions: People with write permissions to the repository to which the head branch of the pull request belongs can update the head branch with changes that have been made in the base branch.
 versions:
   fpt: '*'
@@ -19,11 +19,11 @@ contentType: how-tos
 Before merging, update your pull request branch with changes from the base branch to catch conflicts or test failures early. You can update the branch from the pull request page when there are no merge conflicts and the branch is behind the base branch.
 
 > [!NOTE]
-> You may not be able to use the `Update branch` button if the HEAD branch of your pull request is a protected branch. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+> You may not be able to use the `Update branch` button if the HEAD branch of your pull request is a protected branch. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
 
-If changes to the base branch cause merge conflicts in your pull request branch, resolve the conflicts before updating the branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts).
+If changes to the base branch cause merge conflicts in your pull request branch, resolve the conflicts before updating the branch. See [AUTOTITLE](/pull-requests/reference/merge-conflicts).
 
-From the pull request page, you can update by merging the base branch into your head branch or by rebasing your changes onto the latest base branch. Rebasing creates a linear history without a merge commit. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-comparing-branches-in-pull-requests#three-dot-and-two-dot-git-diff-comparisons).
+From the pull request page, you can update by merging the base branch into your head branch or by rebasing your changes onto the latest base branch. Rebasing creates a linear history without a merge commit. See [AUTOTITLE](/pull-requests/reference/branches#three-dot-and-two-dot-git-diff-comparisons).
 
 ## Updating your pull request branch
 
@@ -40,5 +40,5 @@ From the pull request page, you can update by merging the base branch into your 
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request)
+* [AUTOTITLE](/pull-requests/reference/pull-requests)
+* [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/changing-the-stage-of-a-pull-request)

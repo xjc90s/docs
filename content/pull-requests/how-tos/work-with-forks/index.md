@@ -6,17 +6,17 @@ redirect_from:
   - /articles/working-with-forks
   - /github/collaborating-with-pull-requests/working-with-forks
 shortTitle: Work with forks
-intro: Fork repositories, sync forks, and manage changes to pull request branches created from forks.
+intro: 'Fork repositories, sync changes, and manage pull request branches effectively using forks.'
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
 children:
   - /fork-a-repo
-  - /allowing-changes-to-a-pull-request-branch-created-from-a-fork
   - /configuring-a-remote-repository-for-a-fork
-  - /detaching-a-fork
   - /syncing-a-fork
+  - /allowing-changes-to-a-pull-request-branch-created-from-a-fork
+  - /detaching-a-fork
 contentType: how-tos
 ---
 

@@ -1,11 +1,12 @@
 ---
 title: Detaching a fork
-intro: You can disconnect a repository from its fork network by leaving the network or manually deleting the fork and recreating it without any connection to the original.
+intro: Disconnect a repository from its fork network by leaving the network or creating a standalone repository through manual steps.
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
 permissions: People with admin access for a forked repository can delete the forked repository.
+shortTitle: Detach a fork
 category:
   - Work with forks
 redirect_from:
@@ -19,7 +20,7 @@ To turn your fork into a standalone repository, you can leave the fork network. 
 
 > [!WARNING]
 > * The new repository will not retain any of its issues, pull requests, wikis, stars, watchers, comments, child forks, or other metadata that may currently be associated with your current fork.
-> * All git commit metadata will be preserved. Commits may become eligible to be counted as contributions if they meet certain criteria. For more information, see [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile#your-local-git-commit-email-isnt-connected-to-your-account).
+> * All git commit metadata will be preserved. Commits may become eligible to be counted as contributions if they meet certain criteria. See [AUTOTITLE](/account-and-profile/how-tos/contribution-settings/troubleshooting-missing-contributions#your-local-git-commit-email-isnt-connected-to-your-account).
 > * Leaving the fork network is **permanent** and the new repository **cannot** be reconnected to the fork network.
 
 {% ifversion ghes %}
@@ -49,19 +50,19 @@ While the fork is being detached, some operations will be briefly unavailable. T
 
 To turn your fork into a standalone repository, you can clone the fork and use the clone to create a new repository. Then, delete the fork to remove the connection to the original network.
 
-{% data reusables.command_line.open_the_multi_os_terminal %}
+1. Open your terminal or Git Bash.
 1. Create a bare clone of the fork.
 
    ```shell
    git clone --bare https://{% data variables.product.product_url %}/EXAMPLE-USER/FORK.git
    ```
 
-1. Delete the forked repository. For more information, see [AUTOTITLE](/repositories/creating-and-managing-repositories/deleting-a-repository).<br><br>
+1. Delete the forked repository. See [AUTOTITLE](/repositories/creating-and-managing-repositories/deleting-a-repository).<br><br>
 
    > [!WARNING]
    > Deleting a fork will **permanently** delete any associated pull requests and configurations. This action **cannot** be undone.
 
-1. Create a new repository with the same name in the same location. For more information, see [AUTOTITLE](/repositories/creating-and-managing-repositories/creating-a-new-repository).
+1. Create a new repository with the same name in the same location. See [AUTOTITLE](/repositories/creating-and-managing-repositories/creating-a-new-repository).
 1. Mirror-push the repository back to the same remote URL.
 
    ```shell
@@ -74,4 +75,4 @@ To turn your fork into a standalone repository, you can clone the fork and use t
    rm -rf FORK.git
    ```
 
-For more information, see [our support page](https://support.github.com/request/fork) on forks.
+See [our support page](https://support.github.com/request/fork) on forks.

@@ -1,6 +1,6 @@
 ---
 title: Changing the stage of a pull request
-intro: You can mark a draft pull request as ready for review or convert a pull request to a draft.
+intro: Mark a draft pull request as ready for review or convert an open pull request back to a draft to manage your workflow effectively.
 permissions: People with write permissions to a repository and pull request authors can change the stage of a pull request.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request
@@ -12,7 +12,7 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
-shortTitle: Change the state
+shortTitle: Draft pull requests
 category:
   - Create pull requests
 contentType: how-tos
@@ -22,7 +22,7 @@ contentType: how-tos
 {% data reusables.pull_requests.mark-ready-review %}
 
 > [!TIP]
-> You can also mark a pull request as ready for review using the {% data variables.product.prodname_cli %}. For more information, see [`gh pr ready`](https://cli.github.com/manual/gh_pr_ready) in the {% data variables.product.prodname_cli %} documentation.
+> You can also mark a pull request as ready for review using the {% data variables.product.prodname_cli %}. See [`gh pr ready`](https://cli.github.com/manual/gh_pr_ready) in the {% data variables.product.prodname_cli %} documentation.
 
 {% data reusables.repositories.sidebar-pr %}
 1. In the "Pull requests" list, click the pull request you want to mark as ready for review.
@@ -46,4 +46,4 @@ No one can merge the pull request until you mark the pull request as ready for r
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
+* [AUTOTITLE](/pull-requests/reference/pull-requests)

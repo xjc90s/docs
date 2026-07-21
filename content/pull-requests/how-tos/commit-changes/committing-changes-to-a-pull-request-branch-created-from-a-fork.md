@@ -1,7 +1,8 @@
 ---
 title: Committing changes to a pull request branch created from a fork
-intro: You can commit changes on a pull request branch that was created from a fork of your repository with permission from the pull request creator.
+intro: Commit changes to a pull request branch created from a fork by obtaining the necessary permissions and using Git commands effectively.
 redirect_from:
+  - /pull-requests/how-tos/create-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork
   - /github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork
   - /articles/committing-changes-to-a-pull-request-branch-created-from-a-fork
   - /github/collaborating-with-issues-and-pull-requests/committing-changes-to-a-pull-request-branch-created-from-a-fork
@@ -13,15 +14,15 @@ versions:
   ghec: '*'
 shortTitle: Commit to PR branch from fork
 category:
-  - Create pull requests
+  - Commit changes
 contentType: how-tos
 ---
 
-To commit to a pull request branch created from a fork, you need push access to the base repository, permission from the pull request creator, and a user-owned fork without branch restrictions that prevent your push. Only the pull request creator can allow edits to their fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
+To commit to a pull request branch created from a fork, you need push access to the base repository, permission from the pull request creator, and a user-owned fork without branch restrictions that prevent your push. Only the pull request creator can allow edits to their fork. See [AUTOTITLE](/pull-requests/how-tos/work-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
 
 1. On {% data variables.product.github %}, navigate to the fork where the pull request branch was created.
 {% data reusables.repositories.copy-clone-url %}
-{% data reusables.command_line.open_the_multi_os_terminal %}
+1. Open your terminal or Git Bash.
 1. Change the current working directory to the location where you want to clone the fork.
 
    ```shell
@@ -58,4 +59,4 @@ Your new commits appear on the original pull request on {% data variables.locati
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks)
+* [AUTOTITLE](/pull-requests/reference/forks)

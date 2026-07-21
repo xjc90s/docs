@@ -1,7 +1,7 @@
 ---
 title: Creating a pull request
-intro: Create a pull request to propose and collaborate on changes to a repository. These changes are proposed in a *branch*, which ensures that the default branch only contains finished and approved work.
-permissions: Anyone with read access to a repository can create a pull request. {% data reusables.enterprise-accounts.emu-permission-propose %}
+intro: Create a pull request to propose changes to the code in a repository.
+permissions: 'Anyone with read access to a repository can create a pull request.<br>{% data reusables.enterprise-accounts.emu-permission-propose %}'
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
   - /articles/creating-a-pull-request
@@ -11,29 +11,19 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
+shortTitle: Create a pull request
 category:
   - Create pull requests
 contentType: how-tos
 ---
 
-If you want to create a new branch for your pull request but don't have write permissions to the repository, you can fork the repository first. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork) and [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
+If you want to create a new branch for your pull request but don't have write permissions to the repository, you can fork the repository first. See [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork) and [AUTOTITLE](/pull-requests/reference/forks).
 
 When you create your pull request, you can specify which branch you want to merge your changes into. Pull requests can only be opened between two different branches.
 
 {% data reusables.pull_requests.perms-to-open-pull-request %}
 
 {% data reusables.pull_requests.close-issues-using-keywords %}
-
-## Changing the branch range and destination repository
-
-By default, pull requests target the parent repository's default branch. Use the branch and repository dropdown menus to choose the base branch where changes should be applied and the head branch that contains your changes.
-
-![Screenshot of a pull request. The dropdown to edit the compare branch is expanded.](/assets/images/help/pull_requests/pull-request-review-edit-branch.png)
-
-When you change the branch range, the Commit and Files changed preview areas update to show the new comparison. If you change the base repository, people who can push to that repository receive notifications for the pull request.
-
-> [!TIP]
-> For more comparison options, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
 
 ## Creating the pull request
 
@@ -51,7 +41,7 @@ When you change the branch range, the Commit and Files changed preview areas upd
 
 {% data reusables.repositories.asking-for-review %}
 
-After your pull request has been reviewed, it can be [merged into the repository](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request).
+After your pull request has been reviewed, it can be merged into the repository. See [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request).
 
 {% endwebui %}
 
@@ -119,18 +109,6 @@ gh pr create --web
 
 1. Click **Preview Pull Request**. {% data variables.product.prodname_desktop %} opens a preview dialog that shows the diff of the changes between your current branch and the base branch.
 
-   {% mac %}
-
-   ![Screenshot of the "No local changes" view. A button, labeled "Preview Pull Request", is highlighted with an orange outline.](/assets/images/help/desktop/mac-preview-pull-request.png)
-
-   {% endmac %}
-
-   {% windows %}
-
-   ![Screenshot of the "No local changes" view. A button, labeled "Preview Pull Request", is highlighted with an orange outline.](/assets/images/help/desktop/windows-preview-pull-request.png)
-
-   {% endwindows %}
-
    Alternatively, to go straight to {% data variables.product.prodname_dotcom %} to create your pull request, select the dropdown icon and click **Create Pull Request**.
 
 1. Confirm that the branch in the **base:** dropdown menu is the branch where you want to merge your changes.
@@ -157,7 +135,7 @@ gh pr create --web
 ![Screenshot of the "{% data variables.product.prodname_dotcom %} Pull Request" side bar with a form for creating a pull request, including "Title" and "Description" fields.](/assets/images/help/codespaces/codespaces-commit-pr.png)
 1. Click **Create**.
 
-For more information on creating pull requests in {% data variables.product.prodname_github_codespaces %}, see [AUTOTITLE](/codespaces/developing-in-codespaces/using-github-codespaces-for-pull-requests).
+For more information on creating pull requests in {% data variables.product.prodname_github_codespaces %}, see [AUTOTITLE](/codespaces/developing-in-a-codespace/using-github-codespaces-for-pull-requests).
 
 {% endcodespaces %}
 
@@ -174,7 +152,7 @@ You can also make changes to files on the {% data variables.product.github %} we
 1. On {% data variables.product.github %}, navigate to a pull request in a repository.
 {% data reusables.repositories.changed-files %}
 1. Scroll down to the file you want to make changes to.
-   * If the pull request has a lot of files, you can use the filter to locate the file. See [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/filtering-files-in-a-pull-request).
+   * If the pull request has a lot of files, you can use the filter to locate the file.
 1. Above the file you want to change, click {% octicon "kebab-horizontal" aria-label="Show options" %}.
    ![Screenshot of the options above a file on the "File changed" tab. The "Show options" button is highlighted with an orange rectangle.](/assets/images/help/pull_requests/menu-on-pull-request-file.png)
 1. In the menu, click **Edit file**.
@@ -184,9 +162,9 @@ You can also make changes to files on the {% data variables.product.github %} we
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-base-branch-of-a-pull-request)
-* [AUTOTITLE](/issues/tracking-your-work-with-issues/creating-an-issue)
-* [AUTOTITLE](/issues/tracking-your-work-with-issues/assigning-issues-and-pull-requests-to-other-github-users)
+* [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork)
+* [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/keeping-your-pull-request-in-sync-with-the-base-branch)
+* [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/changing-the-base-branch-of-a-pull-request)
+* [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/creating-an-issue)
+* [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/assigning-issues-and-pull-requests-to-other-github-users)
 * [AUTOTITLE](/get-started/writing-on-github)

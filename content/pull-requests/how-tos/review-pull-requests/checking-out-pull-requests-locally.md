@@ -1,6 +1,6 @@
 ---
 title: Checking out pull requests locally
-intro: When someone sends you a pull request from a fork or branch of your repository, you can merge it locally to resolve a merge conflict or to test and verify the changes before merging on {% data variables.product.github %}.
+intro: Check out pull requests locally to resolve merge conflicts, test changes, or modify code.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally
   - /articles/checking-out-pull-requests-locally
@@ -18,7 +18,7 @@ contentType: how-tos
 ---
 
 > [!NOTE]
-> Pull request authors can give upstream repository maintainers, or people with push access to the upstream repository, permission to make commits to their pull request's compare branch in a user-owned fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
+> Pull request authors can give upstream repository maintainers, or people with push access to the upstream repository, permission to make commits to their pull request's compare branch in a user-owned fork. See [AUTOTITLE](/pull-requests/how-tos/work-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
 
 ## Modifying an active pull request locally
 
@@ -54,19 +54,19 @@ gh pr checkout PULL-REQUEST
 
 ## Modifying an inactive pull request locally
 
-If a pull request’s author is unresponsive to requests or has deleted their fork, the changes proposed in that pull request can still be merged through a new pull request. However, if you want to make changes to a pull request and the author is not responding, you need to take additional steps to update the pull request.
+If a pull request’s author is unresponsive to requests or has deleted their fork, the changes proposed in that pull request can still be merged through a new pull request. However, if you want to make changes, you need to take additional steps to update the pull request.
 
-After a pull request is opened, {% data variables.product.github %} stores all of the changes remotely. In other words, commits in a pull request are available in a repository even before the pull request is merged. You can fetch an open pull request and recreate it as your own.
+After a pull request is opened, {% data variables.product.github %} stores all of the changes remotely. Commits in a pull request are available in a repository even before the pull request is merged. You can fetch an open pull request and recreate it as your own.
 
-Anyone can work with a previously opened pull request to continue working on it, test it, or open a new pull request with additional changes. However, only collaborators with push access can merge pull requests.
+Anyone can work with a previously opened pull request to continue working on it, test it, or open a new pull request with additional changes.
 
-{% data reusables.repositories.sidebar-issue-pr %}
-1. In the "Pull Requests" list, click the pull request you want to merge.
+{% data reusables.repositories.sidebar-pr %}
+1. In the **Pull Requests** list, click the pull request you want to merge.
 1. Find the ID number of the inactive pull request. This is the sequence of digits right after the pull request's title.
 
    ![Screenshot of the title of a pull request. The pull request's ID number is outlined in dark orange.](/assets/images/help/pull_requests/pull-request-id-number.png)
 
-{% data reusables.command_line.open_the_multi_os_terminal %}
+1. Open your terminal or Git Bash.
 1. Fetch the reference to the pull request based on its ID number. This creates a new branch. Use the pull request ID and the name of the local branch you want to create in the command.
 
    ```shell
@@ -94,7 +94,7 @@ Anyone can work with a previously opened pull request to continue working on it,
    >  * [new branch]      BRANCH_NAME -> BRANCH_NAME
    ```
 
-1. [Create a new pull request](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) with your new branch.
+1. Create a new pull request with your new branch.
 
 ## Error: Failed to push some refs
 

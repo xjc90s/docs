@@ -1,7 +1,7 @@
 ---
 title: Creating a commit with multiple authors or on behalf of an organization
 allowTitleToDifferFromFilename: true
-intro: You can attribute a commit to more than one author, or to an organization, by adding trailers to the commit's message.
+intro: Attribute commits to multiple authors or organizations using trailers in commit messages for better collaboration and transparency.
 redirect_from:
   - /articles/creating-a-commit-with-multiple-authors
   - /github/committing-changes-to-your-project/creating-a-commit-with-multiple-authors
@@ -15,7 +15,7 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
-shortTitle: Multiple authors or an org
+shortTitle: Create a commit with multiple authors
 category:
   - Commit changes
 contentType: how-tos
@@ -29,15 +29,11 @@ Add one or more `Co-authored-by` trailers to a commit message to attribute a com
 
 Before adding a co-author, get the email address they want used in the trailer. For the commit to count as a contribution, use an email address associated with their account on {% data variables.location.product_location %}.
 
-{% ifversion fpt or ghec %}
-
-If a co-author keeps their email address private, use their {% data variables.product.github %}-provided `no-reply` email. For more information, see [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address).
-
-{% endif %}
+If a co-author keeps their email address private, use their {% data variables.product.github %}-provided `no-reply` email. See [AUTOTITLE](/account-and-profile/how-tos/email-preferences/setting-your-commit-email-address).
 
 ### Creating co-authored commits using {% data variables.product.prodname_desktop %}
 
-You can use {% data variables.product.prodname_desktop %} to create a commit with a co-author. For more information, see [AUTOTITLE](/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop#write-a-commit-message-and-push-your-changes) and [{% data variables.product.prodname_desktop %}](https://desktop.github.com).
+You can use {% data variables.product.prodname_desktop %} to create a commit with a co-author. See [AUTOTITLE](/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop#write-a-commit-message-and-push-your-changes) and [{% data variables.product.prodname_desktop %}](https://desktop.github.com).
 
 ### Creating co-authored commits on the command line
 
@@ -60,7 +56,7 @@ You can use {% data variables.product.prodname_desktop %} to create a commit wit
    > Co-authored-by: ANOTHER-NAME <ANOTHER-NAME@EXAMPLE.COM>"
    ```
 
-The new commit and message appear on {% data variables.location.product_location %} after you push. For more information, see [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
+The new commit and message appear on {% data variables.location.product_location %} after you push. See [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
 
 ### Creating co-authored commits on {% data variables.product.github %}
 
@@ -74,9 +70,10 @@ After you make changes in a file using the web editor on {% data variables.produ
 
 The new commit and message appear on {% data variables.location.product_location %}.
 
-{% ifversion fpt or ghec %}
-
 ## Creating a commit on behalf of an organization
+
+> [!NOTE]
+> Creating a commit on behalf of an organization is not available on {% data variables.product.prodname_ghe_server %}.
 
 Add an `on-behalf-of:` trailer to a signed commit to attribute it to an organization. To use the trailer, you must be a member of the organization, and both your commit email and the organization email must be in a domain verified by the organization.
 
@@ -99,7 +96,7 @@ Add an `on-behalf-of:` trailer to a signed commit to attribute it to an organiza
    on-behalf-of: @ORG NAME@ORGANIZATION.COM"
    ```
 
-The new commit, message, and badge appear on {% data variables.product.prodname_dotcom %} after you push. For more information, see [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
+The new commit, message, and badge appear on {% data variables.product.prodname_dotcom %} after you push. See [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
 
 ### Creating commits with an `on-behalf-of` badge on {% data variables.product.github %}
 
@@ -112,12 +109,10 @@ After you make changes in a file using the web editor on {% data variables.produ
 
 The new commit, message, and badge appear on {% data variables.product.prodname_dotcom %}.
 
-{% endif %}
-
 ## Further reading
 
-* [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/viewing-contributions-on-your-profile)
-* [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-github-profile/managing-contribution-settings-on-your-profile/why-are-my-contributions-not-showing-up-on-my-profile)
+* [AUTOTITLE](/account-and-profile/how-tos/contribution-settings/viewing-contributions-on-your-profile)
+* [AUTOTITLE](/account-and-profile/how-tos/contribution-settings/troubleshooting-missing-contributions)
 * [AUTOTITLE](/repositories/viewing-activity-and-data-for-your-repository/viewing-a-projects-contributors)
-* [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message)
+* [AUTOTITLE](/pull-requests/how-tos/commit-changes/changing-a-commit-message)
 * [AUTOTITLE](/desktop/making-changes-in-a-branch/committing-and-reviewing-changes-to-your-project-in-github-desktop#write-a-commit-message-and-push-your-changes) in the {% data variables.product.prodname_desktop %} documentation

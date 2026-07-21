@@ -1,6 +1,6 @@
 ---
 title: Viewing a pull request review
-intro: You can view all of the comments made in a single pull request review.
+intro: View and navigate all comments from a single pull request review to understand changes and feedback.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests/viewing-a-pull-request-review
   - /articles/viewing-a-pull-request-review
@@ -28,6 +28,6 @@ When you view a full review, you see the same version of the pull request as the
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request)
-* [AUTOTITLE](/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests)
+* [AUTOTITLE](/pull-requests/reference/pull-request-reviews)
+* [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request)
+* [AUTOTITLE](/code-security/how-tos/manage-security-alerts/manage-code-scanning-alerts/triage-alerts-in-pull-requests)

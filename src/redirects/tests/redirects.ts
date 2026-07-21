@@ -17,7 +17,7 @@ describe('redirects', () => {
 
   test('page.buildRedirects() returns an array', async () => {
     const page = await Page.init({
-      relativePath: 'pull-requests/concepts/about-branches.md',
+      relativePath: 'pull-requests/reference/branches.md',
       basePath: path.join(__dirname, '../../../content'),
       languageCode: 'en',
     })

@@ -1,7 +1,9 @@
 ---
-title: About pull requests
-intro: Pull requests let you propose, review, and merge code changes.
+title: Pull requests
+shortTitle: Pull requests
+intro: Propose, review, and merge code changes using pull requests to collaborate effectively and maintain code quality.
 redirect_from:
+  - /pull-requests/concepts/about-pull-requests
   - /github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests
   - /articles/using-pull-requests
   - /articles/about-pull-requests
@@ -20,7 +22,7 @@ versions:
   ghec: '*'
 category:
   - Create pull requests
-contentType: concepts
+contentType: reference
 ---
 
 Pull requests are proposals to merge code changes into a project. A pull request is {% data variables.product.github %}'s key **collaboration feature**, letting you discuss and review changes before merging them. This helps teams work together, catch issues early, and maintain code quality.
@@ -45,7 +47,7 @@ Together, these views help authors and reviewers discuss the change, track feedb
 
 When you create a pull request, you can choose to make it a draft pull request. Draft pull requests cannot be merged, and code owners are not automatically requested to review them. Drafts are useful when you want to share work-in-progress without formally requesting reviews.
 
-{% data reusables.pull_requests.mark-ready-review %} You can convert a pull request to a draft at any time. See [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-stage-of-a-pull-request).
+{% data reusables.pull_requests.mark-ready-review %} You can convert a pull request to a draft at any time. See [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/changing-the-stage-of-a-pull-request).
 
 ## Pull request refs and merge branches
 
@@ -78,8 +80,8 @@ In the shared repository model, collaborators have push access to a single share
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork)
+* [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-a-pull-request)
+* [AUTOTITLE](/pull-requests/reference/branches)
+* [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/commenting-on-a-pull-request)
+* [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork)
+* [AUTOTITLE](/pull-requests/how-tos/work-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork)

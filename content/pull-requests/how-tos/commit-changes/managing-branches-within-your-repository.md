@@ -1,17 +1,18 @@
 ---
-title: Creating and deleting branches within your repository
-intro: You can create or delete branches directly on {% data variables.product.github %}.
+title: Managing branches within your repository
+intro: Create new branches for development and delete unused branches directly on {% data variables.product.github %}.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository
   - /articles/deleting-branches-in-a-pull-request
   - /articles/creating-and-deleting-branches-within-your-repository
   - /github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository
   - /pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository
+  - /pull-requests/how-tos/create-pull-requests/creating-and-deleting-branches-within-your-repository
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
-shortTitle: Create & delete branches
+shortTitle: Manage branches
 category:
   - Create pull requests
 contentType: how-tos
@@ -19,10 +20,10 @@ contentType: how-tos
 
 ## Creating a branch
 
-Create a branch when you want a separate place to work on changes before opening a pull request.
+Create a branch for a separate place to work on changes before opening a pull request.
 
 > [!NOTE]
-> You can only create a branch in a repository to which you have push access.
+> You can only create a branch in a repository to which you have write access.
 
 ### Creating a branch via the branches overview
 
@@ -49,7 +50,7 @@ Create a branch when you want a separate place to work on changes before opening
 
 ### Creating a branch for an issue
 
-You can create a branch to work on an issue directly from the issue page. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/creating-a-branch-for-an-issue).
+You can create a branch to work on an issue directly from the issue page. See [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/creating-a-branch-for-an-issue).
 
 ## Deleting a branch
 
@@ -58,7 +59,7 @@ Delete branches that you no longer need, such as branches for merged or closed w
 {% data reusables.pull_requests.automatically-delete-branches %}
 
 > [!NOTE]
-> If the branch you want to delete is the repository's default branch, choose a new default branch first. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch).
+> If the branch you want to delete is the repository's default branch, choose a new default branch first. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch).
 
 If the branch is associated with an open pull request, merge or close the pull request before deleting the branch.
 
@@ -70,10 +71,10 @@ If the branch is associated with an open pull request, merge or close the pull r
 1. If the branch is associated with at least one open pull request, deleting the branch closes the pull requests. Read the warning, then click **Delete**.
 
 {% data reusables.pull_requests.retargeted-on-branch-deletion %}
-For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#working-with-branches).
+See [AUTOTITLE](/pull-requests/reference/branches).
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches)
+* [AUTOTITLE](/pull-requests/reference/branches)
 * [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/viewing-branches-in-your-repository)
 * [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/deleting-and-restoring-branches-in-a-pull-request)

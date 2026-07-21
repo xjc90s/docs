@@ -1,6 +1,6 @@
 ---
 title: Requesting a pull request review
-intro: After you create a pull request, you can ask a specific person to review the changes you've proposed. If you're an organization member, you can also request a specific team to review your changes.
+intro: Request reviews for your pull requests from individuals or teams to ensure thorough feedback and collaboration.
 product: '{% data reusables.gated-features.multiple-pr-reviewers %}'
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review
@@ -18,15 +18,11 @@ category:
 contentType: how-tos
 ---
 
-To request a review, you need write access to the repository. You can request a review from a person or team with read access to the repository, and they receive a notification. Pull request authors can request reviews only if they are repository owners or collaborators with write access.
-
-{% ifversion copilot %}
+To request a review, you need write access to the repository. You can request a review from a person or team with read access to the repository, and they  receive a notification. For complete details on permissions for requesting reviews, see [AUTOTITLE](/pull-requests/reference/pull-request-reviews#requesting-and-requiring-reviews).
 
 ## Requesting reviews from collaborators and organization members
 
-{% endif %}
-
-Suggested reviewers are based on [git blame data](/repositories/working-with-files/using-files/viewing-a-file). After someone reviews your pull request and you make changes, you can request another review from the same reviewer.
+Suggested reviewers are based on [git blame data](/repositories/working-with-files/using-files/viewing-and-understanding-files). After someone reviews your pull request and you make changes, you can request another review from the same reviewer.
 
 {% data reusables.repositories.sidebar-pr %}
 1. In the list of pull requests, click the pull request that you want a specific person or team to review.
@@ -42,14 +38,17 @@ Suggested reviewers are based on [git blame data](/repositories/working-with-fil
 
    ![Screenshot of the "Reviewers" section of a pull request's sidebar. To the right of @octocat, a sync icon is outlined in dark orange.](/assets/images/help/pull_requests/request-re-review.png)
 
-{% ifversion copilot %}
+{% ifversion fpt or ghec %}
 
 ## Requesting a review from {% data variables.product.prodname_copilot %}
 
-You can also request that {% data variables.product.prodname_copilot_short %} review your code and provide feedback and suggested changes on your work. See [AUTOTITLE](/copilot/using-github-copilot/code-review/using-copilot-code-review).
+> [!NOTE]
+> {% data variables.product.prodname_copilot_short %} features require a {% data variables.product.prodname_copilot_short %} plan. See [AUTOTITLE](/copilot/get-started/plans).
+
+You can also request that {% data variables.product.prodname_copilot_short %} review your code and provide feedback and suggested changes on your work. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/request-a-code-review/use-code-review).
 
 {% endif %}
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
+* [AUTOTITLE](/pull-requests/reference/pull-request-reviews)

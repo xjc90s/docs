@@ -13,16 +13,18 @@ redirect_from:
   - /articles/viewing-and-comparing-commits
   - /github/committing-changes-to-your-project/viewing-and-comparing-commits
 shortTitle: Commit changes
-intro: Create, change, compare, and troubleshoot commits in your pull requests.
+intro: Create, modify, compare, and troubleshoot branches and commits to streamline collaboration in your pull requests.
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
 children:
-  - /comparing-commits
+  - /managing-branches-within-your-repository
+  - /committing-changes-to-a-pull-request-branch-created-from-a-fork
   - /creating-a-commit-with-multiple-authors
-  - /troubleshooting-commits
   - /changing-a-commit-message
+  - /comparing-commits
+  - /troubleshooting-commits
 contentType: how-tos
 ---
 

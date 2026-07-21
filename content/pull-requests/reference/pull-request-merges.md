@@ -1,7 +1,8 @@
 ---
-title: About pull request merges
-intro: You can [merge pull requests](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request) by retaining all the commits in a feature branch, squashing all commits into a single commit, or by rebasing individual commits from the `head` branch onto the `base` branch.
+title: Pull request merges
+intro: Learn strategies for merging pull requests, including merge commits, squash merges, and rebases, to manage repository history effectively.
 redirect_from:
+  - /pull-requests/concepts/about-pull-request-merges
   - /github/collaborating-with-issues-and-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges
   - /articles/about-pull-request-merge-squashing
   - /articles/about-pull-request-merges
@@ -14,10 +15,16 @@ versions:
   ghec: '*'
 category:
   - Merge and close pull requests
-contentType: concepts
+contentType: reference
 ---
 
 Pull requests can be merged in different ways. The best strategy depends on how your team wants the repository history to look and how much detail you want to preserve from the pull request branch.
+
+| Strategy | Result | Choose when |
+| --- | --- | --- |
+| Merge commit | Preserves every commit from the pull request branch and adds an explicit merge point. | Your team values complete history, or the individual commits are meaningful on their own. |
+| Squash and merge | Combines all commits in the pull request into a single commit on the base branch. | A pull request represents one logical change, especially with many small fixup commits. |
+| Rebase and merge | Adds each commit onto the base branch without a merge commit, for a linear history. | Your team wants a linear history and the commits are already organized clearly. |
 
 ## Merge your commits
 
@@ -39,7 +46,7 @@ Choose this strategy when a pull request represents one logical change, especial
 
 When you squash and merge, {% data variables.product.prodname_dotcom %} generates a default commit message that you can edit. The default message can include the pull request title, pull request description, or commit information, depending on repository settings and the number of commits in the pull request.
 
-Maintainers and administrators can configure the default message for squashed commits. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests).
+Maintainers and administrators can configure the default message for squashed commits. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests).
 
 ### Squashing and merging a long-running branch
 
@@ -53,7 +60,7 @@ For long-running branches, consider using a merge commit or rebasing the branch 
 
 Rebasing adds each commit from the pull request branch onto the base branch without creating a merge commit. This produces a linear history while preserving the individual commits from the pull request.
 
-Choose this strategy when your team wants a linear history and the pull request commits are already organized clearly. If {% data variables.product.github %} cannot safely rebase the pull request automatically, you can rebase locally, resolve conflicts, and push the updated branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) and [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request).
+Choose this strategy when your team wants a linear history and the pull request commits are already organized clearly. If {% data variables.product.github %} cannot safely rebase the pull request automatically, you can rebase locally, resolve conflicts, and push the updated branch. See [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests/resolving-a-merge-conflict-using-the-command-line) and [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request).
 
 ## Indirect merges
 
@@ -63,5 +70,5 @@ Indirect merges are uncommon, but they can affect automation and branch protecti
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts)
+* [AUTOTITLE](/pull-requests/reference/pull-requests)
+* [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests)

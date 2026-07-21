@@ -1,6 +1,6 @@
 ---
 title: Merging a pull request
-intro: Merge a pull request into the upstream branch when work is completed. Anyone with push access to the repository can complete the merge.
+intro: Merge pull requests into the upstream branch, choose merge methods, and meet repository requirements like reviews or status checks.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request
   - /articles/merging-a-pull-request
@@ -11,6 +11,7 @@ versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
+shortTitle: Merge a pull request
 category:
   - Merge and close pull requests
 contentType: how-tos
@@ -19,17 +20,17 @@ contentType: how-tos
 
 Merge a pull request when the proposed changes are ready and any repository requirements are satisfied. You can't merge a draft pull request.
 
-Repository rules or branch protection may require reviews, status checks, or an up-to-date branch before merging. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+Repository rules or branch protection may require reviews, status checks, or an up-to-date branch before merging. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
 
 {% data reusables.repositories.rulesets-alternative %}
 
 {% data reusables.pull_requests.you-can-auto-merge %}
 
-If the base branch requires a merge queue, the available merge options differ from those described here. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue).
+If the base branch requires a merge queue, the available merge options differ from those described here. See [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request-with-a-merge-queue).
 
-If the pull request has merge conflicts, or if you want to test changes first, [check out the pull request locally](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally).
+If the pull request has merge conflicts, or if you want to test changes first, [check out the pull request locally](/pull-requests/how-tos/review-pull-requests/checking-out-pull-requests-locally).
 
-The repository may automatically delete the head branch after merging. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches).
+The repository may automatically delete the head branch after merging. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches).
 
 > [!NOTE]
 > {% data reusables.pull_requests.retargeted-on-branch-deletion %}
@@ -38,7 +39,7 @@ Pull requests use [the `--no-ff` option](https://git-scm.com/docs/git-merge#_fas
 
 {% data reusables.pull_requests.close-issues-using-keywords %}
 
-If you don't want to merge the changes, you can [close the pull request](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/closing-a-pull-request).
+If you don't want to merge the changes, you can [close the pull request](/pull-requests/how-tos/merge-and-close-pull-requests/closing-a-pull-request).
 
 ## Merging a pull request
 
@@ -48,16 +49,16 @@ If you don't want to merge the changes, you can [close the pull request](/pull-r
 1. In the "Pull Requests" list, click the pull request you want to merge.
 1. Scroll down to the bottom of the pull request. Depending on the merge options enabled for your repository, choose a merge method:
 
-    * [Merge all commits into the base branch](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges) by clicking **Merge pull request**. If the option is not shown, click the merge dropdown menu and select **Create a merge commit**.
+    * [Merge all commits into the base branch](/pull-requests/reference/pull-request-merges) by clicking **Merge pull request**. If the option is not shown, click the merge dropdown menu and select **Create a merge commit**.
 
       ![Screenshot of the merge options for a pull request. The arrow to expand the dropdown is outlined in dark orange.](/assets/images/help/pull_requests/merge-pull-request-options.png)
 
-    * [Squash the commits into one commit](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#squash-and-merge-your-pull-request-commits) by clicking the merge dropdown menu, selecting **Squash and merge**, and then clicking **Squash and merge**.
+    * [Squash the commits into one commit](/pull-requests/reference/pull-request-merges#squash-and-merge-your-pull-request-commits) by clicking the merge dropdown menu, selecting **Squash and merge**, and then clicking **Squash and merge**.
 
-    * [Rebase the commits individually onto the base branch](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges#rebase-and-merge-your-pull-request-commits) by clicking the merge dropdown menu, selecting **Rebase and merge**, and then clicking **Rebase and merge**.
+    * [Rebase the commits individually onto the base branch](/pull-requests/reference/pull-request-merges#rebase-and-merge-your-pull-request-commits) by clicking the merge dropdown menu, selecting **Rebase and merge**, and then clicking **Rebase and merge**.
 
     > [!NOTE]
-    > Rebase and merge will always update the committer information and create new commit SHAs. For more information, see [About pull request merges](/articles/about-pull-request-merges#rebase-and-merge-your-pull-request-commits).
+    > Rebase and merge will always update the committer information and create new commit SHAs. See [About pull request merges](/pull-requests/reference/pull-request-merges#rebase-and-merge-your-pull-request-commits).
 
 1. If prompted, type a commit message, or accept the default message.
 
@@ -82,7 +83,7 @@ To merge a pull request, use the `gh pr merge` subcommand. Replace `pull-request
 gh pr merge PULL-REQUEST
 ```
 
-Follow the interactive prompts to complete the merge. For more information about the merge methods that you can choose, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges).
+Follow the interactive prompts to complete the merge. See [AUTOTITLE](/pull-requests/reference/pull-request-merges).
 
 Alternatively, you can use flags to skip the interactive prompts. For example, this command squashes the commits into a single commit with the commit message "my squash commit", merges the squashed commit into the base branch, and then deletes the local and remote branch.
 
@@ -94,7 +95,7 @@ gh pr merge 523 --squash --body "my squash commit" --delete-branch
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/reverting-a-pull-request)
-* [AUTOTITLE](/desktop/keeping-your-local-repository-in-sync-with-github/syncing-your-branch) using {% data variables.product.prodname_desktop %}
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts)
+* [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests/reverting-a-pull-request)
+* [AUTOTITLE](/desktop/working-with-your-remote-repository-on-github-or-github-enterprise/syncing-your-branch-in-github-desktop) using {% data variables.product.prodname_desktop %}
+* [AUTOTITLE](/pull-requests/reference/pull-request-merges)
+* [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests)

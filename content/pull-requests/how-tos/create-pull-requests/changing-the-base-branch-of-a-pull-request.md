@@ -1,6 +1,6 @@
 ---
 title: Changing the base branch of a pull request
-intro: After a pull request is opened, you can change the base branch to compare the changes in the pull request against a different branch.
+intro: Modify the base branch of an open pull request to compare changes against a different branch and ensure accurate updates.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/changing-the-base-branch-of-a-pull-request
   - /articles/changing-the-base-branch-of-a-pull-request
@@ -24,7 +24,7 @@ contentType: how-tos
 1. In the "Pull Requests" list, click the pull request you want to modify.
 1. Next to the pull request title, click **Edit title** {% octicon "pencil" aria-label="Edit title" %}.
 
-1. In the base branch drop-down menu, select the base branch you'd like to [compare changes against](/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits#comparing-branches).
+1. In the base branch drop-down menu, select the base branch you'd like to [compare changes against](/pull-requests/how-tos/commit-changes/comparing-commits#comparing-branches).
 
    ![Screenshot of a pull request title. The dropdown to change the base branch is outlined in dark orange.](/assets/images/help/pull_requests/pull-request-edit-base-branch.png)
 
@@ -35,6 +35,6 @@ contentType: how-tos
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request)
+* [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-a-pull-request)
+* [AUTOTITLE](/pull-requests/reference/pull-requests)
+* [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request)

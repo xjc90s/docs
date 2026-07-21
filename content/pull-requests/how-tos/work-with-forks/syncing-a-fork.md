@@ -1,6 +1,6 @@
 ---
 title: Syncing a fork
-intro: Sync a fork of a repository to keep it up-to-date with the upstream repository.
+intro: Sync a forked repository with its upstream repository using the web interface, GitHub CLI, or command line.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/working-with-forks/syncing-a-fork
   - /articles/syncing-a-fork
@@ -17,6 +17,7 @@ versions:
   ghes: '*'
   ghec: '*'
 permissions: People with write access for a forked repository can sync the fork to the upstream repository.
+shortTitle: Sync a fork
 category:
   - Work with forks
 contentType: how-tos
@@ -46,9 +47,9 @@ If the changes from the upstream repository cause conflicts, the {% data variabl
 
 ## Syncing a fork branch from the command line
 
-Before you can sync your fork with an upstream repository, you must configure a remote that points to the upstream repository in Git. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/configuring-a-remote-repository-for-a-fork).
+Before you can sync your fork with an upstream repository, you must configure a remote that points to the upstream repository in Git. See [AUTOTITLE](/pull-requests/how-tos/work-with-forks/configuring-a-remote-repository-for-a-fork).
 
-{% data reusables.command_line.open_the_multi_os_terminal %}
+1. Open your terminal or Git Bash.
 1. Change the current working directory to your local project.
 1. Fetch the branches and their respective commits from the upstream repository. Commits to `BRANCH-NAME` will be stored in the local branch `upstream/BRANCH-NAME`.
 
@@ -82,7 +83,7 @@ Before you can sync your fork with an upstream repository, you must configure a 
    >  create mode 100644 README.md
    ```
 
-   If your local branch didn't have any unique commits, Git will perform a fast-forward. For more information, see [Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) in the Git documentation.
+   If your local branch didn't have any unique commits, Git will perform a fast-forward. See [Basic Branching and Merging](https://git-scm.com/book/en/v2/Git-Branching-Basic-Branching-and-Merging) in the Git documentation.
 
    ```shell
    $ git merge upstream/main
@@ -92,7 +93,7 @@ Before you can sync your fork with an upstream repository, you must configure a 
    >  1 file changed, 3 insertions(+), 2 deletions(-)
    ```
 
-   If your local branch had unique commits, you may need to resolve conflicts. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts).
+   If your local branch had unique commits, you may need to resolve conflicts. See [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests).
 
 > [!TIP]
 > Syncing your fork only updates your local copy of the repository. To update your fork on {% data variables.location.product_location %}, you must [push your changes](/get-started/using-git/pushing-commits-to-a-remote-repository).

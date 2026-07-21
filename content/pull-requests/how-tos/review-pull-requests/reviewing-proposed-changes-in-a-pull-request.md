@@ -1,12 +1,25 @@
 ---
 title: Reviewing proposed changes in a pull request
-intro: In a pull request, you can review and discuss commits, changed files, and the differences (or "diff") between the files in the base and compare branches.
+intro: Review commits, file changes, and diffs in pull requests to provide feedback, approve changes, or request updates before merging.
 redirect_from:
+  - /pull-requests/how-tos/review-pull-requests/filtering-files-in-a-pull-request
+  - /pull-requests/how-tos/review-pull-requests/finding-changed-methods-and-functions-in-a-pull-request
   - /github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
   - /articles/reviewing-proposed-changes-in-a-pull-request
   - /github/collaborating-with-issues-and-pull-requests/reviewing-proposed-changes-in-a-pull-request
   - /github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
   - /pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request
+  - /github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests/filtering-files-in-a-pull-request
+  - /articles/filtering-files-in-a-pull-request-by-file-type
+  - /articles/filtering-files-in-a-pull-request
+  - /github/collaborating-with-issues-and-pull-requests/filtering-files-in-a-pull-request
+  - /github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/filtering-files-in-a-pull-request
+  - /pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/filtering-files-in-a-pull-request
+  - /github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests/finding-changed-methods-and-functions-in-a-pull-request
+  - /articles/finding-changed-methods-and-functions-in-a-pull-request
+  - /github/collaborating-with-issues-and-pull-requests/finding-changed-methods-and-functions-in-a-pull-request
+  - /github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/finding-changed-methods-and-functions-in-a-pull-request
+  - /pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/finding-changed-methods-and-functions-in-a-pull-request
 versions:
   fpt: '*'
   ghes: '*'
@@ -26,11 +39,7 @@ It's best to review changes in a pull request one file at a time:
 * The **progress bar** in the pull request header shows how many files you've viewed.
 * When you've finished, you can **approve** the pull request or **request changes** by submitting your review with a summary comment.
 
-{% ifversion copilot %}
-
-If the pull request was raised by {% data variables.product.prodname_copilot %}, then {% data variables.product.prodname_copilot_short %} will respond to your comments when you submit them. {% data variables.product.prodname_copilot_short %} will push a new commit to the pull request with further changes. See [AUTOTITLE](/copilot/concepts/agents/cloud-agent/about-cloud-agent).
-
-{% endif %}
+{% ifversion fpt or ghec %} If the pull request was raised by {% data variables.product.prodname_copilot %}, then {% data variables.product.prodname_copilot_short %} will respond to your comments when you submit them. {% data variables.product.prodname_copilot_short %} will push a new commit to the pull request with further changes. See [AUTOTITLE](/copilot/concepts/agents/cloud-agent/about-cloud-agent).{% endif %}
 
 {% webui %}
 
@@ -49,8 +58,6 @@ In the pull request sidebar, you can find valuable context, including:
 
 Use this information to frame your review and check if the goals of the pull request align with the original intent.
 
-{% ifversion copilot %}
-
 ### Using {% data variables.copilot.copilot_chat_short %} to understand the rationale
 
 You can ask {% data variables.copilot.copilot_chat_short %} for help understanding the pull request’s intent or clarifying any part of the change.
@@ -68,8 +75,6 @@ You can ask {% data variables.copilot.copilot_chat_short %} for help understandi
 
 {% data variables.copilot.copilot_chat_short %} can help you clarify the bigger picture before you start line-level review.
 
-{% endif %}
-
 ## Starting a review
 
 {% data reusables.repositories.sidebar-pr %}
@@ -80,10 +85,10 @@ To change the format of the diff view in this tab, click {% octicon "gear" aria-
    ![Screenshot of the "Files changed" tab for a pull request. The "Diff view" menu is outlined in dark orange.](/assets/images/help/pull_requests/diff-settings-menu.png)
 
    You can also hide whitespace differences. The choice you make only applies to this pull request and will be remembered the next time you visit this page.
-1. Optionally, filter the files to show only the files you want to review or use the file tree to navigate to a specific file. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/filtering-files-in-a-pull-request).
-{%- ifversion ghec %}
-1. Optionally, if you have access to {% data variables.copilot.copilot_enterprise %}, you can ask {% data variables.product.prodname_copilot_short %} about the changes in a file in a pull request by clicking {% octicon "kebab-horizontal" aria-label="Show options" %} at the top right of the file, clicking **Ask {% data variables.product.prodname_copilot_short %} about this diff**, then typing a request such as "Explain these changes." For more information, see [AUTOTITLE](/enterprise-cloud@latest/copilot/github-copilot-chat/copilot-chat-in-github/using-github-copilot-chat-in-githubcom#asking-questions-about-a-specific-pull-request).
-{%- endif %}
+1. Optionally, filter the files to show only the files you want to review or use the file tree to navigate to a specific file.
+{% ifversion ghec %}
+1. Optionally, if you have access to {% data variables.copilot.copilot_enterprise %}, you can ask {% data variables.product.prodname_copilot_short %} about the changes in a file in a pull request by clicking {% octicon "kebab-horizontal" aria-label="Show options" %} at the top right of the file, clicking **Ask {% data variables.product.prodname_copilot_short %} about this diff**, then typing a request such as "Explain these changes." See [AUTOTITLE](/enterprise-cloud@latest/copilot/how-tos/copilot-on-github/chat-with-copilot/chat-in-github#asking-questions-about-a-specific-pull-request).
+{% endif %}
 {% data reusables.repositories.start-line-comment %}
 {% data reusables.repositories.multiple-lines-comment %}
 {% data reusables.repositories.type-line-comment %}
@@ -104,7 +109,7 @@ Before you submit your review, your line comments are _pending_ and only visible
 
 You can use [{% data variables.product.prodname_github_codespaces %}](/codespaces/quickstart) to test, run, and review pull requests.
 
-1. Open the pull request in a codespace, as described in [AUTOTITLE](/codespaces/developing-in-codespaces/using-github-codespaces-for-pull-requests#opening-a-pull-request-in-codespaces).
+1. Open the pull request in a codespace, as described in [AUTOTITLE](/codespaces/developing-in-a-codespace/using-github-codespaces-for-pull-requests#opening-a-pull-request-in-codespaces).
 1. In the Activity Bar, click the **{% data variables.product.github %} Pull Request** view. This view only appears when you open a pull request in a codespace.
 
    ![Screenshot of the {% data variables.product.prodname_vscode_shortname %} Activity Bar. The mouse pointer is hovering over an icon displaying the tooltip "{% data variables.product.prodname_dotcom %} Pull Request."](/assets/images/help/codespaces/github-pr-view.png)
@@ -123,13 +128,14 @@ You can use [{% data variables.product.prodname_github_codespaces %}](/codespace
 
    ![Screenshot of the side bar showing the dropdown options "Comment and Submit," "Approve and Submit," and "Request Changes and Submit."](/assets/images/help/codespaces/submit-review.png)
 
-For more information on reviewing pull requests in {% data variables.product.prodname_github_codespaces %}, see [AUTOTITLE](/codespaces/developing-in-codespaces/using-github-codespaces-for-pull-requests).
+For more information on reviewing pull requests in {% data variables.product.prodname_github_codespaces %}, see [AUTOTITLE](/codespaces/developing-in-a-codespace/using-github-codespaces-for-pull-requests).
 
 {% endcodespaces %}
 {% endif %}
 
 {% webui %}
-{% ifversion copilot %}
+
+{% ifversion fpt or ghec %}
 
 ## Understanding changes in a pull request
 
@@ -156,7 +162,7 @@ For more information on reviewing pull requests in {% data variables.product.pro
 
 ## Reviewing dependency changes
 
-If the pull request contains changes to dependencies, you can use the dependency review for a manifest or lock file to see what has changed. You can also check whether the changes introduce security vulnerabilities. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-dependency-changes-in-a-pull-request).
+If the pull request contains changes to dependencies, you can use the dependency review for a manifest or lock file to see what has changed. You can also check whether the changes introduce security vulnerabilities. See [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/reviewing-dependency-changes-in-a-pull-request).
 
 {% data reusables.repositories.changed-files %}
 
@@ -196,4 +202,4 @@ After you've finished reviewing all the files you want in the pull request, subm
 ## Further reading
 
 * [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-pull-request-reviews-before-merging)
-* [AUTOTITLE](/issues/tracking-your-work-with-issues/filtering-and-searching-issues-and-pull-requests)
+* [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/filtering-and-searching-issues-and-pull-requests)

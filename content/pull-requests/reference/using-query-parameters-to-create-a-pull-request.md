@@ -1,6 +1,6 @@
 ---
 title: Using query parameters to create a pull request
-intro: Use query parameters to create custom URLs to open pull requests with pre-populated fields.
+intro: 'Use query parameters to create custom URLs that open pull requests with pre-filled titles, descriptions, labels, and more.'
 redirect_from:
   - /github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/using-query-parameters-to-create-a-pull-request
   - /pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/using-query-parameters-to-create-a-pull-request
@@ -26,6 +26,6 @@ You can add query parameters to a compare URL to open a pull request with pre-po
 | `projects` | Adds the pull request to a project. | `https://github.com/octo-org/octo-repo/compare/main...my-branch?quick_pull=1&title=Bug+fix&projects=octo-org/1` |
 | `template` | Adds a pull request template from a `PULL_REQUEST_TEMPLATE` subdirectory in the root, `docs/`, or `.github/` directory. | `https://github.com/octo-org/octo-repo/compare/main...my-branch?quick_pull=1&template=issue_template.md` |
 
-You must have permission to complete the equivalent action to use its query parameter. For example, you must have permission to add labels to use `labels`. For more information, see [AUTOTITLE](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization).
+You must have permission to complete the equivalent action to use its query parameter. For example, you must have permission to add labels to use `labels`. See [AUTOTITLE](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization).
 
 Invalid query parameters or insufficient permissions return a `404 Not Found` error. URLs that exceed the server limit return a `414 URI Too Long` error.

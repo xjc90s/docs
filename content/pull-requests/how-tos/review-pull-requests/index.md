@@ -7,21 +7,19 @@ redirect_from:
   - /articles/reviewing-changes-in-pull-requests
   - /github/collaborating-with-pull-requests/reviewing-changes-in-pull-requests
 shortTitle: Review pull requests
-intro: Review proposed changes, comment, approve, and manage reviews on pull requests.
+intro: 'Review, comment on, approve, and manage pull requests effectively, including filtering files, reviewing dependency changes, and incorporating feedback.'
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
 children:
-  - /finding-changed-methods-and-functions-in-a-pull-request
-  - /filtering-files-in-a-pull-request
+  - /checking-out-pull-requests-locally
   - /reviewing-proposed-changes-in-a-pull-request
   - /reviewing-dependency-changes-in-a-pull-request
-  - /checking-out-pull-requests-locally
-  - /viewing-a-pull-request-review
   - /commenting-on-a-pull-request
-  - /dismissing-a-pull-request-review
   - /approving-a-pull-request-with-required-reviews
+  - /viewing-a-pull-request-review
+  - /dismissing-a-pull-request-review
   - /incorporating-feedback-in-your-pull-request
 contentType: how-tos
 ---

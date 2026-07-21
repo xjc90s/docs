@@ -1,18 +1,19 @@
 ---
 title: Working with pre-receive hooks
-intro: '*Pre-receive hooks* enforce rules for contributions before commits may be pushed to a repository.'
+intro: Enforce repository policies and prevent issues like secrets or invalid commits using pre-receive hooks on GitHub Enterprise Server.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/collaborating-on-repositories-with-code-quality-features/working-with-pre-receive-hooks
   - /articles/working-with-pre-receive-hooks
   - /github/collaborating-with-issues-and-pull-requests/working-with-pre-receive-hooks
   - /github/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/working-with-pre-receive-hooks
   - /pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/working-with-pre-receive-hooks
+  - /pull-requests/concepts/working-with-pre-receive-hooks
 versions:
   ghes: '*'
 shortTitle: Pre-receive hooks
 category:
   - Merge and close pull requests
-contentType: concepts
+contentType: reference
 ---
 
 Pre-receive hooks are scripts that run on {% data variables.product.prodname_ghe_server %} before Git accepts pushed commits. They enforce repository, organization, or enterprise policy at the point where code enters a repository.
@@ -37,4 +38,4 @@ error: failed to push some refs to 'https://54.204.174.51/hodor/nope.git'
 
 Pre-receive hooks matter because they apply rules consistently before changes reach the repository. This can reduce manual review burden and prevent policy violations from being stored in Git history.
 
-Your {% data variables.product.prodname_ghe_server %} site administrator creates and removes pre-receive hooks. They may also allow organization or repository administrators to enable or disable hooks for specific scopes. For more information, see [AUTOTITLE](/admin/policies/enforcing-policy-with-pre-receive-hooks).
+Your {% data variables.product.prodname_ghe_server %} site administrator creates and removes pre-receive hooks. They may also allow organization or repository administrators to enable or disable hooks for specific scopes. See [AUTOTITLE](/admin/enforcing-policies/enforcing-policy-with-pre-receive-hooks).

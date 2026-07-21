@@ -1,6 +1,6 @@
 ---
 title: Creating a pull request from a fork
-intro: You can create a pull request to propose changes you've made to a fork of an upstream repository.
+intro: Create a pull request from a fork to propose changes to an upstream repository and collaborate on code effectively.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork
   - /articles/creating-a-pull-request-from-a-fork
@@ -18,9 +18,9 @@ category:
 contentType: how-tos
 ---
 
-Before creating a pull request from a fork, fork the upstream repository and push your changes to a branch in your fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
+Before creating a pull request from a fork, fork the upstream repository and push your changes to a branch in your fork. See [AUTOTITLE](/pull-requests/how-tos/work-with-forks/fork-a-repo).
 
-In a pull request from a fork, the base branch is where you want to merge your changes, and the compare branch is the branch in your fork that contains your changes. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request#changing-the-branch-range-and-destination-repository).
+In a pull request from a fork, the base branch is where you want to merge your changes, and the compare branch is the branch in your fork that contains your changes. See [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-a-pull-request#creating-the-pull-request).
 
 {% data reusables.pull_requests.perms-to-open-pull-request %}
 
@@ -47,5 +47,5 @@ In a pull request from a fork, the base branch is where you want to merge your c
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork)
+* [AUTOTITLE](/pull-requests/how-tos/work-with-forks)
+* [AUTOTITLE](/pull-requests/how-tos/work-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork)

@@ -9,23 +9,24 @@ redirect_from:
   - /github/getting-started-with-github/quickstart/fork-a-repo
   - /get-started/quickstart/fork-a-repo
   - /pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo
-intro: Create a fork of a repository so you can make changes without affecting the upstream repository.
+intro: Fork a repository on {% data variables.product.github %} to propose changes, collaborate on projects, and manage your own copy of the codebase.
 permissions: '{% data reusables.enterprise-accounts.emu-permission-fork %}'
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
+shortTitle: Fork a repository
 category:
   - Work with forks
 contentType: how-tos
 ---
 ## About forks
 
-Forking a repository lets you propose changes to a project without affecting the upstream repository. For more information about what forks are and when to use them, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks).
+Forking a repository lets you propose changes to a project without affecting the upstream repository. See [AUTOTITLE](/pull-requests/get-started/about-forks).
 
 ## Prerequisites
 
-If you haven't already, set up Git and authentication with {% data variables.location.product_location %} from Git. For more information, see [AUTOTITLE](/get-started/git-basics/set-up-git).
+If you haven't already, set up Git and authentication with {% data variables.location.product_location %} from Git. See [AUTOTITLE](/get-started/git-basics/set-up-git).
 
 ## Forking a repository
 
@@ -46,7 +47,7 @@ You might fork a project to propose changes to the upstream repository. In this 
 1. Click **Create fork**.
 
 > [!NOTE]
-> If you want to copy additional branches from the upstream repository, you can do so from the **Branches** page. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository).
+> If you want to copy additional branches from the upstream repository, you can do so from the **Branches** page. See [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-and-deleting-branches-within-your-repository).
 
 {% endwebui %}
 
@@ -70,7 +71,7 @@ gh repo fork REPOSITORY --org "octo-org"
 
 {% desktop %}
 
-You can fork a repository on {% data variables.product.prodname_dotcom_the_website %} or in {% data variables.product.prodname_desktop %}. For information about forking on {% data variables.product.prodname_dotcom_the_website %}, see [the web browser version of this article](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo?tool=webui).
+You can fork a repository on {% data variables.product.prodname_dotcom_the_website %} or in {% data variables.product.prodname_desktop %}. For information about forking on {% data variables.product.prodname_dotcom_the_website %}, see [the web browser version of this article](/pull-requests/how-tos/work-with-forks/fork-a-repo?tool=webui).
 
 {% data reusables.desktop.forking-a-repo %}
 
@@ -84,7 +85,7 @@ You now have a fork of the Spoon-Knife repository, but you do not have the files
 
 1. On {% ifversion fpt or ghec %}{% data variables.product.prodname_dotcom %}{% else %}{% data variables.location.product_location %}{% endif %}, navigate to **your fork** of the Spoon-Knife repository.
 {% data reusables.repositories.copy-clone-url %}
-{% data reusables.command_line.open_the_multi_os_terminal %}
+1. Open your terminal or Git Bash.
 {% data reusables.command_line.change-current-directory-clone %}
 1. Type `git clone`, then paste the URL you copied earlier. It will look like this, with your {% data variables.product.github %} username instead of `YOUR-USERNAME`:
 
@@ -129,7 +130,7 @@ When you fork a project to propose changes to the upstream repository, you can c
 
 1. On {% ifversion fpt or ghec %}{% data variables.product.prodname_dotcom %}{% else %}{% data variables.location.product_location %}{% endif %}, navigate to the [octocat/Spoon-Knife](https://github.com/octocat/Spoon-Knife) repository.
 {% data reusables.repositories.copy-clone-url %}
-{% data reusables.command_line.open_the_multi_os_terminal %}
+1. Open your terminal or Git Bash.
 1. Change to the directory for the fork you cloned.
     * To go to your home directory, type just `cd` with no other text.
     * To list the files and folders in your current directory, type `ls`.
@@ -159,7 +160,7 @@ When you fork a project to propose changes to the upstream repository, you can c
    > upstream  https://{% data variables.product.product_url %}/ORIGINAL-OWNER/ORIGINAL-REPOSITORY.git (push)
    ```
 
-You can now keep your fork synced with the upstream repository with a few Git commands. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/syncing-a-fork).
+You can now keep your fork synced with the upstream repository with a few Git commands. See [AUTOTITLE](/pull-requests/how-tos/work-with-forks/syncing-a-fork).
 
 {% endwebui %}
 
@@ -186,13 +187,15 @@ gh repo fork REPOSITORY --remote-name "main-remote-repo"
 You can make any changes to a fork, including:
 
 * **Creating branches:** [_Branches_](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-and-deleting-branches-within-your-repository) allow you to build new features or test out ideas without putting your main project at risk.
-* **Opening pull requests:** If you want to contribute back to the upstream repository, you can submit a pull request to ask the original author to pull your fork into their repository. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request-from-a-fork).
+* **Opening pull requests:** If you want to contribute back to the upstream repository, you can submit a pull request to ask the original author to pull your fork into their repository. See [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/creating-a-pull-request-from-a-fork).
 
 ## Find another repository to fork
 
-Fork a repository to start contributing to a project. {% data reusables.repositories.you-can-fork %} For more information about when you can fork a repository, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/about-permissions-and-visibility-of-forks).
+Fork a repository to start contributing to a project. {% data reusables.repositories.you-can-fork %}
 
-{% ifversion fpt or ghec %}You can browse [Explore {% data variables.product.prodname_dotcom %}](https://github.com/explore) to find projects and start contributing to open source repositories. For more information, see [AUTOTITLE](/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github).
+For more information about when you can fork a repository, see [AUTOTITLE](/pull-requests/reference/forks).
+
+{% ifversion fpt or ghec %}You can browse [Explore {% data variables.product.prodname_dotcom %}](https://github.com/explore) to find projects and start contributing to open source repositories. See [AUTOTITLE](/get-started/exploring-projects-on-github/finding-ways-to-contribute-to-open-source-on-github).
 
 {% endif %}
 
@@ -200,7 +203,7 @@ Fork a repository to start contributing to a project. {% data reusables.reposito
 
 You have now forked a repository, practiced cloning your fork, and configured an upstream repository.
 
-* For more information about cloning the fork and syncing the changes in a forked repository from your computer, see [AUTOTITLE](/get-started/git-basics/set-up-git).
+* For more information about using Git on the command line to clone and sync changes, see [AUTOTITLE](/get-started/git-basics/set-up-git).
 
 * You can also create a new repository to store your projects and share the code on {% data variables.product.prodname_dotcom %}. {% data reusables.getting-started.create-a-repository %}
 

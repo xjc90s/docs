@@ -6,23 +6,17 @@ redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/overview
   - /github/collaborating-with-pull-requests/getting-started
 shortTitle: Concepts
-intro: Learn the core concepts behind pull requests, branches, forks, commits, reviews, and merges.
+intro: 'Understand the foundational concepts of pull requests, including branches, forks, commits, reviews, and merges to streamline collaboration on {% data variables.product.github %}.'
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
 children:
-  - /about-forks
-  - /about-commits
-  - /about-status-checks
-  - /working-with-pre-receive-hooks
-  - /about-pull-request-merges
-  - /about-pull-request-reviews
-  - /managing-and-standardizing-pull-requests
+  - /writing-code-for-a-project
   - /helping-others-review-your-changes
-  - /about-branches
-  - /about-merge-conflicts
-  - /about-pull-requests
+  - /giving-reviews
+  - /resolving-reviews
+  - /deploying-code
 contentType: concepts
 ---
 

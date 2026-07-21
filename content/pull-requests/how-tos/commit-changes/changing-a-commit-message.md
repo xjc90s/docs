@@ -6,7 +6,7 @@ redirect_from:
   - /github/committing-changes-to-your-project/changing-a-commit-message
   - /github/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message
   - /pull-requests/committing-changes-to-your-project/creating-and-editing-commits/changing-a-commit-message
-intro: If a commit message contains unclear, incorrect, or sensitive information, you can amend it locally and push a new commit with a new message to {% data variables.product.github %}. You can also change a commit message to add missing information.
+intro: Amend unclear, incorrect, or sensitive commit messages locally and push updated commits to {% data variables.product.github %}, including steps for editing recent or older commits.
 versions:
   fpt: '*'
   ghes: '*'
@@ -14,6 +14,7 @@ versions:
 category:
   - Commit changes
 contentType: how-tos
+shortTitle: Change a commit message
 ---
 
 ## Rewriting the most recent commit message
@@ -27,9 +28,9 @@ If the commit only exists in your local repository, amend the commit message loc
 1. On the command line, navigate to the repository that contains the commit you want to amend.
 1. Type `git commit --amend` and press **Enter**.
 1. In your text editor, edit the commit message, and save the commit.
-   * To add a co-author, add a trailer to the commit. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors).
+   * To add a co-author, add a trailer to the commit. See [AUTOTITLE](/pull-requests/how-tos/commit-changes/creating-a-commit-with-multiple-authors).
 {% ifversion fpt or ghec %}
-   * To create commits on behalf of your organization, add a trailer to the commit. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/creating-and-editing-commits/creating-a-commit-with-multiple-authors#creating-a-commit-on-behalf-of-an-organization).
+   * To create commits on behalf of your organization, add a trailer to the commit. See [AUTOTITLE](/pull-requests/how-tos/commit-changes/creating-a-commit-with-multiple-authors#creating-a-commit-on-behalf-of-an-organization).
 {% endif %}
 1. Push the commit to {% data variables.location.product_location %}.
 
@@ -73,7 +74,7 @@ Use interactive rebase to change older or multiple commit messages.
    git push --force-with-lease origin EXAMPLE-BRANCH
    ```
 
-For more information about interactive rebase, see [Interactive mode](https://git-scm.com/docs/git-rebase#_interactive_mode) in the Git manual.
+See [Interactive mode](https://git-scm.com/docs/git-rebase#_interactive_mode) in the Git manual.
 
 > [!WARNING]
 > If a commit message included sensitive information, force pushing an amended commit might not remove the original commit from {% data variables.product.github %}. Contact {% data variables.contact.contact_support %} with the old commit ID to have it purged from the remote repository.

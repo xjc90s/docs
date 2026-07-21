@@ -1,6 +1,6 @@
 ---
 title: Incorporating feedback in your pull request
-intro: When reviewers suggest changes in a pull request, you can automatically incorporate the changes into the pull request or open an issue to track out-of-scope suggestions.
+intro: Apply suggested changes directly to a pull request, batch multiple suggestions into a single commit, or open an issue to track out-of-scope feedback.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/reviewing-changes-in-pull-requests/incorporating-feedback-in-your-pull-request
   - /articles/incorporating-feedback-in-your-pull-request
@@ -20,11 +20,11 @@ contentType: how-tos
 
 Other people can suggest specific changes to your pull request. You can apply these suggested changes directly in a pull request if you have write access to the repository.
 
-If the pull request was created from a fork and the author allowed edits from maintainers, you can also apply suggested changes if you have write access to the upstream repository. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request) and [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
+If the pull request was created from a fork and the author allowed edits from maintainers, you can also apply suggested changes if you have write access to the upstream repository. See [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/commenting-on-a-pull-request) and [AUTOTITLE](/pull-requests/how-tos/work-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork).
 
 To quickly incorporate more than one suggested change into a single commit, you can also apply suggested changes as a batch. Applying one suggested change or a batch of suggested changes creates a single commit on the compare branch of the pull request.
 
-Each person who suggested a change included in the commit will be a co-author of the commit. The person who applies the suggested changes will be a co-author and the committer of the commit. For more information about the term committer in Git, see [Git Basics - Viewing the Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History) from the _Pro Git_ book site.
+Each person who suggested a change included in the commit will be a co-author of the commit. The person who applies the suggested changes will be a co-author and the committer of the commit. See [Git Basics - Viewing the Commit History](https://git-scm.com/book/en/v2/Git-Basics-Viewing-the-Commit-History) from the _Pro Git_ book site.
 
 {% data reusables.repositories.sidebar-pr %}
 1. In the list of pull requests, click the pull request where you want to apply a suggested change.
@@ -47,12 +47,12 @@ To request a fresh review from a reviewer, in the sidebar of the **Conversation*
 
 ## Opening an issue for an out-of-scope suggestion
 
-If someone suggests changes to your pull request and the changes are out of the pull request's scope, you can open a new issue to track the feedback. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/creating-an-issue).
+If someone suggests changes to your pull request and the changes are out of the pull request's scope, you can open a new issue to track the feedback. See [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/creating-an-issue).
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-proposed-changes-in-a-pull-request)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/commenting-on-a-pull-request)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review)
-* [AUTOTITLE](/issues/tracking-your-work-with-issues/creating-an-issue)
+* [AUTOTITLE](/pull-requests/reference/pull-request-reviews)
+* [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/reviewing-proposed-changes-in-a-pull-request)
+* [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/commenting-on-a-pull-request)
+* [AUTOTITLE](/pull-requests/how-tos/create-pull-requests/requesting-a-pull-request-review)
+* [AUTOTITLE](/issues/tracking-your-work-with-issues/using-issues/creating-an-issue)

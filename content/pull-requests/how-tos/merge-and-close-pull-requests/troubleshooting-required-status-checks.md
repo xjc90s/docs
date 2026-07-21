@@ -1,6 +1,6 @@
 ---
 title: Troubleshooting required status checks
-intro: You can check for common errors and resolve issues with required status checks.
+intro: Resolve common errors and unblock merging or pushing to protected branches by troubleshooting required status checks.
 product: '{% data reusables.gated-features.protected-branches %}'
 versions:
   fpt: '*'
@@ -11,16 +11,16 @@ redirect_from:
   - /github/administering-a-repository/defining-the-mergeability-of-pull-requests/troubleshooting-required-status-checks
   - /repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/troubleshooting-required-status-checks
   - /pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/troubleshooting-required-status-checks
-shortTitle: Required status checks
+shortTitle: Troubleshoot status checks
 category:
   - Merge and close pull requests
 contentType: how-tos
 ---
-Use these checks when a required status check blocks merging or pushing to a protected branch. For an overview, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks).
+Use these checks when a required status check blocks merging or pushing to a protected branch. See [AUTOTITLE](/pull-requests/reference/status-checks).
 
 * A required status check must have completed successfully in the chosen repository during the past seven days.
-* If a check and a commit status have the same name, both must pass when that name is required. For more information, see [AUTOTITLE](/rest/checks).
-* If branch protection requires your branch to be up-to-date, merge or rebase the base branch into your branch. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging) and [AUTOTITLE](/get-started/using-git/about-git-rebase).
+* If a check and a commit status have the same name, both must pass when that name is required. See [AUTOTITLE](/rest/checks).
+* If branch protection requires your branch to be up-to-date, merge or rebase the base branch into your branch. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging) and [AUTOTITLE](/get-started/using-git/about-git-rebase).
 
 If required status checks have not passed, pushing to a protected branch returns an error similar to this.
 
@@ -37,7 +37,7 @@ remote: error: Required status check "ci-build" is failing
 Check the following if a required check is still blocking a pull request.
 
 * Required checks must pass on the latest commit SHA. Checks from earlier commits don't satisfy the requirement.
-* Successful check statuses are `success`, `skipped`, and `neutral`. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/collaborating-on-repositories-with-code-quality-features/about-status-checks).
+* Successful check statuses are `success`, `skipped`, and `neutral`. See [AUTOTITLE](/pull-requests/reference/status-checks).
 
 ## Conflicts between head commit and test merge commit
 
@@ -48,15 +48,15 @@ Use the pull request status checks box to identify which commit must pass.
 | Test merge commit has a status | The test merge commit | `Showing checks for the merge commit` |
 | Test merge commit has no status | The head commit | Checks for the latest head commit |
 
-For more information about test merge commits, see [AUTOTITLE](/rest/pulls/pulls#get-a-pull-request).
+See [AUTOTITLE](/rest/pulls/pulls#get-a-pull-request).
 
 ## Handling skipped but required checks
 
 | Cause | Result | How to fix or check |
 | --- | --- | --- |
-| A workflow is skipped by [path filtering](/actions/using-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore), [branch filtering](/actions/using-workflows/workflow-syntax-for-github-actions#onpull_requestpull_request_targetbranchesbranches-ignore), or a [commit message](/actions/managing-workflow-runs/skipping-workflow-runs) | Associated checks stay in a "Pending" state and block merging | Avoid requiring workflows that can be skipped. |
-| A job is skipped by a conditional | The job reports "Success" | See [AUTOTITLE](/actions/using-jobs/using-conditions-to-control-job-execution). |
-| A job depends on a failed job | The dependent job is skipped and may not block merging | Use `always()` with `needs` for required checks that depend on other jobs. See [AUTOTITLE](/actions/using-jobs/using-jobs-in-a-workflow#defining-prerequisite-jobs). |
+| A workflow is skipped by [path filtering](/actions/reference/workflows-and-actions/workflow-syntax#onpushpull_requestpull_request_targetpathspaths-ignore), [branch filtering](/actions/reference/workflows-and-actions/workflow-syntax#onpull_requestpull_request_targetbranchesbranches-ignore), or a [commit message](/actions/how-tos/manage-workflow-runs/skip-workflow-runs) | Associated checks stay in a "Pending" state and block merging | Avoid requiring workflows that can be skipped. |
+| A job is skipped by a conditional | The job reports "Success" | See [AUTOTITLE](/actions/how-tos/write-workflows/choose-when-workflows-run/control-jobs-with-conditions). |
+| A job depends on a failed job | The dependent job is skipped and may not block merging | Use `always()` with `needs` for required checks that depend on other jobs. See [AUTOTITLE](/actions/how-tos/write-workflows/choose-what-workflows-do/use-jobs#defining-prerequisite-jobs). |
 
 {% data reusables.pull_requests.path-filtering-required-workflows %}
 
@@ -105,7 +105,7 @@ on:
   merge_group:
 ```
 
-For more information on the `merge_group` event, see [AUTOTITLE](/actions/using-workflows/events-that-trigger-workflows#merge_group).
+See [AUTOTITLE](/actions/reference/workflows-and-actions/events-that-trigger-workflows#merge_group).
 
 ## Required status checks from unexpected sources
 

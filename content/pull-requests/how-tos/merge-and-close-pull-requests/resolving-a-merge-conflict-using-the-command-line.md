@@ -1,6 +1,6 @@
 ---
 title: Resolving a merge conflict using the command line
-intro: You can resolve merge conflicts using the command line and a text editor.
+intro: Resolve merge conflicts using the command line by identifying conflicting changes, editing files, and committing resolutions.
 redirect_from:
   - /github/collaborating-with-issues-and-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line
   - /articles/resolving-a-merge-conflict-from-the-command-line
@@ -17,16 +17,16 @@ category:
   - Merge and close pull requests
 contentType: how-tos
 ---
-Merge conflicts happen when competing changes are made to the same line of a file, or when one person edits a file and another person deletes the same file. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts).
+Merge conflicts happen when competing changes are made to the same line of a file, or when one person edits a file and another person deletes the same file. See [AUTOTITLE](/pull-requests/reference/merge-conflicts).
 
 > [!TIP]
-> You can use the conflict editor on {% data variables.product.github %} to resolve competing line change merge conflicts between branches that are part of a pull request. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github).
+> You can use the conflict editor on {% data variables.product.github %} to resolve competing line change merge conflicts between branches that are part of a pull request. See [AUTOTITLE](/pull-requests/how-tos/merge-and-close-pull-requests/resolving-a-merge-conflict-on-github).
 
 ## Competing line change merge conflicts
 
 When competing changes affect the same lines, choose which changes to keep, then commit the resolution.
 
-{% data reusables.command_line.open_the_multi_os_terminal %}
+1. Open your terminal or Git Bash.
 1. Navigate into the local Git repository that has the merge conflict.
 
    ```shell
@@ -79,13 +79,13 @@ When competing changes affect the same lines, choose which changes to keep, then
    git commit -m "Resolve merge conflict by incorporating both suggestions"
    ```
 
-You can now merge the branches on the command line or [push your changes to your remote repository](/get-started/using-git/pushing-commits-to-a-remote-repository) on {% data variables.product.github %} and [merge your changes](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request) in a pull request.
+You can now merge the branches on the command line or [push your changes to your remote repository](/get-started/using-git/pushing-commits-to-a-remote-repository) on {% data variables.product.github %} and [merge your changes](/pull-requests/how-tos/merge-and-close-pull-requests/merging-a-pull-request) in a pull request.
 
 ## Removed file merge conflicts
 
 When one branch deletes a file and another branch edits the same file, choose whether to keep or delete the file, then commit the resolution.
 
-{% data reusables.command_line.open_the_multi_os_terminal %}
+1. Open your terminal or Git Bash.
 1. Navigate into the local Git repository that has the merge conflict.
 
    ```shell
@@ -133,9 +133,9 @@ When one branch deletes a file and another branch edits the same file, choose wh
    > [branch-d 6f89e49] Merge branch 'branch-c' into branch-d
    ```
 
-You can now merge the branches on the command line or [push your changes to your remote repository](/get-started/using-git/pushing-commits-to-a-remote-repository) on {% data variables.product.github %} and [merge your changes](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request) in a pull request.
+With merge conflicts resolved, you can now push your changes to your remote repository on {% data variables.product.github %} or merge your pull request into its base branch.
 
 ## Further reading
 
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/about-merge-conflicts)
-* [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally)
+* [AUTOTITLE](/pull-requests/reference/merge-conflicts)
+* [AUTOTITLE](/pull-requests/how-tos/review-pull-requests/checking-out-pull-requests-locally)

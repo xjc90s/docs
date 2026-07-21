@@ -6,19 +6,17 @@ redirect_from:
   - /articles/proposing-changes-to-your-work-with-pull-requests
   - /github/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests
 shortTitle: Create pull requests
-intro: Create pull requests and the branches behind them, keep them in sync, and request reviews.
+intro: Create pull requests, manage branches, keep them in sync, and request reviews for collaborative development.
 versions:
   fpt: '*'
   ghes: '*'
   ghec: '*'
 children:
-  - /requesting-a-pull-request-review
-  - /changing-the-stage-of-a-pull-request
-  - /keeping-your-pull-request-in-sync-with-the-base-branch
-  - /creating-and-deleting-branches-within-your-repository
-  - /committing-changes-to-a-pull-request-branch-created-from-a-fork
   - /creating-a-pull-request
   - /creating-a-pull-request-from-a-fork
+  - /changing-the-stage-of-a-pull-request
+  - /requesting-a-pull-request-review
+  - /keeping-your-pull-request-in-sync-with-the-base-branch
   - /changing-the-base-branch-of-a-pull-request
 contentType: how-tos
 ---
