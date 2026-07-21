@@ -16,15 +16,14 @@ category:
   - Merge and close pull requests
 contentType: concepts
 ---
-Status checks are based on external processes, such as continuous integration builds, that run for each push you make to a repository. You can see the _pending_, _passing_, or _failing_ state of status checks next to individual commits in your pull request.
+
+Status checks show whether commits meet the conditions set for a repository. They are usually created by external systems, such as continuous integration builds, tests, code scanning, or deployment checks.
+
+Status checks help reviewers and maintainers understand whether a pull request is ready to merge. A check can show that work is still running, that changes passed validation, or that something needs attention.
 
 ![Screenshot of a list of commits and statuses.](/assets/images/help/pull_requests/commit-list-statuses.png)
 
-Anyone with write permissions to a repository can set the state for any status check in the repository.
-
-You can see the overall state of the last commit to a branch on your repository's branches page or in your repository's list of pull requests.
-
-If status checks are required for a repository, they must pass before you can merge your branch into the protected branch. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
+If status checks are required for a protected branch, they must pass before the pull request can be merged. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-status-checks-before-merging).
 
 {% data reusables.actions.workflows.skipped-job-status-checks-passing %}
 
@@ -32,10 +31,8 @@ If status checks are required for a repository, they must pass before you can me
 
 There are two types of status checks on {% data variables.product.github %}:
 
-* Checks
-* Commit statuses
-
-_Checks_ differ from _commit statuses_ because they provide line annotations and more detailed messaging. Checks are only available for use with {% data variables.product.prodname_github_apps %}.
+* **Checks** provide detailed output, annotations, and messages. They are created by {% data variables.product.prodname_github_apps %}, including {% data variables.product.prodname_actions %}.
+* **Commit statuses** provide a simpler status for a commit. They are often used by external services and integrations.
 
 > [!NOTE]
 > {% data variables.product.prodname_actions %} generates checks, not commit statuses, when workflows are run.
@@ -44,71 +41,36 @@ Organization owners and users with push access to a repository can create checks
 
 ## Checks
 
-Pull requests have a **Checks** tab where you can view detailed build output from checks and rerun failed checks.
+Checks can include build logs, test results, annotations, and links to more detail. In a pull request, the **Checks** tab helps you understand which validations ran and why a check passed or failed.
 
 > [!NOTE]
 > The **Checks** tab is populated for pull requests only if you set up _checks_, not _commit statuses_, for the repository.
 
-When a specific line in a commit causes a check to fail, you will see details about the failure, warning, or notice next to the relevant code. These details appear in the **Files** tab of the pull request.
-
-You can navigate between the checks summaries for different commits in a pull request using the commit drop-down menu under the **Checks** tab.
+When a check points to a specific line, details can also appear in the **Files** tab of the pull request. This helps reviewers connect automated feedback to the code being changed.
 
 ![Screenshot of the "Checks" tab of a pull request. The "Checks" tab and the dropdown menu to select a commit are both outlined in dark orange.](/assets/images/help/pull_requests/checks-summary-for-various-commits.png)
 
 ## Skipping and requesting checks for individual commits
 
-When a repository is set to automatically request checks for pushes, you can choose to skip checks for an individual commit you push. When a repository is _not_ set to automatically request checks for pushes, you can request checks for an individual commit you push. For more information about these settings, see [AUTOTITLE](/rest/checks/suites#update-repository-preferences-for-check-suites).
+Some repositories allow checks to be skipped or requested for individual commits. This can be useful when a check is not relevant to a specific change, or when checks are not requested automatically.
 
-You can also skip workflow runs triggered by the `push` and `pull_request` events by including a command in your commit message. For more information, see [AUTOTITLE](/actions/managing-workflow-runs/skipping-workflow-runs)
+For {% data variables.product.prodname_actions %} workflows, you can skip workflow runs triggered by the `push` and `pull_request` events by including a skip instruction in your commit message. For more information, see [AUTOTITLE](/actions/managing-workflow-runs/skipping-workflow-runs).
 
-Alternatively, to skip or request _all_ checks for your commit, add one of the following trailer lines to the end of your commit message:
-
-* To _skip checks_ for a commit, type your commit message and a short, meaningful description of your changes. After your commit description, before the closing quotation, add two empty lines followed by `skip-checks: true`:
-
-  ```shell
-  $ git commit -m "Update README
-  >
-  >
-  skip-checks: true"
-  ```
-
-* To _request_ checks for a commit, type your commit message and a short, meaningful description of your changes. After your commit description, before the closing quotation, add two empty lines followed by `request-checks: true`:
-
-  ```shell
-  $ git commit -m "Refactor usability tests
-  >
-  >
-  request-checks: true"
-  ```
+For check suite preferences and commit trailers such as `skip-checks: true` or `request-checks: true`, see [AUTOTITLE](/rest/checks/suites#update-repository-preferences-for-check-suites).
 
 {% data reusables.commits.about-commit-cleanup %}
 
 ## Check statuses and conclusions
 
-Checks can have many different statuses. Statuses describe the state of a check from when it is created to when it is completed. Some statuses cannot be set manually and are reserved for {% data variables.product.prodname_actions %}. When a check has a status of `completed`, it has a conclusion. The conclusion describes the result of the check. The following tables list all possible check statuses and conclusions.
+Checks move through statuses as they run, then receive a conclusion when they finish.
 
-| Status | Description | {% data variables.product.prodname_actions %} only? |
-| --- | --- | --- |
-| `completed` | The check run completed and has a conclusion (see below). | No |
-| `expected` | The check run is waiting for a status to be reported. | Yes |
-| `failure` | The check run failed. | No |
-| `in_progress` | The check run is in progress. | No |
-| `pending` | The check run is at the front of the queue but the [group-based concurrency](/actions/writing-workflows/choosing-what-your-workflow-does/control-the-concurrency-of-workflows-and-jobs) limit has been reached. | Yes |
-| `queued` | The check run has been queued. | No |
-| `requested` | The check run has been created but has not been queued. | Yes |
-| `startup_failure` | The check suite failed during startup. This status is not applicable to check runs. | Yes |
-| `waiting` | The check run is waiting for a [deployment protection rule](/actions/managing-workflow-runs-and-deployments/managing-deployments/managing-environments-for-deployment#deployment-protection-rules) to be satisfied. | Yes |
-
-| Conclusion | Description |
+| State | What it means |
 | --- | --- |
-| `action_required` | The check run provided required actions when it completed. For more information, see [AUTOTITLE](/rest/guides/using-the-rest-api-to-interact-with-checks#check-runs-and-requested-actions). |
-| `cancelled` | The check run was cancelled before it completed. |
-| `failure` | The check run failed. |
-| `neutral` | The check run completed with a neutral result. This is treated as a success for dependent checks in {% data variables.product.prodname_actions %}. |
-| `skipped` | The check run was skipped. This is treated as a success for dependent checks in {% data variables.product.prodname_actions %}. |
-| `stale` | The check run was marked stale by {% data variables.product.github %} because it took too long. |
-| `success` | The check run completed successfully. |
-| `timed_out` | The check run timed out. |
+| Waiting or queued | The check has not started yet, or is waiting for a required condition such as capacity or deployment approval. |
+| In progress | The check is running. |
+| Completed | The check finished and has a conclusion, such as success, failure, cancelled, skipped, or timed out. |
+
+A successful conclusion usually means the check does not block merging. A failure, timeout, or action-required conclusion usually means someone must review the details before the pull request can merge.
 
 ## Retention of checks
 

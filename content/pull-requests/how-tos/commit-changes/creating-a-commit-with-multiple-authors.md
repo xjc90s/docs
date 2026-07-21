@@ -23,22 +23,15 @@ contentType: how-tos
 
 ## Creating a commit with multiple authors
 
-You can attribute a commit to more than one author by adding one or more `Co-authored-by` trailers to the commit's message. Co-authored commits are visible on {% data variables.product.github %}{% ifversion ghes %} and can be included in the profile contributions graph and the repository's statistics{% endif %}.
+Add one or more `Co-authored-by` trailers to a commit message to attribute a commit to multiple authors.
 
 ### Required co-author information
 
-Before you add a co-author to a commit, you must know the right email address to use for each co-author. For the co-author's commit to count as a contribution, use the email address associated with their account on {% data variables.location.product_location %}.
+Before adding a co-author, get the email address they want used in the trailer. For the commit to count as a contribution, use an email address associated with their account on {% data variables.location.product_location %}.
 
 {% ifversion fpt or ghec %}
 
-If a person chooses to keep their email address private, you should use their {% data variables.product.github %}-provided `no-reply` email to protect their privacy. Otherwise, the co-author's email will be public in the commit message. To keep your email private, you can choose to use a {% data variables.product.github %}-provided `no-reply` email for Git operations and ask other co-authors to list your `no-reply` email in commit trailers.
-
-For more information, see [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address).
-
-> [!TIP]
-> You can help a co-author find their preferred email address by sharing this information:
-> * To find your {% data variables.product.github %}-provided `no-reply` email, navigate to your email settings page under "Keep my email address private."
-> * To find the email you used to configure Git on your computer, run `git config user.email` on the command line.
+If a co-author keeps their email address private, use their {% data variables.product.github %}-provided `no-reply` email. For more information, see [AUTOTITLE](/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-email-preferences/setting-your-commit-email-address).
 
 {% endif %}
 
@@ -58,12 +51,7 @@ You can use {% data variables.product.prodname_desktop %} to create a commit wit
    >
    ```
 
-   > [!TIP]
-   > If you're using a text editor on the command line to type your commit message, ensure there is a blank line (two consecutive newlines) between the end of your commit description and the `Co-authored-by:` commit trailer.
-
-1. On the next line of the commit message, type `Co-authored-by: name <name@example.com>` with specific information for each co-author. After the co-author information, add a closing quotation mark.
-
-   If you're adding multiple co-authors, give each co-author their own line and `Co-authored-by:` commit trailer. Do not add blank lines between each co-author line.
+1. Add one `Co-authored-by: name <name@example.com>` line for each co-author, then add the closing quotation mark.
 
    ```shell
    $ git commit -m "Refactor usability tests.
@@ -72,40 +60,29 @@ You can use {% data variables.product.prodname_desktop %} to create a commit wit
    > Co-authored-by: ANOTHER-NAME <ANOTHER-NAME@EXAMPLE.COM>"
    ```
 
-The new commit and message will appear on {% data variables.location.product_location %} after you push. For more information, see [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
+The new commit and message appear on {% data variables.location.product_location %} after you push. For more information, see [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
 
 ### Creating co-authored commits on {% data variables.product.github %}
 
-After you make changes in a file using the web editor on {% data variables.product.github %}, you can create a co-authored commit by adding a `Co-authored-by:` trailer to the commit's message.
+After you make changes in a file using the web editor on {% data variables.product.github %}, add co-author trailers before you commit.
 
 {% data reusables.pull_requests.collect-co-author-commit-git-config-info %}
 1. Click **Commit changes...**
 1. In the "Commit message" field, type a short, meaningful commit message that describes the changes you made.
-1. In the text box below your commit message, add `Co-authored-by: name <name@example.com>` with specific information for each co-author. If you're adding multiple co-authors, give each co-author their own line and `Co-authored-by:` commit trailer.
+1. In the text box below your commit message, add one `Co-authored-by: name <name@example.com>` line for each co-author.
 1. Click **Commit changes** or **Propose changes**.
 
-The new commit and message will appear on {% data variables.location.product_location %}.
+The new commit and message appear on {% data variables.location.product_location %}.
 
 {% ifversion fpt or ghec %}
 
 ## Creating a commit on behalf of an organization
 
-You can create commits on behalf of an organization by adding a trailer to the commit's message. Commits attributed to an organization include an `on-behalf-of` badge on {% data variables.product.github %}.
-
-To create commits on behalf of an organization:
-
-* You must be a member of the organization indicated in the trailer.
-* You must sign the commit.
-* Your commit email and the organization email must be in a domain verified by the organization.
-* Your commit message must end with the commit trailer `on-behalf-of: @org <name@organization.com>`.
-  * `org` is the organization's login.
-  * `name@organization.com` is in the organization's domain.
-
-Organizations can use the `name@organization.com` email as a public point of contact for open source efforts.
+Add an `on-behalf-of:` trailer to a signed commit to attribute it to an organization. To use the trailer, you must be a member of the organization, and both your commit email and the organization email must be in a domain verified by the organization.
 
 ### Creating commits with an `on-behalf-of` badge on the command line
 
-1. Type your commit message and a short, meaningful description of your changes. After your commit description, instead of a closing quotation, add two empty lines.
+1. Type your commit message and a short, meaningful description of your changes. After your commit description, add two empty lines instead of a closing quotation mark.
 
    ```shell
    $ git commit -m "Refactor usability tests.
@@ -113,10 +90,7 @@ Organizations can use the `name@organization.com` email as a public point of con
    >
    ```
 
-   > [!TIP]
-   > If you're using a text editor on the command line to type your commit message, ensure there are two newlines between the end of your commit description and the `on-behalf-of:` commit trailer.
-
-1. On the next line of the commit message, type `on-behalf-of: @org <name@organization.com>`, then a closing quotation mark.
+1. Add `on-behalf-of: @org <name@organization.com>`, then add the closing quotation mark.
 
    ```shell
    $ git commit -m "Refactor usability tests.
@@ -125,18 +99,18 @@ Organizations can use the `name@organization.com` email as a public point of con
    on-behalf-of: @ORG NAME@ORGANIZATION.COM"
    ```
 
-The new commit, message, and badge will appear on {% data variables.product.prodname_dotcom %} the next time you push. For more information, see [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
+The new commit, message, and badge appear on {% data variables.product.prodname_dotcom %} after you push. For more information, see [AUTOTITLE](/get-started/using-git/pushing-commits-to-a-remote-repository).
 
 ### Creating commits with an `on-behalf-of` badge on {% data variables.product.github %}
 
-After you make changes in a file using the web editor on {% data variables.product.github %}, you can create a commit on behalf of your organization by adding an `on-behalf-of:` trailer to the commit's message.
+After you make changes in a file using the web editor on {% data variables.product.github %}, add the organization trailer before you commit.
 
 1. Click **Commit changes...**
 1. In the "Commit message" field, type a short, meaningful commit message that describes the changes you made.
 1. In the text box below your commit message, add `on-behalf-of: @org <name@organization.com>`.
 1. Click **Commit changes** or **Propose changes**.
 
-The new commit, message, and badge will appear on {% data variables.product.prodname_dotcom %}.
+The new commit, message, and badge appear on {% data variables.product.prodname_dotcom %}.
 
 {% endif %}
 

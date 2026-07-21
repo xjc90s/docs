@@ -13,42 +13,40 @@ redirect_from:
 contentType: concepts
 ---
 
-If you are a repository maintainer, you can manage and standardize the pull requests that contributors create in your repository. These steps can help you ensure that pull requests are reviewed by the right people and meet your repository's standards.
+If you maintain a repository, you can use {% data variables.product.github %} features to make pull requests more consistent and easier to review. Standardization helps contributors know what information to provide, helps reviewers focus on the right changes, and helps protect important branches from accidental or risky merges.
 
 ## Using pull request templates
 
-Pull request templates let you customize and standardize the information you want contributors to include when they create a pull request in your repository. When you add a pull request template to your repository, project contributors will automatically see the template's contents in the pull request body. For more information, see [AUTOTITLE](/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository).
+Pull request templates help contributors provide the context your project needs for review. A template can prompt authors to explain the purpose of the change, link related issues, include testing notes, or complete a checklist before requesting review.
 
-You can use pull request templates to standardize the review process for your repository. For example, you can add a task list to the template with tasks you want authors to complete before merging their pull requests. For more information, see [AUTOTITLE](/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists).
-
-You can request that contributors include an issue reference in their pull request body, so that merging the pull request will automatically close the issue. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
+Templates are useful when many contributors open pull requests or when your project has review expectations that should be visible every time. For more information, see [AUTOTITLE](/communities/using-templates-to-encourage-useful-issues-and-pull-requests/creating-a-pull-request-template-for-your-repository), [AUTOTITLE](/get-started/writing-on-github/working-with-advanced-formatting/about-task-lists), and [AUTOTITLE](/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue).
 
 ## Defining code owners
 
-You may want to make sure that specific individuals always review changes to certain code or files in your repository. For example, you may want to ensure that a member of the security team always reviews changes to your `SECURITY.md` file or `dependabot.yml` file.
+Code owners identify the people or teams responsible for specific files or directories. When a pull request changes owned code, {% data variables.product.github %} can automatically request a review from the right owners.
 
-You can define code owners as the individuals or teams responsible for code or files in a repository. Code owners will automatically be requested for review when someone opens a pull request that modifies the files that they own. You can define code owners for specific types of files or directories, as well as for different branches in a repository. For more information, see [AUTOTITLE](/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
+Code owners help route reviews to people with the right context. They are especially useful for sensitive areas such as security files, deployment configuration, or shared libraries. For more information, see [AUTOTITLE](/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners).
 
 ## Using protected branches
 
-You can use protected branches to prevent pull requests from being merged into important branches, such as `main`, until certain conditions are met. For example, you can require an approving review or require all status checks to pass. See [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+Protected branches help keep important branches, such as `main`, stable. They can require conditions such as passing status checks, signed commits, or approving reviews before a pull request can merge.
+
+Use protected branches when a branch represents production code, a release line, or another important source of truth. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
 
 ## Using rulesets
 
-Alongside protected branches, rulesets let you enforce policies across your repository, such as requiring status checks or workflows to pass before a pull request can be merged.
+Rulesets let you enforce repository policies across branches and tags. They can require status checks, workflows, pull request reviews, or other conditions before changes are accepted.
 
-Rulesets are especially useful for maintaining repository security when combined with other automated security checks. For example:
-* You can use rulesets to enforce the dependency review action, a workflow that blocks pull requests that introduce vulnerable dependencies into your codebase. See [AUTOTITLE](/code-security/supply-chain-security/understanding-your-software-supply-chain/enforcing-dependency-review-across-an-organization).
-* If your repository is configured with {% data variables.product.prodname_code_scanning %}, you can use rulesets to set {% data variables.product.prodname_code_scanning %} merge protection, which prevents pull requests from being merged if there is a {% data variables.product.prodname_code_scanning %} alert of a certain severity, or if a {% data variables.product.prodname_code_scanning %} analysis is still in progress. See [AUTOTITLE](/code-security/code-scanning/managing-your-code-scanning-configuration/set-code-scanning-merge-protection).
+Rulesets are useful when you want consistent rules across multiple branches or when you want to combine review requirements with automated security checks, such as dependency review or {% data variables.product.prodname_code_scanning %} merge protection. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets), [AUTOTITLE](/code-security/supply-chain-security/understanding-your-software-supply-chain/enforcing-dependency-review-across-an-organization), and [AUTOTITLE](/code-security/code-scanning/managing-your-code-scanning-configuration/set-code-scanning-merge-protection).
 
 ## Using push rulesets
 
 {% data reusables.repositories.push-rulesets-overview %}
 
-For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets#push-rulesets).
+Push rulesets help block risky content before it enters the repository. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-rulesets/about-rulesets#push-rulesets).
 
 ## Using automated tools to review code styling
 
-Use automated tools, such as linters, in your repository's pull requests to maintain consistent styling and make code more understandable. Automated tools can catch smaller problems like typos or styling, which leaves more time for reviewers to focus on the substance of a pull request.
+Automated tools, such as linters and formatters, help keep code style consistent across pull requests. They can catch small issues automatically so reviewers can focus on design, correctness, and maintainability.
 
-For example, you can use {% data variables.product.prodname_actions %} to set up code linters that can run on pull requests as part of your continuous integration (CI) workflow. For more information, see [AUTOTITLE](/actions/automating-builds-and-tests/about-continuous-integration).
+You can run these tools as part of a continuous integration workflow with {% data variables.product.prodname_actions %}. For more information, see [AUTOTITLE](/actions/automating-builds-and-tests/about-continuous-integration).

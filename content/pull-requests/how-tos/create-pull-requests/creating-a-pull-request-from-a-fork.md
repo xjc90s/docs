@@ -17,16 +17,10 @@ category:
   - Create pull requests
 contentType: how-tos
 ---
-If your pull request compares your topic branch with a branch in the upstream repository as the base branch, your topic branch is also called the "compare branch" of the pull request.
 
-Before creating a pull request from a fork, you need to fork the upstream repository and push your changes to a branch in your fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
+Before creating a pull request from a fork, fork the upstream repository and push your changes to a branch in your fork. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo).
 
-For example:
-* Your topic branch (also known as “feature branch”) is the branch where you make changes in your forked repository, for example, `my-topic-branch`.
-* The base branch is the branch in the upstream (central) repository where you want to merge your changes, for example, `main`.
-* The pull request compares the changes proposed by the topic branch (`my-topic-branch`) with the base branch (`main`), so `my-topic-branch` is the “compare branch”.
-
-For more information about pull request branches, including examples, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request#changing-the-branch-range-and-destination-repository).
+In a pull request from a fork, the base branch is where you want to merge your changes, and the compare branch is the branch in your fork that contains your changes. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request#changing-the-branch-range-and-destination-repository).
 
 {% data reusables.pull_requests.perms-to-open-pull-request %}
 

@@ -19,8 +19,7 @@ contentType: how-tos
 
 ## About merge queues
 
-{% data reusables.pull_requests.merge-queue-overview %}
-{% data reusables.pull_requests.merge-queue-references %}
+A merge queue helps merge pull requests into a busy protected branch after required checks pass. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue).
 
 ## Adding a pull request to a merge queue
 
@@ -41,7 +40,7 @@ contentType: how-tos
    ![Screenshot of the merge queue options for a pull request.](/assets/images/help/pull_requests/merge-queue-options.png)
 
    > [!NOTE]
-   > You can click **Merge when ready** whenever you're ready to merge your proposed changes. {% data variables.product.github %} will automatically add the pull request to the merge queue once required approval and status check conditions are met.
+   > You can click **Merge when ready** before all requirements pass. {% data variables.product.github %} adds the pull request to the queue when requirements are met.
 
 1. Confirm you want to add the pull request to the merge queue by clicking **Confirm merge when ready**.
 
@@ -100,6 +99,6 @@ You can view the merge queue for a base branch in various places on {% data vari
 
 ## Understanding why your pull request was removed from the merge queue
 
-{% data reusables.pull_requests.merge-queue-reject %}
+A pull request can be removed from the merge queue if it no longer meets merge requirements or if a queue check fails.
 
 {% data reusables.pull_requests.merge-queue-removal-reasons %}

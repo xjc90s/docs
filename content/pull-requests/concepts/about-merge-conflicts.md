@@ -16,21 +16,22 @@ category:
   - Merge and close pull requests
 contentType: concepts
 ---
+
 Git can often resolve differences between branches and merge them automatically. Usually, changes are on different lines or in different files, so Git can merge them without help. Sometimes, competing changes need your help. Merge conflicts often happen when people make different changes to the same line of the same file, or when one person edits a file and another person deletes the same file.
 
-You must resolve all merge conflicts before you can merge a pull request on {% data variables.product.github %}. If your pull request has a merge conflict between the compare branch and base branch, you can view a list of the files with conflicting changes above the **Merge pull request** button. The **Merge pull request** button is deactivated until you've resolved all conflicts between the compare branch and base branch.
+Merge conflicts block merging because Git cannot safely choose which version of the conflicting content to keep. You must resolve all merge conflicts before you can merge a pull request on {% data variables.product.github %}. If your pull request has a merge conflict between the compare branch and base branch, the **Merge pull request** button is deactivated until the conflicts are resolved.
 
 ## Resolving merge conflicts
 
-To resolve a merge conflict, you must manually edit the conflicted file to select the changes that you want to keep in the final merge. There are a couple of different ways to resolve a merge conflict:
+Resolving a merge conflict means choosing the final content that should appear after the branches are merged. The right tool depends on the type of conflict.
 
-* If competing line changes cause your merge conflict, such as when people make different changes to the same line of the same file on different branches in your Git repository, you can resolve it on {% data variables.product.github %} using the conflict editor. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github).
-* For all other types of merge conflicts, you must resolve the merge conflict in a local clone of the repository and push the change to your branch on {% data variables.product.github %}. You can use the command line or a tool like [{% data variables.product.prodname_desktop %}](https://desktop.github.com/) to push the change. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
+* Simple line conflicts can often be resolved on {% data variables.product.github %}. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-on-github).
+* More complex conflicts must be resolved in a local clone and pushed back to the pull request branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
 {% ifversion copilot %}
-* For any type of merge conflict, if you have access to {% data variables.copilot.copilot_cloud_agent %} and it is enabled for the repository, you can click **Fix with {% data variables.product.prodname_copilot_short %}** in the merge box to have {% data variables.product.prodname_copilot_short %} resolve the conflicts for you. {% data variables.product.prodname_copilot_short %} will analyze the conflicting changes, resolve the conflicts, and verify that the build, tests, and linter still pass. For more information, see [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/make-changes-to-an-existing-pr#resolving-merge-conflicts).
+* If you have access to {% data variables.copilot.copilot_cloud_agent %} and it is enabled for the repository, {% data variables.product.prodname_copilot_short %} can help resolve conflicts from the merge box. For more information, see [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/make-changes-to-an-existing-pr#resolving-merge-conflicts).
 {% endif %}
 
-If you have a merge conflict on the command line, you cannot push your local changes to {% data variables.product.github %} until you resolve the merge conflict locally on your computer. If you try to merge branches with a merge conflict on the command line, you'll get an error message. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
+On the command line, Git tells you when a merge cannot finish automatically. You cannot push the merged result until you resolve the conflict and commit the resolution.
 
 ```shell
 $ git merge BRANCH-NAME

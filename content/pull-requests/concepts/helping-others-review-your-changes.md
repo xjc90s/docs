@@ -14,44 +14,39 @@ category:
 contentType: concepts
 ---
 
-When you create a pull request, you’re asking your team to review your changes and provide feedback. This guide shares best practices for creating pull requests that are easy to review and keep your team informed, so that you can improve collaboration and the quality of reviews.
+When you create a pull request, you’re asking your team to review your changes and provide feedback. Pull requests that are focused, clear, and easy to follow help reviewers give better feedback and make confident decisions.
 
 ## Making your changes easy to review
 
-Clear context in your pull requests helps reviewers quickly see what you’ve changed and why it matters. This makes the review process faster and smoother, with less back-and-forth. It also helps your team give better feedback and make confident decisions. For information on creating a pull request, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
+Clear context helps reviewers quickly understand what changed and why it matters. It reduces back-and-forth, makes review faster, and helps your team focus on the most important parts of the change. For information on creating a pull request, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request).
 
 ### Write small pull requests
 
-Aim to create small, focused pull requests that serve a single purpose. Smaller pull requests are easier and faster to review and merge. They also leave less room to introduce bugs and provide a clearer history of changes.
+Small, focused pull requests are easier to review and safer to merge. They help reviewers understand the purpose of the change, spot issues more quickly, and follow the history of the project later.
+
+When a change grows large, consider splitting it into smaller pull requests that each serve one purpose.
 
 ### Provide context and guidance
 
-Write clear titles and descriptions for your pull requests so that reviewers can quickly understand what the pull request does. In the pull request body, include:
+A clear title and description help reviewers understand the problem, the approach, and the result. Good context often explains why the change is needed, what changed, and where reviewers should pay special attention.
 
-* The purpose of the pull request
-* An overview of what changed
-* Links to any additional context such as tracking issues or previous conversations
-
-To help reviewers, share the type of feedback you need. For example, do you need a quick look or a deeper critique?{% ifversion copilot %} You can also use {% data variables.product.prodname_copilot %} to generate a summary of your pull request. See [Use {% data variables.product.prodname_copilot %} to generate pull request summaries](#use-github-copilot-to-generate-pull-request-summaries), later in this article.{% endif %}
-
-If your pull request consists of changes to multiple files, provide guidance to reviewers about the order in which to review the files. Recommend where to start and how to proceed with the review.
+Guidance is especially helpful when a pull request touches many files or requires a specific review order. For example, you can point reviewers to the most important files first or explain what type of feedback would be most useful.{% ifversion copilot %} You can also use {% data variables.product.prodname_copilot %} to generate a summary of your pull request, as described later in this article.{% endif %}
 
 ### Review your own pull request first
 
-Review, build, and test your own pull request before submitting it. This helps you catch errors or typos that you may have missed, before others start reviewing.
+Reviewing your own pull request before asking others to review it helps you catch mistakes early. It also shows reviewers that the pull request is ready for their attention.
+
+A self-review can include reading the diff, checking for accidental changes, and making sure relevant builds or tests have run.
 
 ### Review for security
 
-Several tools can help you review your pull request for potential security issues before others review it. Reviewing for security helps catch and resolve security issues early. It also lets you highlight unresolved risks for others to review and advise on. For example, you can:
+Security review helps catch risk before a pull request is merged. This is especially important when a pull request changes dependencies, authentication, permissions, workflows, or code that handles sensitive data.
 
-* Check the dependency diff to see if your pull request is introducing vulnerable dependencies. See [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-dependency-changes-in-a-pull-request).
-* Check the {% data variables.product.prodname_advisory_database %} to find additional context and information on vulnerable dependencies.
-* Investigate and resolve any failing security checks or workflows, such as the dependency review action or the {% data variables.product.prodname_code_scanning %} results check. See [AUTOTITLE](/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#about-the-dependency-review-action) and [AUTOTITLE](/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests#about-code-scanning-as-a-pull-request-check).{% ifversion code-scanning-autofix %}
-* If your repository has set up {% data variables.product.prodname_code_scanning %} as a pull request check, use {% data variables.copilot.copilot_autofix %} to suggest fixes for security vulnerabilities in your code. See [AUTOTITLE](/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests#working-with-copilot-autofix-suggestions-for-alerts-on-a-pull-request).{% endif %}
+{% data variables.product.github %} can surface security information in pull requests, such as dependency changes, dependency review results, and {% data variables.product.prodname_code_scanning %} checks. Use these signals to resolve issues early or to highlight risks that need reviewer attention. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/reviewing-dependency-changes-in-a-pull-request), [AUTOTITLE](/code-security/supply-chain-security/understanding-your-software-supply-chain/about-dependency-review#about-the-dependency-review-action), and [AUTOTITLE](/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests#about-code-scanning-as-a-pull-request-check).{% ifversion code-scanning-autofix %} If your repository has set up {% data variables.product.prodname_code_scanning %} as a pull request check, {% data variables.copilot.copilot_autofix %} can suggest fixes for security vulnerabilities. For more information, see [AUTOTITLE](/code-security/code-scanning/managing-code-scanning-alerts/triaging-code-scanning-alerts-in-pull-requests#working-with-copilot-autofix-suggestions-for-alerts-on-a-pull-request).{% endif %}
 
 ## Keeping your team informed
 
-Pull requests can do more than document code changes—they’re also a powerful way to keep your team and manager informed about the status of your work. By making your progress visible in your pull requests, you can reduce the need for separate updates and keep everyone aligned.
+Pull requests can do more than document code changes—they’re also a way to keep your team and manager informed about the status of your work. Visible progress helps reduce separate status updates and keeps everyone aligned.
 
 {% ifversion copilot %}
 
@@ -59,25 +54,9 @@ Pull requests can do more than document code changes—they’re also a powerful
 
 > [!NOTE] {% data reusables.copilot.copilot-requires-subscription %}
 
-You can use {% data variables.product.prodname_copilot_short %} to generate a summary of a pull request on {% data variables.product.github %}. You can use the summary to help reviewers understand your changes.
+{% data variables.product.prodname_copilot_short %} can generate a pull request summary on {% data variables.product.github %}. A generated summary can help reviewers understand the main changes, but you should review it carefully and add context that only you know.
 
-1. On {% data variables.product.github %}, create a pull request or navigate to an existing pull request.
-
-   > [!NOTE] {% data variables.product.prodname_copilot_short %} does not consider any existing content in the pull request description, so it is best to start with a blank description.
-
-1. Navigate to the text field where you want to add the pull request summary.
-
-   * If you're creating a new pull request, use the "Add a description" field.
-   * If you're adding a description to an existing pull request, edit the opening comment.
-   * If you're adding a summary as a comment, navigate to the "Add a comment" section at the bottom of the pull request page.
-
-1. In the header of the text field, select {% octicon "copilot" aria-label="Copilot actions" %}, then click **Summary**.
-
-   ![Screenshot of the form for creating a pull request. A Copilot icon is highlighted, and a box appears with the "Summary" command.](/assets/images/help/copilot/copilot-description-suggestion.png)
-
-1. Wait for {% data variables.product.prodname_copilot_short %} to produce the summary, then review the results carefully.
-1. Add any additional context that will help people viewing your pull request.
-1. When you're satisfied with the description, click **Create pull request** on a new pull request, or **Update comment** if you're editing an existing description.
+Summaries are most useful when they explain the purpose of the change, call out important files, and highlight anything reviewers should examine closely. For instructions, see [AUTOTITLE](/copilot/using-github-copilot/creating-a-pull-request-summary-with-github-copilot).
 
 > [!TIP] You can also use {% data variables.copilot.copilot_chat_short %} to turn your work into a discussion or blog post. See [AUTOTITLE](/copilot/copilot-chat-cookbook/documenting-code/writing-discussions-or-blog-posts).
 
@@ -85,11 +64,10 @@ You can use {% data variables.product.prodname_copilot_short %} to generate a su
 
 ### Link to related issues or projects
 
-Connect your pull request to relevant issues or project boards to show how your work fits into the larger project.
+Connecting a pull request to issues or projects shows how the work fits into the larger project. Links help reviewers understand priority, track progress, and find related discussions.
 
-* Add keywords like `Closes ISSUE-LINK` in your description to automatically link and close the issue when the pull request is merged.
-* Use {% data variables.product.prodname_projects_v2 %} to track your work and link to the project from your pull request, so people can track progress in one place. See [AUTOTITLE](/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects).
+Use issue-closing keywords when a pull request should close an issue after merging. You can also link to {% data variables.product.prodname_projects_v2 %} so people can track work in one place. For more information, see [AUTOTITLE](/issues/tracking-your-work-with-issues/linking-a-pull-request-to-an-issue) and [AUTOTITLE](/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects).
 
 ### Highlight the status with labels
 
-Add a status label to your pull request to show whether it’s ready for review, blocked, or in progress. This helps reviewers understand the state of your work at a glance. For more information, see [AUTOTITLE](/issues/using-labels-and-milestones-to-track-work/managing-labels).
+Status labels help reviewers understand whether a pull request is ready for review, blocked, or still in progress. Clear labels make it easier for people to prioritize reviews and avoid reviewing work before it is ready. For more information, see [AUTOTITLE](/issues/using-labels-and-milestones-to-track-work/managing-labels).

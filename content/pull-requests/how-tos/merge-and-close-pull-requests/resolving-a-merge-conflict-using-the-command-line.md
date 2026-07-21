@@ -24,9 +24,7 @@ Merge conflicts happen when competing changes are made to the same line of a fil
 
 ## Competing line change merge conflicts
 
-To resolve a merge conflict caused by competing line changes, you must choose which changes to incorporate from the different branches in a new commit.
-
-For example, if you and another person both edited the file `styleguide.md` on the same lines in different branches of the same Git repository, you'll get a merge conflict error when you try to merge these branches. You must resolve this merge conflict in a new commit before you can merge these branches.
+When competing changes affect the same lines, choose which changes to keep, then commit the resolution.
 
 {% data reusables.command_line.open_the_multi_os_terminal %}
 1. Navigate into the local Git repository that has the merge conflict.
@@ -52,9 +50,7 @@ For example, if you and another person both edited the file `styleguide.md` on t
    ```
 
 1. Open your preferred text editor, such as [{% data variables.product.prodname_vscode %}](https://code.visualstudio.com/), and navigate to the file that has merge conflicts.
-1. To see the beginning of the merge conflict in your file, search the file for the conflict marker `<<<<<<<`. When you open the file in your text editor, you'll see the changes from the HEAD or base branch after the line `<<<<<<< HEAD`.
-
-   Next, you'll see `=======`, which divides your changes from the changes in the other branch, followed by `>>>>>>> BRANCH-NAME`. In this example, one person wrote "open an issue" in the base or HEAD branch and another person wrote "ask your question in IRC" in the compare branch or `branch-a`.
+1. Search the file for the conflict marker `<<<<<<<`. The changes from the HEAD or base branch appear after `<<<<<<< HEAD`, followed by `=======`, then the changes from the other branch and `>>>>>>> BRANCH-NAME`.
 
    ```text
    If you have questions, please
@@ -65,7 +61,7 @@ For example, if you and another person both edited the file `styleguide.md` on t
    >>>>>>> branch-a
    ```
 
-{% data reusables.pull_requests.decide-how-to-resolve-competing-line-change-merge-conflict %} In this example, both changes are incorporated into the final merge:
+{% data reusables.pull_requests.decide-how-to-resolve-competing-line-change-merge-conflict %} For example, you can keep both changes:
 
    ```shell
    If you have questions, please open an issue or ask in our IRC channel if it's more urgent.
@@ -87,9 +83,7 @@ You can now merge the branches on the command line or [push your changes to your
 
 ## Removed file merge conflicts
 
-To resolve a merge conflict caused by competing changes to a file, where a person deletes a file in one branch and another person edits the same file, you must choose whether to delete or keep the removed file in a new commit.
-
-For example, if you edited a file, such as `README.md`, and another person removed the same file in another branch in the same Git repository, you'll get a merge conflict error when you try to merge these branches. You must resolve this merge conflict with a new commit before you can merge these branches.
+When one branch deletes a file and another branch edits the same file, choose whether to keep or delete the file, then commit the resolution.
 
 {% data reusables.command_line.open_the_multi_os_terminal %}
 1. Navigate into the local Git repository that has the merge conflict.
@@ -118,9 +112,7 @@ For example, if you edited a file, such as `README.md`, and another person remov
    ```
 
 1. Open your preferred text editor, such as [{% data variables.product.prodname_vscode %}](https://code.visualstudio.com/), and navigate to the file that has merge conflicts.
-1. Decide if you want to keep the removed file. You may want to view the latest changes made to the removed file in your text editor.
-
-   To add the removed file back to your repository:
+1. Decide whether to keep the removed file. To add it back to your repository:
 
    ```shell
    git add README.md

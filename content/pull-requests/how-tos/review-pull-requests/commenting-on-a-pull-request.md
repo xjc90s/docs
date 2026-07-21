@@ -52,7 +52,7 @@ To reply to an existing line or file comment, navigate to the comment on either 
 
    * If you want to add **multiple comments**, click **Start a review**, then continue adding comments.
 
-     When you're finished, click **Finish your review** at the top right of the page, leave a summary of your review, and click **Submit review**.
+     When you're finished, click **Finish your review**, leave a summary of your review, and click **Submit review**.
 
 Anyone watching the pull request or repository will receive a notification of your comments. Batching your comments avoids sending multiple notifications. {% ifversion copilot %}If you are commenting on a pull request created by {% data variables.product.prodname_copilot_short %}, batching your comments prevents {% data variables.product.prodname_copilot_short %} from starting to work on individual comments before you have completed your review. See [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/start-copilot-sessions).{% endif %}
 
@@ -68,7 +68,7 @@ If the suggestion in a comment is out of your pull request's scope, you can open
 
 #### Discovering and navigating conversations
 
-You can discover and navigate to all the conversations in your pull request with the **Conversations** menu at the top of the **Files changed** tab.
+You can discover and navigate to all the conversations in your pull request with the **Conversations** menu on the **Files changed** tab.
 
 In this view, you can see which conversations are unresolved, resolved, and outdated. This makes it easy to discover and resolve conversations.
 

@@ -29,15 +29,17 @@ Pull requests are proposals to merge code changes into a project. A pull request
 
 ## Working with pull requests
 
-The **Conversation** tab of a pull request displays a description of the changes, a timeline of events, and comments and reviews from collaborators. This tab lets you track the discussion and progress of the proposed changes.
+A pull request brings together the context reviewers need to understand a change. This context is organized into tabs:
 
-The **Commits** tab shows all commits on the pull request branch in chronological order. This helps you understand the development history and see how the changes evolved over time.
+* The **Conversation** tab shows the description, timeline, comments, and reviews.
+* The **Commits** tab shows how the pull request branch changed over time.
+* The **Checks** tab shows automated tests, builds, and other validations.
+* The **Files changed** tab shows the diff that reviewers use to understand the proposed changes.
+* The **Findings** tab shows automated code review results, such as code scanning alerts, for the proposed changes.
 
-The **Checks** tab displays the status of any automated tests, builds, or other continuous integration workflows that run when you push commits. These checks help ensure your changes meet quality standards before merging.
+Separately from the tabs, the **merge status** highlights blockers, missing approvals, and other requirements before merging. It appears in the pull request header and in the merge box.
 
-The **Files changed** tab shows the differences between the proposed changes and the existing code, making it easy to see what will change when the pull request merges.
-
-You can view the **Merge status** of a pull request directly in the header from anywhere in the pull request page. Click the merge status to open the details, quickly identify blockers and missing approvals, and get your pull request ready to merge.
+Together, these views help authors and reviewers discuss the change, track feedback, and decide when the pull request is ready to merge.
 
 ## Draft pull requests
 
@@ -47,30 +49,15 @@ When you create a pull request, you can choose to make it a draft pull request. 
 
 ## Pull request refs and merge branches
 
-When you open a pull request, {% data variables.product.github %} creates up to two temporary, read-only Git references for it:
+When you open a pull request, {% data variables.product.github %} creates temporary Git references that point to the pull request's head branch and, when possible, to a simulated merge result. These refs help {% data variables.product.github %} and integrations evaluate the pull request without changing the base branch.
 
-| Ref | Description |
-| --- | --- |
-| `refs/pull/PULL_REQUEST_NUMBER/head` | Points to the latest commit on the pull request's head branch. |
-| `refs/pull/PULL_REQUEST_NUMBER/merge` | A merge branch—a simulated merge commit that represents what the repository would look like if the pull request were merged right now. This ref is only available when the pull request has no merge conflicts. |
-
-The merge branch automatically updates when the head branch changes. To fetch it locally:
-
-```shell
-git fetch origin refs/pull/PULL_REQUEST_NUMBER/merge
-git checkout FETCH_HEAD
-```
-
-Replace `PULL_REQUEST_NUMBER` with the number of your pull request.
-
-For information about how {% data variables.product.prodname_actions %} uses the merge branch, see [AUTOTITLE](/actions/reference/workflows-and-actions/events-that-trigger-workflows#how-the-merge-branch-affects-your-workflow).
+For most contributors, these refs stay in the background. They are most relevant when you are building automation, debugging CI behavior, or fetching pull request state locally. For information about how {% data variables.product.prodname_actions %} uses the merge branch, see [AUTOTITLE](/actions/reference/workflows-and-actions/events-that-trigger-workflows#how-the-merge-branch-affects-your-workflow).
 
 ## Differences between commits on compare and pull request pages
 
-The compare and pull request pages use different methods to calculate the diff for changed files:
+Compare pages and pull request pages can calculate changed files from different merge bases. As a result, the same branches can sometimes show different diffs in each place.
 
-* Compare pages show the diff between the tip of the head ref and the current common ancestor (that is, the merge base) of the head and base ref.
-* Pull request pages show the diff between the tip of the head ref and the common ancestor of the head and base ref at the time when the pull request was created. As a result, the merge base used for the comparison might be different.
+This usually matters when the base branch has changed since the pull request was created. Pull request pages focus on what the pull request introduced, while compare pages reflect the current comparison between two refs.
 
 ## Collaborative development models
 

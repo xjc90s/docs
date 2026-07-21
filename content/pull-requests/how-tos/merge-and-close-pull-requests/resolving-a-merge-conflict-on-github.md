@@ -17,22 +17,20 @@ category:
   - Merge and close pull requests
 contentType: how-tos
 ---
-On {% data variables.product.github %}, you can only resolve merge conflicts caused by competing line changes, such as when people make different changes to the same line of the same file on different branches in your Git repository. For all other types of merge conflicts, you must resolve the conflict locally on the command line. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
+You can resolve simple competing line change conflicts on {% data variables.product.github %}. For other conflicts, use the command line. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
 
 {% ifversion copilot %}
 
-If you have access to {% data variables.copilot.copilot_cloud_agent %} and it is enabled for the repository, you can click **Fix with {% data variables.product.prodname_copilot_short %}** in the merge box to have {% data variables.product.prodname_copilot_short %} resolve the merge conflicts automatically. {% data variables.product.prodname_copilot_short %} will analyze the conflicting changes, resolve the conflicts, and verify that the build, tests, and linter still pass. For more information, see [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/make-changes-to-an-existing-pr#resolving-merge-conflicts).
+If {% data variables.copilot.copilot_cloud_agent %} is enabled for the repository, you can click **Fix with {% data variables.product.prodname_copilot_short %}** in the merge box to have {% data variables.product.prodname_copilot_short %} resolve conflicts automatically. For more information, see [AUTOTITLE](/copilot/how-tos/use-copilot-agents/cloud-agent/make-changes-to-an-existing-pr#resolving-merge-conflicts).
 
 {% endif %}
 
 {% ifversion ghes %}
-If a site administrator disables the merge conflict editor for pull requests between repositories, you cannot use the conflict editor on {% data variables.product.prodname_ghe_server %} and must resolve merge conflicts on the command line. For example, if the merge conflict editor is disabled, you cannot use it on a pull request between a fork and upstream repository.
+If a site administrator disables the merge conflict editor for pull requests between repositories, resolve merge conflicts on the command line.
 {% endif %}
 
 > [!WARNING]
-> When you resolve a merge conflict on {% data variables.product.github %}, the entire [base branch](/get-started/learning-about-github/github-glossary#base-branch) of your pull request is merged into the [head branch](/get-started/learning-about-github/github-glossary#head-branch). Make sure you really want to commit to this branch.
->
-> If the head branch is the default branch of your repository, you'll be given the option of creating a new branch to serve as the head branch for your pull request. If the head branch is protected, you won't be able to merge your conflict resolution into it, so you'll be prompted to create a new head branch. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+> Resolving conflicts on {% data variables.product.github %} merges the entire [base branch](/get-started/learning-about-github/github-glossary#base-branch) into the [head branch](/get-started/learning-about-github/github-glossary#head-branch). If the head branch is the default or protected branch, you may be prompted to create a new head branch. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
 
 {% data reusables.repositories.sidebar-pr %}
 1. In the "Pull Requests" list, click the pull request with a merge conflict that you want to resolve.
@@ -41,7 +39,7 @@ If a site administrator disables the merge conflict editor for pull requests bet
    ![Screenshot of a warning that a pull request has a merge conflict. The "Resolve merge conflicts" button is outlined in dark orange.](/assets/images/help/pull_requests/resolve-merge-conflicts-button.png)
 
    > [!NOTE]
-   > If the **Resolve conflicts** button is deactivated, your pull request's merge conflict is too complex to resolve on {% data variables.product.github %}{% ifversion ghes %} or the site administrator has disabled the conflict editor for pull requests between repositories{% endif %}. You must resolve the merge conflict using an alternative Git client or Git on the command line. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
+   > If **Resolve conflicts** is deactivated, resolve the conflict using another Git client or the command line. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
 
 {% data reusables.pull_requests.decide-how-to-resolve-competing-line-change-merge-conflict %}
 1. If your file has more than one merge conflict, scroll down to the next set of conflict markers and repeat steps four and five to resolve the conflict.
@@ -54,15 +52,9 @@ If a site administrator disables the merge conflict editor for pull requests bet
 
    ![Screenshot of the editor to resolve a merge conflict in a pull request. The "Commit merge" button is outlined in dark orange.](/assets/images/help/pull_requests/merge-conflict-commit-changes.png)
 
-1. If prompted, review the branch that you are committing to.
+1. If prompted, review the branch that you are committing to. You can update the head branch or, if available, create a new branch for the pull request. If the head branch is protected, you must create a new branch.
 
-   If the head branch is the default branch of the repository, you can choose either to update this branch with the changes you made to resolve the conflict or to create a new branch and use it as the head branch of the pull request.
-
-   If you choose to create a new branch, enter a name for the branch.
-
-   If the head branch of your pull request is protected, you must create a new branch. You won't get the option to update the protected branch.
-
-   Click **Create branch and update my pull request** or **I understand, continue updating BRANCH**. The button text corresponds to the action you are performing.
+   Click **Create branch and update my pull request** or **I understand, continue updating BRANCH**.
 1. To merge your pull request, click **Merge pull request**. For more information about other pull request merge options, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request).
 
 ## Further reading

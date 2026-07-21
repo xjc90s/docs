@@ -26,21 +26,14 @@ When you create your pull request, you can specify which branch you want to merg
 
 ## Changing the branch range and destination repository
 
-By default, pull requests are based on the parent repository's default branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#about-the-default-branch).
-
-If the default parent repository isn't correct, you can change both the parent repository and the branch with the dropdown lists. You can also swap your head and base branches with the dropdown lists to compare reference points. The references must be branch names in your GitHub repository.
+By default, pull requests target the parent repository's default branch. Use the branch and repository dropdown menus to choose the base branch where changes should be applied and the head branch that contains your changes.
 
 ![Screenshot of a pull request. The dropdown to edit the compare branch is expanded.](/assets/images/help/pull_requests/pull-request-review-edit-branch.png)
 
-When thinking about branches, remember that the _base branch_ is **where** changes should be applied. The _head branch_ contains **what** you would like to be applied.
-
-When you change the base repository, you also change notifications for the pull request. Everyone who can push to the base repository receives an email notification and sees the new pull request in their dashboard the next time they sign in.
-
-When you change any information in the branch range, the Commit and Files changed preview areas update to show your new range.
+When you change the branch range, the Commit and Files changed preview areas update to show the new comparison. If you change the base repository, people who can push to that repository receive notifications for the pull request.
 
 > [!TIP]
-> * Using the compare view, you can set up comparisons across any timeframe. For more information, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
-> * Project maintainers can add a pull request template for a repository. Templates include prompts for information in the body of a pull request. For more information, see [AUTOTITLE](/communities/using-templates-to-encourage-useful-issues-and-pull-requests/about-issue-and-pull-request-templates).
+> For more comparison options, see [AUTOTITLE](/pull-requests/committing-changes-to-your-project/viewing-and-comparing-commits/comparing-commits).
 
 ## Creating the pull request
 

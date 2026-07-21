@@ -19,7 +19,7 @@ contentType: how-tos
 
 ## Creating a branch
 
-You can create branches in several ways on {% data variables.product.github %}.
+Create a branch when you want a separate place to work on changes before opening a pull request.
 
 > [!NOTE]
 > You can only create a branch in a repository to which you have push access.
@@ -32,9 +32,7 @@ You can create branches in several ways on {% data variables.product.github %}.
 
    ![Screenshot of the "Branches" page for a repository. A green button, labeled "New branch", is highlighted with an orange outline.](/assets/images/help/branches/new-branch-button.png)
 1. Under "Branch name", type a name for the branch.
-1. Under "Branch source", choose a source for your branch.
-   * If your repository is a fork, select the repository dropdown menu and click your fork or the upstream repository.
-   * Select the branch dropdown menu and click a branch.
+1. Under "Branch source", choose the repository and branch to base your new branch on.
 1. Click **Create branch**.
 
 ### Creating a branch using the branch dropdown
@@ -55,12 +53,14 @@ You can create a branch to work on an issue directly from the issue page. For mo
 
 ## Deleting a branch
 
+Delete branches that you no longer need, such as branches for merged or closed work.
+
 {% data reusables.pull_requests.automatically-delete-branches %}
 
 > [!NOTE]
-> If the branch you want to delete is the repository's default branch, you must choose a new default branch before deleting the branch. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch).
+> If the branch you want to delete is the repository's default branch, choose a new default branch first. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch).
 
-If the branch you want to delete is associated with an open pull request, you must merge or close the pull request before deleting the branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request) or [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/closing-a-pull-request).
+If the branch is associated with an open pull request, merge or close the pull request before deleting the branch.
 
 {% data reusables.repositories.navigate-to-repo %}
 {% data reusables.repositories.navigate-to-branches %}

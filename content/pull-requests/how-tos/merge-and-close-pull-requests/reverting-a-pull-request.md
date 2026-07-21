@@ -17,17 +17,12 @@ contentType: how-tos
 ---
 ## About reverting a pull request
 
-Reverting a pull request on {% data variables.product.github %} creates a new pull request that contains a revert of the merge commit from the original merged pull request. To revert pull requests, you must have [write permissions](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization) in the repository.
+Reverting a merged pull request creates a new pull request that reverts the original merge commit. You must have [write permissions](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization) in the repository.
 
 ## Reverting a pull request
 
 > [!NOTE]
-> You might need to revert the individual commits in your pull request if either of the following is true.
->
-> * Reverting the pull request causes merge conflicts
-> * The original pull request was not merged on {% data variables.product.github %}. For example, someone could have merged the pull request using a fast-forward merge on the command line.
->
-> For more information about using Git to manually revert individual commits, see [Git revert](https://git-scm.com/docs/git-revert.html) in the Git documentation.
+> You may need to revert individual commits if reverting the pull request causes merge conflicts or if the original pull request was not merged on {% data variables.product.github %}. For more information, see [Git revert](https://git-scm.com/docs/git-revert.html) in the Git documentation.
 
 {% data reusables.repositories.sidebar-pr %}
 1. In the "Pull Requests" list, click the pull request you want to revert.

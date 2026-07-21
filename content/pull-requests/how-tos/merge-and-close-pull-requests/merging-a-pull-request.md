@@ -17,29 +17,28 @@ contentType: how-tos
 ---
 ## About pull request merges
 
-In a pull request, you propose that changes you've made on a head branch should be merged into a base branch. By default, any pull request can be merged at any time, unless the head branch is in conflict with the base branch.
+Merge a pull request when the proposed changes are ready and any repository requirements are satisfied. You can't merge a draft pull request.
 
-However, there may be restrictions on when you can merge a pull request into a specific branch. For example, you may only be able to merge a pull request into the default branch if required status checks are passing. Repository administrators can add these constraints to branches using branch protection rules. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
+Repository rules or branch protection may require reviews, status checks, or an up-to-date branch before merging. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches).
 
 {% data reusables.repositories.rulesets-alternative %}
 
 {% data reusables.pull_requests.you-can-auto-merge %}
 
-If the pull request has merge conflicts, or if you want to test the changes before merging, you can [check out the pull request locally](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally) and merge it using the command line.
+If the base branch requires a merge queue, the available merge options differ from those described here. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request-with-a-merge-queue).
 
-You can't merge a draft pull request. For more information about draft pull requests, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests#draft-pull-requests).
+If the pull request has merge conflicts, or if you want to test changes first, [check out the pull request locally](/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/checking-out-pull-requests-locally).
 
-The repository may be configured so that the head branch for a pull request is automatically deleted when you merge a pull request. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches).
+The repository may automatically delete the head branch after merging. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches).
 
 > [!NOTE]
 > {% data reusables.pull_requests.retargeted-on-branch-deletion %}
-> For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches#working-with-branches).
 
-Pull requests are merged using [the `--no-ff` option](https://git-scm.com/docs/git-merge#_fast_forward_merge), except for [pull requests with squashed or rebased commits](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges), which are merged using the fast-forward option.
+Pull requests use [the `--no-ff` option](https://git-scm.com/docs/git-merge#_fast_forward_merge), except squashed or rebased pull requests, which use fast-forward merging.
 
 {% data reusables.pull_requests.close-issues-using-keywords %}
 
-If you decide you don't want the changes in a topic branch to be merged to the upstream branch, you can [close the pull request](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/closing-a-pull-request) without merging.
+If you don't want to merge the changes, you can [close the pull request](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/closing-a-pull-request).
 
 ## Merging a pull request
 
@@ -47,9 +46,9 @@ If you decide you don't want the changes in a topic branch to be merged to the u
 
 {% data reusables.repositories.sidebar-pr %}
 1. In the "Pull Requests" list, click the pull request you want to merge.
-1. Scroll down to the bottom of the pull request. Depending on the merge options enabled for your repository, you can:
+1. Scroll down to the bottom of the pull request. Depending on the merge options enabled for your repository, choose a merge method:
 
-    * [Merge all of the commits into the base branch](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges) by clicking **Merge pull request**. If the **Merge pull request** option is not shown, click the merge dropdown menu and select **Create a merge commit**.
+    * [Merge all commits into the base branch](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/about-pull-request-merges) by clicking **Merge pull request**. If the option is not shown, click the merge dropdown menu and select **Create a merge commit**.
 
       ![Screenshot of the merge options for a pull request. The arrow to expand the dropdown is outlined in dark orange.](/assets/images/help/pull_requests/merge-pull-request-options.png)
 

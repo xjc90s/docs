@@ -18,16 +18,7 @@ category:
 contentType: how-tos
 ---
 
-Repositories belong to a personal account (a single individual owner) or an organization account (a shared account with many collaborators or maintainers). For more information, see [AUTOTITLE](/get-started/learning-about-github/types-of-github-accounts).
-
-Owners and collaborators on a repository owned by a personal account can assign pull request reviews. Organization members with triage permissions can also assign a reviewer for a pull request.
-
-To assign a reviewer to a pull request, you need write access to the repository. For more information about repository access, see [AUTOTITLE](/organizations/managing-user-access-to-your-organizations-repositories/managing-repository-roles/repository-roles-for-an-organization). If you have write access, you can assign anyone who has read access to the repository as a reviewer.
-
-Organization members with write access can also assign a pull request review to any person or team with read access to a repository. The requested reviewer or team receives a notification that you asked them to review the pull request. If you request a review from a team and code review assignment is enabled, specific members are requested and the team is removed as a reviewer. For more information, see [AUTOTITLE](/organizations/organizing-members-into-teams/managing-code-review-settings-for-your-team).
-
-> [!NOTE]
-> Pull request authors can't request reviews unless they are either a repository owner or collaborator with write access to the repository.
+To request a review, you need write access to the repository. You can request a review from a person or team with read access to the repository, and they receive a notification. Pull request authors can request reviews only if they are repository owners or collaborators with write access.
 
 {% ifversion copilot %}
 
@@ -35,9 +26,7 @@ Organization members with write access can also assign a pull request review to 
 
 {% endif %}
 
-You can request a review from either a suggested person or a specific person. Suggested reviewers are based on [git blame data](/repositories/working-with-files/using-files/viewing-a-file). If you request a review, other people with read access to the repository can still review your pull request.
-
-After someone reviews your pull request and you make the necessary changes, you can request another review from the same reviewer. If the requested reviewer does not submit a review, and the pull request meets the repository's [mergeability requirements](/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests), you can still merge the pull request.
+Suggested reviewers are based on [git blame data](/repositories/working-with-files/using-files/viewing-a-file). After someone reviews your pull request and you make changes, you can request another review from the same reviewer.
 
 {% data reusables.repositories.sidebar-pr %}
 1. In the list of pull requests, click the pull request that you want a specific person or team to review.

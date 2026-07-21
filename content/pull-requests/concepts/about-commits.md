@@ -31,14 +31,9 @@ Rebasing lets you change a series of commits and can change the order of the com
 
 ## About commit branches and tag labels
 
-You can see which branch a commit is on by looking at the labels beneath the commit on the commit page.
+Commit pages can show labels for branches and tags that contain the commit. These labels help you understand where a commit appears in the repository history.
 
-{% data reusables.repositories.navigate-to-repo %}
-{% data reusables.repositories.navigate-to-commit-page %}
-{% data reusables.repositories.navigate-to-commit %}
-1. To see what branch the commit is on, check the label below the commit message.
-
-   ![Screenshot of a commit summary. A branch icon and "main" are highlighted with an orange outline.](/assets/images/help/commits/commit-branch-indicator.png)
+![Screenshot of a commit summary. A branch icon and "main" are highlighted with an orange outline.](/assets/images/help/commits/commit-branch-indicator.png)
 
 If your commit is not on the default branch (`main`), the label will show the branches which contain the commit. If the commit is part of an unmerged pull request, you can click the link to go to the pull request.
 
@@ -48,18 +43,12 @@ Once the commit is on the default branch, any tags that contain the commit will 
 
 ## Using the file tree
 
-You can use the file tree to navigate between files in a commit.
+The file tree helps you navigate between files in a commit and focus on the diffs that matter. You can select a file to view its diff or filter by file path when a commit changes many files.
 
-{% data reusables.repositories.navigate-to-repo %}
-{% data reusables.repositories.navigate-to-commit-page %}
-{% data reusables.repositories.navigate-to-commit %}
-1. Click a file in the file tree to view the corresponding file diff. If the file tree is hidden, click {% octicon "sidebar-collapse" aria-label="The sidebar collapse icon" %} to display the file tree.
+> [!NOTE]
+> The file tree will not display if your screen width is too narrow or if the commit only includes one file.
 
-   > [!NOTE]
-   > The file tree will not display if your screen width is too narrow or if the commit only includes one file.
-
-   ![Screenshot of the "Files changed" tab of a pull request. In the left sidebar, the file tree is outlined in dark orange.](/assets/images/help/repository/file-tree.png)
-1. To filter by file path, enter part or all of the file path in the **Filter changed files** search box.
+![Screenshot of the "Files changed" tab of a pull request. In the left sidebar, the file tree is outlined in dark orange.](/assets/images/help/repository/file-tree.png)
 
 ## Further reading
 

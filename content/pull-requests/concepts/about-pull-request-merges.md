@@ -16,66 +16,50 @@ category:
   - Merge and close pull requests
 contentType: concepts
 ---
+
+Pull requests can be merged in different ways. The best strategy depends on how your team wants the repository history to look and how much detail you want to preserve from the pull request branch.
+
 ## Merge your commits
 
 {% data reusables.pull_requests.default_merge_option %}
+
+A merge commit preserves the full commit history from the pull request branch. This makes it easier to see every commit that led to the final change, including review fixes and intermediate work. It also creates an explicit merge point in the base branch history.
+
+Choose this strategy when your team values complete history or when the individual commits in a pull request are meaningful on their own.
 
 ## Squash and merge your commits
 
 {% data reusables.pull_requests.squash_and_merge_summary %}
 
+Squashing turns all commits in the pull request into one commit on the base branch. This keeps the default branch history concise and can make it easier to scan later. The tradeoff is that intermediate commits from the pull request are not preserved as separate commits on the base branch.
+
+Choose this strategy when a pull request represents one logical change, especially if the branch includes many small fixup commits.
+
 ### Merge message for a squash merge
 
-When you squash and merge, {% data variables.product.prodname_dotcom %} generates a default commit message, which you can edit. Depending on how the repository is configured and the number of commits in the pull request, excluding merge commits, this message may include the pull request title, pull request description, or information about the commits.
+When you squash and merge, {% data variables.product.prodname_dotcom %} generates a default commit message that you can edit. The default message can include the pull request title, pull request description, or commit information, depending on repository settings and the number of commits in the pull request.
 
-| Number of commits | Summary | Description |
-| ----------------- | ------- | ----------- |
-| One commit | The title of the commit message for the single commit, followed by the pull request number | The body text of the commit message for the single commit |
-| More than one commit | The pull request title, followed by the pull request number | A list of the commit messages for all of the squashed commits, in date order |
-
-People with maintainer or admin access to a repository can configure their repository's default merge message for all squashed commits to use the pull request title, the pull request title and commit details, or the pull request title and description. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests).
+Maintainers and administrators can configure the default message for squashed commits. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests).
 
 ### Squashing and merging a long-running branch
 
-If you plan to continue work on the [head branch](/get-started/learning-about-github/github-glossary#head-branch) of a pull request after the pull request is merged, we recommend you don't squash and merge the pull request.
+Squash merging works best for short-lived branches. If you keep working on the same head branch after a squash merge, later pull requests can include commits that were already squashed into the base branch. This can make merge conflicts more likely and can force you to resolve the same conflicts more than once.
 
-When you create a pull request, {% data variables.product.prodname_dotcom %} identifies the most recent commit that is on both the head branch and the [base branch](/get-started/learning-about-github/github-glossary#base-branch): the common ancestor commit. When you squash and merge the pull request, {% data variables.product.prodname_dotcom %} creates a commit on the base branch. This commit contains all of the changes you made on the head branch since the common ancestor commit.
-
-Because this commit is only on the base branch and not the head branch, the common ancestor of the two branches remains unchanged. If you continue to work on the head branch, then create a new pull request between the two branches, the pull request will include all of the commits since the common ancestor. This includes commits that you squashed and merged in the previous pull request.
-
-If there are no conflicts, you can safely merge these commits. However, this workflow makes merge conflicts more likely. If you continue to squash and merge pull requests for a long-running head branch, you will have to resolve the same conflicts repeatedly.
+For long-running branches, consider using a merge commit or rebasing the branch before opening the next pull request.
 
 ## Rebase and merge your commits
 
 {% data reusables.pull_requests.rebase_and_merge_summary %}
 
-You can't automatically rebase and merge when:
-* The pull request has merge conflicts.
-* Rebasing the commits from the base branch into the head branch runs into conflicts.
-* Rebasing the commits is considered "unsafe," such as when a rebase is possible without merge conflicts but would produce a different result than a merge would.
+Rebasing adds each commit from the pull request branch onto the base branch without creating a merge commit. This produces a linear history while preserving the individual commits from the pull request.
 
-If you still want to rebase the commits but can't rebase and merge automatically, you must:
-* Rebase the topic branch (or head branch) onto the base branch locally on the command line.
-* [Resolve any merge conflicts on the command line](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line).
-* Force-push the rebased commits to the pull request's topic branch (or remote head branch).
-
-Anyone with write permissions in the repository can then [merge the changes](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request) using the rebase and merge button.
+Choose this strategy when your team wants a linear history and the pull request commits are already organized clearly. If {% data variables.product.github %} cannot safely rebase the pull request automatically, you can rebase locally, resolve conflicts, and push the updated branch. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/addressing-merge-conflicts/resolving-a-merge-conflict-using-the-command-line) and [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/incorporating-changes-from-a-pull-request/merging-a-pull-request).
 
 ## Indirect merges
 
-A pull request can be merged automatically if its head branch is directly or indirectly merged into the base branch externally. In other words, this happens if the head branch's tip commit becomes reachable from the tip of the target branch. For example:
+A pull request can be marked as merged if its head branch commits become reachable from the base branch outside that pull request. This can happen when the same commits are merged through another pull request or pushed directly to the default branch.
 
-* Branch `main` is at commit **C**.
-* Branch `feature` is branched off of `main` and is currently at commit **D**. This branch has a pull request targeting `main`.
-* Branch `feature_2` is branched off of `feature` and is now at commit **E**. This branch also has a pull request targeting `main`.
-
-If pull request **E** --> `main` is merged first, pull request **D** --> `main` is marked as merged _automatically_ because all of the commits from `feature` are now reachable from `main`. Merging `feature_2` into `main` and pushing `main` to the server from the command line marks _both_ pull requests as merged.
-
-Indirect merges can occur only when the commits in the pull request's head branch are pushed directly to the repository's default branch, or when the commits in the pull request's head branch are present in another pull request and are merged into the repository's default branch using the **Create a merge commit** option.
-
-If a pull request containing commits present in another pull request's head branch is merged using the **Squash and merge** or **Rebase and merge** options, a new commit is created on the base branch and the other pull request will not be automatically merged.
-
-Pull requests that are merged indirectly are marked as `merged` even if [branch protection rules](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#about-branch-protection-rules) have not been satisfied.
+Indirect merges are uncommon, but they can affect automation and branch protection expectations. Pull requests merged indirectly are marked as `merged` even if branch protection rules on that pull request were not satisfied.
 
 ## Further reading
 

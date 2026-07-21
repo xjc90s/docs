@@ -23,19 +23,15 @@ Pull request reviews are one of the main ways people collaborate on {% data vari
 
 ## Reviewing pull requests
 
-Anyone with read access can review and comment on proposed changes. When submitting a review, choose one of three statuses:
+Anyone with read access can review and comment on proposed changes. Reviews help authors improve their work and help maintainers decide whether a pull request is ready to merge.
 
-* **Comment**: Share feedback without approving or requesting changes.
-* **Approve**: Approve the changes for merging.
-* **Request changes**: Identify issues that must be fixed before merging.
-
-You can comment on specific lines, suggest changes for authors to apply directly, and discuss implementation approaches. Reviews appear in the conversation timeline and merge box. To track addressed feedback, mark conversation threads as resolved.
+A review can leave general feedback, approve the pull request, or request changes that should be addressed before merging. Reviewers can also comment on specific lines, suggest changes, and discuss implementation details. Review conversations appear in the pull request timeline so the team can track feedback and decisions.
 
 ## Requesting and requiring reviews
 
-Repository owners and collaborators can request reviews from specific people or teams. If you define code owners in a CODEOWNERS file, they are automatically requested for review when a pull request modifies their code. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review).
+Repository owners and collaborators can request reviews from specific people or teams when they need feedback from the right experts. If you define code owners in a CODEOWNERS file, {% data variables.product.github %} can automatically request review from owners when a pull request changes their code. For more information, see [AUTOTITLE](/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/requesting-a-pull-request-review).
 
-To maintain code quality and prevent accidental merges, repository administrators can require approvals before pull requests are merged. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-pull-request-reviews-before-merging).
+Repository administrators can require approvals before pull requests are merged. Required reviews help protect important branches and reduce accidental merges. For more information, see [AUTOTITLE](/repositories/configuring-branches-and-merges-in-your-repository/managing-protected-branches/about-protected-branches#require-pull-request-reviews-before-merging).
 
 ## Further reading
 

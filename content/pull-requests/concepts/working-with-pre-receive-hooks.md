@@ -14,7 +14,10 @@ category:
   - Merge and close pull requests
 contentType: concepts
 ---
-Pre-receive hooks run tests on code pushed to a repository to make sure contributions meet repository or organization policy. If the commit contents pass the tests, the push is accepted into the repository. If the commit contents do not pass the tests, the push is not accepted.
+
+Pre-receive hooks are scripts that run on {% data variables.product.prodname_ghe_server %} before Git accepts pushed commits. They enforce repository, organization, or enterprise policy at the point where code enters a repository.
+
+A pre-receive hook can check whether a push follows required rules. For example, a hook might block pushes that include secrets, use nonstandard commit messages, or change protected files. If the push passes the checks, Git accepts it. If the push fails, Git rejects it and shows an error message.
 
 If your push isn't accepted, you'll see an error message for the failed pre-receive hook.
 
@@ -32,4 +35,6 @@ To https://54.204.174.51/hodor/nope.git
 error: failed to push some refs to 'https://54.204.174.51/hodor/nope.git'
 ```
 
-Your {% data variables.product.prodname_ghe_server %} site administrator can create and remove pre-receive hooks for your organization or repository, and may allow organization or repository administrators to enable or disable pre-receive hooks. For more information, see [AUTOTITLE](/admin/policies/enforcing-policy-with-pre-receive-hooks).
+Pre-receive hooks matter because they apply rules consistently before changes reach the repository. This can reduce manual review burden and prevent policy violations from being stored in Git history.
+
+Your {% data variables.product.prodname_ghe_server %} site administrator creates and removes pre-receive hooks. They may also allow organization or repository administrators to enable or disable hooks for specific scopes. For more information, see [AUTOTITLE](/admin/policies/enforcing-policy-with-pre-receive-hooks).
