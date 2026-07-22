@@ -22,7 +22,16 @@ permissions:
 jobs:
   noResponse:
     runs-on: ubuntu-latest
-    if: github.repository == 'github/docs'
+    # Only run in the OS repository, and skip bot-authored events. On failure the
+    # create-workflow-failure-issue step below posts a comment (as a bot); that
+    # comment is itself an issue_comment event that would re-trigger this workflow.
+    # During a transient failure that loops, so guard against bot actors to keep
+    # one failure from producing a flood of runs and Slack alerts.
+    if: >-
+      github.repository == 'github/docs' &&
+      github.actor != 'docs-bot' &&
+      github.actor != 'github-actions' &&
+      !endsWith(github.actor, '[bot]')
     steps:
       - uses: actions/stale@3a9db7e6a41a89f618792c92c0e97cc736e1b13f # v10.0.0
         with:
