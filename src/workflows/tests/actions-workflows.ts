@@ -109,9 +109,12 @@ const alertWorkflows = workflows.filter(({ data }) =>
 )
 // to generate list, console.log(new Set(workflows.map(({ data }) => Object.keys(data.on)).flat()))
 
-const dailyWorkflows = scheduledWorkflows.filter(({ data }) =>
-  data.on.schedule!.find(({ cron }: { cron: string }) => /^20 \d{1,2} /.test(cron)),
-)
+const dailyWorkflows = scheduledWorkflows
+  // purge-fastly's daily soft purge runs every day off-peak (02:20 UTC)
+  .filter(({ filename }) => filename !== 'purge-fastly.yml')
+  .filter(({ data }) =>
+    data.on.schedule!.find(({ cron }: { cron: string }) => /^20 \d{1,2} /.test(cron)),
+  )
 
 // Weekly workflows have a single day-of-week digit (e.g. "20 16 * * 1")
 const weeklyWorkflows = dailyWorkflows.filter(({ data }) =>
