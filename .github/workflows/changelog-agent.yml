@@ -412,7 +412,7 @@ jobs:
 
       - name: Install GitHub Copilot CLI
         if: steps.check_parent.outputs.has_parent == 'true' && steps.check_existing.outputs.exists == 'false'
-        run: npm install -g @github/copilot
+        run: npm install -g @github/copilot@1.0.71
 
       - name: Generate changelog draft via Copilot
         if: steps.check_parent.outputs.has_parent == 'true' && steps.check_existing.outputs.exists == 'false'
